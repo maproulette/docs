@@ -1,6 +1,0 @@
-{
-  "editor.formatOnSave": true,
-  "files.associations": {
-    "*.stub": "blade"
-  }
-}

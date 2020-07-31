@@ -1,5 +1,4 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 import SvgSymbol from 'components/SvgSymbol'
 
@@ -9,10 +8,11 @@ function Header() {
       <div className="max-w-screen-xl mx-auto relative">
         <div className="flex items-center space-x-4 sm:space-x-6">
           <Link
-            to="/"
-            className="flex-shrink-0 lg:w-1/4 xl:w-1/5 text-white"
-            rel="home"
+            href="/"
+            
           >
+            <a className="flex-shrink-0 lg:w-1/4 xl:w-1/5 text-white"
+            rel="home">
             <span className="sr-only">{process.env.REACT_APP_NAME}</span>
             <SvgSymbol
               symbolId="logo"
@@ -20,6 +20,7 @@ function Header() {
               className="hidden sm:block w-56 h-auto"
             />
             <SvgSymbol symbolId="logomark" className="sm:hidden w-12 h-12" />
+            </a>
           </Link>
           <div className="flex-grow lg:w-3/4 xl:w-4/5">
             <input
