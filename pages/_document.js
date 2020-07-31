@@ -14,8 +14,8 @@ class MyDocument extends Document {
       <Html lang="en" className="bg-blue antialiased leading-tight">
         <Head />
         <body className="text-white leading-normal">
-            <Layout>
-          <Main tabindex="-1" class="outline-none" />
+          <Layout>
+            <Main tabindex="-1" class="outline-none" />
           </Layout>
           <SvgSprites />
           <NextScript />
