@@ -4,10 +4,7 @@ import Header from 'components/Header'
 
 function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-gradient-r-green-blue">
-      <a href="#content" className="sr-only">
-        Skip to content
-      </a>
+    <div tabIndex={-1} role="group" className="min-h-screen outline-none">
       <Header />
       <main id="content" className="px-4">
         <div className="max-w-screen-xl mx-auto">{children}</div>

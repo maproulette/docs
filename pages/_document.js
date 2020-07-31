@@ -13,7 +13,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en" className="bg-blue antialiased leading-tight">
         <Head />
-        <body className="text-white leading-normal">
+        <body className="text-white leading-normal bg-gradient-r-green-blue">
           <Layout>
             <Main tabindex="-1" class="outline-none" />
           </Layout>
