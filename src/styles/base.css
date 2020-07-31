@@ -1,0 +1,4 @@
+::selection {
+  text-shadow: none;
+  @apply opacity-100 bg-yellow-200 text-black;
+}
