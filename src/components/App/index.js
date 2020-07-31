@@ -8,7 +8,6 @@ import SvgSprites from 'components/SvgSprites'
 
 import Home from 'components/Home'
 import Page from 'components/Page'
-import Error404 from 'components/Error404'
 
 function App() {
   return (
@@ -19,11 +18,8 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/:slug">
+            <Route path="/:slug">
               <Page />
-            </Route>
-            <Route path="*">
-              <Error404 />
             </Route>
           </Switch>
         </Layout>

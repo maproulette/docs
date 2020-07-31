@@ -24,7 +24,7 @@ function Header() {
           <div className="flex-grow lg:w-3/4 xl:w-4/5">
             <input
               type="search"
-              className="w-full outline-none rounded shadow-inner font-mono text-white bg-black-15 placeholder-gray-400 focus:placeholder-white p-2"
+              className="w-full outline-none rounded shadow-inner font-mono leading-6 text-white bg-black-15 placeholder-gray-400 focus:placeholder-white px-3 py-2"
               placeholder="Search the docs... (Press &ldquo;/&rdquo; to focus)"
             />
           </div>
