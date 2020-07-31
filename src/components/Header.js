@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 import SvgSymbol from 'components/SvgSymbol'
@@ -33,10 +32,6 @@ function Header() {
       </div>
     </header>
   )
-}
-
-Header.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Header
