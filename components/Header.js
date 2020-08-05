@@ -1,8 +1,19 @@
+import { useRef, useEffect } from 'react'
 import Link from 'next/link'
 
 import SvgSymbol from 'components/SvgSymbol'
+import useKeyPress from 'hooks/useKeyPress'
 
 function Header() {
+  const searchInput = useRef(null)
+  const searchFocused = useKeyPress('/')
+
+  useEffect(() => {
+    if (searchFocused) {
+      searchInput.current.focus()
+    }
+  }, [searchFocused])
+
   return (
     <header className="p-4 md:py-8">
       <div className="max-w-screen-xl mx-auto relative">
@@ -26,6 +37,7 @@ function Header() {
           </a>
           <div className="flex-grow lg:w-3/4 xl:w-4/5">
             <input
+              ref={searchInput}
               type="search"
               className="w-full outline-none rounded shadow-inner font-mono leading-6 text-white bg-black-15 placeholder-gray-400 focus:placeholder-white px-3 py-2"
               placeholder="Search the docs... (Press &ldquo;/&rdquo; to focus)"
