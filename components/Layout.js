@@ -62,51 +62,64 @@ function Layout({ mainNav, secondaryNav, children }) {
         <Header />
         <div className="px-4 mb-auto">
           <div className="max-w-screen-xl mx-auto lg:flex lg:space-x-6">
-            <div className="hidden lg:block w-full lg:w-1/4 xl:w-1/5 overflow-auto space-y-12">
-              <nav aria-label="Main">
-                <ol className="space-y-2">
-                  {mainNav &&
-                    mainNav.map((item, index) => (
-                      <li key={index}>
-                        <MainNavLink item={item} />
-                      </li>
-                    ))}
-                  <li>
-                    <MainNavLink
-                      item={{
-                        dirname: 'release-notes',
-                        frontmatter: {
-                          title: 'Release Notes',
-                        },
-                      }}
-                      href="/release-notes"
-                    />
-                  </li>
-                </ol>
-              </nav>
-              {secondaryNav && (
-                <nav aria-label="Secondary">
-                  <ol>
-                    {Object.entries(secondaryNav).map(([key, value]) => (
-                      <li key={key}>
-                        <h5 className="font-mono font-bold italic text-sm leading-6 tracking-wide uppercase mb-2">
-                          {key}
-                        </h5>
-                        <ol className="text-sm leading-4 space-y-2">
-                          {value.map((item, index) => (
-                            <li key={index}>
-                              <SecondaryNavLink
-                                href={`/${item.slug}`}
-                                title={item.frontmatter.title}
-                              />
-                            </li>
-                          ))}
-                        </ol>
-                      </li>
-                    ))}
+            <div className="hidden lg:block w-full lg:w-1/4 xl:w-1/5 overflow-auto">
+              <div className="space-y-12">
+                <nav aria-label="Main">
+                  <ol className="space-y-2">
+                    {mainNav &&
+                      mainNav.map((item, index) => (
+                        <li key={index}>
+                          <MainNavLink item={item} />
+                        </li>
+                      ))}
+                    <li>
+                      <MainNavLink
+                        item={{
+                          dirname: 'release-notes',
+                          frontmatter: {
+                            title: 'Release Notes',
+                          },
+                        }}
+                        href="/release-notes"
+                      />
+                    </li>
                   </ol>
                 </nav>
-              )}
+                {secondaryNav && (
+                  <nav aria-label="Secondary">
+                    <ol className="space-y-6">
+                      {Object.entries(secondaryNav).map(([key, value]) => (
+                        <li key={key}>
+                          {key !== 'undefined' && (
+                            <h5 className="font-mono font-bold italic text-sm leading-6 tracking-wide uppercase mb-2">
+                              {key}
+                            </h5>
+                          )}
+                          <ol className="text-sm leading-4 space-y-2">
+                            {value.map((item, index) => (
+                              <li key={index}>
+                                {item.frontmatter.draft === true ? (
+                                  <span className="opacity-50">
+                                    {item.frontmatter.title}{' '}
+                                    <span className="text-xs font-mono">
+                                      (Draft)
+                                    </span>
+                                  </span>
+                                ) : (
+                                  <SecondaryNavLink
+                                    href={`/${item.slug}`}
+                                    title={item.frontmatter.title}
+                                  />
+                                )}
+                              </li>
+                            ))}
+                          </ol>
+                        </li>
+                      ))}
+                    </ol>
+                  </nav>
+                )}
+              </div>
             </div>
             <main id="content" className="w-full lg:w-2/4 xl:w-3/5">
               {children}

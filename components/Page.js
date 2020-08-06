@@ -27,15 +27,22 @@ function Page({ data }) {
 
   const { frontmatter, content, nextDoc, prevDoc } = data
 
-  const { title, headline, description } = frontmatter
+  const { title, headline, description, draft } = frontmatter
 
   return (
     <div>
       <SEO title={headline || title} description={description} />
       <div className="space-y-8 mb-16">
-        <h1 className="mb-2 text-4xl md:text-5xl font-bold leading-none font-display">
-          {headline || title}
-        </h1>
+        <header className="mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold leading-none font-display">
+            {headline || title}
+          </h1>
+          {draft && (
+            <p className="mt-2 text-sm leading-4 font-mono opacity-50">
+              <sup>*</sup> Note: This page is a draft.
+            </p>
+          )}
+        </header>
         <ReactMarkdown
           className="prose-sm max-w-none sm:prose sm:max-w-none"
           escapeHtml={false}

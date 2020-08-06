@@ -18,7 +18,7 @@ function getDocs() {
       docs.push(file.slug, file)
     })
   })
-  return docs.sortBy('frontmatter.sort')
+  return docs
 }
 
 export function getDocsIndexes() {
@@ -52,6 +52,7 @@ export function getSiblingDocsGroupedByCategory(slug) {
   return getDocs()
     .where('dirname', path.dirname(slug))
     .filter((item, key) => item.name !== 'index')
+    .sortBy('frontmatter.sort')
     .mapToGroups((item, key) => [item.frontmatter.category, item])
     .all()
 }

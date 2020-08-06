@@ -48,6 +48,12 @@ module.exports = {
           h4: {
             color: theme('colors.white'),
           },
+          blockquote: {
+            color: theme('colors.white'),
+          },
+          thead: {
+            color: theme('colors.white'),
+          },
         },
       },
     }),
