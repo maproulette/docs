@@ -1,11 +1,11 @@
-import { getDocs } from 'utils/docs'
+import { getDocsIndexes } from 'utils/docs'
 
 import Layout from 'components/Layout'
 import SEO from 'components/Seo'
 
-export default function Home({ docs }) {
+export default function Home({ mainNav }) {
   return (
-    <Layout docs={docs}>
+    <Layout mainNav={mainNav}>
       <SEO title="Home" />
       <p>Next.js app.</p>
     </Layout>
@@ -13,11 +13,11 @@ export default function Home({ docs }) {
 }
 
 export async function getStaticProps() {
-  const docs = getDocs()
+  const mainNav = getDocsIndexes()
 
   return {
     props: {
-      docs,
+      mainNav,
     },
   }
 }

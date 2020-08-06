@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer className="px-4 py-8 bg-blue">
       <div className="max-w-screen-xl mx-auto">
-        <ul className="flex items-center space-x-6 text-sm leading-4 font-mono tracking-wider">
+        <ul className="flex items-center space-x-6 text-xs leading-4 font-mono">
           <li>
             <a
               href="https://maproulette.org"

@@ -5,22 +5,54 @@ import matter from 'gray-matter'
 
 import { getFormattedDate } from 'utils/helpers'
 
-export function getDocs() {
-  const docs = {}
-  const folderPath = `${process.cwd()}/content/docs/`
-  getDirectories(folderPath).map((path) => {
-    const files = collect(
-      getFiles(folderPath + '/' + path).map((file) => {
-        return parseFile(folderPath + path + '/' + file)
-      })
-    )
-      .filter((item, key) => item.slug !== 'index')
-      .mapToGroups((item, key) => [item.frontmatter.category, item])
-      .all()
-    docs[path] = files
-  })
+function docsDir() {
+  return `${process.cwd()}/content/docs/`
+}
 
+function getDocs() {
+  const folderPath = docsDir()
+  const docs = {}
+  getDirectories(folderPath).map((path) => {
+    getFiles(folderPath + '/' + path).map((file) => {
+      file = parseFile(folderPath + path + '/' + file)
+      docs[file.slug] = file
+    })
+  })
   return docs
+}
+
+export function getDocsIndexes() {
+  const folderPath = docsDir()
+  return collect(
+    getDirectories(folderPath).map((path) => {
+      const files = collect(
+        getFiles(folderPath + '/' + path).map((file) => {
+          return parseFile(folderPath + path + '/' + file)
+        })
+      )
+        .where('name', 'index')
+        .first()
+      return files
+    })
+  )
+    .sortBy('frontmatter.sort')
+    .all()
+}
+
+export function getDocsSlugs() {
+  return [] // Object.keys(getDocs())
+}
+
+export function getDocBySlug(slug) {
+  return collect(getDocs()).where('slug', slug).first()
+}
+
+export function getSiblingDocsGroupedByCategory(slug) {
+  return collect(getDocs())
+    .where('dirname', path.dirname(slug))
+    .filter((item, key) => item.name !== 'index')
+    .mapToGroups((item, key) => [item.frontmatter.category, item])
+    .all()
 }
 
 function getDirectories(dir) {
@@ -45,8 +77,13 @@ function parseFile(filePath) {
     date: getFormattedDate(data.date),
   }
 
+  const name = path.basename(filePath, '.md')
+  const slug = path.dirname(path.relative(docsDir(), filePath)) + '/' + name
+
   return {
-    slug: path.basename(filePath, '.md'),
+    name,
+    slug,
+    dirname: path.dirname(slug),
     frontmatter,
     excerpt,
     content,
