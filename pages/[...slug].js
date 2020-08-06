@@ -1,20 +1,17 @@
 import {
   getDocsSlugs,
   getDocBySlug,
-  getSiblingDocsGroupedByCategory,
   getDocsIndexes,
+  getSiblingDocsGroupedByCategory,
 } from 'utils/docs'
 
 import Layout from 'components/Layout'
-import SEO from 'components/Seo'
+import Page from 'components/Page'
 
-export default function Doc({ mainNav, secondaryNav, doc }) {
+export default function Content({ content, mainNav, secondaryNav }) {
   return (
     <Layout mainNav={mainNav} secondaryNav={secondaryNav}>
-      <SEO title="Doc" />
-      <pre>
-        <code>{JSON.stringify(doc, true, true)}</code>
-      </pre>
+      <Page data={content} />
     </Layout>
   )
 }
@@ -27,15 +24,15 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const slugPath = slug.join('/')
-  const doc = getDocBySlug(slugPath)
-  const secondaryNav = getSiblingDocsGroupedByCategory(slugPath)
+  const content = getDocBySlug(slugPath)
   const mainNav = getDocsIndexes()
+  const secondaryNav = getSiblingDocsGroupedByCategory(slugPath)
 
   return {
     props: {
+      content,
       mainNav,
       secondaryNav,
-      doc,
     },
   }
 }

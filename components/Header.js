@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
 import SvgSymbol from 'components/SvgSymbol'
-import LiveSearch from 'components/LiveSearch'
+// import LiveSearch from 'components/LiveSearch'
 
 function Header() {
   return (
-    <header className="p-4 md:py-8 lg:py-12">
+    <header className="px-4 py-8 lg:py-12">
       <div className="max-w-screen-xl mx-auto relative">
         <div className="flex items-center space-x-4 lg:space-x-6">
           <Link href="/">
@@ -25,9 +25,7 @@ function Header() {
           <a href="#content" className="sr-only">
             Skip to content
           </a>
-          <div className="flex-grow">
-            <LiveSearch />
-          </div>
+          <div className="flex-grow">{/* <LiveSearch /> */}</div>
           <ul className="flex-shrink-0 flex items-center space-x-4">
             <li>
               <a

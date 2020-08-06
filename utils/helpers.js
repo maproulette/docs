@@ -6,7 +6,7 @@ export function getSiteMetaData() {
 
 export function getFormattedDate(date) {
   if (!date) {
-    return
+    return null
   }
 
   const options = { year: 'numeric', month: 'long', day: 'numeric' }

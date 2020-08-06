@@ -22,6 +22,35 @@ module.exports = {
         inner: 'inset 0 1px 3px 0 rgba(0,0,0,0.3)',
       },
     },
+    typography: (theme) => ({
+      default: {
+        css: {
+          color: theme('colors.white'),
+          a: {
+            color: theme('colors.turquoise'),
+            '&:hover': {
+              color: theme('colors.white'),
+            },
+            'text-decoration': 'underline',
+          },
+          strong: {
+            color: theme('colors.white'),
+          },
+          h1: {
+            color: theme('colors.white'),
+          },
+          h2: {
+            color: theme('colors.white'),
+          },
+          h3: {
+            color: theme('colors.white'),
+          },
+          h4: {
+            color: theme('colors.white'),
+          },
+        },
+      },
+    }),
     linearGradientColors: (theme) => ({
       'green-blue': [
         theme('colors.green.default'),

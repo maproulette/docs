@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
@@ -7,25 +8,44 @@ import SvgSymbol from 'components/SvgSymbol'
 import SvgSprites from 'components/SvgSprites'
 
 function MainNavLink({ item, href }) {
-  const slug = href ?? `/content/${item.slug}`
+  const slug = href ?? '/' + item.slug
+  const { asPath } = useRouter()
+
+  const icons = {
+    documentation: 'icon-book-open',
+    screencasts: 'icon-play',
+    'release-notes': 'icon-newspaper',
+  }
+
+  const symbolId = icons[item.dirname] ?? 'icon-link'
 
   return (
     <Link href={slug}>
-      <a className="hover:text-turquoise transition-colors duration-200 flex items-center space-x-2">
-        <SvgSymbol
-          symbolId={
-            {
-              documentation: 'icon-book-open',
-              screencasts: 'icon-play',
-              'release-notes': 'icon-newspaper',
-              default: 'icon-link',
-            }[item.dirname]
-          }
-          className="w-5 h-5"
-        />
+      <a
+        className={`${
+          asPath === slug ? 'text-turquoise' : 'text-white'
+        } hover:text-turquoise transition-colors duration-200 flex items-center space-x-2`}
+      >
+        <SvgSymbol symbolId={symbolId} className="w-5 h-5" />
         <span className="text-sm font-mono leading-5">
           {item.frontmatter.title}
         </span>
+      </a>
+    </Link>
+  )
+}
+
+function SecondaryNavLink({ href, title }) {
+  const { asPath } = useRouter()
+
+  return (
+    <Link href={href}>
+      <a
+        className={`${
+          asPath === href ? 'text-turquoise' : 'text-white'
+        } hover:text-turquoise transition-colors duration-200`}
+      >
+        {title}
       </a>
     </Link>
   )
@@ -59,7 +79,7 @@ function Layout({ mainNav, secondaryNav, children }) {
                           title: 'Release Notes',
                         },
                       }}
-                      href="release-notes"
+                      href="/release-notes"
                     />
                   </li>
                 </ol>
@@ -69,15 +89,16 @@ function Layout({ mainNav, secondaryNav, children }) {
                   <ol>
                     {Object.entries(secondaryNav).map(([key, value]) => (
                       <li key={key}>
-                        <h5 className="font-mono font-bold italic text-sm leading-6 tracking-wide uppercase">
+                        <h5 className="font-mono font-bold italic text-sm leading-6 tracking-wide uppercase mb-2">
                           {key}
                         </h5>
                         <ol className="text-sm leading-4 space-y-2">
                           {value.map((item, index) => (
                             <li key={index}>
-                              <Link href={item.slug}>
-                                <a>{item.frontmatter.title}</a>
-                              </Link>
+                              <SecondaryNavLink
+                                href={`/${item.slug}`}
+                                title={item.frontmatter.title}
+                              />
                             </li>
                           ))}
                         </ol>

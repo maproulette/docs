@@ -1,22 +1,23 @@
-import { getDocsIndexes } from 'utils/docs'
+import { getDocBySlug, getDocsIndexes } from 'utils/docs'
 
 import Layout from 'components/Layout'
-import SEO from 'components/Seo'
+import Page from 'components/Page'
 
-export default function Home({ mainNav }) {
+export default function Home({ content, mainNav }) {
   return (
     <Layout mainNav={mainNav}>
-      <SEO title="Home" />
-      <p>Next.js app.</p>
+      <Page data={content} />
     </Layout>
   )
 }
 
 export async function getStaticProps() {
+  const content = getDocBySlug('introduction/index')
   const mainNav = getDocsIndexes()
 
   return {
     props: {
+      content,
       mainNav,
     },
   }

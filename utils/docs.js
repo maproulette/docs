@@ -6,7 +6,7 @@ import matter from 'gray-matter'
 import { getFormattedDate } from 'utils/helpers'
 
 function docsDir() {
-  return `${process.cwd()}/content/docs/`
+  return `${process.cwd()}/content/`
 }
 
 function getDocs() {
@@ -79,11 +79,12 @@ function parseFile(filePath) {
 
   const name = path.basename(filePath, '.md')
   const slug = path.dirname(path.relative(docsDir(), filePath)) + '/' + name
+  const dirname = path.dirname(slug)
 
   return {
     name,
     slug,
-    dirname: path.dirname(slug),
+    dirname,
     frontmatter,
     excerpt,
     content,

@@ -2,8 +2,7 @@
 title: Setting your default OSM Editor
 description: When you click Edit in a Task, you are sent to an OSM Editor to edit OSM and resolve the task. Everyone has their own preference of OSM Editor, and you can set this preference in your User Settings.
 category: Basics
-date: 2020-08-05T11:00:00.000Z
-sort: 1
+sort: 0
 ---
 
 When you click _Edit_ in a Task, you are sent to an OSM Editor to edit OSM and resolve the task. Everyone has their own preference of OSM Editor, and you can set this preference in your [User Settings](https://maproulette.org/user/profile).
