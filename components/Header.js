@@ -1,23 +1,13 @@
-import { useRef, useEffect } from 'react'
 import Link from 'next/link'
 
 import SvgSymbol from 'components/SvgSymbol'
-import useKeyPress from 'hooks/useKeyPress'
+import LiveSearch from 'components/LiveSearch'
 
 function Header() {
-  const searchInput = useRef(null)
-  const searchFocused = useKeyPress('/')
-
-  useEffect(() => {
-    if (searchFocused) {
-      searchInput.current.focus()
-    }
-  }, [searchFocused])
-
   return (
-    <header className="p-4 md:py-8">
+    <header className="p-4 md:py-8 lg:py-12">
       <div className="max-w-screen-xl mx-auto relative">
-        <div className="flex items-center space-x-4 sm:space-x-6">
+        <div className="flex items-center space-x-4 lg:space-x-6">
           <Link href="/">
             <a
               className="flex-shrink-0 lg:w-1/4 xl:w-1/5 text-white"
@@ -35,14 +25,33 @@ function Header() {
           <a href="#content" className="sr-only">
             Skip to content
           </a>
-          <div className="flex-grow lg:w-3/4 xl:w-4/5">
-            <input
-              ref={searchInput}
-              type="search"
-              className="w-full outline-none rounded shadow-inner font-mono leading-6 text-white bg-black-15 placeholder-gray-400 focus:placeholder-white px-3 py-2"
-              placeholder="Search the docs... (Press &ldquo;/&rdquo; to focus)"
-            />
+          <div className="flex-grow">
+            <LiveSearch />
           </div>
+          <ul className="flex-shrink-0 flex items-center space-x-4">
+            <li>
+              <a
+                href="https://github.com/osmlab/maproulette3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-turquoise transition-colors duration-200"
+              >
+                <SvgSymbol symbolId="icon-github" className="w-5 h-5" />
+                <span className="sr-only">Github</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://maproulette.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-turquoise transition-colors duration-200"
+              >
+                <SvgSymbol symbolId="logomark" className="w-5 h-5" />
+                <span className="sr-only">MapRoulette.org</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </header>

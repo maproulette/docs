@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "collect.js": "^4.28.2",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "lazysizes": "^5.2.2",

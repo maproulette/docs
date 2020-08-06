@@ -1,13 +1,23 @@
-import Head from 'next/head'
+import { getDocs } from 'utils/docs'
 
-export default function Home() {
+import Layout from 'components/Layout'
+import SEO from 'components/Seo'
+
+export default function Home({ docs }) {
   return (
-    <>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout docs={docs}>
+      <SEO title="Home" />
       <p>Next.js app.</p>
-    </>
+    </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const docs = getDocs()
+
+  return {
+    props: {
+      docs,
+    },
+  }
 }

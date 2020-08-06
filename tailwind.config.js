@@ -16,6 +16,7 @@ module.exports = {
         blue: {
           default: '#172E51',
         },
+        turquoise: '#91f3a2',
       },
       boxShadow: {
         inner: 'inset 0 1px 3px 0 rgba(0,0,0,0.3)',
@@ -29,5 +30,9 @@ module.exports = {
     }),
   },
   variants: {},
-  plugins: [require('@tailwindcss/ui'), require('tailwindcss-gradients')],
+  plugins: [
+    require('@tailwindcss/ui'),
+    require('@tailwindcss/typography'),
+    require('tailwindcss-gradients'),
+  ],
 }
