@@ -11,44 +11,45 @@ function docsDir() {
 
 function getDocs() {
   const folderPath = docsDir()
-  const docs = {}
+  const docs = collect([])
   getDirectories(folderPath).map((path) => {
     getFiles(folderPath + '/' + path).map((file) => {
       file = parseFile(folderPath + path + '/' + file)
-      docs[file.slug] = file
+      docs.push(file.slug, file)
     })
   })
-  return docs
+  return docs.sortBy('frontmatter.sort')
 }
 
 export function getDocsIndexes() {
-  const folderPath = docsDir()
-  return collect(
-    getDirectories(folderPath).map((path) => {
-      const files = collect(
-        getFiles(folderPath + '/' + path).map((file) => {
-          return parseFile(folderPath + path + '/' + file)
-        })
-      )
-        .where('name', 'index')
-        .first()
-      return files
-    })
-  )
+  return getDocs()
+    .where('name', 'index')
+    .where('frontmatter.hideFromIndex', '!==', true)
     .sortBy('frontmatter.sort')
     .all()
 }
 
 export function getDocsSlugs() {
-  return [] // Object.keys(getDocs())
+  return [] // getDocs().keys()
 }
 
 export function getDocBySlug(slug) {
-  return collect(getDocs()).where('slug', slug).first()
+  const docs = getDocs().values().all()
+  const docIndex = docs.findIndex(({ slug: docSlug }) => docSlug === slug)
+
+  const doc = docs[docIndex]
+  const prevDoc = docs[docIndex - 2] ?? null
+  const nextDoc = docs[docIndex + 1] ?? null
+
+  return {
+    ...doc,
+    prevDoc,
+    nextDoc,
+  }
 }
 
 export function getSiblingDocsGroupedByCategory(slug) {
-  return collect(getDocs())
+  return getDocs()
     .where('dirname', path.dirname(slug))
     .filter((item, key) => item.name !== 'index')
     .mapToGroups((item, key) => [item.frontmatter.category, item])

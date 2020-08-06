@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import SvgSymbol from 'components/SvgSymbol'
-// import LiveSearch from 'components/LiveSearch'
+import LiveSearch from 'components/LiveSearch'
 
 function Header() {
   return (
@@ -25,8 +25,10 @@ function Header() {
           <a href="#content" className="sr-only">
             Skip to content
           </a>
-          <div className="flex-grow">{/* <LiveSearch /> */}</div>
-          <ul className="flex-shrink-0 flex items-center space-x-4">
+          <div className="w-full lg:w-2/4 xl:w-3/5">
+            <LiveSearch />
+          </div>
+          <ul className="flex-shrink-0 flex-grow justify-end flex items-center space-x-4">
             <li>
               <a
                 href="https://github.com/osmlab/maproulette3"

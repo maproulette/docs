@@ -2,7 +2,7 @@
 title: Welcome
 headline: Hello and Welcome to MapRoulette
 description: Hello and welcome to MapRoulette. MapRoulette is a micro-task platform for OpenStreetMap. MapRoulette.org gives you small tasks you can complete in under a minute to improve OpenStreetMap. Anyone can create groups of tasks, called Challenges, that the community can complete together.
-sort: 0
+hideFromIndex: true
 ---
 
 MapRoulette is a micro-task platform for OpenStreetMap. [MapRoulette.org](https://maproulette.org/) gives you small **Tasks** you can complete in under a minute to improve OpenStreetMap. Anyone can create groups of tasks, called **Challenges**, that the community can complete together.

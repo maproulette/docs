@@ -25,7 +25,7 @@ function Page({ data }) {
     )
   }
 
-  const { frontmatter, content } = data
+  const { frontmatter, content, nextDoc, prevDoc } = data
 
   const { title, headline, description } = frontmatter
 
@@ -37,7 +37,7 @@ function Page({ data }) {
           {headline || title}
         </h1>
         <ReactMarkdown
-          className="prose-sm prose sm:prose lg:prose-lg"
+          className="prose-sm max-w-none sm:prose sm:max-w-none"
           escapeHtml={false}
           source={content}
           renderers={{ code: CodeBlock }}
