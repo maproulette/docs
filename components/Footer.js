@@ -6,7 +6,7 @@ function Footer() {
   const siteMetadata = getSiteMetaData()
 
   return (
-    <footer className="px-4 py-8 bg-blue">
+    <footer className="px-4 py-8 lg:py-12 bg-blue">
       <div className="max-w-screen-xl mx-auto">
         <ul className="flex items-center space-x-6 text-xs leading-4 font-mono">
           <li>

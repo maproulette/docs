@@ -34,17 +34,28 @@ export function getDocsSlugs() {
 }
 
 export function getDocBySlug(slug) {
-  const docs = getDocs().values().all()
-  const docIndex = docs.findIndex(({ slug: docSlug }) => docSlug === slug)
+  const docs = getDocs()
+  const doc = docs.where('slug', slug).first()
 
-  const doc = docs[docIndex]
-  const prevDoc = docs[docIndex - 2] ?? null
-  const nextDoc = docs[docIndex + 1] ?? null
+  if (!doc) {
+    return null
+  }
+
+  const siblingDocs = docs
+    .where('frontmatter.draft', '!==', true)
+    .where('name', '!==', 'index')
+    .where('dirname', doc.dirname)
+    .sortBy('frontmatter.sort')
+    .all()
+
+  const docIndex = siblingDocs.findIndex(
+    ({ slug: docSlug }) => docSlug === slug
+  )
 
   return {
     ...doc,
-    prevDoc,
-    nextDoc,
+    prevDoc: siblingDocs[docIndex - 1] ?? false,
+    nextDoc: siblingDocs[docIndex + 1] ?? false,
   }
 }
 

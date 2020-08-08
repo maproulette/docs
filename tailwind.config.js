@@ -15,11 +15,16 @@ module.exports = {
         },
         blue: {
           default: '#172E51',
+          ...defaultTheme.colors.blue,
+        },
+        yellow: {
+          default: '#fffd86',
+          ...defaultTheme.colors.yellow,
         },
         turquoise: '#91f3a2',
       },
       boxShadow: {
-        inner: 'inset 0 1px 3px 0 rgba(0,0,0,0.3)',
+        inner: 'inset 0 1px 3px 0 rgba(0, 0, 0, 0.3)',
       },
     },
     typography: (theme) => ({

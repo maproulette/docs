@@ -25,6 +25,7 @@ function MainNavLink({ item, href }) {
         className={`${
           asPath === slug ? 'text-turquoise' : 'text-white'
         } hover:text-turquoise transition-colors duration-200 flex items-center space-x-2`}
+        aria-current={asPath === slug}
       >
         <SvgSymbol symbolId={symbolId} className="w-5 h-5" />
         <span className="text-sm font-mono leading-5">
@@ -35,17 +36,30 @@ function MainNavLink({ item, href }) {
   )
 }
 
-function SecondaryNavLink({ href, title }) {
+function SecondaryNavLink({ item }) {
   const { asPath } = useRouter()
 
-  return (
+  const { slug, frontmatter } = item
+  const href = `/${slug}`
+
+  return frontmatter.postUrl ? (
+    <a
+      href={frontmatter.postUrl}
+      target="_blank"
+      rel="noopener"
+      className="-ml-6"
+    >
+      📕 {frontmatter.title}
+    </a>
+  ) : (
     <Link href={href}>
       <a
         className={`${
           asPath === href ? 'text-turquoise' : 'text-white'
         } hover:text-turquoise transition-colors duration-200`}
+        aria-current={asPath === slug}
       >
-        {title}
+        {frontmatter.title}
       </a>
     </Link>
   )
@@ -86,7 +100,7 @@ function Layout({ mainNav, secondaryNav, children }) {
                   </ol>
                 </nav>
                 {secondaryNav && (
-                  <nav aria-label="Secondary">
+                  <nav className="pl-7" aria-label="Secondary">
                     <ol className="space-y-6">
                       {Object.entries(secondaryNav).map(([key, value]) => (
                         <li key={key}>
@@ -106,10 +120,7 @@ function Layout({ mainNav, secondaryNav, children }) {
                                     </span>
                                   </span>
                                 ) : (
-                                  <SecondaryNavLink
-                                    href={`/${item.slug}`}
-                                    title={item.frontmatter.title}
-                                  />
+                                  <SecondaryNavLink item={item} />
                                 )}
                               </li>
                             ))}

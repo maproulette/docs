@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown/with-html'
+import Link from 'next/link'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
@@ -30,12 +31,12 @@ function Page({ data }) {
   const { title, headline, description, draft } = frontmatter
 
   return (
-    <div>
+    <>
       <SEO title={headline || title} description={description} />
-      <div className="space-y-8 mb-16">
+      <div className="mb-24">
         <header className="mb-2">
-          <h1 className="text-4xl md:text-5xl font-bold leading-none font-display">
-            {headline || title}
+          <h1 className="text-4xl md:text-5xl font-light text-yellow leading-none font-display">
+            {frontmatter.postUrl && '📕'} {headline || title}
           </h1>
           {draft && (
             <p className="mt-2 text-sm leading-4 font-mono opacity-50">
@@ -43,14 +44,45 @@ function Page({ data }) {
             </p>
           )}
         </header>
-        <ReactMarkdown
-          className="prose-sm max-w-none sm:prose sm:max-w-none"
-          escapeHtml={false}
-          source={content}
-          renderers={{ code: CodeBlock }}
-        />
+        <div className="prose-sm max-w-none sm:prose sm:max-w-none">
+          {frontmatter.postUrl ? (
+            <a href={frontmatter.postUrl} target="_blank" rel="noopener">
+              {frontmatter.postUrl}
+            </a>
+          ) : (
+            <ReactMarkdown
+              escapeHtml={false}
+              source={content}
+              renderers={{ code: CodeBlock }}
+            />
+          )}
+        </div>
+        {(nextDoc || prevDoc) && (
+          <nav className="mt-24" role="navigation" aria-label="Pagination">
+            <ol className="flex justify-between space-x-16 leading-tight">
+              {prevDoc.slug && (
+                <li>
+                  <Link href={prevDoc.slug}>
+                    <a className="button" aria-label="Goto previous doc">
+                      Prev: {prevDoc.frontmatter.title}
+                    </a>
+                  </Link>
+                </li>
+              )}
+              {nextDoc.slug && (
+                <li className={!prevDoc && 'flex-grow flex justify-center'}>
+                  <Link href={nextDoc.slug}>
+                    <a className="button" aria-label="Goto next doc">
+                      Next: {nextDoc.frontmatter.title}
+                    </a>
+                  </Link>
+                </li>
+              )}
+            </ol>
+          </nav>
+        )}
       </div>
-    </div>
+    </>
   )
 }
 

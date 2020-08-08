@@ -1,6 +1,6 @@
 ---
 title: Documentation
-sort: 1
+sort: 0
 ---
 
 Documentation overview / landing page.
