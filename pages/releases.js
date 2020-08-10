@@ -6,26 +6,31 @@ import { getFormattedDate } from 'utils/helpers'
 import Layout from 'components/Layout'
 import SEO from 'components/Seo'
 
-const title = 'Releases'
+const title = 'Front-end Releases'
 
 export default function ReleaseNotes({ mainNav, releases }) {
   return (
     <Layout mainNav={mainNav}>
       <div className="mb-24">
         <SEO title={title} />
-        <h1 className="text-4xl md:text-5xl font-light text-yellow leading-none font-display mb-4">
+        <h1 className="text-4xl md:text-5xl font-light text-yellow leading-none font-display mb-8">
           {title}
         </h1>
         <ol className="space-y-4">
           {releases.map((item) => (
             <li key={item.id}>
               <details className="space-y-4">
-                <summary className="font-bold text-xl lg:text-2xl">
-                  {item.name
-                    ? `${item.name} (${item.tag_name})`
-                    : item.tag_name}
+                <summary className="inline-block text-xl lg:text-2xl outline-none cursor-pointer">
+                  {item.name ? (
+                    `${item.name} (${item.tag_name})`
+                  ) : (
+                    <>
+                      <span className="sr-only">Release:</span>
+                      {item.tag_name}
+                    </>
+                  )}
                 </summary>
-                <dl>
+                <dl className="ml-6">
                   <div className="flex space-x-2">
                     <dt className="font-bold flex-shrink-0">Release Date:</dt>
                     <dd className="flex-grow">

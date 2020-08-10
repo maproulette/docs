@@ -34,7 +34,7 @@ function Page({ data }) {
     <>
       <SEO title={headline || title} description={description} />
       <div className="mb-24">
-        <header className="mb-4">
+        <header className="mb-8">
           <h1 className="text-4xl md:text-5xl font-light text-yellow leading-none font-display">
             {frontmatter.postUrl && '📕'} {headline || title}
           </h1>

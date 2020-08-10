@@ -31,17 +31,6 @@ function Header() {
           <ul className="flex-shrink-0 flex-grow justify-end flex items-center space-x-4">
             <li>
               <a
-                href="https://github.com/osmlab/maproulette3"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-turquoise transition-colors duration-200"
-              >
-                <SvgSymbol symbolId="icon-github" className="w-5 h-5" />
-                <span className="sr-only">Github</span>
-              </a>
-            </li>
-            <li>
-              <a
                 href="https://maproulette.org"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -49,6 +38,17 @@ function Header() {
               >
                 <SvgSymbol symbolId="logomark" className="w-5 h-5" />
                 <span className="sr-only">MapRoulette.org</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/osmlab/maproulette3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-turquoise transition-colors duration-200"
+              >
+                <SvgSymbol symbolId="icon-github" className="w-5 h-5" />
+                <span className="sr-only">Github</span>
               </a>
             </li>
           </ul>

@@ -7,10 +7,8 @@ Documentation overview / landing page.
 
 Some code!
 
-```jsx
-import React from 'react'
-
-const CoolComponent = () => <div>I'm a cool component!!</div>
-
-export default CoolComponent
+```json
+{
+  "string": "value"
+}
 ```
