@@ -91,10 +91,10 @@ function Layout({ mainNav, secondaryNav, children }) {
                         item={{
                           dirname: 'release-notes',
                           frontmatter: {
-                            title: 'Release Notes',
+                            title: 'Releases',
                           },
                         }}
-                        href="/release-notes"
+                        href="/releases"
                       />
                     </li>
                   </ol>
