@@ -44,7 +44,7 @@ function Page({ data }) {
             </p>
           )}
         </header>
-        <div className="prose-sm max-w-none sm:prose sm:max-w-none">
+        <div className="prose max-w-none">
           {frontmatter.postUrl ? (
             <a href={frontmatter.postUrl} target="_blank" rel="noopener">
               {frontmatter.postUrl}
