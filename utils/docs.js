@@ -45,6 +45,7 @@ export function getDocBySlug(slug) {
     .where('frontmatter.draft', '!==', true)
     .where('name', '!==', 'index')
     .where('dirname', doc.dirname)
+    .where('frontmatter.category', doc.frontmatter.category)
     .sortBy('frontmatter.sort')
     .all()
 
