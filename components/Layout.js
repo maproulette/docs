@@ -76,8 +76,8 @@ function Layout({ mainNav, secondaryNav, children }) {
         <Header />
         <div className="px-4 mb-auto">
           <div className="max-w-screen-xl mx-auto lg:flex lg:space-x-6">
-            <div className="relative hidden lg:block w-full lg:w-1/4 xl:w-1/5">
-              <div className="sticky top-8 space-y-12">
+            <div className="relative hidden lg:block w-full lg:w-1/4 xl:w-1/5 pt-4 pb-12">
+              <div className="sticky top-8 space-y-8">
                 <nav aria-label="Main">
                   <ol className="space-y-2">
                     {mainNav &&
