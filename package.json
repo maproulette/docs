@@ -1,36 +1,63 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "eleventy-starter",
+  "version": "1.0.0",
+  "description": "An 11ty starter project.",
+  "author": "Ryan Scherler",
   "license": "MIT",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eastslopestudio/eleventy-starter"
   },
-  "dependencies": {
-    "collect.js": "^4.28.2",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-optipng": "^8.0.0",
-    "lazysizes": "^5.2.2",
-    "lqip-loader": "^2.2.0",
-    "next": "9.5.1",
-    "next-compose-plugins": "^2.2.0",
-    "next-optimized-images": "^2.6.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-markdown": "^4.3.1",
-    "react-syntax-highlighter": "^13.2.1",
-    "typeface-ibm-plex-mono": "0.0.61",
-    "typeface-roboto": "0.0.75"
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev:webpack": "webpack --mode development",
+    "dev:eleventy": "cross-env ELEVENTY_ENV=development eleventy",
+    "dev": "npm-run-all clean --parallel dev:* --print-label",
+    "build:webpack": "webpack --mode production",
+    "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
+    "build": "run-s clean build:* --print-label",
+    "watch:webpack": "webpack --mode development --watch",
+    "watch:eleventy": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "watch": "npm-run-all clean --parallel watch:*",
+    "start": "npm run watch"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.9",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
     "@tailwindcss/typography": "^0.2.0",
     "@tailwindcss/ui": "^0.5.0",
-    "gray-matter": "^4.0.2",
+    "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "cssnano": "^4.1.10",
+    "dotenv": "^8.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "html-minifier": "^4.0.0",
+    "luxon": "^1.24.1",
+    "markdown-it": "^11.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.32",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.3",
     "prettier": "^2.0.5",
+    "svg-sprite": "^1.5.0",
     "tailwindcss": "^1.6.2",
-    "tailwindcss-gradients": "^3.0.0"
+    "tailwindcss-gradients": "^3.0.0",
+    "terser-webpack-plugin": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "alpinejs": "^2.5.0",
+    "focus-visible": "^5.1.0"
   }
 }

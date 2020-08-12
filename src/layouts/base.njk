@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}" class="bg-blue antialiased leading-tight">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {%- if seo.title -%}
+            {{ seo.title }} 
+        {%- else -%} 
+            {{ title }} | {{meta.title }}
+        {%- endif -%}
+    </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Roboto:300,400,500,700&amp;display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css">
+    <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">   
+    {% include "meta.njk" %}
+</head>
+<body class="text-white leading-normal bg-gradient-r-green-blue">
+    <div hidden>{% svgsprite %}</div>
+    <a href="#content" class="sr-only">skip to main content</a>
+    <div role="document" class="min-h-screen flex flex-col">
+        {% include "header.njk" %}
+        <div class="px-4 mb-auto">
+            <div class="max-w-screen-xl mx-auto flex lg:space-x-8">
+                <div class="flex-shrink-0 relative hidden pt-4 pb-12 lg:block lg:w-1/5">
+                    <div class="sticky top-8 space-y-8">
+                        {% block sidebar %}
+                            <nav aria-label="Main">
+                                {% set sections = collections.section | eleventyNavigation %}
+                                <ol class="space-y-2">   
+                                {%- for entry in sections -%}
+                                    <li>
+                                        <a href="{{ entry.url | url }}"
+                                            class="{{ "text-turquoise" if entry.url == page.url else "text-white" }} hover:text-turquoise transition-colors duration-200 flex items-center space-x-2" 
+                                            {% if entry.url == page.url %}aria-current{% endif %}
+                                        >
+                                            {% svg entry.key, entry.title, "w-6 h-6" %}
+                                            <span class="text-sm font-mono leading-5">{{ entry.title }}</span>    
+                                        </a>
+                                    </li>
+                                {%- endfor -%}
+                                </ol>
+                            </nav>                     
+                        {% endblock %}
+                    </div>
+                </div>
+                <main id="content" class="flex-grow" tabindex="-1">
+                    <div class="mb-24">
+                        {% block main %}{% endblock %}
+                    </div>
+                </main>
+            </div>
+        </div>
+        {% include "footer.njk" %}
+    </div>
+    <script src="{{ '/assets/main.js' | url }}" defer></script> 
+    <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
+</body>
+</html>

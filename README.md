@@ -1,17 +1,43 @@
 # MapRoulette Docs
 
-A documentation site for learning MapRoulette.
+Documentation site for MapRoulette.org based on [Eleventy Starter](https://github.com/eastslopestudio/eleventy-starter).
 
 ---
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Prerequisites
 
-## Getting Started
+- [Node and NPM](https://nodejs.org/)
+- [Netlify CLI](https://www.npmjs.com/package/netlify-cli) _optional_
 
-First, run the development server:
+## Running locally
 
 ```bash
-npm run dev
+# install the project dependencies
+npm install
+
+# run the build and server locally
+npm run start
+
+# run the production build
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Netlify Dev
+
+```bash
+# Install the Netlify CLI globally
+npm install -g netlify-cli
+netlify dev
+```
+
+Serverless functions are located in `src/functions`
+
+A serverless functions pipeline is included via Netlify Dev. By running `netlify dev` you'll be able to execute any of your serverless functions directly like this:
+
+- /.netlify/functions/hello
+
+### Redirects and proxies
+
+Netlify's Redirects API can provide friendlier URLs as proxies to these URLs.
+
+- /api/hello

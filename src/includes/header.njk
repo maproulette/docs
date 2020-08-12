@@ -1,0 +1,28 @@
+<header class="px-4 py-8">
+    <div class="max-w-screen-xl mx-auto relative">
+        <div class="flex items-center space-x-4 lg:space-x-8">
+            <a class="flex-shrink-0 lg:w-1/5 text-white" rel="home" href="{{ build.url }}">
+                {% svg "logo", meta.title, "hidden sm:block w-56 h-auto", "0 0 174 40" %}
+                {% svg "logomark", meta.title, "sm:hidden w-12 h-12" %}
+            </a>
+            <a href="#content" class="sr-only">Skip to content</a>
+            <div class="flex-grow flex items-center space-x-4">
+                <div class="flex-grow">
+                    <input type="search" class="w-full outline-none rounded shadow-inner font-mono leading-6 text-white bg-black-15 placeholder-gray-400 focus:placeholder-white px-3 py-2" placeholder="Search the docs... (Press “/” to focus)">
+                </div>
+                <ul class="flex-shrink-0 flex items-center space-x-4">
+                    <li>
+                        <a href="{{ meta.urls.maproulette }}" target="_blank" rel="noopener noreferrer" class="hover:text-turquoise transition-colors duration-200">
+                            {% svg "logomark", "MapRoulette", "w-6 h-6" %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ meta.urls.github }}" target="_blank" rel="noopener noreferrer" class="hover:text-turquoise transition-colors duration-200">
+                            {% svg "github", "Github", "w-6 h-6" %}
+                        </a>
+                    </li>
+                </ul>
+            </div>           
+        </div>
+    </div>
+</header>

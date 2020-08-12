@@ -1,0 +1,20 @@
+<footer class="p-4 md:py-8 bg-blue">
+    <div class="max-w-screen-xl mx-auto space-y-4 md:space-y-0 md:flex justify-between text-xs leading-4 font-mono">
+        <ul class="flex items-center justify-center md:justify-start space-x-6 md:space-x-8">
+            <li>
+                <a href="{{ meta.urls.maproulette }}" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 hover:text-turquoise transition-colors duration-200">
+                    {% svg "logomark", "MapRoulette", "w-6 h-6" %}
+                </a>
+            </li>
+            <li>
+                <a href="{{ meta.urls.github }}" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 hover:text-turquoise transition-colors duration-200">
+                    {% svg "github", "Github", "w-6 h-6" %}
+                </a>
+            </li>
+            <li>
+                <a href="{{ meta.urls.coc }}" target="_blank" rel="noopener noreferrer" class="text-white hover:text-turquoise transition-colors duration-200">Code of Conduct</a>
+            </li>
+        </ul>
+        <p class="text-center md:text-left"><a href="https://netlify.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-turquoise transition-colors duration-200">This site is powered by Netlify</a></p>
+    </div>
+</footer>
