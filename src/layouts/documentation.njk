@@ -38,12 +38,3 @@
         </ol>
     </nav>
 {% endblock %}
-
-{% block main %}
-    <header class="mb-8">
-        <h1 class="text-4xl md:text-5xl font-light text-yellow leading-none font-display">{{ headline or title }}</h1>
-    </header>
-    <div class="prose max-w-none">
-        {{ content | safe }}
-    </div>
-{% endblock %}

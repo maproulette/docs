@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: base
 title: Welcome
 headline: Hello and Welcome to MapRoulette
 ---

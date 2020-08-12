@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Discovering Interesting Tasks and Challenges
+tags: documentation
 eleventyNavigation:
   key: Discovering Challenges
   parent: Basics

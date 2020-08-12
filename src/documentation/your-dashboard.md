@@ -5,6 +5,6 @@ tags: documentation
 eleventyNavigation:
   key: Your Dashboard
   parent: Basics
-  order: 5
+  order: 4
 permalink: false
 ---

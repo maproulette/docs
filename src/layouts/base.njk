@@ -25,29 +25,36 @@
             <div class="max-w-screen-xl mx-auto flex lg:space-x-8">
                 <div class="flex-shrink-0 relative hidden pt-4 pb-12 lg:block lg:w-1/5">
                     <div class="sticky top-8 space-y-8">
-                        {% block sidebar %}
-                            <nav aria-label="Main">
-                                {% set sections = collections.section | eleventyNavigation %}
-                                <ol class="space-y-2">   
-                                {%- for entry in sections -%}
-                                    <li>
-                                        <a href="{{ entry.url | url }}"
-                                            class="{{ "text-turquoise" if entry.url == page.url else "text-white" }} hover:text-turquoise transition-colors duration-200 flex items-center space-x-2" 
-                                            {% if entry.url == page.url %}aria-current{% endif %}
-                                        >
-                                            {% svg entry.key, entry.title, "w-6 h-6" %}
-                                            <span class="text-sm font-mono leading-5">{{ entry.title }}</span>    
-                                        </a>
-                                    </li>
-                                {%- endfor -%}
-                                </ol>
-                            </nav>                     
-                        {% endblock %}
+                    {% block sidebar %}
+                        <nav aria-label="Main">
+                            {% set sections = collections.section | eleventyNavigation %}
+                            <ol class="space-y-2">   
+                            {%- for entry in sections -%}
+                                <li>
+                                    <a href="{{ entry.url | url }}"
+                                        class="{{ "text-turquoise" if entry.url == page.url else "text-white" }} hover:text-turquoise transition-colors duration-200 flex items-center space-x-2" 
+                                        {% if entry.url == page.url %}aria-current{% endif %}
+                                    >
+                                        {% svg entry.key, entry.title, "w-6 h-6" %}
+                                        <span class="text-sm font-mono leading-5">{{ entry.title }}</span>    
+                                    </a>
+                                </li>
+                            {%- endfor -%}
+                            </ol>
+                        </nav>                     
+                    {% endblock %}
                     </div>
                 </div>
                 <main id="content" class="flex-grow" tabindex="-1">
                     <div class="mb-24">
-                        {% block main %}{% endblock %}
+                    {% block main %}
+                        <header class="mb-8">
+                            <h1 class="text-4xl md:text-5xl font-light text-yellow leading-none font-display">{{ headline or title }}</h1>
+                        </header>
+                        <div class="prose max-w-none">
+                        {{ content | safe }}
+                        </div>
+                    {% endblock %}
                     </div>
                 </main>
             </div>
