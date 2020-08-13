@@ -43,7 +43,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "html-minifier": "^4.0.0",
     "luxon": "^1.24.1",
-    "markdown-it": "^11.0.0",
+    "node-fetch": "^2.6.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.32",
     "postcss-import": "^12.0.1",
@@ -59,6 +59,6 @@
   "dependencies": {
     "alpinejs": "^2.5.0",
     "focus-visible": "^5.1.0",
-    "node-fetch": "^2.6.0"
+    "markdown-it": "^11.0.0"
   }
 }
