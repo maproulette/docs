@@ -58,6 +58,7 @@
   },
   "dependencies": {
     "alpinejs": "^2.5.0",
-    "focus-visible": "^5.1.0"
+    "focus-visible": "^5.1.0",
+    "node-fetch": "^2.6.0"
   }
 }

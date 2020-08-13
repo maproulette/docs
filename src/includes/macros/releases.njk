@@ -1,0 +1,36 @@
+{% macro list(url) %}
+<div x-data="{ releases: [], loading: true }" 
+    x-init="fetch('{{ url }}')
+            .then(response => response.json())
+            .then(data => releases = data)
+            .finally(() => {
+                loading = false
+            })"
+>
+    <template x-if="loading">
+        <p>Loading releases&hellip;</p>
+    </template>
+    <ol class="space-y-4">    
+        <template x-for="(release, index) in releases" :key="index">
+            <li>
+                <details class="space-y-4">
+                    <summary class="inline-block text-xl lg:text-2xl outline-none cursor-pointer">
+                        <span class="sr-only">Release:</span>
+                        <span x-text="release.tag_name"></span>
+                    </summary>
+                    <dl class="p-4 bg-gray-900 text-white rounded overflow-scroll">
+                        <div class="flex space-x-2">
+                            <dt class="font-bold flex-shrink-0">Release Date:</dt>
+                            <dd class="flex-grow">
+                                <time x-bind:dateTime="release.published_at" x-text="new Date(release.published_at).toDateString()"></time>
+                            </dd>
+                        </div>
+                        <dt class="font-bold">Notes:</dt>
+                        <dd class="prose prose-sm max-w-none" x-html="release.body"></dd>
+                    </dl>
+                </details>
+            </li>
+        </template>
+    </ol>
+</div>
+{% endmacro %}

@@ -11,5 +11,3 @@ Besides the website maproulette.org, there is also a full API that you can use t
 On this wiki, you will find all the resources you need to use MapRoulette.org, create and manage Challenges, see statistics and interact with the MapRoulette API.
 
 Help is welcome! If you have suggestions for this documentation, or don't understand how something works, please email us at [maproulette@maproulette](mailto:maproulette@maproulette).org or [open a new issue](https://github.com/osmlab/maproulette3/issues).
-
-Links marked with 📕 are OSM Diary entries.

@@ -1,40 +1,40 @@
 {% extends "./base.njk" %}
 
-{% block sidebar %}
-    {{ super() }}
-    <nav aria-label="Secondary">
-        {% set pages = collections.documentation | eleventyNavigation %}
-        <ol class="space-y-6">
-        {%- for entry in pages %}
-            <li>
-                <h3 class="text-sm font-bold uppercase tracking-wider leading-tight italic mb-2">
-                {%- if entry.url %}
-                    <a href="{{ entry.url | url }}"
-                        class="underline {{ "text-turquoise" if entry.url == page.url else "text-white" }} hover:text-turquoise transition-colors duration-200"
-                        {% if entry.url == page.url %}aria-current{% endif %}
-                    >{{ entry.title }}</a>
+{%- block sidebar %}
+{{ super() }}
+<nav aria-label="Secondary" class="pl-7">
+    {% set pages = collections.documentation | eleventyNavigation %}
+    <ol class="space-y-6">
+    {%- for entry in pages %}
+        <li>
+            <h3 class="text-sm font-bold uppercase tracking-wider leading-tight italic mb-2">
+            {%- if entry.url %}
+                <a href="{{ entry.url | url }}"
+                    class="underline {{ "text-turquoise" if entry.url == page.url else "text-white" }} hover:text-turquoise transition-colors duration-200"
+                    {% if entry.url == page.url %}aria-current{% endif %}
+                >{{ entry.title }}</a>
+            {%- else %}
+                {{ entry.title }}
+            {%- endif %}
+            </h3>
+            {%- if entry.children %}
+            <ol class="text-sm font-mono space-y-2 leading-snug">
+            {%- for child in entry.children %}
+                <li>
+                {%- if not child.permalink and not child.url %}
+                    <span class="text-gray-400">{{ child.title }} (draft)</span>
                 {%- else %}
-                    {{ entry.title }}
-                {%- endif %}
-                </h3>
-                {%- if entry.children %}
-                <ol class="text-sm font-mono space-y-2 leading-snug">
-                {%- for child in entry.children %}
-                    <li>
-                    {%- if not child.permalink and not child.url %}
-                        <span class="text-gray-400">{{ child.title }} (draft)</span>
-                    {%- else %}
-                        <a href="{{ child.url | url }}"
-                            class="{{ "text-turquoise" if child.url == page.url else "text-white" }} hover:text-turquoise transition-colors duration-200"
-                            {% if child.url == page.url %} aria-current{% endif %}
-                        >{{ child.title }}</a>                      
-                    {% endif %}
-                    </li>
-                {%- endfor %}
-                </ol>
-                {%- endif %}
-            </li>
-        {%- endfor %}
-        </ol>
-    </nav>
-{% endblock %}
+                    <a href="{{ child.url | url }}"
+                        class="{{ "text-turquoise" if child.url == page.url else "text-white" }} hover:text-turquoise transition-colors duration-200"
+                        {% if child.url == page.url %} aria-current{% endif %}
+                    >{{ child.title }}</a>                      
+                {% endif %}
+                </li>
+            {%- endfor %}
+            </ol>
+            {%- endif %}
+        </li>
+    {%- endfor %}
+    </ol>
+</nav>
+{%- endblock %}
