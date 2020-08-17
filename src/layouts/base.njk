@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">   
     {% include "meta.njk" %}
 </head>
-<body class="text-white leading-normal bg-gradient-r-green-blue">
+<body class="text-white leading-normal bg-gradient-r-green-blue" x-data="{ showNav: false }">
     <div hidden>{% svgsprite %}</div>
     <a href="#content" class="sr-only">skip to main content</a>
     <div role="document" class="min-h-screen flex flex-col">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <main id="content" class="flex-grow" tabindex="-1">
-                    <div class="mb-24">
+                    <div class="mb-12">
                         <header class="mb-8">
                             <h1 class="text-4xl md:text-5xl font-light text-yellow leading-none font-display">{{ headline or title }}</h1>
                         </header>
@@ -61,6 +61,7 @@
         </div>
         {% include "footer.njk" %}
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.1"></script>
     <script src="{{ '/assets/main.js' | url }}" defer></script> 
     <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
 </body>

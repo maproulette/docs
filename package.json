@@ -56,7 +56,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "alpinejs": "^2.5.0",
+    "alpinejs": "^2.6.0",
     "focus-visible": "^5.1.0",
     "markdown-it": "^11.0.0"
   }

@@ -12,6 +12,7 @@ module.exports = {
       },
       colors: {
         'black-15': 'rgba(0, 0, 0, .15)',
+        'black-90': 'rgba(0, 0, 0, .9)',
         green: {
           default: '#47725F',
         },

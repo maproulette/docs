@@ -1,0 +1,107 @@
+<div class="relative"
+    x-data='LiveSearch([
+        {%- for entry in collections.documentation -%}
+        {
+            "url":"{{ entry.data.eleventyNavigation.url or entry.url | url }}",
+            "title":"{{ entry.data.title | escape }}",
+            "description": "{{ entry.data.description | escape }}",
+            "parent": "{{ entry.data.eleventyNavigation.parent | escape }}"
+        }{{ ',' if not loop.last }}
+        {%- endfor -%}
+    ])' 
+    x-init="$watch('search', value => { if (value.length === 0) selected = 0 })"
+    @keydown.window.slash="open()"
+    @keydown.window.escape="close()"
+>
+    <input type="text" 
+        autocomplete="off" 
+        spellcheck="false" 
+        role="combobox" 
+        aria-autocomplete="list" 
+        :aria-expanded="hasResults()"
+        aria-label="search input" 
+        aria-owns="listbox-autocomplete-docs-search" 
+        dir="auto" 
+        class="w-full outline-none rounded shadow-inner font-mono leading-6 text-white bg-black-15 placeholder-gray-400 focus:placeholder-white px-3 py-2" 
+        placeholder="Search the docs... (Press “/” to focus)"
+        x-ref="search" 
+        x-model="search" 
+        @keydown.tab.prevent 
+        @keydown.prevent.stop.enter="go()" 
+        @keydown.prevent.arrow-up="selectUp()" 
+        @keydown.prevent.arrow-down="selectDown()"
+    >
+    <div id="listbox-autocomplete-docs-search" 
+        class="absolute left-0 mt-2 w-full"
+        x-show="hasResults()"
+        role="listbox"
+        @click.away="close()"
+    >
+        <ul class="overflow-auto max-h-96 bg-black-90 rounded p-3 shadow space-y-3"
+            x-ref="results"
+        >
+            <template x-for="([{ item: { title, url, parent }}, i]) in filteredItems()" :key="url">
+                <li>
+                    <a :href="url" class="block px-4 py-2 rounded space-x-1" :class="{ 'bg-gray-700': selected === i, 'hover:bg-gray-800': selected !== i }">
+                        <span x-text="title" :class="{'text-gray-300': selected !== i, 'text-white': selected === i }"></span>
+                        <span x-text="parent" :class="{'text-gray-500': selected !== i, 'text-gray-400': selected === i }"></span>
+                    </a>
+                </li>
+            </template>
+        </ul>
+    </div>
+</div>
+
+<script>
+function LiveSearch(items) {
+    const fuse = new Fuse(items, { threshold: 0.3, keys: ['title', 'description'] })
+    return {
+        isOpen: false,
+        search: '',
+        selected: 0,
+        open() {
+            if (this.isOpen) {
+                return
+            }
+            this.search = ''
+            this.isOpen = true
+            setTimeout(() => {
+                this.$refs.search.focus()
+            }, 100)
+        },
+        close() {
+            this.isOpen = false
+            this.search = ''
+            this.selected = 0,
+            setTimeout(() => {
+                this.$refs.search.blur()
+            }, 100)
+        },
+        filteredItems() {
+            return fuse.search(this.search).map((item, i) => [item, i])
+        },
+        hasResults() {
+            return this.filteredItems().length > 0
+        },
+        selectUp() {
+            this.selected = Math.max(0, this.selected - 1)
+            this.$nextTick(() => {
+                this.$refs.results.children[this.selected + 1].scrollIntoView({
+                    block: 'nearest',
+                })
+            })
+        },
+        selectDown() {
+            this.selected = Math.min(this.filteredItems().length - 1, this.selected + 1)
+            this.$nextTick(() => {
+                this.$refs.results.children[this.selected + 1].scrollIntoView({
+                    block: 'nearest',
+                })
+            })
+        },
+        go() {
+            window.location = this.filteredItems()[this.selected][0].item.url
+        }
+    }
+}
+</script>
