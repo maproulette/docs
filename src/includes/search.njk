@@ -2,11 +2,11 @@
     x-data='LiveSearch([
         {% for entry in collections.documentation %}
         {
-            "url":"{{ entry.data.eleventyNavigation.url or entry.url | url }}",
-            "title":"{{ entry.data.title | escape }}",
+            "url": "{{ entry.data.eleventyNavigation.url or entry.url }}",
+            "title": "{{ entry.data.title | escape }}",
             "description": "{{ entry.data.description | escape }}",
             "parent": "{{ entry.data.eleventyNavigation.parent | escape }}"
-        }{{ ',' if not loop.last }}
+        }{{ "," if not loop.last }}
         {% endfor %}
     ])' 
     x-init="$watch('search', value => { if (value.length === 0) selected = 0 })"
@@ -78,7 +78,11 @@ function LiveSearch(items) {
             }, 100)
         },
         filteredItems() {
-            return fuse.search(this.search).map((item, i) => [item, i])
+            return fuse.search(this.search)
+                    .filter(i => {
+                        return i.item.url !== "false"
+                    })
+                    .map((item, i) => [item, i])
         },
         hasResults() {
             return this.filteredItems().length > 0
