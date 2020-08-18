@@ -1,13 +1,13 @@
 {% set absolutePageUrl %}{{ page.url | url | absoluteUrl(build.url) }}{% endset %}
 
 {# General #}
-<meta name="description" content="{{ seo.description or meta.description }}">
+<meta name="description" content="{{ seo.description or description or meta.description }}">
 <link rel="canonical" href="{{ absolutePageUrl }}">
 
 {# Open Graph #}
 <meta property="og:site_name" content="{{ meta.title }}">
 <meta property="og:title" content="{% if seo.title %}{{ seo.title }}{% else %}{{ title }} | {{meta.title }}{% endif %}">
-<meta property="og:description" content="{{ seo.description or meta.description }}">
+<meta property="og:description" content="{{ seo.description or description or meta.description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:locale" content="{{ meta.locale }}">
 <meta name="twitter:card" content="{% if seo.image or meta.image %}summary_large_image{% else %}summary{% endif %}">
@@ -20,7 +20,4 @@
 <link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-32x32.png' | url }}" sizes="32x32">
 <link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-16x16.png' | url }}" sizes="16x16">
 <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
-<meta name="theme-color" content="#1a1a1a">
-
-{# RSS Feed #}
-{# <link type="application/atom+xml" rel="alternate" href="{{ build.url }}/feed.xml" title="{{ meta.title }}"> #}
+<meta name="theme-color" content="#172E51">
