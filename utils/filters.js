@@ -2,13 +2,13 @@ const { DateTime } = require('luxon')
 
 const build = require('../src/data/build')
 
-let defaultZone = 'local';
+let defaultZone = 'local'
 if (Object.prototype.hasOwnProperty.call(build, 'timezone')) {
-  const testDate = DateTime.local().setZone(build.timezone);
+  const testDate = DateTime.local().setZone(build.timezone)
   if (testDate.isValid) {
-    defaultZone = build.timezone;
+    defaultZone = build.timezone
   } else {
-    console.warn(testDate.invalidExplanation);
+    console.warn(testDate.invalidExplanation)
   }
 }
 
@@ -30,5 +30,17 @@ module.exports = {
       chars.unshift(['&#', str[i].charCodeAt(), ';'].join(''))
     }
     return chars.join('')
+  },
+
+  split: function (val, delimiter = '/') {
+    return val.toString().split(delimiter)
+  },
+
+  ltrim: function (val, charlist) {
+    return val.toString().replace(new RegExp('^[' + charlist + ']+'), '')
+  },
+
+  rtrim: function (val, charlist) {
+    return val.toString().replace(new RegExp('[' + charlist + ']+$'), '')
   },
 }

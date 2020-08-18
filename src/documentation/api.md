@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: base
 title: REST API documentation
 tags: documentation
 eleventyNavigation:

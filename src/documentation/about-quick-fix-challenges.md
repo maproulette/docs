@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: base
 title: Introducing MapRoulette Quick Fixes
 description: 'We’re introducing a new type of Task: the Quick Fix. In a Quick Fix Task, MapRoulette will present the suggested fix to you, and all you need to do is click Yes to agree with the fix, and the change will be applied to OSM directly.'
 tags: documentation

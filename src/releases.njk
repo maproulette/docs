@@ -7,17 +7,17 @@ eleventyNavigation:
   order: 2
 ---
 {% extends "./layouts/base.njk" %}
-{% import "macros/releases.njk" as releasesMacros %}
+{% import "macros/lists.njk" as listMacros %}
 
-{%- block main %}
+{% block main %}
 <div class="md:grid grid-cols-2 gap-8">
     <section class="space-y-4">
         <h2 class="text-3xl">Front-end</h2>
-        {{ releasesMacros.list('https://api.github.com/repos/osmlab/maproulette3/releases') }}
+        {{ listMacros.releases('https://api.github.com/repos/osmlab/maproulette3/releases') }}
     </section>
     <section class="space-y-4">
         <h2 class="text-3xl">Back-end</h2>
-        {{ releasesMacros.list('https://api.github.com/repos/maproulette/maproulette2/releases') }}
+        {{ listMacros.releases('https://api.github.com/repos/maproulette/maproulette2/releases') }}
     </section>
 </div>
-{%- endblock %}
+{% endblock %}

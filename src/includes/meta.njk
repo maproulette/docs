@@ -1,4 +1,4 @@
-{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(build.url) }}{%- endset -%}
+{% set absolutePageUrl %}{{ page.url | url | absoluteUrl(build.url) }}{% endset %}
 
 {# General #}
 <meta name="description" content="{{ seo.description or meta.description }}">

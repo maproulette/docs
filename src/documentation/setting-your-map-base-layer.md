@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: base
 title: Setting your Map Base Layer
 description: Depending on the type of Task and the geographical area you are working on, you may want to use a different base layer for the Task map.
 tags: documentation

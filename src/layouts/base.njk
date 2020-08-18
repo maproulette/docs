@@ -1,14 +1,16 @@
+{% import "macros/lists.njk" as listMacros %}
+
 <!DOCTYPE html>
 <html lang="{{ meta.lang }}" class="bg-blue antialiased leading-tight">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        {%- if seo.title -%}
+        {% if seo.title %}
             {{ seo.title }} 
-        {%- else -%} 
+        {% else %} 
             {{ title }} | {{meta.title }}
-        {%- endif -%}
+        {% endif %}
     </title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Roboto:300,400,500,700&amp;display=swap">
@@ -16,7 +18,7 @@
     <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">   
     {% include "meta.njk" %}
 </head>
-<body class="text-white leading-normal bg-gradient-r-green-blue" x-data="{ showNav: false }">
+<body class="text-white leading-normal bg-gradient-r-green-blue">
     <div hidden>{% svgsprite %}</div>
     <a href="#content" class="sr-only">skip to main content</a>
     <div role="document" class="min-h-screen flex flex-col">
@@ -25,24 +27,17 @@
             <div class="max-w-screen-lg mx-auto flex lg:space-x-8">
                 <div class="flex-shrink-0 relative hidden pt-4 pb-12 lg:block lg:w-1/4">
                     <div class="sticky top-8 space-y-8">
-                        {%- block sidebar %}
-                        <nav aria-label="Main">
-                            {% set sections = collections.section | eleventyNavigation %}
-                            <ol class="space-y-2">   
-                            {%- for entry in sections -%}
-                                <li>
-                                    <a href="{{ entry.url | url }}"
-                                        class="{{ "text-turquoise" if entry.url == page.url else "text-white" }} hover:text-turquoise transition-colors duration-200 flex items-center space-x-2" 
-                                        {% if entry.url == page.url %}aria-current{% endif %}
-                                    >
-                                        {% svg entry.key, entry.title, "w-5 h-5" %}
-                                        <span class="text-sm font-mono leading-5">{{ entry.title }}</span>    
-                                    </a>
-                                </li>
-                            {%- endfor -%}
-                            </ol>
-                        </nav>                     
-                        {%- endblock %}
+                        {% block sidebar %}
+                            <nav aria-label="Primary">
+                                {{ listMacros.primary(collections.section, page.url) }} 
+                            </nav>           
+                            {% set section = page.url | ltrim('/') | split | first %}
+                            {% if collections[section] %}
+                                <nav aria-label="Secondary" class="pl-7">
+                                    {{ listMacros.secondary(collections[section], page.url) }}
+                                </nav>
+                            {% endif %}                                
+                        {% endblock %}
                     </div>
                 </div>
                 <main id="content" class="flex-grow" tabindex="-1">
@@ -50,11 +45,11 @@
                         <header class="mb-8">
                             <h1 class="text-4xl md:text-5xl font-light text-yellow leading-none font-display">{{ headline or title }}</h1>
                         </header>
-                        {%- block main %}
-                        <div class="prose max-w-none">
-                            {{ content | safe }}
-                        </div>
-                        {%- endblock %}
+                        {% block main %}
+                            <div class="prose max-w-none">
+                                {{ content | safe }}
+                            </div>
+                        {% endblock %}
                     </div>
                 </main>
             </div>

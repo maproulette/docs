@@ -1,3 +1,5 @@
+{% import "macros/lists.njk" as listMacros %}
+
 <header class="px-4 py-8">
     <div class="max-w-screen-lg mx-auto relative">
         <div class="flex items-center space-x-4 lg:space-x-8">
@@ -10,7 +12,7 @@
                 <div class="flex-grow">
                     {% include "search.njk" %}
                 </div>
-                <ul class="flex-shrink-0 flex items-center space-x-4">
+                <ul class="hidden lg:flex flex-shrink-0 items-center space-x-4">
                     <li>
                         <a href="{{ meta.urls.maproulette }}" target="_blank" rel="noopener noreferrer" class="hover:text-turquoise transition-colors duration-200">
                             {% svg "logomark", "MapRoulette", "w-6 h-6" %}
@@ -22,6 +24,35 @@
                         </a>
                     </li>
                 </ul>
+                <div class="flex flex-shrink-0 lg:hidden relative" 
+                    x-data="{ mobileNavOpen: false }"
+                    @keydown.window.escape="mobileNavOpen = false"
+                >
+                    <button type="button" 
+                        aria-controls="mobile-navigation" 
+                        class="flex p-2 -m-2 hover:text-turquoise transition-colors duration-200"
+                        @click="mobileNavOpen = !mobileNavOpen"
+                    >
+                        {% svg "menu", "Toggle Navigation Menu", "w-6 h-6" %}
+                    </button>
+                    <div id="mobile-navigation" 
+                        class="origin-top-right absolute right-0 top-full mt-4 w-64" 
+                        x-show.transition="mobileNavOpen" 
+                        @click.away="mobileNavOpen = false"
+                    >
+                        <div class="rounded shadow-lg bg-black-90 p-6 space-y-6">
+                            <nav aria-label="Mobile Primary">
+                                {{ listMacros.primary(collections.section, page.url) }}                           
+                            </nav>                            
+                            {% set section = page.url | ltrim('/') | split | first %}
+                            {% if collections[section] %}
+                            <nav aria-label="Mobile Secondary">
+                                {{ listMacros.secondary(collections[section], page.url) }}
+                            </nav>
+                            {% endif %}                       
+                        </div>
+                    </div>
+                </div>
             </div>           
         </div>
     </div>

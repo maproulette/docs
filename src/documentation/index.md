@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: base
 title: Documentation
 tags: section
 eleventyNavigation:

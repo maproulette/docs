@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: base
 title: Setting your default OSM Editor
 description: When you click Edit in a Task, you are sent to an OSM Editor to edit OSM and resolve the task. Everyone has their own preference of OSM Editor, and you can set this preference in your User Settings.
 tags: documentation

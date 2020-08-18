@@ -1,13 +1,13 @@
 <div class="relative"
     x-data='LiveSearch([
-        {%- for entry in collections.documentation -%}
+        {% for entry in collections.documentation %}
         {
             "url":"{{ entry.data.eleventyNavigation.url or entry.url | url }}",
             "title":"{{ entry.data.title | escape }}",
             "description": "{{ entry.data.description | escape }}",
             "parent": "{{ entry.data.eleventyNavigation.parent | escape }}"
         }{{ ',' if not loop.last }}
-        {%- endfor -%}
+        {% endfor %}
     ])' 
     x-init="$watch('search', value => { if (value.length === 0) selected = 0 })"
     @keydown.window.slash="open()"
@@ -37,7 +37,7 @@
         role="listbox"
         @click.away="close()"
     >
-        <ul class="overflow-auto max-h-96 bg-black-90 rounded p-3 shadow space-y-3"
+        <ul class="overflow-auto max-h-96 bg-black-90 rounded p-3 shadow-lg space-y-3"
             x-ref="results"
         >
             <template x-for="([{ item: { title, url, parent }}, i]) in filteredItems()" :key="url">

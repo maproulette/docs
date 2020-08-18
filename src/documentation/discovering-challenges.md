@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: base
 title: Discovering Interesting Tasks and Challenges
 tags: documentation
 eleventyNavigation:

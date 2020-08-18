@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: base
 title: Earning Points and the Leaderboard
 description: Points are awarded for each task that is completed according to the included table.
 tags: documentation

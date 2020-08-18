@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: base
 title: Your Dashboard
 tags: documentation
 eleventyNavigation:

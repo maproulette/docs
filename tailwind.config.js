@@ -18,6 +18,7 @@ module.exports = {
         },
         blue: {
           default: '#172E51',
+          dark: '#182841',
           ...defaultTheme.colors.blue,
         },
         yellow: {

@@ -15,7 +15,7 @@ eleventyExcludeFromCollections: true
     <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
     {% endif %}
     <id>{{ meta.url }}/</id>
-    {%- for post in collections.posts | reverse -%}
+    {% for post in collections.posts | reverse %}
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(meta.url) }}{% endset %}
         <entry>
             <title>{{ post.data.title }}</title>
@@ -26,5 +26,5 @@ eleventyExcludeFromCollections: true
                 {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}
             ]]></content>
         </entry>
-    {%- endfor -%}
+    {% endfor %}
 </feed>
