@@ -17,30 +17,48 @@
 
 {% macro secondary(collection, url) %}
     {% set pages = collection | eleventyNavigation %}
-    <ol class="space-y-6">
+    <ol class="space-y-8">
     {% for entry in pages %}
         <li>
-            <h3 class="text-sm font-bold uppercase tracking-wider leading-tight italic mb-2">
+            <h3 class="text-xs font-bold uppercase tracking-widest leading-tight mb-2">
             {% if entry.url %}
                 <a href="{{ entry.url | url }}"
-                    class="underline {{ "text-turquoise" if entry.url == url else "text-white" }} hover:text-turquoise transition-colors duration-200"
+                    class="underline {{ "text-turquoise" if entry.url == url else "text-white" }} hover:text-turquoise transition-colors duration-200 flex justify-between space-x-2"
                     {% if entry.url == url %}aria-current{% endif %}
-                >{{ entry.title }}</a>
+                    {% if 'http' in child.url %}
+                        target="_blank"
+                        rel="noopener nofollow"
+                    {% endif %}
+                >
+                    <span>{{ entry.title }}</span>
+                    {% if 'http' in child.url %}
+                        {% svg 'external-link', child.title, "w-4 h-4 text-green" %}
+                    {% endif %}
+                </a>
             {% else %}
                 {{ entry.title }}
             {% endif %}
             </h3>
             {% if entry.children %}
-            <ol class="text-sm font-mono space-y-2 leading-snug">
+            <ol class="text-sm font-mono space-y-3 leading-tight">
             {% for child in entry.children %}
                 <li>
                 {% if not child.permalink and not child.url %}
                     <span class="text-gray-400">{{ child.title }} (draft)</span>
                 {% else %}
                     <a href="{{ child.url | url }}"
-                        class="{{ "text-turquoise" if child.url == url else "text-white" }} hover:text-turquoise transition-colors duration-200"
+                        class="{{ "text-turquoise" if child.url == url else "text-white" }} hover:text-turquoise transition-colors duration-200 group flex justify-between space-x-2"
                         {% if child.url == url %} aria-current{% endif %}
-                    >{{ child.title }}</a>                      
+                        {% if 'http' in child.url %}
+                            target="_blank"
+                            rel="noopener nofollow"
+                        {% endif %}
+                    >
+                        <span>{{ child.title }}</span>
+                        {% if 'http' in child.url %}
+                            {% svg 'external-link', child.title, "w-4 h-4 text-green group-hover:text-turquoise transition duration-200" %}
+                        {% endif %}
+                    </a>                     
                 {% endif %}
                 </li>
             {% endfor %}

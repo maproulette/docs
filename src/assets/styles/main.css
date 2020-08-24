@@ -1,9 +1,10 @@
 /* purgecss start ignore */
 @import 'tailwindcss/base';
-@import '_base.css';
+@import 'base.css';
 
 @import 'tailwindcss/components';
 @import './components/button.css';
+@import './components/prose.css';
 /* purgecss end ignore */
 
 @import 'tailwindcss/utilities';

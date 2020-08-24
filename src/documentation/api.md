@@ -1,10 +1,9 @@
 ---
-layout: base
-title: REST API documentation
+title: Interacting with the MapRoulette API
 tags: documentation
 eleventyNavigation:
   key: API
-  url: https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none
-  order: 1
+  title: Interacting with the MapRoulette API
+  order: 3
 permalink: false
 ---

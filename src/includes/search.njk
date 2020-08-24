@@ -42,7 +42,7 @@
         >
             <template x-for="([{ item: { title, url, parent }}, i]) in filteredItems()" :key="url">
                 <li>
-                    <a :href="url" class="block px-4 py-2 rounded space-x-1" :class="{ 'bg-gray-700': selected === i, 'hover:bg-gray-800': selected !== i }">
+                    <a :href="url" class="block px-4 py-2 rounded space-x-2" :class="{ 'bg-gray-700': selected === i, 'hover:bg-gray-800': selected !== i }">
                         <span x-text="title" :class="{'text-gray-300': selected !== i, 'text-white': selected === i }"></span>
                         <span x-text="parent" :class="{'text-gray-500': selected !== i, 'text-gray-400': selected === i }"></span>
                     </a>
