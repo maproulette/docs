@@ -66,6 +66,12 @@ module.exports = {
           thead: {
             color: theme('colors.white'),
           },
+          pre: {
+            backgroundColor: theme('colors.black-90'),
+          },
+          code: {
+            color: theme('colors.white'),
+          },
         },
       },
     }),
