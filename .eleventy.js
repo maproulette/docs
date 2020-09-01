@@ -1,14 +1,19 @@
+require('module-alias/register')
 const fs = require('fs')
+
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginNavigation = require('@11ty/eleventy-navigation')
 const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const markdownIt = require('markdown-it')
 
 const filters = require('./utils/filters')
 const transforms = require('./utils/transforms')
 const shortcodes = require('./utils/shortcodes')
 const svgsprite = require('./utils/svgsprite')
+const markdown = require('./utils/markdown')
+
+// You can now require config options using @config
+const config = require('@config')
 
 module.exports = function (eleventyConfig) {
   /**
@@ -60,8 +65,9 @@ module.exports = function (eleventyConfig) {
    *
    * @link https://www.11ty.dev/docs/config/#add-your-own-watch-targets
    */
-  eleventyConfig.addWatchTarget('./src/assets')
   eleventyConfig.addWatchTarget('./tailwind.config.js')
+  eleventyConfig.addWatchTarget('./src/assets')
+  eleventyConfig.addWatchTarget('./src/media')
 
   /**
    * Passthrough file copy
@@ -82,15 +88,7 @@ module.exports = function (eleventyConfig) {
    *
    * @link https://www.11ty.dev/docs/languages/liquid/#optional-set-your-own-library-instance
    */
-  eleventyConfig.setLibrary(
-    'md',
-    markdownIt({
-      html: true,
-      breaks: true,
-      linkify: true,
-      typographer: true,
-    })
-  )
+  eleventyConfig.setLibrary('md', markdown)
 
   /**
    * Add layout aliases
@@ -137,13 +135,7 @@ module.exports = function (eleventyConfig) {
   })
 
   return {
-    dir: {
-      input: 'src',
-      output: 'dist',
-      layouts: 'layouts',
-      includes: 'includes',
-      data: 'data',
-    },
+    dir: config.dir,
     passthroughFileCopy: true,
     templateFormats: ['njk', 'md', '11ty.js'],
     htmlTemplateEngine: 'njk',

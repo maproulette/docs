@@ -27,11 +27,11 @@ Explaining the full syntax of Overpass QL (the language this query is written in
 
 You can plug this query right into MapRoulette when you create a Challenge:
 
-![](/media/87983753-1f76b580-ca96-11ea-89d0-c6373a54031e.png)
+![](87983753-1f76b580-ca96-11ea-89d0-c6373a54031e.png)
 
 After completing the Challenge wizard, your Tasks will reflect the result of the Overpass Query:
 
-![](/media/87983923-606eca00-ca96-11ea-8ba4-c06bdf0ff1df.png)
+![](87983923-606eca00-ca96-11ea-8ba4-c06bdf0ff1df.png)
 
 ## Common Pitfalls
 
@@ -73,6 +73,6 @@ Complex queries or queries that span a large area can take a long time to comple
 
 Strictly speaking, you don't need all OSM metadata to build the tasks. You can just use the `out` statement with no parameters which, according to the documentation, gives you "all information necessary to use the data". By using `out meta` you get "everything output by body for each OSM element, as well as the version, changeset id, timestamp, and the user data of the user that last touched".
 
-![](/media/88001168-b8202c00-cabc-11ea-9d47-db983ce4d11b.png)
+![](88001168-b8202c00-cabc-11ea-9d47-db983ce4d11b.png)
 
 _An OSM way imported as a Task using Overpass with full metadata_
