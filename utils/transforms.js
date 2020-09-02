@@ -8,7 +8,7 @@ module.exports = {
     }
 
     // returned minified content from html files
-    if (outputPath.endsWith('.html')) {
+    if (outputPath && outputPath.endsWith('.html')) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
