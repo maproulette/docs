@@ -2,6 +2,10 @@
 
 Documentation site for MapRoulette.org based on [Eleventy Starter](https://github.com/eastslopestudio/eleventy-starter).
 
+This site is hosted on Netlify.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/57d02f79-250b-4b4b-aabc-8a099ad22202/deploy-status)](https://app.netlify.com/sites/learn-maproulette/deploys)
+
 ---
 
 ## Prerequisites
