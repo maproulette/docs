@@ -44,7 +44,7 @@
             {% for child in entry.children %}
                 <li>
                 {% if not child.permalink and not child.url %}
-                    <span class="text-gray-400">{{ child.title }} (draft)</span>
+                    <span class="text-gray-400">{{ child.title }}</span>
                 {% else %}
                     <a href="{{ child.url | url }}"
                         class="{{ "text-turquoise" if child.url == url else "text-white" }} hover:text-turquoise transition-colors duration-200 group flex justify-between space-x-2"
