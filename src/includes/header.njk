@@ -40,7 +40,7 @@
                         x-show.transition="mobileNavOpen" 
                         @click.away="mobileNavOpen = false"
                     >
-                        <div class="rounded shadow-lg bg-black-90 p-6 space-y-6">
+                        <div class="rounded shadow-lg bg-black-90 p-6 space-y-6 max-h-96 overflow-y-auto scrolling-touch">
                             <nav aria-label="Mobile Primary">
                                 {{ listMacros.primary(collections.section, page.url) }}                           
                             </nav>                            

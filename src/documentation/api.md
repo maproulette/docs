@@ -4,6 +4,6 @@ tags: documentation
 eleventyNavigation:
   key: API
   title: Interacting with the MapRoulette API
-  order: 3
+  order: 4
 permalink: false
 ---
