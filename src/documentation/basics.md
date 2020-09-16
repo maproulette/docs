@@ -1,5 +1,5 @@
 ---
-title: documentation
+title: Documentation
 tags: documentation
 eleventyNavigation:
   key: Basics
