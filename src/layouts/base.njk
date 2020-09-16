@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css">
     <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">   
     {% include "meta.njk" %}
+    {% block head %}{% endblock %}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="text-white leading-normal bg-gradient-r-green-blue">
     <div hidden>{% svgsprite %}</div>
@@ -58,6 +60,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.1"></script>
     <script src="{{ '/assets/main.js' | url }}" defer></script> 
+    {% block footer %}{% endblock %}
     <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
 </body>
 </html>

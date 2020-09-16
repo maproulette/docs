@@ -5,7 +5,6 @@
   "locale": "en_us",
   "urls": {
     "github": "https://github.com/osmlab/maproulette3",
-    "maproulette": "https://maproulette.org",
-    "coc": "https://github.com/osmlab/maproulette3/issues/1359"
+    "maproulette": "https://maproulette.org"
   }
 }

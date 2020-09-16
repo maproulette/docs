@@ -1,0 +1,23 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+    <div class="prose max-w-none">
+        {{ content | safe }}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+{% endblock %}
+
+

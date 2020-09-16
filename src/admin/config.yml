@@ -4,3 +4,130 @@ backend:
 publish_mode: editorial_workflow
 media_folder: 'src/media'
 public_folder: ''
+site_url: https://learn.maproulette.org
+display_url: https://learn.maproulette.org
+collections:
+  - name: 'pages'
+    label: 'Pages'
+    files:
+      - name: 'home'
+        label: 'Home'
+        delete: false
+        file: 'src/index.md'
+        slug: '{{slug}}'
+        fields:
+          - {
+              label: 'Layout',
+              name: 'layout',
+              widget: 'hidden',
+              default: 'home',
+            }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Headline', name: 'headline', widget: 'string' }
+          - { label: 'Content', name: 'body', widget: 'markdown' }
+  - name: documentation
+    label: Documentation
+    label_singular: Document
+    folder: 'src/documentation'
+    slug: '{{title}}'
+    extension: md
+    create: true
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'base' }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'hidden',
+          default: 'documentation',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - label: 'Navigation'
+        name: 'eleventyNavigation'
+        widget: 'object'
+        fields:
+          - {
+              label: 'Title',
+              name: 'key',
+              widget: 'string',
+              default: '{{title}}',
+            }
+          - {
+              label: 'Parent',
+              name: 'parent',
+              widget: 'relation',
+              collection: 'documentation',
+              search_fields: ['title', 'description'],
+              value_field: '{{title}}',
+              display_fields: ['{{title}}'],
+              required: false,
+            }
+          - { label: 'URL', name: 'url', widget: 'text', required: false }
+          - {
+              label: 'Order',
+              name: 'order',
+              widget: 'number',
+              value_type: 'int',
+              step: 1,
+              default: 0,
+            }
+      - {
+          label: 'Permalink',
+          name: 'permalink',
+          widget: 'boolean',
+          default: true,
+        }
+      - { label: 'Content', name: 'body', widget: 'markdown', reqiured: false }
+  - name: screencasts
+    label: Screencasts
+    label_singular: Screencast
+    folder: 'src/screencasts'
+    slug: '{{title}}'
+    extension: md
+    create: true
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'base' }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'hidden',
+          default: 'screencasts',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - label: 'Navigation'
+        name: 'eleventyNavigation'
+        widget: 'object'
+        fields:
+          - {
+              label: 'Title',
+              name: 'key',
+              widget: 'string',
+              default: '{{title}}',
+            }
+          - {
+              label: 'Parent',
+              name: 'parent',
+              widget: 'relation',
+              collection: 'screencasts',
+              search_fields: ['title', 'description'],
+              value_field: '{{title}}',
+              display_fields: ['{{title}}'],
+              required: false,
+            }
+          - { label: 'URL', name: 'url', widget: 'text', required: false }
+          - {
+              label: 'Order',
+              name: 'order',
+              widget: 'number',
+              value_type: 'int',
+              step: 1,
+              default: 0,
+            }
+      - {
+          label: 'Permalink',
+          name: 'permalink',
+          widget: 'boolean',
+          default: true,
+        }
+      - { label: 'Content', name: 'body', widget: 'markdown', reqiured: false }

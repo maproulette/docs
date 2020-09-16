@@ -96,6 +96,7 @@ module.exports = function (eleventyConfig) {
    * @link https://www.11ty.dev/docs/layouts/#layout-aliasing
    */
   eleventyConfig.addLayoutAlias('base', 'base.njk')
+  eleventyConfig.addLayoutAlias('home', 'home.njk')
   eleventyConfig.addLayoutAlias('index', 'index.njk')
 
   /**
