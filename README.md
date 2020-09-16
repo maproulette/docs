@@ -24,6 +24,9 @@ npm run start
 
 # run the production build
 npm run build
+
+# run netlify cms proxy server (for local CMS access)
+npx netlify-cms-proxy-server
 ```
 
 ## Netlify Dev
