@@ -23,9 +23,9 @@ The simplest way to create cooperative challenges is with the [mr-cli](https://w
 
 #### With GeoJSON
 
-Cooperative challenges can also be created by including additional data with each task in the GeoJSON, including an [OSMChange (.osc)](https://wiki.openstreetmap.org/wiki/OsmChange) file that represents the in-progress work that is to be loaded into the mapper's editor for the task. The additional data should be included in a `cooperativeWork` object associated with each task's `FeatureCollection` in the challenge's [line-by-line GeoJSON](Line-by-Line-GeoJSON-Format) file.
+Cooperative challenges can also be created by including additional data with each task in the GeoJSON, including an [OSMChange (.osc)](https://wiki.openstreetmap.org/wiki/OsmChange) file that represents the in-progress work that is to be loaded into the mapper's editor for the task. The additional data should be included in a `cooperativeWork` object associated with each task's `FeatureCollection` in the challenge's [line-by-line GeoJSON](/documentation/line-by-line-geojson/) file.
 
-> :warning: Only [line-by-line GeoJSON](Line-by-Line-GeoJSON-Format) is supported for cooperative challenges. If you use a traditional GeoJSON format, your cooperativeWork section will simply be ignored and you will end up with normal tasks instead of cooperative tasks
+> :warning: Only [line-by-line GeoJSON](/documentation/line-by-line-geojson/) is supported for cooperative challenges. If you use a traditional GeoJSON format, your cooperativeWork section will simply be ignored and you will end up with normal tasks instead of cooperative tasks
 
 The structure of the `cooperativeWork` object is designed to be flexible to support various options, formats, and encodings in the future, but at the moment only a very specific combination of values is supported.
 
