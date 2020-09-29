@@ -8,6 +8,7 @@ eleventyNavigation:
   parent: Creating and Managing Challenges
   order: 3.5
 ---
+
 MapRoulette offers two different approaches to styling tasks:
 
 1. A subset of the [simplestyle](https://github.com/mapbox/simplestyle-spec/blob/master/1.1.0/README.md) specification can be used to customize the appearance of features within a Task by including special feature properties in your task's GeoJSON
