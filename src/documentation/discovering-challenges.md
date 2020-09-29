@@ -5,7 +5,7 @@ tags: documentation
 eleventyNavigation:
   key: Discovering Challenges
   parent: Basics
-  order: 5
+  order: 0
 ---
 
 At the time of writing, MapRoulette has well over 4000 Challenges with hundreds of thousands of Tasks. How do you find things that you are interested in fixing? MapRoulette offers a number of ways that we'll talk about on this page.

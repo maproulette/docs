@@ -5,8 +5,8 @@ description: 'You can now get notified of events in MapRoulette that may be impo
 tags: documentation
 eleventyNavigation:
   key: Notifications and Email
-  parent: Advanced Topics
+  parent: Basics
   url: https://www.openstreetmap.org/user/mvexel/diary/48234
-  order: 0
+  order: 1.5
 permalink: false
 ---
