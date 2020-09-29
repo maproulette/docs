@@ -28,6 +28,6 @@ Note that you don't have to 'save' changes in your user settings, they are appli
 
 Because many mappers use different editors based on the task at hand, MapRoulette also lets you set your preferred editor quickly in the Task screen:
 
-![](66153150-7ea03200-e60a-11e9-92cf-dfd8d6aaf3ff.png)
+![](66153150-7ea03200-e60a-11e9-92cf-dfd8d6aaf3ff.png =600x)
 
-And finally, regardless of your selected editor, you can always use a [keyboard shortcut](https://github.com/osmlab/maproulette3/wiki/Keyboard-Shortcuts-for-Task-Completion) to open a specific editor during task completion.
+And finally, regardless of your selected editor, you can always use a [keyboard shortcut](/documentation/using-keyboard-shortcuts/) to open a specific editor during task completion.

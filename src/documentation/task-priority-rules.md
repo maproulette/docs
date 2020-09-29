@@ -30,8 +30,8 @@ Multiple rules can be setup as a group for a given priority. Those rules are the
 
 > Note that if a task matches multiple priority groups, it will be assigned the *highest* matching priority. For example, if it matches both the high-priority and medium-priority rules, it will be assigned high priority
 
-##### Matching Multiple Tag Values with a Single Rule
+#### Matching Multiple Tag Values with a Single Rule
 If you want to match a single tag against multiple possible values (such as `highway` equal to either `trunk` or `primary`), one option is to setup a separate rule for each value and then OR them together. But MapRoulette offers a shortcut whereby you can include multiple values separated by commas (e.g. `string` `highway` `equals` `trunk,primary`). When using "positive" operators like `equals` or `contains`, the comma-separated values will be OR'd together; when using "negative" operators like `doesn't equal` or `doesn't contain` they will be AND'd together (if you require different behavior, then you'll need to fall back to manually setting up separate rules for each value).
 
-##### Location Rules
-MapRoulette v3.6.3 introduces support for location rules, whereby a task can be prioritized based on whether it falls inside or outside of a bounding box/rectangle. Simply choose `location rule` for the type, either `inside` or `outside`, and then either provide the bounding box explicitly as West,South,East,North or else click the Map button and draw the desired rectangle.
+#### Location Rules
+MapRoulette also supports location rules, whereby a task can be prioritized based on whether it falls inside or outside of a bounding box/rectangle. Simply choose `location rule` for the type, either `inside` or `outside`, and then either provide the bounding box explicitly as West,South,East,North or else click the Map button and draw the desired rectangle.
