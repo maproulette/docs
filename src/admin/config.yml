@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: git-gateway # set to 'proxy' for local development
+  # proxy_url: http://localhost:8081/api/v1 # enable for local development
   branch: master
 local_backend: true
 publish_mode: editorial_workflow
@@ -54,12 +55,7 @@ collections:
         name: 'eleventyNavigation'
         widget: 'object'
         fields:
-          - {
-              label: 'Title',
-              name: 'key',
-              widget: 'string',
-              default: '{{title}}',
-            }
+          - { label: 'Title', name: 'key', widget: 'string' }
           - {
               label: 'Parent',
               name: 'parent',
@@ -67,8 +63,7 @@ collections:
               collection: 'documentation',
               search_fields: ['title', 'description'],
               value_field: '{{eleventyNavigation.key}}',
-              display_fields:
-                ['{{title}} (Parent: {{eleventyNavigation.key}})'],
+              display_fields: ['{{eleventyNavigation.key}}'],
               required: false,
             }
           - { label: 'URL', name: 'url', widget: 'text', required: false }
@@ -84,7 +79,7 @@ collections:
           label: 'Permalink',
           name: 'permalink',
           widget: 'boolean',
-          default: true,
+          required: false,
         }
       - { label: 'Content', name: 'body', widget: 'markdown', reqiured: false }
   - name: screencasts
@@ -116,7 +111,7 @@ collections:
               label: 'Title',
               name: 'key',
               widget: 'string',
-              default: '{{title}}',
+              default: '{title}',
             }
           - {
               label: 'Parent',
@@ -125,8 +120,7 @@ collections:
               collection: 'screencasts',
               search_fields: ['title', 'description'],
               value_field: '{{eleventyNavigation.key}}',
-              display_fields:
-                ['{{title}} (Parent: {{eleventyNavigation.key}})'],
+              display_fields: ['{{eleventyNavigation.key}}'],
               required: false,
             }
           - { label: 'URL', name: 'url', widget: 'text', required: false }
@@ -142,6 +136,6 @@ collections:
           label: 'Permalink',
           name: 'permalink',
           widget: 'boolean',
-          default: true,
+          required: false,
         }
       - { label: 'Content', name: 'body', widget: 'markdown', reqiured: false }
