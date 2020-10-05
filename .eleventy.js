@@ -113,15 +113,6 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.setBrowserSyncConfig({
     notify: true,
-    snippetOptions: {
-      rule: {
-        match: /<\/head>/i,
-        fn: function (snippet, match) {
-          return snippet + match
-        },
-      },
-    },
-    // Set local server 404 fallback
     callbacks: {
       ready: function (err, browserSync) {
         const content_404 = fs.readFileSync('dist/404/index.html')

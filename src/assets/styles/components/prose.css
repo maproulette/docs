@@ -1,3 +1,5 @@
-.prose iframe {
-  @apply w-full shadow;
+.prose {
+  iframe {
+    @apply w-full shadow;
+  }
 }

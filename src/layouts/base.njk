@@ -26,8 +26,8 @@
     <div role="document" class="min-h-screen flex flex-col">
         {% include "header.njk" %}
         <div class="px-4 mb-auto">
-            <div class="max-w-screen-xl mx-auto flex lg:space-x-8">
-                <div class="flex-shrink-0 relative hidden pt-4 pb-12 lg:block lg:w-1/4">
+            <div class="max-w-screen-xl mx-auto lg:grid lg:grid-cols-3 lg:gap-8">
+                <div class="relative hidden pt-4 pb-12 lg:block lg:col-span-1">
                     <div class="sticky top-8 space-y-8">
                         {% block sidebar %}
                             <nav aria-label="Primary">
@@ -42,7 +42,7 @@
                         {% endblock %}
                     </div>
                 </div>
-                <main id="content" class="flex-grow" tabindex="-1">
+                <main id="content" class="lg:col-span-2" tabindex="-1">
                     <div class="mb-12">
                         <header class="mb-8">
                             <h1 class="text-4xl md:text-5xl font-light text-yellow leading-none font-display">{{ headline or title }}</h1>

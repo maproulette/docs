@@ -14,8 +14,9 @@ module.exports = {
         mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono],
       },
       colors: {
-        'black-15': 'rgba(0, 0, 0, .15)',
-        'black-90': 'rgba(0, 0, 0, .9)',
+        'white-10': 'rgba(255, 255, 255, 0.1)',
+        'black-15': 'rgba(0, 0, 0, 0.15)',
+        'black-90': 'rgba(0, 0, 0, 0.9)',
         green: {
           default: '#47725F',
         },
@@ -71,6 +72,8 @@ module.exports = {
           },
           code: {
             color: theme('colors.white'),
+            backgroundColor: theme('colors.white-10'),
+            borderRadius: '3px',
           },
         },
       },
