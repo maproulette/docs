@@ -71,8 +71,8 @@ collections:
               label: 'Order',
               name: 'order',
               widget: 'number',
-              value_type: 'int',
-              step: 1,
+              value_type: 'float',
+              step: .25,
               default: 0,
             }
       - {
@@ -81,7 +81,7 @@ collections:
           widget: 'boolean',
           required: false,
         }
-      - { label: 'Content', name: 'body', widget: 'markdown', reqiured: false }
+      - { label: 'Content', name: 'body', widget: 'markdown', required: false }
   - name: screencasts
     label: Screencasts
     label_singular: Screencast
@@ -129,7 +129,7 @@ collections:
               name: 'order',
               widget: 'number',
               value_type: 'int',
-              step: 1,
+              step: .25,
               default: 0,
             }
       - {
@@ -138,4 +138,4 @@ collections:
           widget: 'boolean',
           required: false,
         }
-      - { label: 'Content', name: 'body', widget: 'markdown', reqiured: false }
+      - { label: 'Content', name: 'body', widget: 'markdown', required: false }
