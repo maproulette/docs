@@ -13,16 +13,15 @@
   },
   "scripts": {
     "clean": "rimraf '{dist,.picture.cache}'",
-    "clean:dev": "rimraf dist",
     "dev:webpack": "webpack --mode development",
     "dev:eleventy": "cross-env ELEVENTY_ENV=development DEBUG=Eleventy* eleventy",
-    "dev": "npm-run-all clean:dev --parallel dev:* --print-label",
+    "dev": "npm-run-all clean --parallel dev:* --print-label",
     "build:webpack": "webpack --mode production",
     "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
     "build": "run-s clean build:* --print-label",
     "watch:webpack": "webpack --mode development --watch",
     "watch:eleventy": "cross-env ELEVENTY_ENV=development eleventy --serve",
-    "watch": "npm-run-all clean:dev --parallel watch:*",
+    "watch": "npm-run-all clean --parallel watch:*",
     "start": "npm run watch"
   },
   "devDependencies": {

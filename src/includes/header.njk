@@ -2,15 +2,15 @@
 
 <header class="px-4 py-8">
     <div class="max-w-screen-xl mx-auto relative">
-        <div class="grid grid-cols-3 gap-4 lg:gap-8">
-            <div class="col-span-1">
+        <div class="grid grid-cols-12 gap-4 lg:gap-8">
+            <div class="col-span-3">
                 <a class="inline-flex items-center text-white" rel="home" href="{{ '/' | url }}">
                     {% svg "logo", meta.title, "hidden sm:block w-56 h-auto", "0 0 174 40" %}
                     {% svg "logomark", meta.title, "sm:hidden w-12 h-12" %}
                 </a>
                 <a href="#content" class="sr-only">Skip to content</a>
             </div>
-            <div class="col-span-2 flex items-center space-x-4">
+            <div class="col-span-9 flex items-center space-x-4">
                 <div class="flex-grow">
                     {% include "search-algolia.njk" %}
                 </div>
