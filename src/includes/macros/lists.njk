@@ -91,9 +91,10 @@
         <template x-for="(release, index) in releases" :key="index">
             <li>
                 <details class="space-y-4">
-                    <summary class="inline-block text-xl lg:text-2xl outline-none cursor-pointer">
+                    <summary class="inline-block outline-none cursor-pointer">
                         <span class="sr-only">Release:</span>
-                        <span x-text="release.tag_name"></span>
+                        <span class="text-xl lg:text-2xl" x-text="release.tag_name"></span>
+                        <time class="block font-mono text-sm leading-tight" x-bind:dateTime="release.published_at" x-text="new Date(release.published_at).toDateString()"></time>
                     </summary>
                     <dl class="p-4 bg-gray-900 text-white rounded overflow-scroll">
                         <div class="flex space-x-2">
