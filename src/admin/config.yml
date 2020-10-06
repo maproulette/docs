@@ -50,7 +50,12 @@ collections:
           default: 'documentation',
         }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'text' }
+      - {
+          label: 'Description',
+          name: 'description',
+          widget: 'text',
+          required: false,
+        }
       - label: 'Navigation'
         name: 'eleventyNavigation'
         widget: 'object'
