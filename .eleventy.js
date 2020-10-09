@@ -23,7 +23,7 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(pluginNavigation)
-  eleventyConfig.addPlugin(inclusiveLangPlugin)
+  // eleventyConfig.addPlugin(inclusiveLangPlugin)
   eleventyConfig.addPlugin(syntaxHighlight)
 
   /**

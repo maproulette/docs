@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Roboto:300,400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
     <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">   
     {% include "meta.njk" %}
     {% block head %}{% endblock %}
@@ -42,7 +43,7 @@
                         {% endblock %}
                     </div>
                 </div>
-                <main id="content" class="lg:col-span-9" tabindex="-1">
+                <main id="content" class="outline-none lg:col-span-9" tabindex="-1">
                     <div class="mb-12">
                         <header class="mb-8">
                             <h1 class="text-4xl md:text-5xl font-light text-yellow leading-none font-display">{{ headline or title }}</h1>
@@ -60,6 +61,23 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.1"></script>
     <script src="{{ '/assets/main.js' | url }}" defer></script> 
+    <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script> 
+        var search = docsearch({
+            apiKey: '5fcf6043134e601960c794aeb91486b6',
+            indexName: 'maproulette',
+            inputSelector: '[data-docsearch]',
+            algoliaOptions: { 
+                facetFilters: [
+                    ['tags:documentation', 'tags:screencasts'] // translate as (tags:documentation OR tags:screencasts) ...
+                ] 
+            },
+            autocompleteOptions: {
+                focusShortcuts: ['s', '/'],
+            },
+            debug: false, // Set debug to true if you want to inspect the dropdown
+        });
+    </script>
     {% block footer %}{% endblock %}
     <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
 </body>

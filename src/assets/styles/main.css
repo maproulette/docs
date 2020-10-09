@@ -5,6 +5,7 @@
 @import 'tailwindcss/components';
 @import './components/button.css';
 @import './components/prose.css';
+@import './components/algolia-autocomplete';
 /* purgecss end ignore */
 
 @import 'tailwindcss/utilities';
