@@ -1,6 +1,14 @@
 # MapRoulette Docs
 
-Documentation site for MapRoulette.org based on [Eleventy Starter](https://github.com/eastslopestudio/eleventy-starter).
+Documentation site for MapRoulette.org 
+
+If you would like to contribute to this documentation, thank you!
+* If you have a video or article we should link to, feel free to open an issue and we will look at the best way to include it in learn.maproulette.org.
+* If you want to write or translate documentation, please get in touch at maproulette@maproulette.org. 
+
+## Technical Details
+
+This is based on [Eleventy Starter](https://github.com/eastslopestudio/eleventy-starter).
 
 This site is hosted on Netlify.
 
