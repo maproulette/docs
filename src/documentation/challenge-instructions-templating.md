@@ -1,17 +1,19 @@
 ---
 layout: base
-title: Templating in Challenge Instructions
-description: 'MapRoulette supports mustache-tag replacement in Challenge Instructions, as well as short codes that can be used to embed basic form fields, make data easily copyable to the user clipboard, etc.'
 tags: documentation
+title: Templating in Challenge Instructions
+description: MapRoulette supports mustache-tag replacement in Challenge
+  Instructions, as well as short codes that can be used to embed basic form
+  fields, make data easily copyable to the user clipboard, etc.
 eleventyNavigation:
   key: Templating in Challenge Instructions
   parent: Creating and Managing Challenges
   order: 8
 ---
-
 MapRoulette supports [mustache-tag replacement](/documentation/mustache-tag-replacement/) in Challenge Instructions, as well as special short codes that can be used to embed basic form fields, make data easily copyable to the user's clipboard, etc.
 
 ## Basic Form Fields
+
 It may occasionally be useful to allow mappers to provide to challenge managers some additional information as they work through tasks. MapRoulette supports special short codes that offer the ability to embed very basic form fields in Challenge Instructions, which mappers can optionally complete for each task. Responses are included in CSV and GeoJSON [exports](/documentation/exporting-challenge-data/) of the challenge.
 
 ![](basic_template.gif =500x)
@@ -42,11 +44,10 @@ Creates a select field named myDropdown with three choices (foo or bar or baz) p
 
 The label can also include basic markdown, including mustache tags referencing task or workspace properties
 
-
 ## Other Useful Short Codes
 
 ```
 [copyable "some useful text"]
 ```
 
-Causes a clipboard button to be rendered immediately after the specified text that, when clicked, will copy the text to the user's clipboard. The text can also include mustache tags referencing task or workspace properties, which will be substituted.
+Causes a clipboard button to be rendered immediately after the specified text that, when clicked, will copy the text to the user's clipboard. The text can also include mustache tags referencing task or workspace properties, which will be substituted, but **cannot** include markdown.
