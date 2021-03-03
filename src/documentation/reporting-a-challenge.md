@@ -2,12 +2,11 @@
 layout: base
 tags: documentation
 title: Reporting A Challenge
-description: 'If you come across bad edits you suspect are a result of a poorly designed MapRoulette Challenge, here are the steps you can take to resolve it.'
+description: If you come across bad edits you suspect are a result of a poorly designed MapRoulette Challenge, here are the steps you can take to resolve it.
 eleventyNavigation:
   order: 10
   key: Reporting A Challenge
   parent: Basics
-permalink: true
 ---
 
 From time to time, a Challenge is created in MapRoulette that is poorly designed. The instructions may be unclear or even tell mappers to 'fix' the map in a way that goes against OSM best practices and conventions. Bad Challenges have no place in MapRoulette and we want you to be confident that we will deal with them if we need to.
