@@ -9,6 +9,7 @@ eleventyNavigation:
   parent: Basics
 permalink: true
 ---
+
 From time to time, a Challenge is created in MapRoulette that is poorly designed. The instructions may be unclear or even tell mappers to 'fix' the map in a way that goes against OSM best practices and conventions. Bad Challenges have no place in MapRoulette and we want you to be confident that we will deal with them if we need to.
 
 This page describes the steps you can take to resolve an issue with a MapRoulette Challenge. This process is a lot like the process you would follow when you notice a questionable edit in OSM made outside of MapRoulette. 
