@@ -8,5 +8,6 @@ description: A workshop for State of the Map Africa 2021, covering an
 eleventyNavigation:
   key: "{title}"
   order: 0
+  parent: screencasts
 ---
 <iframe width="876" height="548" src="https://youtu.be/o4aefng9HQg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
