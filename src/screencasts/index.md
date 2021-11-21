@@ -8,5 +8,4 @@ eleventyNavigation:
   title: Screencasts
   order: 2
 ---
-
-Screencasts overview / landing page.
+A collection of Screencasts and Recordings of presentations about MapRoulette.
