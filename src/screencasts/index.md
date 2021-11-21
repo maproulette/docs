@@ -1,9 +1,10 @@
 ---
 layout: index
-title: Screencasts
 tags: section
+title: Screencasts
+description: Other Screencasts
 eleventyNavigation:
-  key: screencasts
+  key: "{Title}"
   title: Screencasts
   order: 2
 ---
