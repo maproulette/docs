@@ -10,4 +10,4 @@ eleventyNavigation:
   order: 3
   parent: Challenges
 ---
-<iframe width="876" height="548" src="https://youtu.be/o4aefng9HQg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o4aefng9HQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
