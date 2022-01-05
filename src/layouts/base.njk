@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Roboto:300,400,500,700&amp;display=swap">
     <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha">
     <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">   
     {% include "meta.njk" %}
     {% block head %}{% endblock %}
@@ -59,14 +59,14 @@
         </div>
         {% include "footer.njk" %}
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.1"></script>
     <script src="{{ '/assets/main.js' | url }}" defer></script> 
-    <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
     <script> 
-        var search = docsearch({
-            apiKey: '5fcf6043134e601960c794aeb91486b6',
+        docsearch({
+            container: '#docsearch',
+            appId: 'ZW90CMRTNS',
+            apiKey: 'b8f0ee7c47e37d93bbcf70da9922055d',
             indexName: 'maproulette',
-            inputSelector: '[data-docsearch]',
             algoliaOptions: { 
                 facetFilters: [
                     ['tags:documentation', 'tags:screencasts'] // translate as (tags:documentation OR tags:screencasts) ...
