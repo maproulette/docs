@@ -9,7 +9,7 @@ eleventyNavigation:
   order: 10.5
 ---
 
-Tasks within a challenge can be prioritized by challenge managers as high, medium, or low priority. Available higher priority tasks will generally be served to mappers ahead of lower priority tasks.
+Tasks within a challenge can be prioritized by challenge managers as high, medium, or low priority. Available higher priority tasks will generally be served to mappers ahead of lower priority tasks. (See below for details about how rules are applied.)
 
 Tasks are prioritized using priority rules that match against either task feature properties (such as OSM tags) or their geographic location. The rules are setup during challenge creation, and can be updated by editing the challenge. Updated rules are immediately reapplied when the edited challenge is saved, but it can take several minutes for that reprioritization process to finish on the server.
 
@@ -35,3 +35,8 @@ If you want to match a single tag against multiple possible values (such as `hig
 
 #### Location Rules
 MapRoulette also supports location rules, whereby a task can be prioritized based on whether it falls inside or outside of a bounding box/rectangle. Simply choose `location rule` for the type, either `inside` or `outside`, and then either provide the bounding box explicitly as West,South,East,North or else click the Map button and draw the desired rectangle.
+
+#### How Rules Are Applied
+In general, higher priority tasks will be served to mappers ahead of lower priority tasks. So, until there are no high priority tasks left, mappers working on this challenge will only be served high priority tasks. Then, until there are no normal priority tasks left, mappers will only be served normal priority tasks. Finally, mappers will be served the low priority tasks, until the Challenge's tasks are exhausted.
+
+Please note that tasks that are marked "Too Hard" with higher priority will still be served before any lower priority tasks. The underlying assumption is that a more experienced mapper will still be able to resolve a task that is marked by someone else as "Too Hard". We are [revisiting this assumption and considering implementing a feature](https://github.com/osmlab/maproulette3/issues/217) that lets the Challenge author set the number of times a task that is marked "Too Hard" is recycled.
