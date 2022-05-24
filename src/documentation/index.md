@@ -8,4 +8,4 @@ eleventyNavigation:
   order: 1
 ---
 
-Documentation overview / landing page.
+Welcome to the MapRoulette documentation and learning site!
