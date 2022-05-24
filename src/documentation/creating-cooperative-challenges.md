@@ -148,3 +148,7 @@ Example:
   "data": ["sometag", "anothertag"]
 }
 ```
+
+### See also
+
+* [Adding Microsoft Building Footprints To OSM With MapRoulette: Why And How](https://ma.rtijn.org/2022/05/23/adding-microsoft-building-footprints-to-osm-with-maproulette-why-and-how.html) walks you through an example of creating a Cooperative Challenge
