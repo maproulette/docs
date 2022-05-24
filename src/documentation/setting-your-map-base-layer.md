@@ -27,6 +27,6 @@ The creator of the Challenge you work on may set an appropriate base layer for t
 
 _Advanced_
 
-If you have a custom TMS tile layer source you want to use, you can select 'Custom' from the list in your User Settings, and add the layer using the same URL pattern used [in JOSM](https://josm.openstreetmap.de/wiki/Help/Preferences/Imagery).
+If you have a custom TMS tile layer source you want to use, you can select 'Custom' from the list in your User Settings, and add the layer using the same URL pattern used [in QGIS](https://docs.qgis.org/3.22/en/docs/user_manual/managing_data_source/opening_data.html#using-xyz-tile-services) and [Leaflet](https://leafletjs.com/reference.html#tilelayer), for example: `https://tiles.somewhere.com/blabla/{z}/{x}/{y}.png`
 
 ![](66154561-464e2300-e60d-11e9-85f5-964723f5e3a9.png =600x)
