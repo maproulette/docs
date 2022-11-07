@@ -63,6 +63,8 @@ editors.
 
 As with standard cooperative challenges, the easiest way to create a Tag Fix challenge is with the [mr-cli](https://www.npmjs.com/package/@maproulette/mr-cli) command-line utility. See the tool's documentation for details and examples of use.
 
+See also [this post on the MapRoulette blog](https://blog.maproulette.org/2022/11/07/tutorial-tagging-parkingsurface-efficiently-with-a-maproulette-tag-fix-challenge/) for a complete example of how to make a tag-fix challenge using the `mr-cli` tool.
+
 #### With GeoJSON
 
 To aid with backwards compatibility, the GeoJSON structure of Tag Fix tasks is extremely similar to that of the old quick fix tasks, with only a few minor changes to the data envelope being required.
