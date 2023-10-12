@@ -14,7 +14,7 @@ When searching for challenges, the search box supports short-commands that can b
 ## List of Supported Commands:
 `m/` Move the map to either a WSEN bounding box or a lon,lat centerpoint
 
-`n/` Perform [nominatum](https://nominatim.openstreetmap.org/) search of geographic name and move map to resulting bounds
+`n/` Perform [nominatim](https://nominatim.openstreetmap.org/) search of geographic name and move map to resulting bounds
 
 `p/` Search by project name
 
@@ -37,7 +37,7 @@ m/2.17,41.34
 ```
 ---
 
-`n/` Perform [nominatum](https://nominatim.openstreetmap.org/) search of geographic name and move map to resulting bounds
+`n/` Perform [nominatim](https://nominatim.openstreetmap.org/) search of geographic name and move map to resulting bounds
 
 > Note: if you wish to also filter challenge results geographically, be sure to change your Location filter to "Intersecting Map Bounds" or "Within Map Bounds" as desired
 
