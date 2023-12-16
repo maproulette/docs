@@ -22,8 +22,6 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="text-white leading-normal bg-gradient-r-green-blue">
-    <div hidden>{% svgsprite %}</div>
-    <a href="#content" class="sr-only">skip to main content</a>
     <div role="document" class="min-h-screen flex flex-col">
         {% include "header.njk" %}
         <div class="px-4 mb-auto">
@@ -59,6 +57,8 @@
         </div>
         {% include "footer.njk" %}
     </div>
+    <div hidden>{% svgsprite %}</div>
+    <a href="#content" class="sr-only">skip to main content</a>
     <script src="{{ '/assets/main.js' | url }}" defer></script> 
     <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
     <script> 

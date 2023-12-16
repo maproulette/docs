@@ -1,7 +1,8 @@
-const fs = require('fs')
+const fs = require('fs').promises
 const path = require('path')
 const util = require('util')
 const glob = require('glob')
+
 const File = require('vinyl')
 const SVGSpriter = require('svg-sprite')
 
@@ -27,38 +28,24 @@ const spriteConfig = {
 }
 
 module.exports = async () => {
-  // Make a new SVGSpriter instance w/ configuration
   const spriter = new SVGSpriter(spriteConfig)
 
-  // Wrap spriter compile function in a Promise
-  const compileSprite = async (args) => {
-    return new Promise((resolve, reject) => {
-      spriter.compile(args, (error, result) => {
-        if (error) {
-          return reject(error)
-        }
-        resolve(result.symbol.sprite)
-      })
-    })
+  try {
+    const files = await fs.readdir(cwd)
+
+    for (const file of files) {
+      if (path.extname(file).toLowerCase() === '.svg') {
+        const filePath = path.join(cwd, file)
+        const contents = await fs.readFile(filePath)
+        spriter.add(new File({ path: filePath, base: cwd, contents }))
+      }
+    }
+
+    const compile = util.promisify(spriter.compile.bind(spriter))
+    const result = await compile(spriteConfig.mode)
+    return result.symbol.sprite.contents.toString('utf8')
+  } catch (error) {
+    console.error('Error in svgsprite:', error)
+    throw new Error(`Error in svgsprite: ${error.message}`)
   }
-
-  // Get all SVG files in working directory
-  const getFiles = util.promisify(glob)
-  const files = await getFiles('**/*.svg', { cwd: cwd })
-
-  // Add them all to the spriter
-  files.forEach(function (file) {
-    spriter.add(
-      new File({
-        path: path.join(cwd, file),
-        base: cwd,
-        contents: fs.readFileSync(path.join(cwd, file)),
-      })
-    )
-  })
-
-  // Compile the sprite file and return it as a string
-  const sprite = await compileSprite(spriteConfig.mode)
-  const spriteContent = sprite.contents.toString('utf8')
-  return spriteContent
 }
