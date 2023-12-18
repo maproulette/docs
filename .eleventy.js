@@ -55,10 +55,16 @@ module.exports = function (eleventyConfig) {
 
   /**
    * Add async shortcodes
-   *
-   * @link https://www.11ty.dev/docs/languages/nunjucks/#asynchronous-shortcodes
    */
-  eleventyConfig.addNunjucksAsyncShortcode('svgsprite', svgsprite)
+  eleventyConfig.addNunjucksAsyncShortcode('svgsprite', async () => {
+    try {
+      const svgsprite = require('./utils/svgsprite')
+      const result = await svgsprite()
+      return result
+    } catch (error) {
+      throw new Error(`Error in svgsprite: ${error.message}`)
+    }
+  })
 
   /**
    * Add custom watch targets
