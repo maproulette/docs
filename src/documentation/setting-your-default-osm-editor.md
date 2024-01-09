@@ -11,7 +11,7 @@ eleventyNavigation:
 
 When you click _Edit_ in a Task, you are sent to an OSM Editor to edit OSM and resolve the task. Everyone has their own preference of OSM Editor, and you can set this preference in your [User Settings](https://maproulette.org/user/profile).
 
-![](66152834-d722ff80-e609-11e9-8eb2-0b7b6072deed.png)
+![](setting-default-editor.png)
 
 The available options are:
 
