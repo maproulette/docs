@@ -3,6 +3,6 @@ title: Documentation
 tags: documentation
 eleventyNavigation:
   key: Basics
-  order: 0
+  order: 1
 permalink: false
 ---

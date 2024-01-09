@@ -56,3 +56,7 @@ A serverless functions pipeline is included via Netlify Dev. By running `netlify
 Netlify's Redirects API can provide friendlier URLs as proxies to these URLs.
 
 - /api/hello
+
+### Troubleshooting
+
+If you run into any strange errors or problems, this [Troubleshooting](TROUBLESHOOT.md) doc may assist you.
