@@ -14,7 +14,6 @@ module.exports = markdownIt({
   .use(require('markdown-it-imsize'))
   .use((md) => {
     md.renderer.rules.image = (tokens, index) => {
-      console.log('Processing image:', tokens[index]?.attrs)
       const token = tokens[index]
 
       const src = token.attrs[token.attrIndex('src')][1]
