@@ -1,21 +1,111 @@
 require('module-alias/register')
 const fs = require('fs')
-
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginNavigation = require('@11ty/eleventy-navigation')
-const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-
 const filters = require('./utils/filters')
 const transforms = require('./utils/transforms')
 const shortcodes = require('./utils/shortcodes')
-const svgsprite = require('./utils/svgsprite')
 const markdown = require('./utils/markdown')
+const { EleventyI18nPlugin } = require('@11ty/eleventy')
+const path = require('path')
+const { IntlMessageFormat } = require('intl-messageformat')
 
 // You can now require config options using @config
 const config = require('@config')
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addShortcode('translate', async function (key, language) {
+    try {
+      // Construct the path to the translation file
+      let translationFilePath = path.join(
+        __dirname,
+        `src/translations/${language}.json`
+      )
+
+      // Read the translation file
+      let translations = fs.readFileSync(translationFilePath, 'utf-8')
+      let messages = JSON.parse(translations)
+
+      // if translation message doesn't exist, use default english message
+      if (!messages[key]) {
+        translationFilePath = path.join(
+          __dirname,
+          `src/translations/en-us.json`
+        )
+
+        translations = fs.readFileSync(translationFilePath, 'utf-8')
+        messages = JSON.parse(translations)
+      }
+
+      // Format message using intl-messageformat
+      const formatter = new IntlMessageFormat(messages[key], language)
+      return formatter.format()
+    } catch (error) {
+      return key
+    }
+  })
+
+  function getSection(url) {
+    if (typeof url !== 'string') {
+      return ''
+    }
+    url = url.replace(/^\/+|\/+$/g, '')
+    const parts = url.split('/')
+    return parts[1] || ''
+  }
+
+  eleventyConfig.addFilter('getSection', getSection)
+
+  function getUrlLang(url) {
+    if (typeof url !== 'string') {
+      return 'en-us'
+    }
+    url = url.replace(/^\/+|\/+$/g, '')
+    const parts = url.split('/')
+    return parts[0] || 'en-us'
+  }
+
+  eleventyConfig.addFilter('getUrlLang', getUrlLang)
+
+  function isCurrentLang(subjectUrl, currentUrl) {
+    const subjectLang = getUrlLang(subjectUrl)
+    const currentLang = getUrlLang(currentUrl)
+    return subjectLang === currentLang
+  }
+
+  eleventyConfig.addFilter('isCurrentLang', isCurrentLang)
+
+  function getSupportedLanguages() {
+    const translationsDir = 'src/translations'
+    const files = fs.readdirSync(translationsDir)
+    const languages = files.map((file) => path.parse(file).name)
+    console.log('SUPPORTED LANGS', languages)
+    return languages
+  }
+
+  eleventyConfig.addGlobalData('supportedLanguages', getSupportedLanguages())
+
+  eleventyConfig.addPlugin(EleventyI18nPlugin, {
+    defaultLanguage: 'en-us',
+  })
+
+  function getUniqueSections(arr) {
+    let seen = {}
+    let uniqueArrayOfObjects = arr.filter((obj) => {
+      if (seen.hasOwnProperty(obj.key)) {
+        return false
+      } else {
+        seen[obj.key] = true
+        return true
+      }
+    })
+
+    return uniqueArrayOfObjects
+  }
+
+  eleventyConfig.addFilter('getUniqueSections', getUniqueSections)
+
   /**
    * Add plugins
    *

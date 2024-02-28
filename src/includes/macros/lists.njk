@@ -1,24 +1,27 @@
 {% macro primary(collection, url) %}
     {% set sections = collection | eleventyNavigation %}
-    <ol class="space-y-2">   
+    <ol class="space-y-2">
     {% for entry in sections %}
-        <li>
-            <a href="{{ entry.url | url }}"
-                class="{{ "text-turquoise" if entry.url == url else "text-white" }} hover:text-turquoise transition-colors duration-200 flex items-center space-x-2" 
-                {% if entry.url == url %}aria-current{% endif %}
-            >
-                {% svg entry.key, entry.title, "w-5 h-5" %}
-                <span class="text-sm font-mono leading-5">{{ entry.title }}</span>    
-            </a>
-        </li>
+        {% if entry.url | isCurrentLang(url) %}
+            <li>
+                <a href="{{ entry.url | url }}"
+                    class="{{ "text-turquoise" if entry.url == url else "text-white" }} hover:text-turquoise transition-colors duration-200 flex items-center space-x-2" 
+                    {% if entry.url == url %}aria-current{% endif %}
+                >
+                    {% svg entry.key, entry.title, "w-5 h-5" %}
+                    <span class="text-sm font-mono leading-5">{{ entry.title }}</span>    
+                </a>
+            </li>
+        {% endif %}
     {% endfor %}
     </ol> 
 {% endmacro %}
 
 {% macro secondary(collection, url) %}
     {% set pages = collection | eleventyNavigation %}
+    {% set uniqueSections = pages | getUniqueSections %}
     <ol class="space-y-8">
-    {% for entry in pages %}
+    {% for entry in uniqueSections %}
         <li>
             <h3 class="text-xs font-bold uppercase tracking-widest leading-tight mb-2">
             {% if entry.url %}
@@ -42,25 +45,27 @@
             {% if entry.children %}
             <ol class="text-sm font-mono space-y-3 leading-tight">
             {% for child in entry.children %}
-                <li>
-                {% if not child.permalink and not child.url %}
-                    <span class="text-gray-400">{{ child.title }}</span>
-                {% else %}
-                    <a href="{{ child.url | url }}"
-                        class="{{ "text-turquoise" if child.url == url else "text-white" }} hover:text-turquoise transition-colors duration-200 group flex justify-between space-x-2"
-                        {% if child.url == url %} aria-current{% endif %}
-                        {% if 'http' in child.url %}
-                            target="_blank"
-                            rel="noopener nofollow"
-                        {% endif %}
-                    >
-                        <span>{{ child.title }}</span>
-                        {% if 'http' in child.url %}
-                            {% svg 'external-link', child.title, "w-4 h-4 text-green group-hover:text-turquoise transition duration-200" %}
-                        {% endif %}
-                    </a>                     
+                {% if child.url | isCurrentLang(url) %}
+                    <li>
+                    {% if not child.permalink and not child.url %}
+                        <span class="text-gray-400">{{ child.title }}</span>
+                    {% else %}
+                        <a href="{{ child.url | url }}"
+                            class="{{ "text-turquoise" if child.url == url else "text-white" }} hover:text-turquoise transition-colors duration-200 group flex justify-between space-x-2"
+                            {% if child.url == url %} aria-current{% endif %}
+                            {% if 'http' in child.url %}
+                                target="_blank"
+                                rel="noopener nofollow"
+                            {% endif %}
+                        >
+                            <span>{{ child.title }}</span>
+                            {% if 'http' in child.url %}
+                                {% svg 'external-link', child.title, "w-4 h-4 text-green group-hover:text-turquoise transition duration-200" %}
+                            {% endif %}
+                        </a>                     
+                    {% endif %}
+                    </li>
                 {% endif %}
-                </li>
             {% endfor %}
             </ol>
             {% endif %}

@@ -1,15 +1,15 @@
 {% import "macros/lists.njk" as listMacros %}
 
 <!DOCTYPE html>
-<html lang="{{ meta.lang }}" class="bg-blue antialiased leading-tight">
+<html lang="{{ meta.locale }}" class="bg-blue antialiased leading-tight">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% if seo.title %}
-            {{ seo.title }} 
-        {% else %} 
-            {{ title }} | {{ meta.title }}
+            {{ seo.title }}
+        {% else %}
+            {% translate title, page.url | getUrlLang %} | {% translate meta.title, page.url | getUrlLang %}
         {% endif %}
     </title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -28,23 +28,37 @@
             <div class="max-w-screen-xl mx-auto lg:grid lg:grid-cols-12 lg:gap-8">
                 <div class="relative hidden pt-4 pb-12 lg:block lg:col-span-3">
                     <div class="sticky top-8 space-y-8">
+                        <div>
+                            {% block langSelector %}
+                                <select class="text-black" name="languages" id="languages" onchange="redirectToPage()">
+                                    <option value="" selected>Switch language</option>
+                                    {% for lang in supportedLanguages %}
+                                        <option value="{{ "/" + lang + "/documentation" }}">{{ lang }}</option>
+                                    {% endfor %}
+                                </select>
+                            {% endblock %}
+                        </div>
+                        <br />
                         {% block sidebar %}
                             <nav aria-label="Primary">
                                 {{ listMacros.primary(collections.section, page.url) }} 
-                            </nav>           
-                            {% set section = page.url | ltrim('/') | split | first %}
+                            </nav>
+                            {% set section = page.url | getSection %}
                             {% if collections[section] %}
                                 <nav aria-label="Secondary" class="pl-7">
                                     {{ listMacros.secondary(collections[section], page.url) }}
                                 </nav>
-                            {% endif %}                                
+                            {% endif %}
                         {% endblock %}
                     </div>
                 </div>
                 <main id="content" class="outline-none lg:col-span-9" tabindex="-1">
                     <div class="mb-12">
                         <header class="mb-8">
-                            <h1 class="text-4xl md:text-5xl font-light text-yellow leading-none font-display">{{ headline or title }}</h1>
+                            <h1 class="text-4xl md:text-5xl font-light text-yellow leading-none font-display">
+                                {% set headerText = headline or title %}
+                                {% translate headerText, meta.locale %}
+                            </h1>
                         </header>
                         {% block main %}
                             <div class="prose max-w-none">
@@ -77,6 +91,12 @@
             },
             debug: false, // Set debug to true if you want to inspect the dropdown
         });
+
+        function redirectToPage() {
+            var selectBox = document.getElementById("languages");
+            var redirect = selectBox.options[selectBox.selectedIndex].value;
+            window.location.href = redirect;
+        }
     </script>
     {% block footer %}{% endblock %}
     <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->

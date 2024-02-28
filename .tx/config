@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[o:maproulette:p:mr-docs:r:en-US-json]
+file_filter  = src/translations/<lang>.json
+source_file  = src/translations/en-us.json
+source_lang  = en
+type         = KEYVALUEJSON
+minimum_perc = 10
