@@ -1,16 +1,12 @@
 const fs = require('fs-extra')
 const path = require('path')
 
-// Define the original folder to be copied
-const originalFolder = './src/en-us' // Change 'original' to the name of your original folder
+const originalFolder = './src/en-us'
 
-// Define the list of languages you want to support
 const languages = ['es'] // Add more languages as needed
 
-// Define the build (dist) folder
-const buildFolder = 'src' // Change 'dist' to match your build folder name
+const buildFolder = 'src'
 
-// Function to copy the original folder for each language in the build folder
 async function copyOriginalFolderForLanguages() {
   try {
     for (const language of languages) {
@@ -26,5 +22,4 @@ async function copyOriginalFolderForLanguages() {
   }
 }
 
-// Call the function to copy original folder for each language during build
 copyOriginalFolderForLanguages()
