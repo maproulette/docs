@@ -8,4 +8,5 @@ eleventyNavigation:
   title: Screencasts
   order: 2
 ---
-A collection of Screencasts and Recordings of presentations about MapRoulette.
+
+{% translate "ScreenCasts.content1", page.url | getUrlLang %}

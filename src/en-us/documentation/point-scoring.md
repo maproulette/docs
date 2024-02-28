@@ -9,12 +9,4 @@ eleventyNavigation:
   order: 3
 ---
 
-Points are awarded for each task that is completed as follows:
-
-| Completion Status | Points Awarded |
-| ----------------- | :------------: |
-| Fixed             |       5        |
-| Not an Issue      |       3        |
-| Already Fixed     |       3        |
-| Too Hard          |       1        |
-| Skipped           |       0        |
+{% translate "PointScoring.content1", page.url | getUrlLang %}
