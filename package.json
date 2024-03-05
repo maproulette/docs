@@ -21,7 +21,7 @@
     "build": "run-s clean build:* --print-label",
     "watch:webpack": "webpack --mode development --watch",
     "watch:eleventy": "cross-env ELEVENTY_ENV=development eleventy --serve",
-    "watch": "npm-run-all --parallel watch:*",
+    "watch": "npm-run-all clean --parallel watch:*",
     "start": "npm run watch",
     "start:langs": "npm-run-all clean build-langs watch",
     "eleventy": "ELEVENTY_ENV=development npx eleventy --serve",

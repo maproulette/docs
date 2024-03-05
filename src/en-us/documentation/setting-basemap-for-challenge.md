@@ -10,3 +10,5 @@ eleventyNavigation:
 ---
 
 {% translate "SettingBasemapForChallenge.content1", page.url | getUrlLang %}
+
+`https://some.imagerylayer.com/tile/{z}/{x}/{y}`

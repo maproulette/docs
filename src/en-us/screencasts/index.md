@@ -9,4 +9,4 @@ eleventyNavigation:
   order: 2
 ---
 
-{% translate "ScreenCasts.content1", page.url | getUrlLang %}
+{% translate "Screencasts.content1", page.url | getUrlLang %}

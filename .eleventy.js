@@ -42,6 +42,7 @@ module.exports = function (eleventyConfig) {
       const formatter = new IntlMessageFormat(messages[key], language)
       return formatter.format()
     } catch (error) {
+      console.error(key, error)
       return key
     }
   })

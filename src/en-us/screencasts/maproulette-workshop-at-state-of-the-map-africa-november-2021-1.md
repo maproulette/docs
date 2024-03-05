@@ -1,12 +1,12 @@
 ---
 layout: base
 tags: screencasts
-title: Screencasts.mr-workshop.title
+title: MapRoulette Workshop at State of the Map Africa, November 2021
 description: A workshop for State of the Map Africa 2021, covering an
   introduction to Microtasking and the MapRoulette application, the workflow for
   solving Tasks, and an introduction to creating Challenges using Overpass.
 eleventyNavigation:
-  key: Screencasts.mr-workshop.title
+  key: MapRoulette Workshop at State of the Map Africa, November 2021
   order: 3
   parent: Challenges
 ---

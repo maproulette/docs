@@ -19,4 +19,6 @@ eleventyNavigation:
 
 {% translate "SettingYourMapBaseLayer.content3", page.url | getUrlLang %}
 
+`https://tiles.somewhere.com/blabla/{z}/{x}/{y}.png`
+
 ![](setting-default-baselayer2.png =600x)

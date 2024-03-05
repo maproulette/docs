@@ -13,6 +13,10 @@ eleventyNavigation:
 
 {% translate "LineByLineGeojson.content1", page.url | getUrlLang %}
 
+`<RS>`
+
+{% translate "LineByLineGeojson.content2", page.url | getUrlLang %}
+
 ```javascript
 <RS>{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.9908295,42.435009]},"properties":{"address":"13001 East Seven Mile","latitude":"42.435009","longitude":"-82.9908295","business_name":"Lions Auto Sales"}}]}
 <RS>{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.94074,42.42207]},"properties":{"address":"10709 Morang","latitude":"42.42207","longitude":"-82.94074","business_name":"Great Lakes Investment"}}]}

@@ -9,6 +9,6 @@ eleventyNavigation:
   order: 14
 ---
 
-{% translate "ExportingChallangeData.content1", page.url | getUrlLang %}
+{% translate "ExportingChallengeData.content1", page.url | getUrlLang %}
 
 ![](export_challenge_data.png =800x)

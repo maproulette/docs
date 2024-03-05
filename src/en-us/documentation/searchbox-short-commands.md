@@ -9,4 +9,4 @@ eleventyNavigation:
   order: 7
 ---
 
-{% translate "SearchboxShortCommands.content1", page.url | getUrlLang %}
+{% translate "SearchboxCommands.content1", page.url | getUrlLang %}
