@@ -5,7 +5,7 @@ tags: documentation
 eleventyNavigation:
   key: Rapid Editor
   parent: New Topics/Features
-  order: 0
+  order: 1
 ---
 
 {% translate "RapidEditor.content1", page.url | getUrlLang %}

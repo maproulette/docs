@@ -31,10 +31,11 @@
                         <div>
                             {% block langSelector %}
                                 <select class="text-black" name="languages" id="languages" onchange="redirectToPage()">
-                                    <option value="" selected>Switch language</option>
+                                    <option value="" selected>Select language</option>
                                     {% for lang in supportedLanguages %}
                                         <option value="{{ "/" + lang + "/documentation" }}">{{ lang }}</option>
                                     {% endfor %}
+                                    <option value="/en-us/documentation/translate-docs">Add Language</option>
                                 </select>
                             {% endblock %}
                         </div>
