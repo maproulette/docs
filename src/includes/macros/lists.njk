@@ -2,7 +2,7 @@
     {% set sections = collection | eleventyNavigation %}
     <ol class="space-y-2">
     {% for entry in sections %}
-        {% if entry.url | isCurrentLang(url) %}
+        {% if entry.url | isCurrentLang(url, entry) %}
             <li>
                 <a href="{{ entry.url | url }}"
                     class="{{ "text-turquoise" if entry.url == url else "text-white" }} hover:text-turquoise transition-colors duration-200 flex items-center space-x-2" 
@@ -45,7 +45,7 @@
             {% if entry.children %}
             <ol class="text-sm font-mono space-y-3 leading-tight">
             {% for child in entry.children %}
-                {% if child.url | isCurrentLang(url) %}
+                {% if child.url | isCurrentLang(url, child) %}
                     <li>
                     {% if not child.permalink and not child.url %}
                         <span class="text-gray-400">{{ child.title }}</span>

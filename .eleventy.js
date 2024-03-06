@@ -69,9 +69,14 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('getUrlLang', getUrlLang)
 
-  function isCurrentLang(subjectUrl, currentUrl) {
+  function isCurrentLang(subjectUrl, entry, currentUrl) {
     const subjectLang = getUrlLang(subjectUrl)
     const currentLang = getUrlLang(currentUrl)
+
+    if (subjectLang.includes('releases') || subjectLang.includes('https')) {
+      return true
+    }
+
     return subjectLang === currentLang
   }
 
