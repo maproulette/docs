@@ -2,7 +2,7 @@
   "title": "MapRoulette Docs",
   "description": "Hello and welcome to MapRoulette docs. MapRoulette is a micro-task platform for OpenStreetMap.",
   "lang": "en",
-  "locale": "en_us",
+  "locale": "en-us",
   "urls": {
     "github": "https://github.com/osmlab/maproulette3",
     "maproulette": "https://maproulette.org"

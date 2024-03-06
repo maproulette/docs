@@ -23,7 +23,9 @@
     "watch:eleventy": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "watch": "npm-run-all clean --parallel watch:*",
     "start": "npm run watch",
-    "eleventy": "ELEVENTY_ENV=development npx eleventy --serve"
+    "start:langs": "npm-run-all clean build-langs watch",
+    "eleventy": "ELEVENTY_ENV=development npx eleventy --serve",
+    "build-langs": "node ./scripts/buildLangs.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -69,6 +71,7 @@
   "dependencies": {
     "alpinejs": "^2.6.0",
     "focus-visible": "^5.1.0",
-    "glob": "^10.3.10"
+    "glob": "^10.3.10",
+    "intl-messageformat": "^10.5.11"
   }
 }

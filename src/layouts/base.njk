@@ -28,16 +28,28 @@
             <div class="max-w-screen-xl mx-auto lg:grid lg:grid-cols-12 lg:gap-8">
                 <div class="relative hidden pt-4 pb-12 lg:block lg:col-span-3">
                     <div class="sticky top-8 space-y-8">
+                        <div>
+                            {% block langSelector %}
+                                <select class="text-black" name="languages" id="languages" onchange="redirectToPage()">
+                                    <option value="" selected>Select language</option>
+                                    {% for lang in supportedLanguages %}
+                                        <option value="{{ "/" + lang + "/documentation" }}">{{ lang }}</option>
+                                    {% endfor %}
+                                    <option value="/en-us/documentation/translate-docs">Add Language</option>
+                                </select>
+                            {% endblock %}
+                        </div>
+                        <br />
                         {% block sidebar %}
                             <nav aria-label="Primary">
                                 {{ listMacros.primary(collections.section, page.url) }} 
-                            </nav>           
-                            {% set section = page.url | ltrim('/') | split | first %}
+                            </nav>
+                            {% set section = page.url | getSection %}
                             {% if collections[section] %}
                                 <nav aria-label="Secondary" class="pl-7">
                                     {{ listMacros.secondary(collections[section], page.url) }}
                                 </nav>
-                            {% endif %}                                
+                            {% endif %}
                         {% endblock %}
                     </div>
                 </div>
@@ -77,6 +89,12 @@
             },
             debug: false, // Set debug to true if you want to inspect the dropdown
         });
+
+        function redirectToPage() {
+            var selectBox = document.getElementById("languages");
+            var redirect = selectBox.options[selectBox.selectedIndex].value;
+            window.location.href = redirect;
+        }
     </script>
     {% block footer %}{% endblock %}
     <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
