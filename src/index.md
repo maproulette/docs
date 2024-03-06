@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Index.title
-headline: Index.headline
+title: Welcome
+headline: Hello and Welcome to MapRoulette
 ---
 
 {% translate "Index.content", meta.locale %}
