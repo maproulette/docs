@@ -14,7 +14,7 @@ Page not found.
     }
 
     function isValidURL(url) {
-        var regex = ^\/\w+\/(?:documentation|screencasts)\/?$;
+        var regex = /^\/\w+\/(?:documentation|screencasts)\/?$/;
         return regex.test(url) || url === "/" || url === "/releases/";
     }
 
