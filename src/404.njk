@@ -15,7 +15,7 @@ Page not found.
 
     function isValidURL(url) {
         var regex = /^\/\w+\/(?:documentation|screencasts)\/?$/;
-        return regex.test(url) || url === "/" || url === "/releases/";
+        return regex.test(url) || url === "/" || url === "/release";
     }
 
     function redirectToValidURL() {
