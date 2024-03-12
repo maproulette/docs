@@ -22,7 +22,7 @@ Page not found.
         var currentURL = window.location.pathname;
 
         if (!isValidURL(currentURL)) {
-            var newURL = window.location.origin + "/en-us" + url;
+            var newURL = window.location.origin + "/en-us" + currentURL;
             window.location.href = newURL;
         }
     }
