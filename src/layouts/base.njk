@@ -89,6 +89,12 @@
             },
             debug: false, // Set debug to true if you want to inspect the dropdown
         });
+
+        function redirectToPage() {
+            var selectBox = document.getElementById("languages");
+            var redirect = selectBox.options[selectBox.selectedIndex].value;
+            window.location.href = redirect;
+        }
     </script>
     {% block footer %}{% endblock %}
     <!-- LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
