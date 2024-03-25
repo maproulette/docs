@@ -15,6 +15,6 @@ eleventyNavigation:
 
 {% translate "SettingYourDefaultOSMEditor.content2", page.url | getUrlLang %}
 
-![](66153150-7ea03200-e60a-11e9-92cf-dfd8d6aaf3ff.png =600x)
+![](editors-1.png =600x)
 
 {% translate "SettingYourDefaultOSMEditor.content3", page.url | getUrlLang %}
