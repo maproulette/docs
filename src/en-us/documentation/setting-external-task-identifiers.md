@@ -23,4 +23,8 @@ osm_id
 name
 ```
 
+{% translate "SettingExternalTaskIdentifiers.content4", page.url | getUrlLang %}
+
+{% translate "SettingExternalTaskIdentifiers.content5", page.url | getUrlLang %}
+
 {% translate "SettingExternalTaskIdentifiers.content3", page.url | getUrlLang %}
