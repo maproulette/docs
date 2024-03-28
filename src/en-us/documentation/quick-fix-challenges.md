@@ -15,6 +15,7 @@ eleventyNavigation:
 {% translate "QuickFixChallenges.content2", page.url | getUrlLang %}
 
 ![](quickfix2.png)
-*I changed the layout for my MapRoulette Task screen to see the most relevant information. [You can do this too]().*
+
+{% translate "QuickFixChallenges.content4", page.url | getUrlLang %}
 
 {% translate "QuickFixChallenges.content3", page.url | getUrlLang %}

@@ -10,15 +10,15 @@ eleventyNavigation:
 
 {% translate "BulkEditingChallenges.content1", page.url | getUrlLang %}
 
-![](bulk-edit-1.png)
+![](bulk-edit-1.png =500x)
 
 {% translate "BulkEditingChallenges.content2", page.url | getUrlLang %}
 
-![](bulk-edit-2.png)
+![](bulk-edit-2.png =500x)
 
 {% translate "BulkEditingChallenges.content3", page.url | getUrlLang %}
 
-![](bulk-edit-3.png)
+![](bulk-edit-3.png =700x)
 
 {% translate "BulkEditingChallenges.content4", page.url | getUrlLang %}
 

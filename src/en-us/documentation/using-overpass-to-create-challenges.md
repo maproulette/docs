@@ -23,6 +23,8 @@ eleventyNavigation:
 
 {% translate "UsingOverpassToCreateChallenges.content4", page.url | getUrlLang %}
 
+{% translate "UsingOverpassToCreateChallenges.content6", page.url | getUrlLang %}
+
 ![](88001168-b8202c00-cabc-11ea-9d47-db983ce4d11b.png)
 
 {% translate "UsingOverpassToCreateChallenges.content5", page.url | getUrlLang %}
