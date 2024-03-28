@@ -10,6 +10,6 @@ eleventyNavigation:
 
 {% translate "ChallengeComments.content1", page.url | getUrlLang %}
 
-![](challenge-comments-1.png)
+![](challenge-comments-2.png =700x)
 
 {% translate "ChallengeComments.content2", page.url | getUrlLang %}
