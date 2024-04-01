@@ -29,7 +29,7 @@ eleventyNavigation:
   }
 }
 ```
-
+<a id='creating-tag-fix-challenges'></a>
 {% translate "CreatingCooperativeChallanges.content2", page.url | getUrlLang %}
 
 ```javascript
