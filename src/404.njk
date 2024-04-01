@@ -13,15 +13,12 @@ Page not found.
         window.location.href = redirect;
     }
 
-    function isValidURL(url) {
-        var regex = /^\/\w+\/(?:documentation|screencasts)\/?$/;
-        return regex.test(url) || url === "/" || url === "/releases/";
-    }
-
     function redirectToValidURL() {
         var currentURL = window.location.pathname;
+        var segments = currentURL.split("/");
+        var firstParent = segments[1];
 
-        if (!isValidURL(currentURL)) {
+        if (firstParent === "screencasts" || firstParent === "documentation") {
             var newURL = window.location.origin + "/en-us" + currentURL;
             window.location.href = newURL;
         }
