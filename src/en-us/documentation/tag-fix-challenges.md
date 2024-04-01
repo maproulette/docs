@@ -10,11 +10,11 @@ eleventyNavigation:
 
 {% translate "TagFixChallenges.content1", page.url | getUrlLang %}
 
-![](quickfix.png =500x)
+![](tagfix.png =500x)
 
 {% translate "TagFixChallenges.content2", page.url | getUrlLang %}
 
-![](quickfix2.png)
+![](tagfix2.png)
 
 {% translate "TagFixChallenges.content4", page.url | getUrlLang %}
 
