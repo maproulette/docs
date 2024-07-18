@@ -1,6 +1,6 @@
 backend:
   name: git-gateway # set to 'proxy' for local development
-  proxy_url: http://localhost:8081/api/v1 # enable for local development
+  # proxy_url: http://localhost:8081/api/v1 # enable for local development
   branch: master
 local_backend: true
 publish_mode: editorial_workflow
