@@ -19,11 +19,11 @@ eleventyNavigation:
 
 {% translate "UsingOverpassToCreateChallenges.content3", page.url | getUrlLang %}
 
-`{{bbox}}`
+{% translate "UsingOverpassToCreateChallenges.content7", page.url | getUrlLang %}
+
+<pre>`&#123;&#123;bbox&#125;&#125;`</pre>
 
 {% translate "UsingOverpassToCreateChallenges.content4", page.url | getUrlLang %}
-
-{% translate "UsingOverpassToCreateChallenges.content6", page.url | getUrlLang %}
 
 ![](88001168-b8202c00-cabc-11ea-9d47-db983ce4d11b.png)
 
