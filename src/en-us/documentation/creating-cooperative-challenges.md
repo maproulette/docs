@@ -87,3 +87,48 @@ eleventyNavigation:
 ```
 
 {% translate "CreatingCooperativeChallanges.content6", page.url | getUrlLang %}
+
+### Full example
+
+This is a full example of a valid GeoJSON that uses `setTags` for two features.
+
+```javascript
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "point/123",
+        "otherkeys": "othervalues"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.4050, 52.5200]
+      }
+    }
+  ],
+  "cooperativeWork": {
+    "meta": {
+      "version": 2,
+      "type": 1
+    },
+    "operations": [
+      {
+        "operationType": "modifyElement",
+        "data": {
+          "id": "point/123", // same id as `feature[0].properties.id` above
+          "operations": [
+            {
+              "operation": "setTags",
+              "data": {
+                "nice": "place"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+```
