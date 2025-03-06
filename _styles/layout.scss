@@ -1,0 +1,96 @@
+html {
+  background: #172e51;
+}
+
+body {
+  margin: 0;
+  background-image: linear-gradient(90deg, #47725f, #172e51);
+  
+  color: white;
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+
+  display: grid;
+  grid-template-columns: [full-start left-start] 300px [left-end right-start] 1fr [right-end full-end];
+  column-gap: 1em;
+  min-height: 100vh;
+  grid-template-rows: min-content 1fr min-content;
+}
+
+main {
+  max-width: 100ch;
+  margin: 1em;
+}
+
+body > header {
+  grid-column: full;
+  background-image: linear-gradient(90deg, #47725f, #172e51);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
+
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  justify-content: space-between;
+  padding: 1em 2em;
+}
+
+body > header a, body > footer a {
+  text-decoration: none;
+}
+
+body > header .right {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+body > nav {
+  margin-left: 1.5em;
+}
+
+nav h3 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  font-size: small;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  line-height: 1.25;
+  margin: 0.25em 0;
+}
+
+nav ul a, nav ul a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul a:hover {
+  color: rgb(145, 243, 162);
+}
+
+body > footer {
+  grid-column: full;
+  background: #172e51;
+  color: #B4CBEE;
+  font-size: small;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 1em;
+}
+
+body > footer ul {
+  padding: 0;
+  list-style-type: none;
+}

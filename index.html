@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<p>Welcome to the MapRoulette documentation website</p>
+<a href="/en-US">Click here if you are not redirected</a>
+
+<script type="module">
+const LOCALES = {{ site.locales | jsonify }}
+const locale = new Intl.Locale(navigator.language);
+
+// try to find an exact match
+let match = LOCALES.find(l => l === locale.baseName);
+// try to find a language match (ignoring region)
+if (!match) match = LOCALES.find(l => (new Intl.Locale(l)).language === locale.language);
+// fall back if no match could be found
+if (!match) match = "en-US";
+
+window.location.replace("/" + match);
+</script>
