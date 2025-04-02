@@ -65,7 +65,7 @@ module Jekyll
 
   class Permalink < Generator
     # Assigns permalinks to pages that begin with their language,
-    # e.g. /en-US/:collection/:slug
+    # e.g. /en-US/:collection/:slug/
     safe true
 
     def generate(site)
@@ -73,14 +73,14 @@ module Jekyll
         lang = doc.data['lang']
         collection_name = doc.collection.label
         slug = doc.data['slug']
-        doc.data['permalink'] ||= "/#{lang}/#{collection_name}/#{slug}"
+        doc.data['permalink'] ||= "/#{lang}/#{collection_name}/#{slug}/"
       end
 
       site.pages.each do |page|
         if lang = page.data['lang']
           dirname = File.dirname(page.relative_path)
           slug = page.data['slug']
-          page.data['permalink'] ||= "/#{lang}/#{dirname}/#{slug}"
+          page.data['permalink'] ||= "/#{lang}/#{dirname}/#{slug}/"
         end
       end
     end
