@@ -2,11 +2,11 @@
 title: Templating in Challenge Instructions
 ---
 
-MapRoulette supports [mustache-tag replacement](/documentation/mustache-tag-replacement/) in Challenge Instructions, as well as special short codes that can be used to embed basic form fields, make data easily copyable to the user's clipboard, etc.
+MapRoulette supports [mustache-tag replacement](/en-US/documentation/mustache-tag-replacement/) in Challenge Instructions, as well as special short codes that can be used to embed basic form fields, make data easily copyable to the user's clipboard, etc.
 
 ## Basic Form Fields
 
-It may occasionally be useful to allow mappers to provide to challenge managers some additional information as they work through tasks. MapRoulette supports special short codes that offer the ability to embed very basic form fields in Challenge Instructions, which mappers can optionally complete for each task. Responses are included in CSV and GeoJSON [exports](/documentation/exporting-challenge-data/) of the challenge.
+It may occasionally be useful to allow mappers to provide to challenge managers some additional information as they work through tasks. MapRoulette supports special short codes that offer the ability to embed very basic form fields in Challenge Instructions, which mappers can optionally complete for each task. Responses are included in CSV and GeoJSON [exports](/en-US/documentation/exporting-challenge-data/) of the challenge.
 
 ![](/media/basic_template.gif){:width="500"}
 

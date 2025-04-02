@@ -24,5 +24,5 @@ Because many mappers use different editors based on the task at hand, MapRoulett
 ![](/media/editors-1.png){:width="600"}
 
 
-And finally, regardless of your selected editor, you can always use a [keyboard shortcut](/documentation/using-keyboard-shortcuts/) to open a specific editor during task completion.
+And finally, regardless of your selected editor, you can always use a [keyboard shortcut](/en-US/documentation/using-keyboard-shortcuts/) to open a specific editor during task completion.
 

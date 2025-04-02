@@ -62,5 +62,5 @@ If you allow browser geolocation, you can also use 'Near Me' to focus on Challen
 
 > The location filters use the Challenges' bounding boxes to match location. It is not guaranteed that all Challenges in the results list will actually have Tasks within the map extent.
 
-See also [Virtual Challenges](/documentation/editing-virtual-challenges/) for a different way to work on all Tasks within a small geographical area.
+See also [Virtual Challenges](/en-US/documentation/editing-virtual-challenges/) for a different way to work on all Tasks within a small geographical area.
 
