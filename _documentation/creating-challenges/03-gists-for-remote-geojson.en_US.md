@@ -15,5 +15,5 @@ to:
 ```
 https://gist.githubusercontent.com/youruser/abcd123/raw/yourTasks.json
 ```
-* Github caches the latest version of your gist, so you may need to wait 5-10 mins after editing your gist before the cache is updated and the latest raw content is served. If you're planning to [rebuild your challenge tasks](/documentation/rebuilding-challenge-tasks/) from updated data, make sure the latest version is being served before asking MapRoulette to rebuild your challenge.
+* Github caches the latest version of your gist, so you may need to wait 5-10 mins after editing your gist before the cache is updated and the latest raw content is served. If you're planning to [rebuild your challenge tasks](/en-US/documentation/rebuilding-challenge-tasks/) from updated data, make sure the latest version is being served before asking MapRoulette to rebuild your challenge.
 

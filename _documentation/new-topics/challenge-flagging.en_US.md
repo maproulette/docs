@@ -6,7 +6,7 @@ Challenge flagging allows mappers to report any questionable encounters within a
 
 See original post and credits on our blog [here](https://blog.maproulette.org/2023/01/23/introducing-our-flag-report-a-challenge-feature/)!
 
-**Please be aware that Challenge Flagging is one of a set of features that assists mappers with reaching out to challenge owners.  Flagging a challenge may not be necessary, so please review the list of features and our recommendations for [Reporting A Challenge](/documentation/reporting-a-challenge) depeding on your specific needs.**
+**Please be aware that Challenge Flagging is one of a set of features that assists mappers with reaching out to challenge owners.  Flagging a challenge may not be necessary, so please review the list of features and our recommendations for [Reporting A Challenge](/en-US/documentation/reporting-a-challenge) depeding on your specific needs.**
 
 Upon coming across something we want to flag in a challenge, go to the challenge details page that belongs to the challenge, there you will be able to see a flag icon next to the challenge name.
 

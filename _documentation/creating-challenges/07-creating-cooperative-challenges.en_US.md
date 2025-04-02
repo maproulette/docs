@@ -16,9 +16,9 @@ The simplest way to create cooperative challenges is with the [mr-cli](https://w
 
 #### With GeoJSON
 
-Cooperative challenges can also be created by including additional data with each task in the GeoJSON, including an [OSMChange (.osc)](https://wiki.openstreetmap.org/wiki/OsmChange) file that represents the in-progress work that is to be loaded into the mapper's editor for the task. The additional data should be included in a `cooperativeWork` object associated with each task's `FeatureCollection` in the challenge's [line-by-line GeoJSON](/documentation/line-by-line-geojson/) file.
+Cooperative challenges can also be created by including additional data with each task in the GeoJSON, including an [OSMChange (.osc)](https://wiki.openstreetmap.org/wiki/OsmChange) file that represents the in-progress work that is to be loaded into the mapper's editor for the task. The additional data should be included in a `cooperativeWork` object associated with each task's `FeatureCollection` in the challenge's [line-by-line GeoJSON](/en-US/documentation/line-by-line-geojson/) file.
 
-> :warning: Only [line-by-line GeoJSON](/documentation/line-by-line-geojson/) is supported for cooperative challenges. If you use a traditional GeoJSON format, your cooperativeWork section will simply be ignored and you will end up with normal tasks instead of cooperative tasks
+> :warning: Only [line-by-line GeoJSON](/en-US/documentation/line-by-line-geojson/) is supported for cooperative challenges. If you use a traditional GeoJSON format, your cooperativeWork section will simply be ignored and you will end up with normal tasks instead of cooperative tasks
 
 The structure of the `cooperativeWork` object is designed to be flexible to support various options, formats, and encodings in the future, but at the moment only a very specific combination of values is supported.
 
@@ -47,7 +47,7 @@ The following example demonstrates the structure, shown here over multiple lines
 
 The `features` for each task are used for all the usual things by MapRoulette (rendering the task on maps, geographical indexing, task prioritization, searching for tasks by feature properties, etc.) but are _not_ incorporated into editing -- only the osc file is sent to the editor.
 
-### Creating [Tag Fix Challenges](https://learn.maproulette.org/en-US/documentation/tag-fix-challenges)
+### Creating [Tag Fix Challenges](/en-US/documentation/tag-fix-challenges)
 
 If your changes consist purely of tag fixes, an alternative _Tag Fix_ (formerly quick fix) style cooperative challenge can be created instead. MapRoulette will present the proposed tag changes to mappers during task completion and allow them to approve or reject the changes within MapRoulette, as well as modify the tags if needed. Approved changes are submitted directly to OSM by MapRoulette itself, removing the need for external editors.
 

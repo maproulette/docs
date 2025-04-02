@@ -29,7 +29,7 @@ name
 
 If none of those are found on either the feature fields or its properties, then a [random UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)) is generated and assigned as an external identifier.
 
-> Note: if you subsequently edit your challenge and set (or change) which feature field or property to treat as the OSM id, you must [rebuild your tasks](/documentation/rebuilding-challenge-tasks/) for that change to take effect. As mentioned above, you must be very careful to ensure that each feature will have a unique value for the field/property
+> Note: if you subsequently edit your challenge and set (or change) which feature field or property to treat as the OSM id, you must [rebuild your tasks](/en-US/documentation/rebuilding-challenge-tasks/) for that change to take effect. As mentioned above, you must be very careful to ensure that each feature will have a unique value for the field/property
 
 > Note: A Tag Fix consists of one independent (or parent) operation which includes one or more embedded dependent (or child) operations. Any OSM ids referenced in an operation must be of the form of `elementType/numericId`, e.g. `node/123456789`
 

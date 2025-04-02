@@ -9,7 +9,7 @@ To use the Multiple Tasks workflow, you need to add the **Multi-Task Work** Widg
 ![multiple tasks widget](/media/66520790-5ec0b080-ead9-11e9-8f87-3eac0de6ec1d.png){:width="300"}
 
 
-You may want to [create a separate Layout](/documentation/using-layouts/) just for Multi-Task work to further optimize your mapping workflow. Here's an example where you see the Multi-Task Widget and the regular Map Widget side by side. Such a Layout allows you to see the Task you've been assigned, while at the same time having visibility on other Tasks that are close together:
+You may want to [create a separate Layout](/en-US/documentation/using-layouts/) just for Multi-Task work to further optimize your mapping workflow. Here's an example where you see the Multi-Task Widget and the regular Map Widget side by side. Such a Layout allows you to see the Task you've been assigned, while at the same time having visibility on other Tasks that are close together:
 
 ![screenshot of an example multi task layout](/media/66521253-5321b980-eada-11e9-9170-168e4ed4e5f9.png)
 

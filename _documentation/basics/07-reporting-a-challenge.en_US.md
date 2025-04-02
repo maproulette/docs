@@ -24,11 +24,11 @@ If you can't come to an agreement on how to proceed, the next step is to get in 
 
 ### 2. Comment on the Challenge
 
-You can raise awareness of a concern or item for a specific challenge using [Challenge Comments](/documentation/challenge-comments).  This feature not only helps create dialogue with the Challenge owner but all interested mappers wanting to assist.
+You can raise awareness of a concern or item for a specific challenge using [Challenge Comments](/en-US/documentation/challenge-comments).  This feature not only helps create dialogue with the Challenge owner but all interested mappers wanting to assist.
 
 ### 3. Challenge Flagging
 
-If reaching out to the challenge owner is proving unsuccessful, and there is continued concern of a challenge's integrity, please use the [Challenge Flagging](/documentation/challenge-flagging) feature.
+If reaching out to the challenge owner is proving unsuccessful, and there is continued concern of a challenge's integrity, please use the [Challenge Flagging](/en-US/documentation/challenge-flagging) feature.
 
 ### 4. Contact us via email
 
