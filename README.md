@@ -3,8 +3,9 @@
 Documentation site for MapRoulette.org 
 
 If you would like to contribute to this documentation, thank you!
-* If you have a video or article we should link to, feel free to open an issue and we will look at the best way to include it in learn.maproulette.org.
-* If you want to write or translate documentation, please get in touch at maproulette@maproulette.org. 
+* If you want to fix a typo, update something that's out-of-date, or add a page or section on a new topic, please feel free to open a PR. Though if you want to add a new page or make large changes to existing content, you should probably open an issue first to gather feedback on your proposed changes.
+* If you'd like to help translate existing documentation into other languages, have a look at our [guide on how to contribute translations](http://learn.maproulette.org/en-us/documentation/translate-docs/).
+* If you have a video or article we should link to, feel free to open an issue and we will look at the best way to include it.
 
 ## Technical Details
 
