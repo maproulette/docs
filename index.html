@@ -16,5 +16,5 @@ if (!match) match = LOCALES.find(l => (new Intl.Locale(l)).language === locale.l
 // fall back if no match could be found
 if (!match) match = "en-US";
 
-window.location.replace("/" + match);
+window.location.replace("/" + match + "/");
 </script>
