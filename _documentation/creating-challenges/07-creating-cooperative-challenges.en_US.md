@@ -47,7 +47,7 @@ The following example demonstrates the structure, shown here over multiple lines
 
 The `features` for each task are used for all the usual things by MapRoulette (rendering the task on maps, geographical indexing, task prioritization, searching for tasks by feature properties, etc.) but are _not_ incorporated into editing -- only the osc file is sent to the editor.
 
-### Creating [Tag Fix Challenges](https://learn.maproulette.org/en-us/documentation/tag-fix-challenges)
+### Creating [Tag Fix Challenges](https://learn.maproulette.org/en-US/documentation/tag-fix-challenges)
 
 If your changes consist purely of tag fixes, an alternative _Tag Fix_ (formerly quick fix) style cooperative challenge can be created instead. MapRoulette will present the proposed tag changes to mappers during task completion and allow them to approve or reject the changes within MapRoulette, as well as modify the tags if needed. Approved changes are submitted directly to OSM by MapRoulette itself, removing the need for external editors.
 
