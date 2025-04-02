@@ -73,14 +73,16 @@ module Jekyll
         lang = doc.data['lang']
         collection_name = doc.collection.label
         slug = doc.data['slug']
-        doc.data['permalink'] ||= "/#{lang}/#{collection_name}/#{slug}/"
+        if slug != "index" then slug += "/" end
+        doc.data['permalink'] ||= "/#{lang}/#{collection_name}/#{slug}"
       end
 
       site.pages.each do |page|
         if lang = page.data['lang']
           dirname = File.dirname(page.relative_path)
           slug = page.data['slug']
-          page.data['permalink'] ||= "/#{lang}/#{dirname}/#{slug}/"
+          if slug != "index" then slug += "/" end
+          page.data['permalink'] ||= "/#{lang}/#{dirname}/#{slug}"
         end
       end
     end
