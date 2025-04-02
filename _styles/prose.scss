@@ -1,0 +1,57 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  color: #fffd86;
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+pre, code {
+  font-size: 1em;
+}
+
+pre {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
+  padding: 1em;
+}
+
+code {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2px;
+  border-radius: 3px;
+}
+
+pre > code {
+  background: none;
+  padding: initial;
+}
+
+a, a:visited {
+  color: rgb(145, 243, 162);
+}
+
+a:hover {
+  color: white;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+.footnotes {
+  border-top: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+  font-size: small;
+  margin-top: 2em;
+  padding-top: 2em;
+}
+
+.footnotes p {
+  margin: 0.5em 0;
+}

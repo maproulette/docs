@@ -1,7 +1,0 @@
-.button {
-  @apply flex items-center justify-center text-center px-6 py-3 text-sm leading-tight font-medium text-turquoise border-2 border-turquoise rounded-sm transition duration-200;
-
-  &:hover {
-    @apply text-white border-white;
-  }
-}

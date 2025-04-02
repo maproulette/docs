@@ -1,0 +1,32 @@
+<footer>
+  <!--
+  <ul>
+    <li><a href="https://maproulette.org">MapRoulette</a></li>
+    <li><a href="https://blog.maproulette.org">MapRoulette blog</a></li>
+  </ul>
+  -->
+    <a href="https://maproulette.org">MapRoulette</a>
+    <a href="https://blog.maproulette.org">MapRoulette blog</a>
+    <a href="https://github.com/maproulette/docs">Help improve these docs</a>
+    <p>Site last updated: {{ site.time }}</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script> 
+    docsearch({
+        container: '#docsearch',
+        appId: 'ZW90CMRTNS',
+        apiKey: 'b8f0ee7c47e37d93bbcf70da9922055d',
+        indexName: 'maproulette',
+        algoliaOptions: { 
+            facetFilters: [
+                ['tags:documentation', 'tags:screencasts']
+                // translate as (tags:documentation OR tags:screencasts) ...
+            ] 
+        },
+        autocompleteOptions: {
+            focusShortcuts: ['/'],
+        },
+        debug: false, // Set debug to true if you want to inspect the dropdown
+    });
+</script>

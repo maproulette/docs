@@ -1,0 +1,32 @@
+---
+permalink: 404.html
+layout: default
+---
+
+<style>
+  main {
+    margin: 0 auto;
+    text-align: center;
+    grid-column: full;
+  }
+  h1 {
+    font-size: 4em;
+    margin-bottom: 0;
+  }
+  p {
+    margin: 0;
+  }
+</style>
+
+<main id="content">
+  <h1>404</h1>
+  <p>The requested page could not be found</p>
+</main>
+
+<script type="module">
+// URLs on the old site started with /en-us/ which isn't a valid locale;
+// we'll redirect these to the correct /en-US/ so that old links don't break.
+if (window.location.pathname.startsWith("/en-us/")) {
+  window.location.replace(window.location.pathname.replace("/en-us/", "/en-US/"));
+}
+</script>

@@ -1,9 +1,411 @@
 [main]
 host = https://www.transifex.com
 
-[o:maproulette:p:mr-docs:r:en-US-json]
-file_filter  = src/translations/<lang>.json
-source_file  = src/translations/en-us.json
-source_lang  = en
-type         = KEYVALUEJSON
-minimum_perc = 10
+[o:maproulette:p:mr-docs:r:documentation_bulk-editing-challenges]
+file_filter            = _documentation/new-topics/bulk-editing-challenges.<lang>.md
+source_file            = _documentation/new-topics/bulk-editing-challenges.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_challenge-comments]
+file_filter            = _documentation/new-topics/challenge-comments.<lang>.md
+source_file            = _documentation/new-topics/challenge-comments.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_challenge-flagging]
+file_filter            = _documentation/new-topics/challenge-flagging.<lang>.md
+source_file            = _documentation/new-topics/challenge-flagging.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_challenge-instructions-templating]
+file_filter            = _documentation/creating-challenges/09-challenge-instructions-templating.<lang>.md
+source_file            = _documentation/creating-challenges/09-challenge-instructions-templating.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_challenge-visibility-and-discovery]
+file_filter            = _documentation/creating-challenges/04-challenge-visibility-and-discovery.<lang>.md
+source_file            = _documentation/creating-challenges/04-challenge-visibility-and-discovery.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_comment-short-codes]
+file_filter            = _documentation/advanced/06-comment-short-codes.<lang>.md
+source_file            = _documentation/advanced/06-comment-short-codes.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_creating-a-challenge]
+file_filter            = _documentation/creating-challenges/01-creating-a-challenge.<lang>.md
+source_file            = _documentation/creating-challenges/01-creating-a-challenge.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_creating-cooperative-challenges]
+file_filter            = _documentation/creating-challenges/07-creating-cooperative-challenges.<lang>.md
+source_file            = _documentation/creating-challenges/07-creating-cooperative-challenges.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_defining-task-sourced-date]
+file_filter            = _documentation/creating-challenges/10-defining-task-sourced-date.<lang>.md
+source_file            = _documentation/creating-challenges/10-defining-task-sourced-date.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_discovering-challenges]
+file_filter            = _documentation/basics/01-discovering-challenges.<lang>.md
+source_file            = _documentation/basics/01-discovering-challenges.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_editing-virtual-challenges]
+file_filter            = _documentation/advanced/01-editing-virtual-challenges.<lang>.md
+source_file            = _documentation/advanced/01-editing-virtual-challenges.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_exporting-challenge-data]
+file_filter            = _documentation/creating-challenges/17-exporting-challenge-data.<lang>.md
+source_file            = _documentation/creating-challenges/17-exporting-challenge-data.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_filtering-the-task-list-by-properties]
+file_filter            = _documentation/creating-challenges/11-filtering-the-task-list-by-properties.<lang>.md
+source_file            = _documentation/creating-challenges/11-filtering-the-task-list-by-properties.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_following]
+file_filter            = _documentation/teams/02-following.<lang>.md
+source_file            = _documentation/teams/02-following.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_gists-for-remote-geojson]
+file_filter            = _documentation/creating-challenges/03-gists-for-remote-geojson.<lang>.md
+source_file            = _documentation/creating-challenges/03-gists-for-remote-geojson.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_line-by-line-geojson]
+file_filter            = _documentation/creating-challenges/15-line-by-line-geojson.<lang>.md
+source_file            = _documentation/creating-challenges/15-line-by-line-geojson.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_map-layer-management]
+file_filter            = _documentation/server-admin/map-layer-management.<lang>.md
+source_file            = _documentation/server-admin/map-layer-management.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_markdown]
+file_filter            = _documentation/basics/04-markdown.<lang>.md
+source_file            = _documentation/basics/04-markdown.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_mustache-tag-replacement]
+file_filter            = _documentation/creating-challenges/08-mustache-tag-replacement.<lang>.md
+source_file            = _documentation/creating-challenges/08-mustache-tag-replacement.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_notifications-and-email]
+file_filter            = _documentation/basics/03-notifications-and-email.<lang>.md
+source_file            = _documentation/basics/03-notifications-and-email.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_point-scoring]
+file_filter            = _documentation/basics/06-point-scoring.<lang>.md
+source_file            = _documentation/basics/06-point-scoring.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_projects-and-project-managers]
+file_filter            = _documentation/teams/03-projects-and-project-managers.<lang>.md
+source_file            = _documentation/teams/03-projects-and-project-managers.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_rapid-editor]
+file_filter            = _documentation/new-topics/rapid-editor.<lang>.md
+source_file            = _documentation/new-topics/rapid-editor.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_rebuilding-challenge-tasks]
+file_filter            = _documentation/creating-challenges/14-rebuilding-challenge-tasks.<lang>.md
+source_file            = _documentation/creating-challenges/14-rebuilding-challenge-tasks.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_reporting-a-challenge]
+file_filter            = _documentation/basics/07-reporting-a-challenge.<lang>.md
+source_file            = _documentation/basics/07-reporting-a-challenge.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_reviewing]
+file_filter            = _documentation/teams/05-reviewing.<lang>.md
+source_file            = _documentation/teams/05-reviewing.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_searchbox-short-commands]
+file_filter            = _documentation/advanced/07-searchbox-short-commands.<lang>.md
+source_file            = _documentation/advanced/07-searchbox-short-commands.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_setting-basemap-for-challenge]
+file_filter            = _documentation/creating-challenges/05-setting-basemap-for-challenge.<lang>.md
+source_file            = _documentation/creating-challenges/05-setting-basemap-for-challenge.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_setting-external-task-identifiers]
+file_filter            = _documentation/creating-challenges/12-setting-external-task-identifiers.<lang>.md
+source_file            = _documentation/creating-challenges/12-setting-external-task-identifiers.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_setting-your-default-osm-editor]
+file_filter            = _documentation/basics/02-setting-your-default-osm-editor.<lang>.md
+source_file            = _documentation/basics/02-setting-your-default-osm-editor.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_setting-your-map-base-layer]
+file_filter            = _documentation/basics/05-setting-your-map-base-layer.<lang>.md
+source_file            = _documentation/basics/05-setting-your-map-base-layer.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_solving-multiple-tasks-together]
+file_filter            = _documentation/advanced/05-solving-multiple-tasks-together.<lang>.md
+source_file            = _documentation/advanced/05-solving-multiple-tasks-together.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_styling-task-features]
+file_filter            = _documentation/creating-challenges/06-styling-task-features.<lang>.md
+source_file            = _documentation/creating-challenges/06-styling-task-features.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_system-notice-management]
+file_filter            = _documentation/server-admin/system-notice-management.<lang>.md
+source_file            = _documentation/server-admin/system-notice-management.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_tag-fix-challenges]
+file_filter            = _documentation/basics/08-tag-fix-challenges.<lang>.md
+source_file            = _documentation/basics/08-tag-fix-challenges.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_task-attachments]
+file_filter            = _documentation/creating-challenges/16-task-attachments.<lang>.md
+source_file            = _documentation/creating-challenges/16-task-attachments.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_task-priority-rules]
+file_filter            = _documentation/creating-challenges/13-task-priority-rules.<lang>.md
+source_file            = _documentation/creating-challenges/13-task-priority-rules.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_teams]
+file_filter            = _documentation/teams/01-teams.<lang>.md
+source_file            = _documentation/teams/01-teams.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_translate-docs]
+file_filter            = _documentation/new-topics/translate-docs.<lang>.md
+source_file            = _documentation/new-topics/translate-docs.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_using-keyboard-shortcuts]
+file_filter            = _documentation/advanced/02-using-keyboard-shortcuts.<lang>.md
+source_file            = _documentation/advanced/02-using-keyboard-shortcuts.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_using-layouts]
+file_filter            = _documentation/advanced/03-using-layouts.<lang>.md
+source_file            = _documentation/advanced/03-using-layouts.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_using-mapillary-images]
+file_filter            = _documentation/advanced/04-using-mapillary-images.<lang>.md
+source_file            = _documentation/advanced/04-using-mapillary-images.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_using-maproulette-tags]
+file_filter            = _documentation/teams/06-using-maproulette-tags.<lang>.md
+source_file            = _documentation/teams/06-using-maproulette-tags.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_using-overpass-to-create-challenges]
+file_filter            = _documentation/creating-challenges/02-using-overpass-to-create-challenges.<lang>.md
+source_file            = _documentation/creating-challenges/02-using-overpass-to-create-challenges.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_virtual-projects]
+file_filter            = _documentation/teams/04-virtual-projects.<lang>.md
+source_file            = _documentation/teams/04-virtual-projects.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_your-dashboard]
+file_filter            = _documentation/new-topics/your-dashboard.<lang>.md
+source_file            = _documentation/new-topics/your-dashboard.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:index]
+file_filter            = index.<lang>.md
+source_file            = index.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:screencasts_connect-2020-5-min-lightning-talk]
+file_filter            = _screencasts/03-connect-2020-5-min-lightning-talk.<lang>.md
+source_file            = _screencasts/03-connect-2020-5-min-lightning-talk.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:screencasts_create-a-challenge-with-geojson-data]
+file_filter            = _screencasts/00-create-a-challenge-with-geojson-data.<lang>.md
+source_file            = _screencasts/00-create-a-challenge-with-geojson-data.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:screencasts_create-a-challenge-with-overpass]
+file_filter            = _screencasts/01-create-a-challenge-with-overpass.<lang>.md
+source_file            = _screencasts/01-create-a-challenge-with-overpass.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:screencasts_maproulette-workshop-at-state-of-the-map-africa-november-2021-1]
+file_filter            = _screencasts/04-maproulette-workshop-at-state-of-the-map-africa-november-2021-1.<lang>.md
+source_file            = _screencasts/04-maproulette-workshop-at-state-of-the-map-africa-november-2021-1.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+

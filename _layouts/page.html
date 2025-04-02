@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<nav>
+  <ul>
+    {% for section in site.sections %}
+    <li>
+    {% assign key = "section." | append: section %}
+    {% assign name = site.data.translations[page.lang][key] | default: site.data.translations["en-US"][key] %}
+    <h3>{{ name }}</h3>
+    <ul>
+      {% assign docs = site.documentation | where: "section", section | where: "lang", page.lang | sort: "order" %}
+      {% for page in docs %}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+      {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+    
+    <h3>For Developers</h3>
+    <ul>
+      <li><a rel="external" href="https://github.com/maproulette/maproulette3/blob/main/DEVELOPMENT.md">Setting up the Frontend</a></li>
+      <li><a rel="external" href="https://github.com/maproulette/maproulette-backend/blob/main/README.md">Setting up the Backend</a></li>
+      <li><a rel="external" href="https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none">HTTP API documentation</a></li>
+      <li><a rel="external" href="https://github.com/osmlab/maproulette-java-client">Java client</a></li>
+      <li><a rel="external" href="https://github.com/osmlab/maproulette-python-client">Python client</a></li>
+    </ul>
+    
+    <h3>Screencasts</h3>
+    <ul>
+      {% assign screencasts = site.screencasts | where: "lang", page.lang | sort: "slug" %}
+      {% for page in screencasts %}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+      {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<main id="#content">
+{% if page.title %}
+  <h1>{{ page.title }}</h1>
+{% endif %}
+
+{{ content }}
+</main>

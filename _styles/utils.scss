@@ -1,0 +1,28 @@
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+a.sr-only[href="#content"] {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+a[rel="external"]::after {
+  display: inline-block;
+  content: "";
+  height: 1em;
+  width: 1em;
+  background-color: currentcolor;
+  mask-image: url(/assets/icons/external.svg);
+  mask-size: contain;
+  transform: translateY(0.125em);
+  margin-left: 0.5ch;
+}

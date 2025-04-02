@@ -3,60 +3,19 @@
 Documentation site for MapRoulette.org 
 
 If you would like to contribute to this documentation, thank you!
-* If you have a video or article we should link to, feel free to open an issue and we will look at the best way to include it in learn.maproulette.org.
-* If you want to write or translate documentation, please get in touch at maproulette@maproulette.org. 
+* If you want to fix a typo, update something that's out-of-date, or add a page or section on a new topic, please feel free to open a PR. Though if you want to add a new page or make large changes to existing content, you should probably open an issue first to gather feedback on your proposed changes.
+* If you'd like to help translate existing documentation into other languages, have a look at our [guide on how to contribute translations](http://learn.maproulette.org/en-us/documentation/translate-docs/).
+* If you have a video or article we should link to, feel free to open an issue and we will look at the best way to include it.
 
 ## Technical Details
 
-This is based on [Eleventy Starter](https://github.com/eastslopestudio/eleventy-starter).
+This site is built using [Jekyll](https://jekyllrb.com/).
 
-This site is hosted on Netlify.
+To build the website and preview it locally, you'll need to:
+1. Install a recent Ruby version (tested on Ruby 3.4.1)
+2. Run `gem install bundler` to install Bundler (a dependency manager for Ruby)
+3. Run `bundle install` to install Jekyll and a few other dependencies (listed in the Gemfile)
+4. Run `bundle exec jekyll serve` to build and start the website.
+5. Go to http://localhost:4000 in your browser to view the site.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/57d02f79-250b-4b4b-aabc-8a099ad22202/deploy-status)](https://app.netlify.com/sites/learn-maproulette/deploys)
-
----
-
-## Prerequisites
-
-- [Node and NPM](https://nodejs.org/)
-- [Netlify CLI](https://www.npmjs.com/package/netlify-cli) _optional_
-
-## Running locally
-
-```bash
-# install the project dependencies
-npm install
-
-# run the build and server locally
-npm run start
-
-# run the production build
-npm run build
-
-# run netlify cms proxy server (for local CMS access)
-npx netlify-cms-proxy-server
-```
-
-## Netlify Dev
-
-```bash
-# Install the Netlify CLI globally
-npm install -g netlify-cli
-netlify dev
-```
-
-Serverless functions are located in `src/functions`
-
-A serverless functions pipeline is included via Netlify Dev. By running `netlify dev` you'll be able to execute any of your serverless functions directly like this:
-
-- /.netlify/functions/hello
-
-### Redirects and proxies
-
-Netlify's Redirects API can provide friendlier URLs as proxies to these URLs.
-
-- /api/hello
-
-### Troubleshooting
-
-If you run into any strange errors or problems, this [Troubleshooting](TROUBLESHOOT.md) doc may assist you.
+After this, if you add or make edits to markdown files, HTML templates, etc, Jekyll will rebuild the site automatically, and you'll see the changes once you refresh the page in your browser. If you make changes to `_config.yaml` or any code in the `_plugins` directory, you'll need to restart Jekyll for the changes to take effect.

@@ -1,0 +1,43 @@
+title: MapRoulette Docs
+
+sass:
+  load_paths:
+    - _styles/
+
+collections:
+  documentation:
+    output: true
+  screencasts:
+    output: true
+
+
+# list of enabled (translated) locales
+locales:
+  - en-US
+  # - de-DE
+  # - es
+  # - fr-FR
+  # - nl
+  # - pt-PT
+  # - ru
+
+# specifies the order of sections in the sidebar. each entry should match the
+# name of a directory in _docs
+sections:
+  - new-topics
+  - basics
+  - advanced
+  - creating-challenges
+  - teams
+  - server-admin
+          
+defaults:
+  - scope: { path: "" } # empty string matches all files in the project
+    values:
+      layout: "page"
+
+exclude:
+  - CODE_OF_CONDUCT.md
+  - LICENSE.md
+  - README.md
+  - mise.toml
