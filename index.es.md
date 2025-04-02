@@ -1,5 +1,4 @@
 ---
-title: Documentation
 ---
 
 ¡Te damos la bienvenida al sitio de documentación y aprendizaje de MapRoulette!
