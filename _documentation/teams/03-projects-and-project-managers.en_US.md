@@ -10,7 +10,7 @@ Here, the creator of a project can designate other users or teams to manage the 
 
 ## Adding a user or team
 
-Simply use the search box to find a user by their OpenStreetMap username.  You can also assign a team.  More about teams [here](documentation/teams/)
+Simply use the search box to find a user by their OpenStreetMap username.  You can also assign a team.  More about teams [here](/en-US/documentation/teams/)
 
 ## Assigning a user privileges
 
