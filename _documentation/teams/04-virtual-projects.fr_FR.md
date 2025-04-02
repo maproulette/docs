@@ -1,6 +1,5 @@
 ---
 title: Projets Virtuels
-slug: projets-virtuels
 ---
 
 Les Projets Virtuels sont un outil flexible permettant d’organiser différents challenge dans un groupe sans avoir besoin de séparer les challenges de leur projet. Bien qu'un challenge ne puisse dépendre que d'un seul projet standard, il peut être membre de plusieurs projets virtuels. N'importe qui peut créer des projets virtuels et y ajouter n'importe quel challenge publique ou dont il a un accès en lecture (depuis les permissions du projet standard du challenge). Les administrateurs d'un projet virtuel peuvent ajouter d'autres membres à leur projet virtuel, et leur donner des accès de Lecture,  Écriture ou d'Administration.

@@ -1,6 +1,5 @@
 ---
 title: Modification des défis en masse
-slug: modification-des-defis-en-masse
 ---
 
 Les propriétaires de projets peuvent désormais **éditer en bloc** des défis au sein d'un même projet. Bien que cette fonctionnalité ne soit pas aussi robuste que l'édition de chaque défi individuellement, il y a quelques champs qui vous permettent d'éditer plusieurs défis pour des raisons de confort personnel.

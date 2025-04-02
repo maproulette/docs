@@ -12,7 +12,6 @@ Simply go to a project admin page.  In the challenges widget, select the graph i
 
 ![](/media/bulk-edit-1.png){:width="500"}
 
-
 You can also choose to "select-all" by clicking the graph icon at the top of the list.
 
 ## Bulk Edit Page
@@ -21,7 +20,6 @@ Next, select the gear icon on the top right and select "Edit Selected"
 
 ![](/media/bulk-edit-2.png){:width="500"}
 
-
 You'll be directed to the bulk edit page.
 
 ## Remove a challenge from Bulk Edit
@@ -29,7 +27,6 @@ You'll be directed to the bulk edit page.
 You should see a list of the challenges you will be editing simultaneously.  If you change your mind on any of the challenges, but don't want to go back and re-select them, you can click the "X" symbol to the right of the challenge name.
 
 ![](/media/bulk-edit-3.png){:width="700"}
-
 
 ## Bulk Editing Guidelines
 
