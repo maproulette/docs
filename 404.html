@@ -28,5 +28,8 @@ layout: default
 // we'll redirect these to the correct /en-US/ so that old links don't break.
 if (window.location.pathname.startsWith("/en-us/")) {
   window.location.replace(window.location.pathname.replace("/en-us/", "/en-US/"));
+} else if (window.location.pathname.startsWith("/documentation/")
+  || window.location.pathname.startsWith("/screencasts/")) {
+  window.location.replace('/en-US' + window.location.pathname);
 }
 </script>
