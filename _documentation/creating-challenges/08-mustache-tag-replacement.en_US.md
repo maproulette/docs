@@ -13,26 +13,26 @@ To reference a property, surround its name with double curly braces or "mustache
 ## Workspace Properties
 Some workspaces, notably Task Completion, make additional properties available for substitution that are specific to the workspace state rather than the task itself. These "workspace" properties always begin with a hash (`#`), e.g. `#mapZoom`, to avoid confusion with task feature properties. Workspace properties are always case-sensitive. The following workspace properties may be available (as with task feature properties, mustache tags referencing missing workspace properties will be replaced with empty text):
 
-`{{ #mapBBox }}`: a WSEN comma-separated bounding box of the current map bounds
+`{{#mapBBox}}`: a WSEN comma-separated bounding box of the current map bounds
 
-`{{ #mapWest }}`: the longitude of the west side of the current map bounds
+`{{#mapWest}}`: the longitude of the west side of the current map bounds
 
-`{{ #mapSouth }}`: the latitude of the south side of the current map bounds
+`{{#mapSouth}}`: the latitude of the south side of the current map bounds
 
-`{{ #mapEast }}`: the longitude of the east side of the current map bounds
+`{{#mapEast}}`: the longitude of the east side of the current map bounds
 
-`{{ #mapNorth }}`: the latitude of the north side of the current map bounds
+`{{#mapNorth}}`: the latitude of the north side of the current map bounds
 
-`{{ #mapZoom }}`: the current zoom of the map
+`{{#mapZoom}}`: the current zoom of the map
 
-`{{ #mapLat }}`: The latitude of the map’s current centerpoint
+`{{#mapLat}}`: The latitude of the map’s current centerpoint
 
-`{{ #mapLon }}`: The longitude of the map’s current centerpoint
+`{{#mapLon}}`: The longitude of the map’s current centerpoint
 
-`{{ #osmType }}`: The type (node/way/relation) of the current task feature if it can be determined
+`{{#osmType}}`: The type (node/way/relation) of the current task feature if it can be determined
 
-`{{ #osmId }}`: The numerical OSM id of the current task feature if it can be determined
+`{{#osmId}}`: The numerical OSM id of the current task feature if it can be determined
 
-`{{ #mrTaskId }}`: the internal MapRoulette id of the current task (not the OSM id)
+`{{#mrTaskId}}`: the internal MapRoulette id of the current task (not the OSM id)
 
 {% endraw %}
