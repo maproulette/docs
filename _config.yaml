@@ -11,15 +11,6 @@ collections:
     output: true
 
 
-# list of enabled (translated) locales
-locales:
-  - en-US
-  # - de-DE
-  # - es
-  # - fr-FR
-  # - nl
-  # - pt-PT
-  # - ru
 
 # Order of the sidebar sections. Each entry must match a directory name under
 # _documentation/.
@@ -33,7 +24,6 @@ sections:
   - teams
   - advanced
   - server-admin
-  - contributing
 
 # Sections pinned below the Screencasts and For Developers lists, for reference
 # material rather than instructions.

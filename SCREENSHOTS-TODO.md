@@ -41,6 +41,6 @@ the feature used to work — and should only change if the feature returns.
 
 ## Elsewhere
 
-- `index.en_US.md` (the landing page) still uses `welcome-index.png`, which
+- `index.md` (the landing page) still uses `welcome-index.png`, which
   shows the previous interface. Replace with a shot of the current Explore
   Challenges page.

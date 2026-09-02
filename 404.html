@@ -23,16 +23,15 @@ layout: default
 <main id="content">
   <h1>404</h1>
   <p>The requested page could not be found</p>
-  <p><a href="/en-US/">Browse the documentation</a></p>
+  <p><a href="/">Browse the documentation</a></p>
 </main>
 
 <script type="module">
-// URLs on the old site started with /en-us/ which isn't a valid locale;
-// we'll redirect these to the correct /en-US/ so that old links don't break.
-if (window.location.pathname.startsWith("/en-us/")) {
-  window.location.replace(window.location.pathname.replace("/en-us/", "/en-US/"));
-} else if (window.location.pathname.startsWith("/documentation/")
-  || window.location.pathname.startsWith("/screencasts/")) {
-  window.location.replace('/en-US' + window.location.pathname);
+// The site used to live under a locale segment, e.g. /en-US/documentation/page/
+// (and older links used the invalid /en-us/). Send those to the flat URL so
+// existing links and bookmarks keep working.
+const match = window.location.pathname.match(/^\/en-[Uu][Ss](\/.*)?$/);
+if (match) {
+  window.location.replace((match[1] || "/") + window.location.hash);
 }
 </script>

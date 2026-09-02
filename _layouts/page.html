@@ -14,7 +14,7 @@ whole group of pages silently vanish from the sidebar.
 {% if site.appendix_sections %}
   {% assign ordered_sections = ordered_sections | concat: site.appendix_sections %}
 {% endif %}
-{% assign present_sections = site.documentation | where: "lang", page.lang | map: "section" | uniq | sort %}
+{% assign present_sections = site.documentation | map: "section" | uniq | sort %}
 
 <nav aria-label="Documentation">
   <details class="nav-toggle" open>
@@ -31,7 +31,7 @@ whole group of pages silently vanish from the sidebar.
         {% endunless %}
       {% endfor %}
 
-      {% assign screencasts = site.screencasts | where: "lang", page.lang | sort: "slug" %}
+      {% assign screencasts = site.screencasts | sort: "slug" %}
       {% if screencasts.size > 0 %}
         <li>
           <h3>Screencasts</h3>

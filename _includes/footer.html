@@ -5,7 +5,6 @@
   <p>Site last updated: {{ site.time | date: "%Y-%m-%d" }}</p>
 </footer>
 
-{%- assign lang = page.lang | default: "en-US" -%}
 <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0"></script>
 <script>
     const INDEX_NAME = 'maproulette';
@@ -14,10 +13,9 @@
     // in _config.yaml. Titles and section names come from the pages themselves.
     const RECOMMENDED = [
     {%- for slug in site.recommended_pages -%}
-      {%- assign doc = site.documentation | where: "lang", lang | where: "slug", slug | first -%}
+      {%- assign doc = site.documentation | where: "slug", slug | first -%}
       {%- if doc -%}
-        {%- assign key = "section." | append: doc.section -%}
-        {%- assign section = site.data.translations[lang][key] | default: site.data.translations["en-US"][key] -%}
+        {%- assign section = site.data.sections[doc.section] | default: doc.section -%}
       { url: {{ doc.url | jsonify }}, title: {{ doc.title | jsonify }}, section: {{ section | jsonify }} },
       {%- endif -%}
     {%- endfor %}
