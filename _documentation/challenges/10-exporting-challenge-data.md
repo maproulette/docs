@@ -14,11 +14,3 @@ Among other things the export carries each task's
 [MR Tags](/documentation/using-maproulette-tags/), which is what makes
 asking mappers for tags worthwhile in the first place.
 
-> Per-challenge exports, GeoJSON exports and the per-export timezone selector
-> are not part of the current frontend. Timestamps in the CSV are in UTC. For
-> anything more specific, the [HTTP
-> API](https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none)
-> exposes the same task data — as do the
-> [Python](https://github.com/osmlab/maproulette-python-client) and
-> [Java](https://github.com/osmlab/maproulette-java-client) clients.
-{: .legacy}

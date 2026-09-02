@@ -6,14 +6,6 @@ When possible, MapRoulette will assign your tasks unique external identifiers ba
 
 > Note: id fields in MapRoulette must always be represented as strings in GeoJSON, even if they are purely numerical
 
-> Naming the field explicitly is not possible from the current challenge form
-> — the "OSM/External Id Property" setting is absent, so MapRoulette relies on
-> the automatic detection described below. The setting still exists on the
-> challenge itself and can be set through the [HTTP
-> API](https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none)
-> if you need it.
-{: .legacy}
-
 Historically the field or property to be used for this purpose was chosen
 during challenge creation, on the "OSM/External Id Property" setting.
 

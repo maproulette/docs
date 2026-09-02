@@ -59,7 +59,3 @@ reviews it, and once **Approved** it becomes selectable in the
 that team. Images awaiting review show as **Awaiting review**, and can be
 withdrawn by whoever requested them or by a team admin.
 
-> Adding a team to a project — so that project permissions flow to every team
-> member — is not available in the current frontend. See [Projects and Project
-> Managers](/documentation/projects-and-project-managers/).
-{: .legacy}

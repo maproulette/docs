@@ -74,7 +74,8 @@ Yet** and into the sections they belong to, and their notices are gone:
 | Templating in Challenge Instructions | Challenges |
 | System-Notice Management | Server Admin |
 
-Two remain under **Not Implemented Yet**: Tag Fix Challenges and Following.
+Following has since joined them in the Teams section, leaving one page under
+**Not Implemented Yet**: Tag Fix Challenges.
 
 ## Translations were removed
 
@@ -92,6 +93,6 @@ frontend, and anything that no longer matched was either corrected or marked.
 
 Where MapRoulette 3 did something MapRoulette 4 does not, the page now says so
 in a highlighted note rather than quietly describing behaviour you cannot find.
-There are 19 such notes across the site. If you want the whole picture in one
+There are a dozen or so such notes across the site. If you want the whole picture in one
 place instead of page by page, see [Moving from MapRoulette 3 to MapRoulette
 4](/documentation/maproulette-3-to-4/).

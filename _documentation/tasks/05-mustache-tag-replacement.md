@@ -26,13 +26,6 @@ mustache tag is left in place as literal text.
 
 ## Workspace Properties
 
-> Workspace properties — the `#`-prefixed tags below, such as `{{#mapZoom}}` —
-> are not substituted by the current MapRoulette frontend, and neither is the
-> Custom URLs widget they were most often used with. They are documented here
-> for reference. Only task feature properties are substituted today, and only
-> in challenge instructions.
-{: .legacy}
-
 Some workspaces made additional properties available for substitution that were
 specific to the workspace state rather than the task itself. These "workspace"
 properties always begin with a hash (`#`), e.g. `#mapZoom`, to avoid confusion

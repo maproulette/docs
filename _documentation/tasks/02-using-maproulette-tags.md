@@ -51,9 +51,3 @@ A challenge can also be set to accept *only* its preferred tags. When it is,
 anything you type that isn't in the challenge's list is refused, so the tags
 that come back in the export stay consistent.
 
-> Preferred MR Tags and the tag restriction are properties of the challenge,
-> but they cannot be set from the current challenge form — it has no MR Tag
-> fields. Challenges that already carry them are honoured, and they can be set
-> through the [HTTP
-> API](https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none).
-{: .legacy}

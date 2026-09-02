@@ -52,8 +52,3 @@ address you enter is valid and yours. Some management actions require an email
 address to be set, so MapRoulette will prompt you for one if you own challenges
 without having set it.
 
-> Per-notification-type email preferences — ignore / receive without email /
-> email immediately / daily digest — are not yet part of the rebuilt settings
-> screen. Until they return, the Notifications tab holds only the address
-> itself.
-{: .legacy}

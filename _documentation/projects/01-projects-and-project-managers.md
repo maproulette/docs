@@ -40,13 +40,6 @@ the ability to add and remove other managers and change their privileges.
 A project always requires at least one Admin, so an admin can only be demoted
 or removed once another user holds the Admin role.
 
-> Adding and removing project managers is not available in the current
-> MapRoulette frontend — there is no Project Managers panel on the project
-> page, and teams cannot be granted project roles. The roles themselves still
-> govern what you can do, and can be granted through the [HTTP
-> API](https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none).
-{: .legacy}
-
 ## Tips
 
 - **Define scope early.** Use a stable naming pattern (region, theme, version)

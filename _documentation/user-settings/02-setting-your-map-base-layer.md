@@ -41,9 +41,13 @@ of its own](/documentation/setting-basemap-for-challenge/), which takes
 precedence. If neither is set, the map opens on whichever layer you last picked
 with the **Map style** control.
 
-> Choosing arbitrary layers from the OSM [editor layer
-> index](https://github.com/osmlab/editor-layer-index), adding your own custom
-> XYZ or WMS layer from within the map, and the Mapillary / KartaView / OSM
-> data overlays are all absent from the current frontend. The base layers
-> listed above are the full set.
-{: .legacy}
+## Adding your own layer
+
+The **Map style** control also offers **Add your own layer**, for imagery
+MapRoulette doesn't bundle. Choose **XYZ tiles** and give a tile template like
+`https://example.org/tile/{z}/{x}/{y}.png`, or choose **WMS** and give the
+endpoint URL plus the layer names to request.
+
+Layers you add are stored in your browser, so they follow you between
+challenges but not between devices, and nobody else sees them. Remove one with
+the bin icon beside it in the list.

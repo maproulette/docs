@@ -22,11 +22,6 @@ them that they've been mentioned in a comment. Depending on their notification
 settings, they may also receive an email notification, or the notification may
 be ignored completely.
 
-> Mentions match usernames made of letters, digits, underscores and hyphens.
-> The older bracketed form for names with spaces or punctuation —
-> `[@example user]` — is no longer recognised.
-{: .legacy}
-
 ## Reference OSM elements and map viewports
 
 > The bracketed short-codes below — `[n123456789]` for an OSM node, way or

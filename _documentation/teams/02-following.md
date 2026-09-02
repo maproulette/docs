@@ -2,11 +2,6 @@
 title: Following other Users
 ---
 
-> Following is not available in the current MapRoulette frontend. There is no
-> Follow widget, no combined activity timeline, and no **Allow Following**
-> setting. This page describes how following worked, for reference.
-{: .legacy}
-
 MapRoulette supported basic Following capability whereby users could follow
 other users to easily keep abreast of their MapRoulette activity. While all
 MapRoulette activity is public, the activity of users you followed was pulled
@@ -37,3 +32,9 @@ No in their User Settings.
   recent contributions.
 - [Teams](/documentation/teams/) are the supported way to group mappers
   who are working together.
+
+> The combined activity timeline of everyone you follow is not part of the
+> current frontend. Follow relationships, the follower and following lists, and
+> the **Allow other mappers to follow me** setting all work; what is missing is
+> the single feed of their recent activity.
+{: .legacy}
