@@ -2,6 +2,13 @@
 title: Tag Fix Challenges
 ---
 
+> The Tag Fix completion workflow is not available in the current MapRoulette
+> frontend. Tag Fix challenges are recognised — the challenge page badges them
+> **Tag Fix** — but the proposed tag change is not presented for approval, and
+> tasks are completed like ordinary ones. This page describes how the workflow
+> works when it is available.
+{: .legacy}
+
 [Learn about creating tag fix challenges](/en-US/documentation/creating-cooperative-challenges/#creating-tag-fix-challenges)
 
 MapRoulette serves you quick tasks that make it easy for you anyone to find something meaningful to map. The way that worked until now required loading the data related to the Task into JOSM or iD, fixing it there, and returning to MapRoulette to say you fixed it, and then move on.
@@ -20,8 +27,6 @@ However, this restaurant does not have `drive_through=yes` in OSM. A simple fix 
 As an example, I created a [Tag Fix Challenge](https://maproulette.org/browse/challenges/9411) to add the `drive_through=yes` tag to Wendy’s restaurants that have drive-through lanes but are not tagged as such in OSM yet. When you go to the Challenge and get your first Task, you will see a screen much like this one:
 
 ![](/media/tagfix2.png)
-
-*I changed the layout for my MapRoulette Task screen to see the most relevant information. [You can do this too]().*
 
 At the top is the suggested change to OSM tags. By default you only see what will be changed. In this case there is a blue ➕ indicating that a new tag is proposed. You have the option to see all tags as well.
 

@@ -2,16 +2,41 @@
 title: Mustache Tag Replacement
 ---
 
-MapRoulette makes it easy to embed the value of task feature properties (or workspace properties) in allowed places, such as challenge instructions or the Custom URLs widget, using Mustache template syntax.
+MapRoulette makes it easy to embed the value of task feature properties in
+challenge instructions, using Mustache template syntax.
 
 {% raw %}
 
-To reference a property, surround its name with double curly braces or "mustaches" (`{{` and `}}`). Any task feature property can be referenced in a mustache tag by the property name, e.g. `{{highway}}` to display the value of the `highway` property. If the property doesn't exist on the task, then the mustache tag will be replaced with empty text.
+To reference a property, surround its name with double curly braces or
+"mustaches" (`{{` and `}}`). Any task feature property can be referenced in a
+mustache tag by the property name, e.g. `{{highway}}` to display the value of
+the `highway` property.
 
-> Note: when working with Markdown content (such as challenge instructions), the mustache tags get replaced *before* the final content is interpreted as Markdown. That means, for example, that feature property values will be interpreted as Markdown, allowing things like URLs to be converted into clickable links. If you instead wish to see the raw property value, you can surround the whole mustache tag (including the curly braces of the "mustache" itself) with single backticks
+Properties are merged across all of the task's features, so a property found on
+any of them can be referenced. If the property doesn't exist on the task, the
+mustache tag is left in place as literal text.
+
+> Note: when working with Markdown content (such as challenge instructions),
+> the mustache tags get replaced *before* the final content is interpreted as
+> Markdown. That means, for example, that feature property values will be
+> interpreted as Markdown, allowing things like URLs to be converted into
+> clickable links. If you instead wish to see the raw property value, you can
+> surround the whole mustache tag (including the curly braces of the "mustache"
+> itself) with single backticks
 
 ## Workspace Properties
-Some workspaces, notably Task Completion, make additional properties available for substitution that are specific to the workspace state rather than the task itself. These "workspace" properties always begin with a hash (`#`), e.g. `#mapZoom`, to avoid confusion with task feature properties. Workspace properties are always case-sensitive. The following workspace properties may be available (as with task feature properties, mustache tags referencing missing workspace properties will be replaced with empty text):
+
+> Workspace properties — the `#`-prefixed tags below, such as `{{#mapZoom}}` —
+> are not substituted by the current MapRoulette frontend, and neither is the
+> Custom URLs widget they were most often used with. They are documented here
+> for reference. Only task feature properties are substituted today, and only
+> in challenge instructions.
+{: .legacy}
+
+Some workspaces made additional properties available for substitution that were
+specific to the workspace state rather than the task itself. These "workspace"
+properties always begin with a hash (`#`), e.g. `#mapZoom`, to avoid confusion
+with task feature properties. Workspace properties are always case-sensitive.
 
 `{{#mapBBox}}`: a WSEN comma-separated bounding box of the current map bounds
 

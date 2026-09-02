@@ -2,17 +2,38 @@
 title: Following other Users
 ---
 
-MapRoulette supports basic Following capability whereby users can follow other users to easily keep abreast of their MapRoulette activity. While all MapRoulette activity is public, the activity of users you follow is pulled together into a single activity timeline for easy viewing. Following is currently managed through the optional Follow widget on the Dashboard page.
+> Following is not available in the current MapRoulette frontend. There is no
+> Follow widget, no combined activity timeline, and no **Allow Following**
+> setting. This page describes how following worked, for reference.
+{: .legacy}
 
-Get started by visiting the Dashboard page and adding the Follow widget if you haven't already. There are three tabs: Activity, Following, and Followers.
+MapRoulette supported basic Following capability whereby users could follow
+other users to easily keep abreast of their MapRoulette activity. While all
+MapRoulette activity is public, the activity of users you followed was pulled
+together into a single activity timeline for easy viewing. Following was
+managed through an optional Follow widget on the Dashboard page, with three
+tabs:
 
-* The Activity tab shows all MapRoulette activity from users you are following. By default, similar consecutive activity entries are grouped together into a single item with a count. You can uncheck the "Group" option if you wish to see a separate item in the timeline for each recorded activity entry.
+* **Activity** showed all MapRoulette activity from users you were following,
+  with similar consecutive entries grouped together into a single item with a
+  count.
 
-* The Following tab allows you to view the users you are following, unfollow them, and follow additional users.
+* **Following** listed the users you were following, and let you unfollow them
+  or follow additional users.
 
-* The Followers tab shows users who are following you, and contains options to follow them back or even block them (and unblock them). Blocked users will continue to see that they are following you, but will no longer see your activity in their Activity tab. Note, however, that MapRoulette activity is public so they may still discover aspects of your activity through other areas of the site.
+* **Followers** showed users who were following you, with options to follow
+  them back or block them. Blocked users continued to see that they were
+  following you, but no longer saw your activity in their Activity tab.
 
-### Disallowing All Followers
+Users who did not wish to be followed at all could set **Allow Following** to
+No in their User Settings.
 
-If you do not wish anyone to be able to follow you, you can visit your User Settings and set the Allow Following option to No. It's also possible to block individual followers via the Follow widget on the Dashboard page (see above).
+## What to use instead
 
+- A mapper's public profile — reachable from their name on a comment or from
+  the header of a challenge they own — shows their task statistics, reviews and
+  top challenges.
+- Your own [Dashboard](/en-US/documentation/your-dashboard/) collects your
+  recent contributions.
+- [Teams](/en-US/documentation/teams/) are the supported way to group mappers
+  who are working together.

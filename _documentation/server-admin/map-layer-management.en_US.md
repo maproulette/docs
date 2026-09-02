@@ -2,66 +2,64 @@
 title: Map Layer Management
 ---
 
-MapRoulette retrieves its map layer data from the [OSM Editor Layer Index](https://github.com/osmlab/editor-layer-index) at build time and, by default, makes available all global layers marked as "default" layers in the index (including overlays). OpenCycleMap, which is not currently a default in the index, is also configured to be included for backwards compatibility.
+MapRoulette's maps are rendered with [MapLibre GL](https://maplibre.org/), and
+the base layers on offer are a fixed set of MapLibre style documents bundled
+with the frontend:
 
-It's possible, on a given server installation, to both choose additional layers from the OSM Editor Index and to add custom map layers that aren't present in the index. It's also possible to separately set (or override) API keys for both custom and indexed layers.
+| Style | Source |
+|:------|:-------|
+| OSM Bright | OpenStreetMap vector tiles |
+| OSM Carto | OpenStreetMap standard raster tiles |
+| Bing Aerial | Bing Maps aerial imagery |
+| Esri World Imagery | Esri World Imagery |
+| Esri World Imagery (Clarity) | Esri World Imagery (Clarity) |
 
-## Including Additional Layers from the OSM Editor Layer Index
+Mappers switch between them with the **Map style** control on any map; the
+choice is remembered in their browser. See [Setting your Map Base
+Layer](/en-US/documentation/setting-your-map-base-layer/).
 
-To include additional layers already found in the OSM Editor Layer Index, simply add the desired layer ids to the `REACT_APP_ADDITIONAL_INDEX_LAYERS` configuration variable in the `.env` file. See the .env file for additional documentation. If any of those layers require API keys, then see below for how to specify keys.
+## Changing the available layers
 
-## Adding Custom Layers
+The layer list is compiled into the frontend rather than configured at
+deployment time. Each style lives as a JSON document in the frontend source
+(`src/components/Map/`) and is registered in `src/components/Map/mapStyles.ts`:
 
-Custom layers can be added by defining them in the `src/customLayers.json` file. The contents of the file should be structured similarly to the `src/defaultLayers.json` file.
-
-> Note that `src/defaultLayers.json` is freshly generated and overwritten during each build, so it should not be modified directly
-
-Here's an example that adds the Mapbox Satellite Streets layer:
-
-```json
-[
-  {
-    "geometry": null,
-    "properties": {
-      "default": true,
-      "description": "Mapbox Satellite Streets.",
-      "i18n": true,
-      "id": "MapboxSatellite",
-      "max_zoom": 22,
-      "name": "Mapbox Satellite Streets",
-      "type": "tms",
-      "url": "https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}{r}?access_token={access_token}",
-      "attribution": {
-        "required": true,
-        "text": "Terms & Feedback",
-        "url": "https://www.mapbox.com/about/maps"
-      }
-    }
-  }
+```ts
+export const mapStyles: StyleSpecification[] = [
+  asStyle(OsmBright),
+  asStyle(OsmCarto),
+  asStyle(BingAerial),
+  asStyle(EsriWorldImagery),
+  asStyle(EsriWorldImageryClarity),
 ]
 ```
 
-## Adding API Keys for Indexed or Custom Layers
+To add, remove or reorder layers on your own installation, add a
+[MapLibre style document](https://maplibre.org/maplibre-style-spec/) to that
+directory, import it in `mapStyles.ts`, and rebuild. The first entry in the
+array is the default. A raster style needs no `glyphs` URL of its own —
+MapRoulette supplies one so that task and cluster markers can be labelled.
 
-API Keys can be provided for both custom layers and layers from the OSM Editor Index by specifying them in the `REACT_APP_MAP_LAYER_API_KEYS` configuration variable in the `.env` file. You'll need to supply the layer id, the name of the substitution variable in the URL that is to be replaced with the key, and the key itself. See the .env file for additional documentation.
+The `name` in each style document is both what mappers see in the control and
+the key the choice is stored under, so renaming a style resets everyone's
+saved selection.
 
-## Disabling Stock Layers
+> Note: layers are no longer pulled from the OSM [editor layer
+> index](https://github.com/osmlab/editor-layer-index) at build time, and the
+> `REACT_APP_ADDITIONAL_INDEX_LAYERS`, `REACT_APP_DEFAULT_MAP_LAYERS`,
+> `REACT_APP_DEFAULT_MAP_LAYER_ID` and `REACT_APP_MAP_LAYER_API_KEYS` settings
+> no longer exist. Neither does `src/customLayers.json` or the generated
+> `src/defaultLayers.json`. If a style needs an API key, put it in the style
+> document's tile URL.
+{: .legacy}
 
-If you want full control over exactly which map layers are displayed, you can disable the stock layers by setting `REACT_APP_DEFAULT_MAP_LAYERS='disabled'` in your `.env` file. Then you can add exactly the layers you want (either from the editor index or custom, as discussed above).
+## Overlays
 
-Note that this does not affect the overlays, such as Mapillary or OpenStreetCam, which can be enabled or disabled individually (discussed below).
+> The Mapillary, OpenStreetCam/KartaView and OSM data overlays — and the
+> `REACT_APP_IMAGERY_OPENSTREETCAM`, `REACT_APP_MAPILLARY_API_KEY` and
+> `REACT_APP_OSM_DATA_OVERLAY` settings that controlled them — are not part of
+> the current frontend, so there is nothing to configure.
+{: .legacy}
 
-## Specifying a Default Map Layer
-
-MapRoulette comes configured to use the OpenStreetMap Standard layer as the default map layer, but you can override that by setting the `REACT_APP_DEFAULT_MAP_LAYER_ID` configuration variable in the `.env` file. See the .env file for additional documentation.
-
-## Controlling the Overlay Layers
-
-The following overlays can be individually enabled or disabled via `.env` file configuration variables.
-
-* OpenStreetCam imagery is enabled by default, but can be disabled by setting `REACT_APP_IMAGERY_OPENSTREETCAM='disabled'`
-
-* Mapillary is disabled by default, but can be enabled with a Mapillary client/api key by setting `REACT_APP_MAPILLARY_API_KEY='your-client-key'`
-
-* The OSM Data layer is enabled by default, but can be disabled by setting `REACT_APP_OSM_DATA_OVERLAY='disabled'`
-
+See also [Runtime Configuration](/en-US/documentation/runtime-configuration/)
+for the settings that *are* configurable per deployment.

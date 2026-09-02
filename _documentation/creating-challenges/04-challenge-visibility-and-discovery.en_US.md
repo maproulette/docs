@@ -13,5 +13,13 @@ Visibility only affects discoverability: mappers can still access a challenge di
 | No                      | Yes                       | No                         |
 | No                      | No                        | No                         |
 
-> Note: virtual projects do not affect visibility of their contained challenges. Only a challenge's standard parent project is considered when determining discoverability
+Both switches live in the actions menus: **Make discoverable** / **Make not
+discoverable** on a challenge, and **Enable project** / **Disable project** on
+a project. Challenges that are not discoverable are labelled **Not
+discoverable** wherever they're listed for their managers, so it's easy to see
+at a glance which of your challenges the public can find.
+
+Archiving is a separate thing: an archived challenge is hidden from your own
+active lists rather than made undiscoverable, and can be unarchived at any
+time.
 

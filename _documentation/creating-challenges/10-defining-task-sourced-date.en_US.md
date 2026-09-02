@@ -2,9 +2,17 @@
 title: Defining A Sourced Date For Your Tasks
 ---
 
-When you create Tasks from a GeoJSON source, MapRoulette asks you to define a date on which the tasks are sourced. This allows you to let mappers know the vintage of the original source data that the task was created from.
+When you create tasks, you can record the date on which the source data was
+sourced. This lets mappers know the vintage of the original data that their
+task was created from, which matters when they're deciding how much to trust
+it.
+
+The field is **Date data was sourced (optional)** and appears in two places:
+
+- in the **Task data** section when you
+  [create a challenge](/en-US/documentation/creating-a-challenge/)
+- in the dialog when you
+  [rebuild a challenge's tasks](/en-US/documentation/rebuilding-challenge-tasks/),
+  so the date keeps up with the data
 
 ![](/media/task-sourced-date.png)
-
-When you create Tasks from a GeoJSON source, MapRoulette asks you to define a date on which the tasks are sourced. This allows you to let mappers know the vintage of the original source data that the task was created from.
-

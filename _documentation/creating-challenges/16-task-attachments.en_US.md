@@ -2,6 +2,13 @@
 title: Task Attachments
 ---
 
+> Task attachments are carried through by the API but are not consumed by the
+> current MapRoulette frontend: reference layers are not passed to JOSM, and no
+> attachment kind is surfaced during task completion. Attachments intended for
+> external processes (the `blob` kind) are unaffected, since nothing in the
+> frontend needs to read those. This page documents the format.
+{: .legacy}
+
 MapRoulette offers the ability to attach data to tasks. That data may simply travel along with the task, perhaps to be consumed by external processes, or -- depending on the kind of data -- it may be utilized during task completion to present mappers with additional information or context.
 
 The initial implementation allows various kinds of data to be attached, but only reference layers (to be shown in JOSM) are specially supported during task completion. Special handling of other kinds of data, such as automatic display of attached street-level imagery, will be coming in future releases.

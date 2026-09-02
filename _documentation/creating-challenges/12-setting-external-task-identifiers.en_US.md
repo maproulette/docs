@@ -6,9 +6,16 @@ When possible, MapRoulette will assign your tasks unique external identifiers ba
 
 > Note: id fields in MapRoulette must always be represented as strings in GeoJSON, even if they are purely numerical
 
-The name of the feature field or property to be used for this purpose can be specified during challenge creation on the "OSM/External Id Property" setting (found in the "Configure property-based behavior" section).
+> Naming the field explicitly is not possible from the current challenge form
+> — the "OSM/External Id Property" setting is absent, so MapRoulette relies on
+> the automatic detection described below. The setting still exists on the
+> challenge itself and can be set through the [HTTP
+> API](https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none)
+> if you need it.
+{: .legacy}
 
-![](/media/setting_external_id_field.png){:width="800"}
+Historically the field or property to be used for this purpose was chosen
+during challenge creation, on the "OSM/External Id Property" setting.
 
 
 Be sure that your external ids are **unique for each feature in your data**. It is your responsibility as the challenge creator to ensure this. Task features _missing_ the specified field will be assigned a [random UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)) as an external identifier.
@@ -40,6 +47,6 @@ While most MapRoulette tasks use OSM ids when specifying external ids, it's poss
 * Make sure your ids don't look like OSM ids. MapRoulette does not provide a way to distinguish OSM ids from non-OSM ids except by their formatting. For example, MapRoulette itself uses UUIDs if it needs to generate ids. If your ids look like OSM ids, then they may be treated as OSM ids in some situations.
 * Make sure your ids are represented as strings in your GeoJSON. External task ids must be strings in MapRoulette.
 * Do not reuse one of the traditional osm id fields mentioned above (such as `id`). Instead, give your external id field a different name, like `externalId`.
-* Provide the name of your id field on the "OSM/External Id Property" setting when setting up your challenge (found in the "Configure property-based behavior" section)
+* Because the id field can't be named from the challenge form, keep your ids out of the automatically-detected fields' way: don't reuse `id`, `@id`, `osmid`, `osm_id` or `name` unless you want that field treated as the external id
 * If you want your external id to show up in the task properties when someone clicks on a task feature, then put your id field inside the feature properties in your GeoJSON. If you do *not* want your id to be displayed in the task properties, then put it on the feature itself in your GeoJSON
 

@@ -24,13 +24,22 @@ locales:
 # specifies the order of sections in the sidebar. each entry should match the
 # name of a directory in _docs
 sections:
-  - new-topics
   - basics
   - advanced
   - creating-challenges
   - teams
   - server-admin
           
+# Pages offered in the search box before anything has been typed. Listed by
+# slug; the title and section label are looked up from the page itself, so they
+# stay correct if a page is retitled or moved.
+recommended_pages:
+  - discovering-challenges
+  - your-dashboard
+  - creating-a-challenge
+  - using-keyboard-shortcuts
+  - teams
+
 defaults:
   - scope: { path: "" } # empty string matches all files in the project
     values:
@@ -40,4 +49,5 @@ exclude:
   - CODE_OF_CONDUCT.md
   - LICENSE.md
   - README.md
+  - SCREENSHOTS-TODO.md
   - mise.toml

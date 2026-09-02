@@ -2,9 +2,17 @@
 title: Cooperative Challenges
 ---
 
+> The current MapRoulette frontend recognises cooperative and Tag Fix
+> challenges — they are badged as such on the challenge page — but does not yet
+> run their workflows: the in-progress change file is not loaded into JOSM, and
+> Tag Fix tasks are completed like ordinary tasks rather than by approving a
+> proposed tag change. The data formats on this page are unchanged, so
+> challenges built with them are still valid.
+{: .legacy}
+
 Cooperative Challenges allow in-progress (uncommitted) mapping work to be packaged with tasks so that mappers don't have to do all the work themselves from scratch. When a mapper chooses to edit the task in MapRoulette, the in-progress work will automatically be loaded into the mapper's editor so that they can verify and complete the work as needed.
 
-> Note: JOSM is currently the only supported editor for Cooperative Challenges, but integration with additional editors is under way
+> Note: JOSM was the only supported editor for Cooperative Challenges
 
 Aside from the initial editing work being automatically loaded into the mapper's editor, the mapping workflow for Cooperative tasks is otherwise identical to normal tasks: the mapper still chooses to Edit the task, they still perform the editing work in their editor, they still upload and commit their work to OSM through their editor, and they still mark the task as Finished or another appropriate status in MapRoulette when complete.
 

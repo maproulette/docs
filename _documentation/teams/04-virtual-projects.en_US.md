@@ -2,6 +2,13 @@
 title: Virtual Projects
 ---
 
+> Virtual Projects are not available in the current MapRoulette frontend:
+> there is no option to create one, and virtual projects cannot be browsed or
+> managed. This page describes how they worked, for reference. A challenge
+> still belongs to exactly one standard project, which you can change with
+> **Move challenge** in the challenge's actions menu.
+{: .legacy}
+
 Virtual Projects provide a flexible means of loosely organizing disparate Challenges into ad-hoc groupings without having to move the challenges from their original projects. Whereas a challenge can only belong to a single standard project, it can be a member of any number of virtual projects. Anyone can create virtual projects and can add any challenge to their virtual project that is either publicly visible or to which they have at least read access (via permissions on the challenge's standard parent project). The admins of a virtual project can add other members to their virtual project, assigning them Read, Write, or Admin access.
 
 > Note: while you can add existing challenges to virtual projects, you cannot create new challenges within a virtual project. Challenges can only be created in standard projects (but can then be added to virtual projects)

@@ -2,6 +2,14 @@
 title: Styling Task Features
 ---
 
+> Custom task-feature styling is not applied by the current MapRoulette
+> frontend. Task geometries are drawn in MapRoulette's own colours, simplestyle
+> properties in your GeoJSON are ignored, there is no style-rule editor on the
+> challenge form, and the Feature Style Legend is not shown. This page
+> documents the data format, which challenges still carry, for when styling
+> returns.
+{: .legacy}
+
 MapRoulette offers two different approaches to styling tasks:
 
 1. A subset of the [simplestyle](https://github.com/mapbox/simplestyle-spec/blob/master/1.1.0/README.md) specification can be used to customize the appearance of features within a Task by including special feature properties in your task's GeoJSON
@@ -53,7 +61,8 @@ The following set of properties results in a Way being rendered with a purple st
 
 ## Customizing task styling during challenge setup
 
-On the "Configure property-based behavior" step when creating/editing a challenge, you can choose to customize task property styles. 
+Challenges could also carry styling rules of their own, set up on the
+"Configure property-based behavior" step when creating or editing a challenge. 
 
 ![](/media/configure_custom_styles.png){:width="544"}
 
@@ -65,7 +74,7 @@ You'll be presented with the ability to specify one or more task styles that sho
 
 Note that if a task matches multiple filters -- or if the task also contains simplestyle GeoJSON properties (see above) -- all of the matching styles will be merged and applied.
 
-When working on a challenge that has custom styles applied, it may be useful to add the new Feature Style Legend widget to your workspace to serve as a basic reminder of what the custom styles indicate.
+A Feature Style Legend was available alongside the map as a reminder of what the custom styles indicate.
 
 ![](/media/style_legend.png){:width="500"}
 

@@ -2,65 +2,92 @@
 title: Discovering Interesting Tasks and Challenges
 ---
 
-How do you find things that you are interested in fixing? MapRoulette offers a number of ways that we'll talk about on this page.
-![](/media/sorting-8.png)
+How do you find things that you are interested in fixing? MapRoulette offers a
+number of ways that we'll talk about on this page.
+
+**Explore Challenges** is the front page of MapRoulette and the main place to
+browse. It has a filter bar across the top and, below it, your results.
+
+# Choosing how results are displayed
+
+The control at the right end of the filter bar switches between three views:
+
+- **Grid with map view** — challenge cards beside a map of the challenges in
+  view. This is the default, and the only view where the map extent narrows the
+  results (see *By location* below).
+- **Grid view** — challenge cards only, with no map.
+- **List view** — a table with a column each for name, author, organisation,
+  percent mapped, percent validated, contributors, priority, difficulty,
+  status, location, last updated and due date. Challenges an admin has marked
+  **Featured** are badged **URGENT** in the priority column.
 
 # Sorting
 
-The Challenge list has a default 'Smart' sorting strategy that puts Featured and Popular Challenges at the top of the list. Featured Challenges are interesting Challenges that are hand-picked by the OSM community, and Popular Challenges are the ones that have seen the most activity recently. You can use the dropdown menu at the top of the Challenge list to sort the list by other criteria.
-
-![](/media/sorting-1.png){:width="500"}
-
+Use **Sort by** to order results by **Name** (the default), **Newest**,
+**Oldest**, **Popular** or **Difficulty**. "Popular" ranks the challenges that
+have seen the most activity recently.
 
 # Filtering
 
-MapRoulette offers powerful filters to help you uncover Challenges you may be interested in. There are five types of filters at the moment: Topic, Difficulty, Custom Categorization Keywords, Text, and Location.
+The filter bar offers four filters plus a global switch. You can combine them
+as you wish, and your selections are remembered the next time you visit.
 
-You can combine these filters as you wish.
+## By topic
 
-## By Topic
+The creator of a Challenge assigns a topic to it from a pre-defined list. Use
+**Work on** to narrow the list to one of them:
 
-The creator of a Challenge will assign a Topic to it from a pre-defined list. For example, a Challenge that looks at fixing coastlines will have the topic 'Water', and a Challenge that looks at fixing the tagging of Burger King restaurants will fall under 'Points / Areas of Interest'. You can select one of these Topics to quickly narrow down the list to only show the relevant Challenges.
+- Anything
+- Roads / Pedestrian / Cycleways
+- Water
+- Points / Areas of Interest
+- Buildings
+- Land Use / Administrative Boundaries
+- Transit
 
-![](/media/sorting-2.png){:width="500"}
+For example, a Challenge that looks at fixing coastlines will have the topic
+'Water', and a Challenge that looks at fixing the tagging of Burger King
+restaurants will fall under 'Points / Areas of Interest'.
 
+## By difficulty
 
-## By Difficulty
+When someone creates a Challenge, they decide if this is an **Easy**,
+**Normal** or **Expert** level Challenge. Tasks in an Easy Challenge should be
+fixable by mappers with little experience. Working on Expert level Challenges
+requires advanced mapping skills and intimate familiarity with OSM tagging
+practices. Leave the filter on **Any** to see all of them.
 
-When someone creates a Challenge, they decide if this is an Easy, Medium, or Expert level Challenge. Tasks in an Easy Challenge should be fixable by mappers with little experience. Working on Expert level Challenges requires advanced mapping skills and intimate familiarity with OSM tagging practices.
+## By location
 
-![](/media/sorting-3.png){:width="500"}
+MapRoulette Challenges cover the entire world. To concentrate on one place,
+type into the location box and pick a result — it searches
+[Nominatim](https://nominatim.openstreetmap.org/), so countries, states,
+cities, roads and many other named features all work. The place boundary is
+drawn on the map and results are restricted to challenges that overlap it.
 
+In the grid-with-map view, panning and zooming the map narrows the results
+further, so the location filter and the map extent combine. In the other two
+views the map extent is ignored.
 
-## By Custom Categorization Keywords
+> The location filters match against the Challenges' bounding boxes. It is not
+> guaranteed that every Challenge in the results actually has Tasks inside the
+> area you picked.
 
- When a challenge is created, the challenge owner has the opportunity to create categorization keywords. This filter allows users to create custom keyword filters that can be used to filter for challenges with matching categorization keywords.
+Turning on **Global** searches every challenge regardless of the map extent or
+the selected place, which is useful for finding challenges that span very large
+areas.
 
-![](/media/sorting-4.png){:width="500"}
+## By text
 
+Free-text search lives in the search box in the header rather than on the
+filter bar. Press <kbd>⌘</kbd> <kbd>K</kbd> (or <kbd>Ctrl</kbd> <kbd>K</kbd>)
+from anywhere to open it, then search challenges, projects, tasks, comments, or
+jump straight to something by its ID. See
+[Search prefixes](/en-US/documentation/searchbox-short-commands/) for the full
+list of what it can do.
 
-The categorization keywords being sorted through are declared here in the challenge creation form.
+## Clearing filters
 
-![](/media/sorting-7.png){:width="500"}
-
-
-## By Text or Id
-
-You can type any text you want into the text search box at the top to narrow down the list by any phrase you want. The filter will look at text in the titles and descriptions when searching by Challenge or Project, and will search for a task by its Id when searching for a task.
-
-![](/media/sorting-5.png){:width="500"}
-
-
-## By Location
-
-MapRoulette Challenges cover the entire world. But if you only want to filter for challenges in a particular location, you can use the location to filter for tasks based on a country, state, city, road, or various other landmarks related to the challenges you are wanting to find.
-
-![](/media/sorting-6.png){:width="500"}
-
-
-If you allow browser geolocation, you can also use 'Near Me' to focus on Challenges that cover your current location.
-
-> The location filters use the Challenges' bounding boxes to match location. It is not guaranteed that all Challenges in the results list will actually have Tasks within the map extent.
-
-See also [Virtual Challenges](/en-US/documentation/editing-virtual-challenges/) for a different way to work on all Tasks within a small geographical area.
-
+**Clear filters** resets the filter bar to its defaults. Because filters are
+remembered between visits, it's worth reaching for when a search unexpectedly
+comes back empty.

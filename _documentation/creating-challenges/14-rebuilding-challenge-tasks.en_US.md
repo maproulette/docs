@@ -41,9 +41,28 @@ For example, the following feature representing a museum contains both a field n
 
 For example, if an updated GeoJSON file contained new opening hours for the museum above, the feature in the updated GeoJSON file should contain an id property with the value of `relation/1553447` so that it will be successfully matched with the existing task for the museum and not result in a duplicated task.
 
+## Starting a rebuild
+
+**Rebuild tasks** is in a challenge's actions menu — on **Manage →
+Challenges**, on the challenge list of its project, and on the challenge's own
+management page.
+
+What the rebuild does depends on how the challenge gets its task data: it
+re-runs an Overpass query, re-downloads a remote GeoJSON URL, or — for a
+challenge built from an uploaded file — asks you for a new GeoJSON file to
+upload. The dialog says which of the three applies before you proceed.
+
+You can also record the [date the data was
+sourced](/en-US/documentation/defining-task-sourced-date/) as part of the
+rebuild.
+
+While the rebuild runs, the challenge page shows **Tasks Updating…** with an
+elapsed timer and refreshes itself as it progresses.
+
 ## Optionally removing incomplete tasks first
 
-When you initiate a Rebuild, you will be presented with a dialog that offers some details about the process along with an option (off by default) to first remove incomplete tasks. This can be useful if your GeoJSON represents the full list of features that still need to be addressed, and you wish to clear out old incomplete tasks that are no longer needed (perhaps they were attended to outside of MapRoulette).
+The rebuild dialog offers some details about the process along with an option
+(off by default) to first remove incomplete tasks. This can be useful if your GeoJSON represents the full list of features that still need to be addressed, and you wish to clear out old incomplete tasks that are no longer needed (perhaps they were attended to outside of MapRoulette).
 
 If you check this option, then incomplete tasks (either untouched or skipped) will first be deleted from the challenge and then recreated as needed based from the latest source data. Tasks in other statuses will not be removed.
 

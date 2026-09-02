@@ -2,6 +2,17 @@
 title: 'Challenge Managers: filtering tasks by properties'
 ---
 
+> Filtering the task table by feature property values is not part of the
+> current MapRoulette frontend. The task table on a challenge's management page
+> filters by **status** and **priority** and sorts by ID, status or priority —
+> but there is no property filter or compound rule builder. This page is kept
+> for reference.
+>
+> Property rules themselves are still very much alive in
+> [task prioritization](/en-US/documentation/task-priority-rules/), which uses
+> the same kind of AND/OR rule builder described below.
+{: .legacy}
+
 When analyzing your challenges as a manager, it can sometimes be useful to filter tasks by property values (such as OSM tags). It has been possible since v3.4.4 of MapRoulette to filter tasks by the value of a single task property, but v3.5.3 brings the ability to create compound filtering rules that can AND and OR together multiple properties to achieve fine-grained filtering.
 
 When managing a challenge, you can get started by clicking the "Filter by Property" control on the tasks table. You'll be asked to select the data type of the property: text, number, or a special "compound rule" if you wish to do a compound search involving multiple properties.

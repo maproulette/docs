@@ -2,6 +2,18 @@
 title: System-Notice Management
 ---
 
+> System notices are not available in the current MapRoulette frontend. There
+> is no `REACT_APP_SYSTEM_NOTICES_URL` setting (and no `VITE_` equivalent), and
+> nothing fetches a notices file. The frontend does show one built-in
+> dismissible banner announcing that this is a beta version; it is part of the
+> app rather than something you configure. This page describes how system
+> notices worked, for reference.
+>
+> In the meantime, **System Message** notifications still exist as a
+> notification type, so the backend can reach users that way — see
+> [Notifications and Email](/en-US/documentation/notifications-and-email/).
+{: .legacy}
+
 MapRoulette supports the display of system notices -- such as notice of upcoming maintenance -- through a simple external JSON file that can be hosted anywhere (including a GitHub repo). You simply need to specify the URL to the file in the `REACT_APP_SYSTEM_NOTICES_URL` .env configuration variable.
 
 The JSON file should represent a single object with a top-level `notices` array of notice objects. Any other top-level fields are ignored.

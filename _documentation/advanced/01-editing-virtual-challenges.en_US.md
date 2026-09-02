@@ -2,30 +2,30 @@
 title: Virtual Challenges
 ---
 
-The core of MapRoulette's fuctionality revolves around the concept of a ‘Roulette’ wheel.  The wheel spins and you get a random task! What is nice about this is that you get to improve the map all over the world, and see what the map looks like in faraway places.
+> Virtual Challenges are not available in the current MapRoulette frontend.
+> There is no lasso control on the explore map for creating one, and existing
+> virtual challenges cannot be browsed. This page describes what they were, and
+> what to reach for in the meantime.
+{: .legacy}
 
-But what if you want to focus on improving one specific area? MapRoulette makes this possible too, with Virtual Challenges.
-
-A Virtual Challenge is a Challenge that consists of a custom group of Tasks in a small area. You can create a Virtual Challenge quickly and easily yourself, based on the Tasks that are already in MapRoulette. Here’s how you go about this.
-
-First navigate the map to show the area you are interested in by. If you zoom in far enough, you will see individual tasks appear on the map.
+A Virtual Challenge was a Challenge made up of a custom group of Tasks in a
+small area, assembled from the tasks already in MapRoulette. You drew a lasso
+around some tasks on the map, gave the result a name, and got a shareable link
+that let a group work through exactly those tasks together — handy at a
+mapathon, or when you wanted to concentrate on one neighbourhood rather than
+take whatever the wheel gave you.
 
 ![](/media/virtual-challenges.png)
 
-You can apply filters to further narrow down the amount of Tasks. For example, you could add a filter to only work on Easy tasks.
+## What to use instead
 
-Once you’re satisfied, you select the ‘Lasso’ button on the right side of the map, and draw a circle around the area of tasks you want to have in your virtual challenge. Then, MapRoulette will ask you to give you new Virtual Challenge a name.
-
-<div style="display: flex;">
-    <img src="/media/virtual-challenges2.png" alt="Image 1" style="width: 48%;">
-    <img src="/media/virtual-challenges3.png" alt="Image 2" style="width: 48%;">
-</div>
-
-Then, MapRoulette will ask you to give you new Virtual Challenge a name.
-
-![](/media/virtual-challenges6.png)
-
-After you set the name, you will be taken to the first random task in you Virtual Challenge. At the top of the Challenge List, you will find a link you can share with others to work on the Tasks together!
-
-![](/media/virtual-challenges4.png)
-
+- **Filter by location.** On
+  [Explore Challenges](/en-US/documentation/discovering-challenges/) you can
+  search for a place and restrict the results to challenges that overlap it,
+  then pan and zoom the map to narrow further.
+- **Work several nearby tasks together.** Within a challenge, the
+  [multi-task workflow](/en-US/documentation/solving-multiple-tasks-together/)
+  lets you draw around a cluster of tasks and complete them as one bundle.
+- **Save the challenge.** Saving a challenge puts it on your
+  [Dashboard](/en-US/documentation/your-dashboard/) so you and your teammates
+  can each pick it back up.

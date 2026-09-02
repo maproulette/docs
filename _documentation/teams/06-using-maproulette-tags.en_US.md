@@ -2,50 +2,59 @@
 title: MapRoulette Tags
 ---
 
-MapRoulette Tags, often called MR Tags, are primarily used for custom filtering and grouping tasks within a challenge. Currently, MR Tags are exclusive to MapRoulette and are not utilized or visible in other editors. If MR Tags are needed, the challenge manager will typically provide instructions on how to implement them within a task's description.
+MapRoulette Tags, often called **MR Tags**, are used for custom filtering and
+grouping of tasks within a challenge. MR Tags are exclusive to MapRoulette and
+are not used or visible in other editors. If MR Tags are needed, the challenge
+manager will typically say so in the challenge or task instructions.
 
-### How the Data is Used and Example of Useful Tag Use 
+### How the data is used, with an example
 
- For example, if you have a challenge in an area where there may not be enough high-quality imagery available for mappers to complete all the tasks successfully, you can ask mappers to add a tag like `bad-imagery` when they encounter that situation. Later, when you download the tasks export, you can analyze the tags to find out which areas lacked good imagery, and potentially use that information to start something like an OpenDroneMap + OpenAerialMap project 🙂.
+If you have a challenge in an area where there may not be enough high-quality
+imagery for mappers to complete all the tasks successfully, you can ask mappers
+to add a tag like `bad-imagery` when they encounter that situation. Later, when
+you download the [tasks export](/en-US/documentation/exporting-challenge-data/),
+you can analyse the tags to find out which areas lacked good imagery, and
+potentially use that information to start something like an OpenDroneMap +
+OpenAerialMap project 🙂.
 
-<div style="display: flex;">
-    <img src="/media/bad-imagery.png" alt="Image 1" style="width: 33%; margin-right: 10px;">
-    <img src="/media/mr-tags-11.png" alt="Image 3" style="width: 33%; margin-right: 10px;">
-    <img src="/media/mr-tags-10.png" alt="Image 2" style="width: 33%;">
+<div class="figure-row">
+    <img src="/media/bad-imagery.png" alt="A task where imagery is too poor to map from">
+    <img src="/media/mr-tags-11.png" alt="Tags being added to a task">
+    <img src="/media/mr-tags-10.png" alt="Tags in the task export">
 </div>
 
-### Preferred MR Tags 
+### Adding MR Tags
 
- Set in the challenge editor, these are the tags that will be recommended to mappers and reviewers if they try to add MR Tags. There are two types of preferred tags: 
- 1. Preferred MR Tags: Recommended in the task completion workflow, which is the workflow that most regular mappers use. 
- 2. Preferred MR Review Tags: Recommended in the task review workflow, which is the workflow the reviewers use.
+Mappers and reviewers add MR Tags in two places:
 
-![](/media/mr-tags-3.png)
+- On the task panel's **Task** tab, the task's tags are listed with an **Edit
+  tags** control (or **No tags** if it has none yet). That opens the **Edit
+  task tags** dialog, where you type a tag and press <kbd>Enter</kbd> or
+  <kbd>,</kbd> to add it, and <kbd>Backspace</kbd> to remove the last one. As
+  you type, MapRoulette suggests tags already in use.
+- In the completion dialog, the **Tags (Optional)** field takes several tags
+  separated by commas, so you can tag and complete a task in one go.
 
-### Restricting MR Tags 
+Tags can be edited while a task is still open (created, skipped or can't
+complete), and while its review is still in play.
 
- As per the editor settings, if the 'Allow other tags during task completion' or review is marked as 'No', the only tags that the user can input are the ones from the pool of tags the challenge manager added.
+### Preferred MR Tags
 
-<div style="display: flex;">
-    <img src="/media/mr-tags-4.png" alt="Image 4" style="width: 66%; margin-right: 10px;">
-    <img src="/media/mr-tags-12.png" alt="Image 5" style="width: 33%;">
-</div>
+A challenge can nominate the tags it would rather mappers used. Those appear
+above the tag box as **Popular in this challenge:**, as chips you can click to
+add rather than typing. There are two sets: one recommended during task
+completion, and one recommended during
+[review](/en-US/documentation/reviewing/).
 
-### Adding MR Tags 
+### Restricting MR Tags
 
- Mappers and reviewers can add MR Tags from the completion widget. If there are currently no MR Tags on a task, the 'Add MR Tags' button will be displayed. This button opens up a modal that allows the user to modify the displayed tags.
+A challenge can also be set to accept *only* its preferred tags. When it is,
+anything you type that isn't in the challenge's list is refused, so the tags
+that come back in the export stay consistent.
 
-<div style="display: flex;">
-    <img src="/media/mr-tags-1.png" alt="Image 4" style="width: 50%; margin-right: 10px;">
-    <img src="/media/mr-tags-6.png" alt="Image 5" style="width: 50%;">
-</div>
-
-![](/media/mr-tags-2.png)
-
-MR Tags can also be added in the completion modal: 
-
-![](/media/mr-tags-13.png){:width="1280"}
-
-
-
-
+> Preferred MR Tags and the tag restriction are properties of the challenge,
+> but they cannot be set from the current challenge form — it has no MR Tag
+> fields. Challenges that already carry them are honoured, and they can be set
+> through the [HTTP
+> API](https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none).
+{: .legacy}

@@ -19,10 +19,13 @@ out meta;
 Explaining the full syntax of Overpass QL (the language this query is written in) is outside the scope of this article. Please look at the [language reference](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL), [examples](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example) and other Overpass related pages on the OSM wiki. OSM user Binette also has some [MapRoulette specific query examples](https://wiki.openstreetmap.org/wiki/User:Binnette/OverpassQueries) on their user page.
 
 You can plug this query right into MapRoulette when you create a Challenge:
+paste it into **Overpass QL** in the challenge form's **Task data** section,
+after choosing *I want to provide an Overpass query*.
 
 ![](/media/87983753-1f76b580-ca96-11ea-89d0-c6373a54031e.png)
 
-After completing the Challenge wizard, your Tasks will reflect the result of the Overpass Query:
+Once you submit the form, MapRoulette runs the query in the background and your
+Tasks reflect its result:
 
 ![](/media/87983923-606eca00-ca96-11ea-8ba4-c06bdf0ff1df.png)
 
@@ -59,6 +62,13 @@ out skel qt;
 way["highway"="path"](40.76,-111.90,40.81,-111.85);
 out geom;
 ```
+
+### The query can't be edited later
+
+A challenge's Overpass query is set when the challenge is created and is shown
+read-only when you edit the challenge afterwards. To change what the query
+returns, use [Rebuild Tasks](/en-US/documentation/rebuilding-challenge-tasks/),
+which re-runs it against current data.
 
 ### Timeouts
 

@@ -1,60 +1,97 @@
 ---
-title: Searchbox Short-Commands
+title: Search Prefixes and Shortcuts
 ---
 
-When searching for challenges, the search box supports short-commands that can be used to execute alternative searches or alter search behavior. For example, the map can be instantly relocated to a bounding box or centerpoint (perhaps copied and pasted from another source) -- or to a named geographic region -- rather than having to manually pan and zoom to the target area.
+The search box in the MapRoulette header searches everything: challenges,
+projects, tasks, comments, and named map features. Press <kbd>Ctrl</kbd> +
+<kbd>K</kbd> (<kbd>⌘</kbd> + <kbd>K</kbd> on a Mac) from anywhere in
+MapRoulette to open it.
 
-## List of Supported Commands:
-`m/` Move the map to either a WSEN bounding box or a lon,lat centerpoint
+By default it searches across all of these at once. To search only one kind of
+thing, start your query with its prefix — or pick the search type from the list
+the box offers before you start typing.
 
-`n/` Perform [nominatim](https://nominatim.openstreetmap.org/) search of geographic name and move map to resulting bounds
+## List of supported prefixes
 
-`p/` Search by project name
+| Prefix | Searches for                                                     |
+| :----- | :--------------------------------------------------------------- |
+| `c:`   | **Challenges**, by name                                           |
+| `p:`   | **Projects**, by name                                             |
+| `t:`   | **Tasks**, by ID                                                  |
+| `id:`  | **Any resource by MapRoulette ID** — project, challenge or task   |
+| `f:`   | **Everything at once** — projects, challenges and tasks in one list |
+| `tc:`  | **Task comments**                                                 |
+| `cc:`  | **Challenge comments**                                            |
 
+## Details and examples
 
-## Details and Examples
-`m/` Move the map to either a bounding box (west, south, east, north) or a centerpoint (lon, lat)
+### `c:` — find a challenge
 
-> Note: if you wish to also filter challenge results geographically, be sure to change your Location filter to "Intersecting Map Bounds" or "Within Map Bounds" as desired
+Show challenges whose name matches your text.
 
-### Examples:
-
-Move map to WSEN bounding box
 ```
-m/-10.9313964,34.2526761,-0.1977539,40.9467136
-```
-
-Move map to lon,lat centerpoint
-```
-m/2.17,41.34
-```
----
-
-`n/` Perform [nominatim](https://nominatim.openstreetmap.org/) search of geographic name and move map to resulting bounds
-
-> Note: if you wish to also filter challenge results geographically, be sure to change your Location filter to "Intersecting Map Bounds" or "Within Map Bounds" as desired
-
-### Examples:
-Move map to California
-```
-n/california
+c:tiger
 ```
 
-Move map to Moscow
-```
-n/moscow
-```
----
-`p/` performs a case-insensitive search by project name, presenting challenges that are in a project matching (or partially matching) the searched name
+### `p:` — find a project
 
-### Examples:
-Show challenges in the mvexel project
+Show projects whose name matches your text. Case-insensitive, and partial names
+work.
+
 ```
-p/mvexel
+p:mvexel
 ```
 
-Show challenges in projects with "TIGER" in their name
+Selecting a result takes you to that project, from where you can see all of its
+challenges.
+
+### `t:` and `id:` — jump straight to something
+
+`t:` looks up a single task by its numeric ID and shows its current status.
+
 ```
-p/tiger
+t:1234567
 ```
 
+`id:` is the same idea but broader: give it a number and it reports every
+project, challenge and task that carries that ID, so you can pick the one you
+meant.
+
+```
+id:40609
+```
+
+### `f:` — search everything together
+
+Returns matching projects, challenges and tasks in a single list, so you don't
+have to guess which kind of thing you're looking for.
+
+```
+f:bus stops
+```
+
+With no search text it shows a starting point instead: a few challenges to
+explore and the featured projects.
+
+> This mode is labelled **Find a Feature by Name** in the search box, and
+> described there as a search for geographic features. It currently searches
+> MapRoulette's own projects, challenges and tasks rather than OSM features.
+{: .legacy}
+
+### `tc:` and `cc:` — search comments
+
+Search the text of comments left on tasks (`tc:`) or on challenges (`cc:`),
+which is the quickest way back to a discussion you half-remember. Results show
+who wrote each comment.
+
+```
+tc:bad imagery
+```
+
+> Older versions of MapRoulette used `m/`, `n/` and `p/` in the challenge
+> search box to move the map to a bounding box, run a Nominatim search, or
+> filter by project. `p/` is now `p:`, the Nominatim search has become the
+> location filter on
+> [Explore Challenges](/en-US/documentation/discovering-challenges/), and there
+> is no longer a command for moving the map to a raw bounding box.
+{: .legacy}

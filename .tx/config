@@ -2,24 +2,24 @@
 host = https://www.transifex.com
 
 [o:maproulette:p:mr-docs:r:documentation_bulk-editing-challenges]
-file_filter            = _documentation/new-topics/bulk-editing-challenges.<lang>.md
-source_file            = _documentation/new-topics/bulk-editing-challenges.en_US.md
+file_filter            = _documentation/creating-challenges/18-bulk-editing-challenges.<lang>.md
+source_file            = _documentation/creating-challenges/18-bulk-editing-challenges.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_challenge-comments]
-file_filter            = _documentation/new-topics/challenge-comments.<lang>.md
-source_file            = _documentation/new-topics/challenge-comments.en_US.md
+file_filter            = _documentation/basics/10-challenge-comments.<lang>.md
+source_file            = _documentation/basics/10-challenge-comments.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_challenge-flagging]
-file_filter            = _documentation/new-topics/challenge-flagging.<lang>.md
-source_file            = _documentation/new-topics/challenge-flagging.en_US.md
+file_filter            = _documentation/basics/12-challenge-flagging.<lang>.md
+source_file            = _documentation/basics/12-challenge-flagging.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
@@ -138,8 +138,8 @@ replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_markdown]
-file_filter            = _documentation/basics/04-markdown.<lang>.md
-source_file            = _documentation/basics/04-markdown.en_US.md
+file_filter            = _documentation/basics/06-markdown.<lang>.md
+source_file            = _documentation/basics/06-markdown.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
@@ -154,16 +154,16 @@ replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_notifications-and-email]
-file_filter            = _documentation/basics/03-notifications-and-email.<lang>.md
-source_file            = _documentation/basics/03-notifications-and-email.en_US.md
+file_filter            = _documentation/basics/07-notifications-and-email.<lang>.md
+source_file            = _documentation/basics/07-notifications-and-email.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_point-scoring]
-file_filter            = _documentation/basics/06-point-scoring.<lang>.md
-source_file            = _documentation/basics/06-point-scoring.en_US.md
+file_filter            = _documentation/basics/08-point-scoring.<lang>.md
+source_file            = _documentation/basics/08-point-scoring.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
@@ -178,8 +178,8 @@ replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_rapid-editor]
-file_filter            = _documentation/new-topics/rapid-editor.<lang>.md
-source_file            = _documentation/new-topics/rapid-editor.en_US.md
+file_filter            = _documentation/basics/04-rapid-editor.<lang>.md
+source_file            = _documentation/basics/04-rapid-editor.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
@@ -194,8 +194,8 @@ replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_reporting-a-challenge]
-file_filter            = _documentation/basics/07-reporting-a-challenge.<lang>.md
-source_file            = _documentation/basics/07-reporting-a-challenge.en_US.md
+file_filter            = _documentation/basics/11-reporting-a-challenge.<lang>.md
+source_file            = _documentation/basics/11-reporting-a-challenge.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
@@ -204,6 +204,14 @@ keep_translations      = false
 [o:maproulette:p:mr-docs:r:documentation_reviewing]
 file_filter            = _documentation/teams/05-reviewing.<lang>.md
 source_file            = _documentation/teams/05-reviewing.en_US.md
+type                   = GITHUBMARKDOWN
+minimum_perc           = 0
+replace_edited_strings = false
+keep_translations      = false
+
+[o:maproulette:p:mr-docs:r:documentation_runtime-configuration]
+file_filter            = _documentation/server-admin/runtime-configuration.<lang>.md
+source_file            = _documentation/server-admin/runtime-configuration.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
@@ -234,8 +242,8 @@ replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_setting-your-default-osm-editor]
-file_filter            = _documentation/basics/02-setting-your-default-osm-editor.<lang>.md
-source_file            = _documentation/basics/02-setting-your-default-osm-editor.en_US.md
+file_filter            = _documentation/basics/03-setting-your-default-osm-editor.<lang>.md
+source_file            = _documentation/basics/03-setting-your-default-osm-editor.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
@@ -274,8 +282,8 @@ replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_tag-fix-challenges]
-file_filter            = _documentation/basics/08-tag-fix-challenges.<lang>.md
-source_file            = _documentation/basics/08-tag-fix-challenges.en_US.md
+file_filter            = _documentation/basics/09-tag-fix-challenges.<lang>.md
+source_file            = _documentation/basics/09-tag-fix-challenges.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
@@ -306,8 +314,8 @@ replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_translate-docs]
-file_filter            = _documentation/new-topics/translate-docs.<lang>.md
-source_file            = _documentation/new-topics/translate-docs.en_US.md
+file_filter            = _documentation/basics/13-translate-docs.<lang>.md
+source_file            = _documentation/basics/13-translate-docs.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false
@@ -362,8 +370,8 @@ replace_edited_strings = false
 keep_translations      = false
 
 [o:maproulette:p:mr-docs:r:documentation_your-dashboard]
-file_filter            = _documentation/new-topics/your-dashboard.<lang>.md
-source_file            = _documentation/new-topics/your-dashboard.en_US.md
+file_filter            = _documentation/basics/02-your-dashboard.<lang>.md
+source_file            = _documentation/basics/02-your-dashboard.en_US.md
 type                   = GITHUBMARKDOWN
 minimum_perc           = 0
 replace_edited_strings = false

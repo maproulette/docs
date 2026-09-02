@@ -2,6 +2,12 @@
 title: Templating in Challenge Instructions
 ---
 
+> The short codes on this page — embedded form fields and the `copyable`
+> control — are not rendered by the current MapRoulette frontend; they appear as
+> literal text in challenge instructions. The page is kept for reference and
+> for challenges that still contain them.
+{: .legacy}
+
 MapRoulette supports [mustache-tag replacement](/en-US/documentation/mustache-tag-replacement/) in Challenge Instructions, as well as special short codes that can be used to embed basic form fields, make data easily copyable to the user's clipboard, etc.
 
 ## Basic Form Fields

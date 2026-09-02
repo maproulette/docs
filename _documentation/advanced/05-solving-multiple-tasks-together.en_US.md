@@ -2,25 +2,53 @@
 title: Solving Multiple Tasks Together
 ---
 
-Many MapRoulette Challenges have Tasks that are geographically so close together that it is more efficient to solve multiple close Tasks together as if it were one Task. MapRoulette offers a workflow for this since version 3.4.2.
+Many MapRoulette Challenges have Tasks that are geographically so close
+together that it is more efficient to solve several of them as if they were one
+Task. MapRoulette calls a group of tasks worked together a **bundle**, and the
+tools for building one are built into the task map — there is nothing to add or
+configure first.
 
-To use the Multiple Tasks workflow, you need to add the **Multi-Task Work** Widget to your Task screen. To do this, click _Edit Layout_ in the right top corner of your Task screen, and use the _Add Widget_ dropdown menu to add add it to your Layout.
+### Building a bundle
 
-![multiple tasks widget](/media/66520790-5ec0b080-ead9-11e9-8f87-3eac0de6ec1d.png){:width="300"}
+Open a task, then use the **Work on multiple tasks** panel on the map. There
+are two ways to add tasks to your selection:
 
+- **Draw to add tasks** (or press <kbd>D</kbd>) and then click and drag a shape
+  around the tasks you want. Press <kbd>Esc</kbd> to cancel while drawing.
+- Select a nearby task marker on the map and choose **Add to Bundle** in the
+  task panel.
 
-You may want to [create a separate Layout](/en-US/documentation/using-layouts/) just for Multi-Task work to further optimize your mapping workflow. Here's an example where you see the Multi-Task Widget and the regular Map Widget side by side. Such a Layout allows you to see the Task you've been assigned, while at the same time having visibility on other Tasks that are close together:
+The panel keeps a running count — *Working on 4 tasks* — and a task can be
+taken back out again with **Remove from Bundle**. A bundle can hold up to 50
+tasks; the panel says so and stops accepting more once you reach the limit.
 
-![screenshot of an example multi task layout](/media/66521253-5321b980-eada-11e9-9170-168e4ed4e5f9.png)
+The task you started from is the **primary** task of the bundle, and is marked
+as such in the bundled task list on the **Task** tab.
 
-The Multi-Task window lets you select multiple tasks either using the Task list or by clicking the markers on the minimap. Here we have a few tasks that are close together selected:
+### Working the bundle
 
-![screenshot of multi-task widget with some tasks selected](/media/66521347-7fd5d100-eada-11e9-9157-5ce931a67976.png){:width="600"}
+Once tasks are bundled, completing the primary task completes all of them
+together — you set one status, leave one comment, and every task in the bundle
+receives it. Locking works the same way: locking the primary task locks the
+whole bundle, which is why your Dashboard shows locked bundles as *n tasks*.
 
+A few map controls help while you work:
 
-The Task Completion section will now offer two options, either _Complete Together_ or _Cancel Selection_. If you click _Complete Together_, the Task map will show all the task features that you selected in the Multi-Task Widget, the separate Tasks are now bundled into one Task.
+- **Center to Bundle** fits the map to every task in the bundle rather than
+  just the primary one
+- <kbd>F</kbd> cycles between showing only the tasks you've selected and
+  showing everything nearby
+- **Show tasks from other challenges** brings in task markers that don't belong
+  to this challenge, so you can see what else is around
 
-![Screenshot of Task screen showing bundled tasks](/media/66521469-bf042200-eada-11e9-878b-a7211fa4ae71.png)
+If you're editing with the [inline iD editor](/en-US/documentation/rapid-editor/),
+**Select All** in the bundled task list selects every bundled task's features
+in iD at once.
 
-Solving this Bundled Task works the same as solving a single Task. If you change your mind, the Multi-Task Widget offers the option to Unbundle the Tasks.
+### Undoing a bundle
 
+**Work on only the primary task** (or press <kbd>Delete</kbd>) unbundles
+everything and leaves you with the task you started on. **Reset to initial
+bundle** restores the bundle as it was when the task loaded, which is useful if
+the challenge itself shipped the tasks pre-bundled. Unbundling never deletes
+tasks — it only separates them.
