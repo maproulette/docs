@@ -6,11 +6,17 @@ As you fix things via MapRoulette, you can ask for someone else to review your
 work; and if you are a more experienced mapper, you can volunteer to review the
 tasks that your fellow mappers have submitted.
 
-> In the current MapRoulette frontend, the reviewing workflow is provided by
-> the **MapRoulette Review plugin** rather than being built into the core
-> interface. Some deployments load it for everyone; otherwise you add it
-> yourself from **Account Settings → Plugins**. Without it, the review queue
-> and the review controls on a task are not shown.
+> Reviewing is not available in the current MapRoulette frontend. There is no
+> review queue, no way to ask for your own work to be reviewed, and no
+> approve/reject controls on a task. This page describes how reviewing works
+> for when it returns.
+>
+> Some review *data* still surfaces, which is why you'll see the word around
+> the app: review outcomes arrive as
+> [notifications](/en-US/documentation/notifications-and-email/), a mapper's
+> profile shows **Reviews Received** and **Reviews Performed** counts, and
+> challenge managers can reassign open task reviews in bulk from the task
+> table. None of those let you actually review a task.
 {: .legacy}
 
 ### What reviewing is for
@@ -46,11 +52,11 @@ Review results reach the mapper as
 
 ### Seeing your review history
 
-Your [public profile](/en-US/documentation/your-dashboard/) has two blocks that
-summarise reviewing, over a time range you choose:
-
-- **Reviews Received** — the outcomes of reviews of your own work
-- **Reviews Performed** — the outcomes of reviews you carried out
+A mapper's public profile has two blocks that summarise reviewing over a time
+range you choose — **Reviews Received** (the outcomes of reviews of their own
+work) and **Reviews Performed** (the outcomes of reviews they carried out).
+These are the one part of reviewing that is present today, populated from
+review history recorded earlier.
 
 ### Adding tags during review
 

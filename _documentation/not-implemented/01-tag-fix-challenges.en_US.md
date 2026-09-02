@@ -2,14 +2,14 @@
 title: Tag Fix Challenges
 ---
 
-> The Tag Fix completion workflow is not available in the current MapRoulette
-> frontend. Tag Fix challenges are recognised — the challenge page badges them
+> The Tag Fix workflow is not available in the current MapRoulette frontend.
+> Tag Fix challenges are still recognised — the challenge page badges them
 > **Tag Fix** — but the proposed tag change is not presented for approval, and
-> tasks are completed like ordinary ones. This page describes how the workflow
-> works when it is available.
+> tasks are completed like ordinary ones. There is also no longer a supported
+> way to create one: Tag Fix challenges were a kind of Cooperative Challenge,
+> and cooperative challenges have been removed. This page describes the
+> workflow for reference.
 {: .legacy}
-
-[Learn about creating tag fix challenges](/en-US/documentation/creating-cooperative-challenges/#creating-tag-fix-challenges)
 
 MapRoulette serves you quick tasks that make it easy for you anyone to find something meaningful to map. The way that worked until now required loading the data related to the Task into JOSM or iD, fixing it there, and returning to MapRoulette to say you fixed it, and then move on.
 

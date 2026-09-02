@@ -1,0 +1,19 @@
+{%- comment -%}
+One labelled group of documentation links in the sidebar.
+Params: section (directory name under _documentation/), current (page.url).
+{%- endcomment -%}
+{%- assign key = "section." | append: include.section -%}
+{%- assign name = site.data.translations[page.lang][key] | default: site.data.translations["en-US"][key] | default: include.section -%}
+{%- assign docs = site.documentation | where: "section", include.section | where: "lang", page.lang | sort: "order" -%}
+{%- if docs.size > 0 -%}
+  <li>
+    <h3>{{ name }}</h3>
+    <ul>
+      {%- for doc in docs %}
+      <li>
+        <a href="{{ doc.url }}"{% if doc.url == include.current %} aria-current="page"{% endif %}>{{ doc.title }}</a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </li>
+{%- endif -%}

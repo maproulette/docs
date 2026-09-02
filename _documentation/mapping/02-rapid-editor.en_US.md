@@ -37,6 +37,6 @@ Editor](/en-US/documentation/setting-your-default-osm-editor/).
 > is iD.
 {: .legacy}
 
-> Cooperative and Tag Fix challenges are not edited this way — see
-> [Cooperative Challenges](/en-US/documentation/creating-cooperative-challenges/)
-> and [Tag Fix Challenges](/en-US/documentation/tag-fix-challenges/).
+> [Tag Fix challenges](/en-US/documentation/tag-fix-challenges/) are not edited
+> this way — they were meant to be resolved in MapRoulette itself, without an
+> editor.

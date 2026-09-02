@@ -4,27 +4,31 @@ layout: default
 
 {% assign current = page.url %}
 
+{%- comment -%}
+Sections named in `sections` / `appendix_sections` render in that order. Any
+other directory under _documentation/ is appended after them rather than being
+dropped, so adding a section without touching _config.yaml can never make a
+whole group of pages silently vanish from the sidebar.
+{%- endcomment -%}
+{% assign ordered_sections = site.sections %}
+{% if site.appendix_sections %}
+  {% assign ordered_sections = ordered_sections | concat: site.appendix_sections %}
+{% endif %}
+{% assign present_sections = site.documentation | where: "lang", page.lang | map: "section" | uniq | sort %}
+
 <nav aria-label="Documentation">
   <details class="nav-toggle" open>
     <summary>Documentation</summary>
 
     <ul>
       {% for section in site.sections %}
-        {% assign key = "section." | append: section %}
-        {% assign name = site.data.translations[page.lang][key] | default: site.data.translations["en-US"][key] %}
-        {% assign docs = site.documentation | where: "section", section | where: "lang", page.lang | sort: "order" %}
-        {% if docs.size > 0 %}
-          <li>
-            <h3>{{ name }}</h3>
-            <ul>
-              {% for doc in docs %}
-                <li>
-                  <a href="{{ doc.url }}"{% if doc.url == current %} aria-current="page"{% endif %}>{{ doc.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </li>
-        {% endif %}
+        {% include nav-section.html section=section current=current %}
+      {% endfor %}
+
+      {% for section in present_sections %}
+        {% unless ordered_sections contains section %}
+          {% include nav-section.html section=section current=current %}
+        {% endunless %}
       {% endfor %}
 
       {% assign screencasts = site.screencasts | where: "lang", page.lang | sort: "slug" %}
@@ -51,6 +55,10 @@ layout: default
           <li><a rel="external" href="https://github.com/osmlab/maproulette-python-client">Python client</a></li>
         </ul>
       </li>
+
+      {% for section in site.appendix_sections %}
+        {% include nav-section.html section=section current=current %}
+      {% endfor %}
     </ul>
   </details>
 </nav>

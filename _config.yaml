@@ -21,15 +21,25 @@ locales:
   # - pt-PT
   # - ru
 
-# specifies the order of sections in the sidebar. each entry should match the
-# name of a directory in _docs
+# Order of the sidebar sections. Each entry must match a directory name under
+# _documentation/.
 sections:
-  - basics
-  - advanced
-  - creating-challenges
+  - getting-started
+  - mapping
+  - user-settings
+  - projects
+  - challenges
+  - tasks
   - teams
+  - advanced
   - server-admin
-          
+  - contributing
+
+# Sections pinned below the Screencasts and For Developers lists, for reference
+# material rather than instructions.
+appendix_sections:
+  - not-implemented
+
 # Pages offered in the search box before anything has been typed. Listed by
 # slug; the title and section label are looked up from the page itself, so they
 # stay correct if a page is retitled or moved.

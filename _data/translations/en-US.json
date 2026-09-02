@@ -1,7 +1,13 @@
 {
-  "section.basics": "Basics",
-  "section.advanced": "Advanced Topics",
-  "section.creating-challenges": "Creating and Managing Challenges",
-  "section.teams": "Working as a Team",
+  "section.getting-started": "Getting Started",
+  "section.mapping": "Mapping Tasks",
+  "section.user-settings": "User Settings",
+  "section.projects": "Projects",
+  "section.challenges": "Challenges",
+  "section.tasks": "Tasks",
+  "section.teams": "Teams",
+  "section.advanced": "Advanced",
   "section.server-admin": "Server Admin",
+  "section.contributing": "Contributing",
+  "section.not-implemented": "Not Implemented Yet"
 }
