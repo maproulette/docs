@@ -39,8 +39,7 @@ different places. The new one is organised by what you are doing.
 | — | Migrating from MR3 (new) |
 
 The sections now are Getting Started, Migrating from MR3, Mapping Tasks, User
-Settings, Projects, Challenges, Tasks, Teams, Advanced and Server Admin, plus a
-**Not Implemented Yet** appendix.
+Settings, Projects, Challenges, Tasks, Teams, Advanced and Server Admin.
 
 ## Pages that went away
 
@@ -74,8 +73,8 @@ Yet** and into the sections they belong to, and their notices are gone:
 | Templating in Challenge Instructions | Challenges |
 | System-Notice Management | Server Admin |
 
-Following has since joined them in the Teams section, leaving one page under
-**Not Implemented Yet**: Tag Fix Challenges.
+Both have since left it — Following for Teams and Tag Fix Challenges for
+Mapping Tasks — so the **Not Implemented Yet** section is gone entirely.
 
 ## Translations were removed
 

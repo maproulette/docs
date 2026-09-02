@@ -23,7 +23,7 @@ usually still exposes it, because the data model did not change.
 | Turned on Mapillary, KartaView or OSM data overlays | Not available. |
 | Edited with the embedded **Rapid** editor | Rapid is now an external editor. The embedded editor is iD. See [Rapid Editor](/documentation/rapid-editor/). |
 | Saved, named, imported or exported widget layouts | Not available, and layouts exported from MR3 cannot be imported. See [Using Layouts](/documentation/using-layouts/). |
-| Worked Tag Fix / cooperative challenges | The challenge page still badges them, but the proposed tag change is not presented for approval and tasks complete like ordinary ones. See [Tag Fix Challenges](/documentation/tag-fix-challenges/). |
+| Worked Tag Fix challenges | The proposed tags are applied for you in the built-in iD editor to review and save, rather than approved through a separate panel. See [Tag Fix Challenges](/documentation/tag-fix-challenges/). |
 | Reviewed tasks | Not available. |
 | Typed `m/`, `n/` or `p/` in the search box | `p/` is now `p:`; the Nominatim search became the location filter on [Explore Challenges](/documentation/discovering-challenges/); there is no bounding-box command. See [Searchbox Short Commands](/documentation/searchbox-short-commands/). |
 
@@ -63,6 +63,5 @@ The biggest change is how the frontend is configured.
 
 Pages that describe something MapRoulette 3 did but MapRoulette 4 does not
 carry a highlighted note saying so, so you can tell at a glance whether what
-you are reading applies today. Features that are documented only for reference
-— because nothing in the current frontend uses them — are collected under
-**Not Implemented Yet** at the bottom of the sidebar.
+you are reading applies today. Every page otherwise describes the current
+frontend.

@@ -2,15 +2,6 @@
 title: Tag Fix Challenges
 ---
 
-> The Tag Fix workflow is not available in the current MapRoulette frontend.
-> Tag Fix challenges are still recognised — the challenge page badges them
-> **Tag Fix** — but the proposed tag change is not presented for approval, and
-> tasks are completed like ordinary ones. There is also no longer a supported
-> way to create one: Tag Fix challenges were a kind of Cooperative Challenge,
-> and cooperative challenges have been removed. This page describes the
-> workflow for reference.
-{: .legacy}
-
 MapRoulette serves you quick tasks that make it easy for you anyone to find something meaningful to map. The way that worked until now required loading the data related to the Task into JOSM or iD, fixing it there, and returning to MapRoulette to say you fixed it, and then move on.
 
 Now, we’re introducing a new type of Task: the **Tag Fix**. In a Tag Fix Task, MapRoulette will present the suggested fix to you, and all you need to do is click Yes to agree with the fix, and the change will be applied to OSM directly.
@@ -36,3 +27,21 @@ I invite you to try it out and leave feedback here or email at [maproulette@mapr
 
 For this to work, MapRoulette needs additional permissions from your OSM account, to modify the map on your behalf. You may need to log out and log back in if you have trouble.
 
+## How tag fixes work in MapRoulette
+
+Opening a Tag Fix task takes you straight to the built-in **iD** editor, whatever
+editor you normally use — it is the one MapRoulette can drive on your behalf.
+The challenge's proposed tags are applied there for you as unsaved edits.
+
+Nothing is submitted on your behalf. The changes sit in iD exactly as though
+you had typed them, so you can look them over on the map, correct a value,
+undo one you disagree with, or add something the challenge missed, then save
+them as your own edit.
+
+Elements the challenge proposes creating or deleting are not applied
+automatically — only tag changes to existing elements are.
+
+> There is no longer a supported way to create a Tag Fix challenge from the
+> MapRoulette interface. Tag Fix challenges are a kind of Cooperative
+> Challenge, and cooperative challenges cannot be created here.
+{: .legacy}

@@ -26,11 +26,6 @@ sections:
   - advanced
   - server-admin
 
-# Sections pinned below the Screencasts and For Developers lists, for reference
-# material rather than instructions.
-appendix_sections:
-  - not-implemented
-
 # Pages offered in the search box before anything has been typed. Listed by
 # slug; the title and section label are looked up from the page itself, so they
 # stay correct if a page is retitled or moved.
