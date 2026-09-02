@@ -24,13 +24,6 @@ be ignored completely.
 
 ## Reference OSM elements and map viewports
 
-> The bracketed short-codes below — `[n123456789]` for an OSM node, way or
-> relation, and `[v17/37.11777/126.99754]` for a map viewport — are not
-> rendered by the current MapRoulette frontend. They appear as literal text in
-> comments. This section is kept for reference and for reading older comments
-> that use them.
-{: .legacy}
-
 Short-codes were always surrounded by brackets (`[` and `]`).
 
 ### Reference an OpenStreetMap element (node, way, or relation)

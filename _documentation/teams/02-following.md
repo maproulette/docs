@@ -33,8 +33,3 @@ No in their User Settings.
 - [Teams](/documentation/teams/) are the supported way to group mappers
   who are working together.
 
-> The combined activity timeline of everyone you follow is not part of the
-> current frontend. Follow relationships, the follower and following lists, and
-> the **Allow other mappers to follow me** setting all work; what is missing is
-> the single feed of their recent activity.
-{: .legacy}

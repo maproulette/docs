@@ -16,8 +16,7 @@ with the frontend:
 
 Mappers switch between them with the **Map style** control on any map; the
 choice is remembered in their browser. They can also add their own XYZ or WMS
-layer from that control, which is stored in their browser rather than on the
-server and so is visible only to them. See [Setting your Map Base
+layer from that control, saved to their own account and visible only to them. See [Setting your Map Base
 Layer](/documentation/setting-your-map-base-layer/).
 
 ## Changing the available layers

@@ -23,6 +23,10 @@ The operators on offer depend on the value type:
 | Text | `equals`, `does not equal`, `contains`, `exists`, `is missing` |
 | Number | `equals`, `does not equal`, `greater than`, `less than` |
 
+Tick **Comma-separated values** on a rule to match one property against
+several values at once — `highway` `equals` `motorway, trunk` matches either —
+rather than building an OR group by hand.
+
 > Note: it's important to choose the correct value type for the properties
 > you're filtering against. If you have numeric data represented as strings in
 > your GeoJSON (e.g. `population: "500"`), choosing Number will still compare

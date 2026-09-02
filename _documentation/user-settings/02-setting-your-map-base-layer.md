@@ -48,6 +48,6 @@ MapRoulette doesn't bundle. Choose **XYZ tiles** and give a tile template like
 `https://example.org/tile/{z}/{x}/{y}.png`, or choose **WMS** and give the
 endpoint URL plus the layer names to request.
 
-Layers you add are stored in your browser, so they follow you between
-challenges but not between devices, and nobody else sees them. Remove one with
-the bin icon beside it in the list.
+Layers you add are saved to your account, so they follow you between browsers
+and devices. Nobody else sees them. Remove one with the bin icon beside it in
+the list. If you are signed out they are remembered by your browser alone.

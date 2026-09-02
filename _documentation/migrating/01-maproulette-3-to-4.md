@@ -20,11 +20,9 @@ usually still exposes it, because the data model did not change.
 | What you did in MR3 | Where it stands in MR4 |
 |:--------------------|:-----------------------|
 | Picked any imagery from the OSM editor layer index | The base layers are now a fixed set bundled with the frontend. See [Setting your Map Base Layer](/documentation/setting-your-map-base-layer/). |
-| Added your own XYZ or WMS layer from inside the map | Works, but the layers you add are stored in your browser rather than on your account, so they no longer follow you between devices. See [Setting your Map Base Layer](/documentation/setting-your-map-base-layer/). |
 | Turned on Mapillary, KartaView or OSM data overlays | Not available. |
 | Edited with the embedded **Rapid** editor | Rapid is now an external editor. The embedded editor is iD. See [Rapid Editor](/documentation/rapid-editor/). |
 | Saved, named, imported or exported widget layouts | Not available, and layouts exported from MR3 cannot be imported. See [Using Layouts](/documentation/using-layouts/). |
-| Followed other mappers | Works, from a mapper's profile, but there is no combined activity timeline of everyone you follow. See [Following](/documentation/following/). |
 | Worked Tag Fix / cooperative challenges | The challenge page still badges them, but the proposed tag change is not presented for approval and tasks complete like ordinary ones. See [Tag Fix Challenges](/documentation/tag-fix-challenges/). |
 | Reviewed tasks | Not available. |
 | Typed `m/`, `n/` or `p/` in the search box | `p/` is now `p:`; the Nominatim search became the location filter on [Explore Challenges](/documentation/discovering-challenges/); there is no bounding-box command. See [Searchbox Short Commands](/documentation/searchbox-short-commands/). |
@@ -33,8 +31,6 @@ usually still exposes it, because the data model did not change.
 
 | What you did in MR3 | Where it stands in MR4 |
 |:--------------------|:-----------------------|
-| Filtered the task table by feature property | Works, except for the comma-separated "Add Value" shortcut for matching one property against several values — use an OR group instead. See [filtering tasks by properties](/documentation/filtering-the-task-list-by-properties/). |
-| Embedded form fields in challenge instructions | Works. The OSM element and map viewport short codes that could also appear in instructions are still not rendered. See [Templating in Challenge Instructions](/documentation/challenge-instructions-templating/). |
 | Styled task features by property | Not available. |
 | Created cooperative (including Tag Fix) challenges | Not available. |
 | Created virtual challenges, or virtual projects | Not surfaced in the frontend. Both still exist in the API. |
