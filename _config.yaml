@@ -16,6 +16,7 @@ collections:
 # _documentation/.
 sections:
   - getting-started
+  - migrating
   - mapping
   - user-settings
   - projects
