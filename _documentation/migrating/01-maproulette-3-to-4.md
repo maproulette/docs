@@ -7,8 +7,11 @@ tasks are unchanged — the server behind both versions is the same one, so
 nothing you have created needs migrating. What changed is the interface, and a
 number of features that have not been rebuilt yet.
 
-This page is a checklist of what to expect. If a feature you rely on is listed
-as gone, the [HTTP
+This page lists only what actually differs. Anything you did in MapRoulette 3
+that isn't mentioned here works the same way, so if a feature you rely on is
+absent from these tables, there is nothing to learn about it.
+
+Where a feature is listed as gone, the [HTTP
 API](https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none)
 usually still exposes it, because the data model did not change.
 
@@ -17,33 +20,24 @@ usually still exposes it, because the data model did not change.
 | What you did in MR3 | Where it stands in MR4 |
 |:--------------------|:-----------------------|
 | Picked any imagery from the OSM editor layer index | The base layers are now a fixed set bundled with the frontend. See [Setting your Map Base Layer](/documentation/setting-your-map-base-layer/). |
-| Added your own XYZ or WMS layer from inside the map | Available again, from the **Map style** control. Layers are stored in your browser rather than on the server. See [Setting your Map Base Layer](/documentation/setting-your-map-base-layer/). |
+| Added your own XYZ or WMS layer from inside the map | Works, but the layers you add are stored in your browser rather than on your account, so they no longer follow you between devices. See [Setting your Map Base Layer](/documentation/setting-your-map-base-layer/). |
 | Turned on Mapillary, KartaView or OSM data overlays | Not available. |
 | Edited with the embedded **Rapid** editor | Rapid is now an external editor. The embedded editor is iD. See [Rapid Editor](/documentation/rapid-editor/). |
 | Saved, named, imported or exported widget layouts | Not available, and layouts exported from MR3 cannot be imported. See [Using Layouts](/documentation/using-layouts/). |
-| Followed other mappers | Available again, from a mapper's profile. The combined activity timeline of everyone you follow is still missing. See [Following](/documentation/following/). |
+| Followed other mappers | Works, from a mapper's profile, but there is no combined activity timeline of everyone you follow. See [Following](/documentation/following/). |
 | Worked Tag Fix / cooperative challenges | The challenge page still badges them, but the proposed tag change is not presented for approval and tasks complete like ordinary ones. See [Tag Fix Challenges](/documentation/tag-fix-challenges/). |
 | Reviewed tasks | Not available. |
 | Typed `m/`, `n/` or `p/` in the search box | `p/` is now `p:`; the Nominatim search became the location filter on [Explore Challenges](/documentation/discovering-challenges/); there is no bounding-box command. See [Searchbox Short Commands](/documentation/searchbox-short-commands/). |
-| Wrote `[@example user]` to mention a name with spaces | Works again. See [Comment Short Codes](/documentation/comment-short-codes/). |
-| Set per-notification email preferences | Available again, on their own **Subscriptions** tab in account settings. See [Notifications and Email](/documentation/notifications-and-email/). |
 
 ## For challenge managers
 
 | What you did in MR3 | Where it stands in MR4 |
 |:--------------------|:-----------------------|
-| Set a challenge basemap | Available again, over the bundled base layers or a custom XYZ template. See [Setting The Basemap Layer For Your Challenge](/documentation/setting-basemap-for-challenge/). |
-| Filtered the task table by feature property | Available again, with an AND/OR rule builder. See [filtering tasks by properties](/documentation/filtering-the-task-list-by-properties/). |
-| Embedded form fields in challenge instructions | Available again. See [Templating in Challenge Instructions](/documentation/challenge-instructions-templating/). |
+| Filtered the task table by feature property | Works, except for the comma-separated "Add Value" shortcut for matching one property against several values — use an OR group instead. See [filtering tasks by properties](/documentation/filtering-the-task-list-by-properties/). |
+| Embedded form fields in challenge instructions | Works. The OSM element and map viewport short codes that could also appear in instructions are still not rendered. See [Templating in Challenge Instructions](/documentation/challenge-instructions-templating/). |
 | Styled task features by property | Not available. |
 | Created cooperative (including Tag Fix) challenges | Not available. |
 | Created virtual challenges, or virtual projects | Not surfaced in the frontend. Both still exist in the API. |
-| Added or removed project managers, or gave a team a project role | Available again, from the project's page. See [Projects and Project Managers](/documentation/projects-and-project-managers/). |
-| Set Preferred MR Tags, or restricted tags to that list | Available again, in the challenge form's **Task settings**. See [Using MapRoulette Tags](/documentation/using-maproulette-tags/). |
-| Named the OSM/External Id property explicitly | Available again, in the challenge form's **Task settings**. Leave it blank for automatic detection. See [Setting External Task Identifiers](/documentation/setting-external-task-identifiers/). |
-| Used `#`-prefixed workspace mustache tags, e.g. {% raw %}`{{#mapZoom}}`{% endraw %} | Substituted again in challenge instructions. See [Mustache Tag Replacement](/documentation/mustache-tag-replacement/). |
-| Attached reference layers to tasks | Reference layers are handed to JOSM again when you open a task in it. See [Task Attachments](/documentation/task-attachments/). |
-| Exported a single challenge, exported GeoJSON, or chose an export timezone | All available again, from the **Export** control on a challenge's task table. See [Exporting Challenge Data](/documentation/exporting-challenge-data/). |
 
 ## For server administrators
 
