@@ -43,8 +43,7 @@ complete), and while its review is still in play.
 A challenge can nominate the tags it would rather mappers used. Those appear
 above the tag box as **Popular in this challenge:**, as chips you can click to
 add rather than typing. There are two sets: one recommended during task
-completion, and one recommended during
-[review](/documentation/reviewing/).
+completion, and one recommended during review.
 
 ### Restricting MR Tags
 

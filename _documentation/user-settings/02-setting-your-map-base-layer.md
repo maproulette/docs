@@ -36,12 +36,10 @@ Basemap URL** field below it for your own tile template. Remember to press
 
 ![](/media/setting-default-baselayer.png)
 
-> The rebuilt map does not read this preference yet: it always opens on the map
-> style you last picked in the **Map style** control. The same is true of the
-> [basemap a challenge owner sets on their
-> challenge](/documentation/setting-basemap-for-challenge/) — the setting
-> is stored, but the map does not apply it.
-{: .legacy}
+Maps open on this layer unless the challenge you are working on sets [a basemap
+of its own](/documentation/setting-basemap-for-challenge/), which takes
+precedence. If neither is set, the map opens on whichever layer you last picked
+with the **Map style** control.
 
 > Choosing arbitrary layers from the OSM [editor layer
 > index](https://github.com/osmlab/editor-layer-index), adding your own custom
