@@ -38,6 +38,12 @@ The team page lists **Admins** and **Members** separately, with **Promote** and
 Teams must have at least one Admin. If you wish to leave a team you created,
 you will first need to promote another team member to Admin.
 
+> A member's role on the team affects only what they can do to the team itself.
+> It has no bearing on the permissions a team confers when it is
+> [given a role on a project](/documentation/projects-and-project-managers/):
+> every member gets the same project permissions through the team, whatever
+> their role on it.
+
 ### Inviting members
 
 **Invite** opens a dialog where you search for a mapper by OSM username and

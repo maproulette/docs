@@ -33,3 +33,15 @@ No in their User Settings.
 - [Teams](/documentation/teams/) are the supported way to group mappers
   who are working together.
 
+## Blocking a follower
+
+Your own profile lists your followers, each with a **Block** control. Blocking
+stops someone receiving your activity. They are not told: from their side they
+still appear to be following you, they simply stop seeing what you do.
+
+A blocked follower stays in the list, greyed out and marked as blocked, so you
+can **Unblock** them again.
+
+> MapRoulette activity is public regardless. Blocking removes someone from your
+> followers' activity feed; it does not hide your editing from them or from
+> anyone else.
