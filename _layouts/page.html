@@ -87,4 +87,61 @@ whole group of pages silently vanish from the sidebar.
     wide.addEventListener("change", sync);
     sync();
   })();
+
+  // Every link here is a full page load, so the sidebar's own scroll box would
+  // otherwise snap back to the top on each navigation. Carry the offset across
+  // pages, then make sure the current page's link ended up visible.
+  (function () {
+    var sidebar = document.querySelector("body > nav");
+    if (!sidebar) return;
+
+    var KEY = "mr-nav-scroll";
+
+    function saved() {
+      try {
+        return parseInt(sessionStorage.getItem(KEY), 10);
+      } catch (e) {
+        return NaN;
+      }
+    }
+
+    function save() {
+      // Below the sidebar breakpoint the nav is a plain static block, so don't
+      // let its permanent 0 overwrite the wide-screen offset.
+      if (sidebar.scrollHeight <= sidebar.clientHeight) return;
+
+      try {
+        sessionStorage.setItem(KEY, String(sidebar.scrollTop));
+      } catch (e) {
+        /* private mode, storage full: scroll restoring is not worth failing over */
+      }
+    }
+
+    function restore() {
+      var top = saved();
+      if (top > 0) sidebar.scrollTop = top;
+
+      // A deep link or an outdated offset can leave the current page's entry
+      // off-screen; nudge it back without scrolling the window itself.
+      var current = sidebar.querySelector('a[aria-current="page"]');
+      if (!current) return;
+
+      var box = sidebar.getBoundingClientRect();
+      var link = current.getBoundingClientRect();
+      var margin = 24;
+
+      if (link.top < box.top + margin) {
+        sidebar.scrollTop -= box.top + margin - link.top;
+      } else if (link.bottom > box.bottom - margin) {
+        sidebar.scrollTop += link.bottom - (box.bottom - margin);
+      }
+    }
+
+    restore();
+    // Web fonts and images can resize the list after first paint.
+    window.addEventListener("load", restore);
+
+    sidebar.addEventListener("scroll", save, { passive: true });
+    window.addEventListener("pagehide", save);
+  })();
 </script>
