@@ -55,9 +55,6 @@ The biggest change is how the frontend is configured.
 - `REACT_APP_SYSTEM_NOTICES_URL` is gone. System notices are now served by the
   backend, which is where the URL of the notices file is configured. See
   [System-Notice Management](/documentation/system-notice-management/).
-- Parts of MapRoulette now ship as plugins, loaded at runtime from a URL.
-  Reviewing is the main example. `VITE_DEPLOYMENT_PLUGIN_URLS` loads them for
-  every user of a deployment.
 
 ## Reading the rest of these docs
 

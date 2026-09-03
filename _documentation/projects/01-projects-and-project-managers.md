@@ -40,6 +40,20 @@ the ability to add and remove other managers and change their privileges.
 A project always requires at least one Admin, so an admin can only be demoted
 or removed once another user holds the Admin role.
 
+### Adding and removing managers
+
+The **Project managers** panel on the project's management page lists everyone
+with a role on the project, and the teams granted one. From there you can:
+
+- search for a mapper by their OpenStreetMap username, pick the role to give
+  them, and add them
+- change an existing manager's role from the dropdown beside their name
+- remove a manager, or a team, with the bin icon
+
+Granting a [team](/documentation/teams/) a role gives that role to every
+member, which is usually easier than adding people one at a time. A grantee who
+somehow holds more than one role is shown as the strongest of them.
+
 ## Tips
 
 - **Define scope early.** Use a stable naming pattern (region, theme, version)

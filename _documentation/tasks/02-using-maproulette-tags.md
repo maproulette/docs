@@ -40,7 +40,10 @@ complete), and while its review is still in play.
 
 ### Preferred MR Tags
 
-A challenge can nominate the tags it would rather mappers used. Those appear
+A challenge can nominate the tags it would rather mappers used. Set them in
+**Task settings** when creating or editing the challenge: **Preferred MR Tags
+(task completion)** and **Preferred MR Tags (review)**, each a comma-separated
+list, with a checkbox beside it to accept only those tags. Those appear
 above the tag box as **Popular in this challenge:**, as chips you can click to
 add rather than typing. There are two sets: one recommended during task
 completion, and one recommended during review.

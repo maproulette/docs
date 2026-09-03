@@ -52,3 +52,23 @@ address you enter is valid and yours. Some management actions require an email
 address to be set, so MapRoulette will prompt you for one if you own challenges
 without having set it.
 
+## Choosing what you're told about
+
+The **Subscriptions** tab of your account settings controls each kind of
+notification separately. For most kinds you choose one of:
+
+- **Ignore** — don't tell me at all
+- **Notify in app** — a notification in MapRoulette, but no email
+- **Notify and email immediately** — an email as soon as it happens
+- **Notify and include in daily digest** — an email, batched into one a day
+
+The kinds you can set are system messages, mentions, review approved, review
+rejected, review requested again, meta review, challenge completed, teams and
+following.
+
+Two further settings are periodic summaries rather than one-off events — tasks
+awaiting your review, and tasks awaiting your revision. Those take a frequency
+instead: off, a daily email, or a weekly one.
+
+Each of these has its own **Submit** button, separate from the rest of your
+account settings.

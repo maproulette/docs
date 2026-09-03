@@ -14,7 +14,12 @@ Be sure that your external ids are **unique for each feature in your data**. It 
 
 > Note: MapRoulette always inspects external identifiers to determine if they match the format of OSM ids before treating them as such, so a UUID will not get treated as an OSM id during task editing or other processes
 
-If you do not specify which field or property to use during challenge creation, MapRoulette will automatically scan your task features looking for certain special fields and properties to use as a unique external identifier.
+You can name the property explicitly in **Task settings → OSM/External Id
+Property** when creating or editing a challenge.
+
+If you leave it blank, MapRoulette will automatically scan your task features
+looking for certain special fields and properties to use as a unique external
+identifier.
 
 MapRoulette looks for external identifiers first on the feature fields and then within the feature's properties. It stops as soon as it finds a matching field or property. It looks for the following, in this order:
 
@@ -39,6 +44,6 @@ While most MapRoulette tasks use OSM ids when specifying external ids, it's poss
 * Make sure your ids don't look like OSM ids. MapRoulette does not provide a way to distinguish OSM ids from non-OSM ids except by their formatting. For example, MapRoulette itself uses UUIDs if it needs to generate ids. If your ids look like OSM ids, then they may be treated as OSM ids in some situations.
 * Make sure your ids are represented as strings in your GeoJSON. External task ids must be strings in MapRoulette.
 * Do not reuse one of the traditional osm id fields mentioned above (such as `id`). Instead, give your external id field a different name, like `externalId`.
-* Because the id field can't be named from the challenge form, keep your ids out of the automatically-detected fields' way: don't reuse `id`, `@id`, `osmid`, `osm_id` or `name` unless you want that field treated as the external id
+* If you leave the property unnamed and rely on automatic detection, keep your ids out of the detected fields' way: don't reuse `id`, `@id`, `osmid`, `osm_id` or `name` unless you want that field treated as the external id
 * If you want your external id to show up in the task properties when someone clicks on a task feature, then put your id field inside the feature properties in your GeoJSON. If you do *not* want your id to be displayed in the task properties, then put it on the feature itself in your GeoJSON
 
