@@ -35,7 +35,9 @@ stack, and the task information becomes a drawer you pull up over the map.
 
 The map has its own space-saving controls: the control stack collapses out of
 the way, task markers can be hidden with <kbd>H</kbd>, and marker clustering
-can be toggled. The challenge page also has a **Show Map** / **Hide Map**
+can be toggled. While the [built-in editor](/documentation/rapid-editor/) is
+open, MapRoulette's controls float over it in a panel you can drag wherever you
+like. The challenge page also has a **Show Map** / **Hide Map**
 toggle, for when you'd rather browse without one.
 
 > Saved, named, importable and exportable widget layouts — and the **Edit

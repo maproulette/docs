@@ -2,44 +2,76 @@
 title: Tag Fix Challenges
 ---
 
-MapRoulette serves you quick tasks that make it easy for you anyone to find something meaningful to map. The way that worked until now required loading the data related to the Task into JOSM or iD, fixing it there, and returning to MapRoulette to say you fixed it, and then move on.
+Most MapRoulette tasks ask you to go and fix something yourself. A **Tag Fix**
+task is different: the challenge already knows what it thinks the change should
+be, and hands it to you ready-made. Your job is to judge whether it's right.
 
-Now, we’re introducing a new type of Task: the **Tag Fix**. In a Tag Fix Task, MapRoulette will present the suggested fix to you, and all you need to do is click Yes to agree with the fix, and the change will be applied to OSM directly.
-
-Let’s look at an example. Consider this aerial image of a Wendy’s restaurant:
+Consider this aerial image of a Wendy's restaurant:
 
 ![](/media/tagfix.png){:width="500"}
 
+You can see from the aerial imagery that this restaurant has a `drive_through`:
+cars snake around the structure on a dedicated lane. But the restaurant does not
+have `drive_through=yes` in OSM. That is exactly the kind of small, verifiable
+change a Tag Fix challenge is built for.
 
-You can see from the aerial imagery that this restaurant has a `drive_through`: you can see cars snaking around the structure on a dedicated lane.
+## Working a Tag Fix task
 
-However, this restaurant does not have `drive_through=yes` in OSM. A simple fix that MapRoulette Tag Fixes are ideally suited for.
+When you lock a Tag Fix task, MapRoulette opens the built-in **iD** editor for
+you automatically and applies the challenge's suggested tags there as unsaved
+edits. It uses iD whatever editor you normally prefer, because iD is the one
+MapRoulette can drive on your behalf.
 
-As an example, I created a [Tag Fix Challenge](https://maproulette.org/browse/challenges/9411) to add the `drive_through=yes` tag to Wendy’s restaurants that have drive-through lanes but are not tagged as such in OSM yet. When you go to the Challenge and get your first Task, you will see a screen much like this one:
+Nothing is submitted for you. The changes sit in iD exactly as though you had
+typed them, so you can:
 
-![](/media/tagfix2.png)
+- look them over on the map, with the affected element already selected
+- correct a value the challenge got slightly wrong
+- undo one you disagree with
+- add something the challenge missed
 
-At the top is the suggested change to OSM tags. By default you only see what will be changed. In this case there is a blue ➕ indicating that a new tag is proposed. You have the option to see all tags as well.
+and then save them as your own edit, through iD, and set the task status as
+usual.
 
-The Completion options are different. You can click YES to accept the tag change, which will then be applied to OSM. If you click NO, nothing happens and you will be given a new task.
+## Seeing what changed
 
-I invite you to try it out and leave feedback here or email at [maproulette@maproulette.org](mailto:maproulette@maproulette.org). Thanks and happy mapping!
+The task panel on the left shows the change in two stages.
 
-For this to work, MapRoulette needs additional permissions from your OSM account, to modify the map on your behalf. You may need to log out and log back in if you have trouble.
+**Before the editor opens** it lists what the challenge suggests, compared
+against the element's current tags in OpenStreetMap — so a suggestion the
+element already satisfies is shown as such rather than as a change.
 
-## How tag fixes work in MapRoulette
+**Once the editor is open** it switches to your unsaved edits: everything
+currently pending, whether the challenge suggested it or you did it yourself.
+Each modified element's tags are shown against how they looked before you
+started.
 
-Opening a Tag Fix task takes you straight to the built-in **iD** editor, whatever
-editor you normally use — it is the one MapRoulette can drive on your behalf.
-The challenge's proposed tags are applied there for you as unsaved edits.
+### Reset
 
-Nothing is submitted on your behalf. The changes sit in iD exactly as though
-you had typed them, so you can look them over on the map, correct a value,
-undo one you disagree with, or add something the challenge missed, then save
-them as your own edit.
+While a Tag Fix task is open in the editor, the panel offers a **Reset**. It
+restores the challenge's suggestion exactly: the element's original tags with
+the suggested change applied, discarding anything else you did to that element.
 
-Elements the challenge proposes creating or deleting are not applied
-automatically — only tag changes to existing elements are.
+The panel tells you which state you're in — whether the elements still match
+what the challenge suggests, or how many have drifted from it because you undid
+something, mistyped a value, or edited further.
+
+Reset only touches the elements the challenge names. Edits you made to other
+elements are yours and are left alone.
+
+## Working several at once
+
+If you [bundle tasks together](/documentation/solving-multiple-tasks-together/),
+every bundled Tag Fix task's suggestion is applied. Adding a task to the bundle
+applies its suggestion; removing one takes its suggestion back out again,
+leaving any editing you did to that element yourself in place.
+
+## Limits
+
+Only tag changes to existing elements are applied for you. A challenge can also
+describe creating or deleting elements, and those are deliberately left for you
+to do by hand — applying them automatically would be a much larger claim than
+"these tags look wrong".
 
 > There is no longer a supported way to create a Tag Fix challenge from the
 > MapRoulette interface. Tag Fix challenges are a kind of Cooperative
