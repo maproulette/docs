@@ -25,9 +25,9 @@ OpenAerialMap project 🙂.
 
 ### Adding MR Tags
 
-Mappers and reviewers add MR Tags in two places:
+Mappers add MR Tags in two places:
 
-- On the task panel's **Task** tab, the task's tags are listed with an **Edit
+- On the task panel's **Instructions** tab, the task's tags are listed with an **Edit
   tags** control (or **No tags** if it has none yet). That opens the **Edit
   task tags** dialog, where you type a tag and press <kbd>Enter</kbd> or
   <kbd>,</kbd> to add it, and <kbd>Backspace</kbd> to remove the last one. As
@@ -36,17 +36,15 @@ Mappers and reviewers add MR Tags in two places:
   separated by commas, so you can tag and complete a task in one go.
 
 Tags can be edited while a task is still open (created, skipped or can't
-complete), and while its review is still in play.
+complete).
 
 ### Preferred MR Tags
 
 A challenge can nominate the tags it would rather mappers used. Set them in
 **Task settings** when creating or editing the challenge: **Preferred MR Tags
-(task completion)** and **Preferred MR Tags (review)**, each a comma-separated
-list, with a checkbox beside it to accept only those tags. Those appear
-above the tag box as **Popular in this challenge:**, as chips you can click to
-add rather than typing. There are two sets: one recommended during task
-completion, and one recommended during review.
+(task completion)**, a comma-separated list, with a checkbox beside it to
+accept only those tags. They appear above the tag box as **Popular in this
+challenge:**, as chips you can click to add rather than typing.
 
 ### Restricting MR Tags
 

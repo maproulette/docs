@@ -23,7 +23,7 @@ taken back out again with **Remove from Bundle**. A bundle can hold up to 50
 tasks; the panel says so and stops accepting more once you reach the limit.
 
 The task you started from is the **primary** task of the bundle, and is marked
-as such in the bundled task list on the **Task** tab.
+as such in the bundled task list on the **Instructions** tab.
 
 ### Working the bundle
 

@@ -37,18 +37,9 @@ deployment without rebuilding.
 
 ### Challenge reporting
 
-[Reporting a challenge](/documentation/challenge-flagging/) files a GitHub
-issue, which needs a repository and a token that can open issues in it:
-
-| Variable | Purpose |
-|:---------|:--------|
-| `VITE_GITHUB_ISSUES_API_OWNER` | GitHub owner (user or organisation) of the reports repository |
-| `VITE_GITHUB_ISSUES_API_REPO` | Name of the reports repository |
-| `VITE_GITHUB_ISSUES_API_TOKEN` | Token used to create the issue |
-
-If these are unset, reporting still records a comment on the challenge but no
-GitHub issue is created. Note the caveat above about secrets: this token is
-visible to anyone using the site.
+[Filing a challenge report](/documentation/challenge-flagging/) needs no
+configuration. Reports are stored by the backend and triaged in-app by a super
+user, so the GitHub repository and token the frontend used to require are gone.
 
 ## Plugins
 

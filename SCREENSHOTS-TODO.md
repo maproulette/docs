@@ -23,7 +23,7 @@ the feature used to work — and should only change if the feature returns.
 | `challenges/10-exporting-challenge-data` | `export_challenge_data` | **Export CSV** on a project's actions menu under Manage → Projects. |
 | `tasks/07-bulk-editing-challenges` | `bulk-edit-1`…`bulk-edit-4` | Task rows selected in a challenge's task table with the bulk actions toolbar showing, and one of its confirmation dialogs. |
 | `challenges/07-challenge-comments` | `challenge-comments-2` | The **Comments** button in the challenge header and the Challenge Comments dialog, with **Show task comments** checked. |
-| `challenges/09-challenge-flagging` | `challenge-flagging-1`…`challenge-flagging-5` | The **Challenge actions** menu with **Report Challenge**, the report dialog, and the **View reported issue on GitHub** state afterwards. |
+| `challenges/09-challenge-flagging` | `challenge-flagging-1`…`challenge-flagging-5` | The **Challenge actions** menu with **Report Challenge**, the report dialog, the **Challenge Reported** state afterwards, and the Super Admin → Challenge Reports queue. |
 | `mapping/02-rapid-editor` | `rapid-editor-1` | The built-in iD editor open in the task screen, with its Re-Center / Select Tasks / Focus / Close editor bar. |
 | `getting-started/01-your-dashboard` | `dashboard-1`…`dashboard-7` | The three-column dashboard: Saved Challenges, profile and level, Contributions + Locked Tasks + Teams. Plus the Mapper Level System dialog. |
 | `projects/01-projects-and-project-managers` | `projects-project-managers-1`, `-2` | Manage → Projects, and a project's page with its challenge list and Project Playbook. |

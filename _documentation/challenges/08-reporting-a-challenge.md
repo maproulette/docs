@@ -34,9 +34,9 @@ through OSM's own messaging system if the discussion is better held privately.
 
 If reaching out to the challenge owner is proving unsuccessful, and there is
 continued concern about a challenge's integrity, use the **Report Challenge**
-action. See [Reporting a Challenge on
-GitHub](/documentation/challenge-flagging/) for what that does and what
-you'll be asked for.
+action. That sends the report to the MapRoulette administrators for review. See
+[Filing a Challenge Report](/documentation/challenge-flagging/) for what you'll
+be asked for and what happens next.
 
 ### 4. Contact us via email
 

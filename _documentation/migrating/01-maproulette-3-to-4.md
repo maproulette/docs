@@ -25,6 +25,7 @@ usually still exposes it, because the data model did not change.
 | Saved, named, imported or exported widget layouts | Not available, and layouts exported from MR3 cannot be imported. See [Using Layouts](/documentation/using-layouts/). |
 | Worked Tag Fix challenges | The editor opens automatically with the proposed tags applied, for you to review and save as your own edit, rather than approved with a Yes/No panel. See [Tag Fix Challenges](/documentation/tag-fix-challenges/). |
 | Reviewed tasks | Not available. |
+| Reported a challenge | The report goes to the MapRoulette administrators inside the app, rather than opening a public issue in a GitHub repository. See [Filing a Challenge Report](/documentation/challenge-flagging/). |
 | Typed `m/`, `n/` or `p/` in the search box | `p/` is now `p:`; the Nominatim search became the location filter on [Explore Challenges](/documentation/discovering-challenges/); there is no bounding-box command. See [Searchbox Short Commands](/documentation/searchbox-short-commands/). |
 
 ## For challenge managers
@@ -55,6 +56,11 @@ The biggest change is how the frontend is configured.
 - `REACT_APP_SYSTEM_NOTICES_URL` is gone. System notices are now served by the
   backend, which is where the URL of the notices file is configured. See
   [System-Notice Management](/documentation/system-notice-management/).
+- `REACT_APP_GITHUB_ISSUES_API_OWNER`, `REACT_APP_GITHUB_ISSUES_API_REPO` and
+  `REACT_APP_GITHUB_ISSUES_API_TOKEN` are gone. Challenge reports are stored by
+  the backend and triaged by a super user, so the frontend no longer needs a
+  repository or a token that can open issues in it. See [Filing a Challenge
+  Report](/documentation/challenge-flagging/).
 
 ## Reading the rest of these docs
 

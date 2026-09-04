@@ -61,29 +61,6 @@ Which project the challenge belongs to. You can only pick projects you manage.
 
 Description and Instructions are both required.
 
-### Challenge image
-
-An optional image shown on this challenge's card. The images available to you
-are the ones your [teams](/documentation/teams/) have had approved: any
-team member can request an image from the team's page, and a super admin
-reviews it before it can be used here.
-
-### Basemap
-
-Optionally force a base layer for this challenge's maps, overriding whatever
-each mapper has chosen for themselves — useful when the tasks can only be
-judged against particular imagery. See [Setting The Basemap Layer For Your
-Challenge](/documentation/setting-basemap-for-challenge/).
-
-### Task settings
-
-- **OSM/External Id Property** — the feature property holding each task's
-  identifier. Leave it blank to let MapRoulette detect it. See [Setting
-  External Task Identifiers](/documentation/setting-external-task-identifiers/).
-- **Preferred MR Tags**, for task completion and for review, each with an
-  option to accept only those tags. See [Using MapRoulette
-  Tags](/documentation/using-maproulette-tags/).
-
 ### Task data
 
 Choose one of three sources for the challenge's tasks:
@@ -111,6 +88,29 @@ couple of thousand.
 > The data source is fixed once the challenge is created. Editing a challenge
 > shows the source read-only; to regenerate tasks from updated data, use
 > [Rebuild Tasks](/documentation/rebuilding-challenge-tasks/).
+
+### Challenge image
+
+An optional image shown on this challenge's card. The images available to you
+are the ones your [teams](/documentation/teams/) have had approved: any
+team member can request an image from the team's page, and a super admin
+reviews it before it can be used here.
+
+### Basemap
+
+Optionally force a base layer for this challenge's maps, overriding whatever
+each mapper has chosen for themselves — useful when the tasks can only be
+judged against particular imagery. See [Setting The Basemap Layer For Your
+Challenge](/documentation/setting-basemap-for-challenge/).
+
+### Task settings
+
+- **OSM/External Id Property** — the feature property holding each task's
+  identifier. Leave it blank to let MapRoulette detect it. See [Setting
+  External Task Identifiers](/documentation/setting-external-task-identifiers/).
+- **Preferred MR Tags (task completion)** — the tags the challenge suggests to
+  mappers, with an option to accept only those tags. See [Using MapRoulette
+  Tags](/documentation/using-maproulette-tags/).
 
 ### Automated Edits code of conduct
 

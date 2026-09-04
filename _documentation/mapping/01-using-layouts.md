@@ -9,16 +9,17 @@ and collapse to suit your screen.
 
 ### The two panels
 
-- **Left — the task panel.** Everything about the task, in four tabs:
-  - **Task** — the challenge and task instructions, the task's MR Tags, and,
-    when you're working on several tasks together, the list of bundled tasks
-  - **Properties** — the task feature's properties (its OSM tags and anything
-    else carried in the challenge's GeoJSON)
+- **Left — the task panel.** Everything about the task, in three tabs:
+  - **Instructions** — the challenge and task instructions, the task's MR Tags,
+    and, when you're working on several tasks together, the list of bundled
+    tasks
+  - **Data** — the task's own data, in three collapsible sections:
+    **Properties** (the task feature's properties: its OSM tags and anything
+    else carried in the challenge's GeoJSON), **GeoJSON** (the raw geometry,
+    with a button to copy it) and **OSM feature** (the OSM element the task
+    points at, linked out to OpenStreetMap)
   - **Comments** — the task's comment and status history, and the box to add
     your own comment
-  - **OSM** — the linked changeset once the task is complete, the history of
-    the task's OSM element, and links out to OpenStreetMap, OSMCha and Overpass
-    Turbo
 
   The task actions — lock, editor, and the completion buttons — sit at the
   bottom of this panel.
