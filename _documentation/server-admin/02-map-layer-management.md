@@ -59,7 +59,9 @@ saved selection.
 > The Mapillary, OpenStreetCam/KartaView and OSM data overlays — and the
 > `REACT_APP_IMAGERY_OPENSTREETCAM`, `REACT_APP_MAPILLARY_API_KEY` and
 > `REACT_APP_OSM_DATA_OVERLAY` settings that controlled them — are not part of
-> the current frontend, so there is nothing to configure.
+> the current frontend, so there is nothing to configure. Mappers reach these
+> overlays through the iD editor's own layer panel instead. See [Editing inside
+> MapRoulette](/documentation/rapid-editor/).
 {: .legacy}
 
 See also [Runtime Configuration](/documentation/runtime-configuration/)

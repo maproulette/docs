@@ -20,7 +20,7 @@ usually still exposes it, because the data model did not change.
 | What you did in MR3 | Where it stands in MR4 |
 |:--------------------|:-----------------------|
 | Picked any imagery from the OSM editor layer index | The base layers are now a fixed set bundled with the frontend. See [Setting your Map Base Layer](/documentation/setting-your-map-base-layer/). |
-| Turned on Mapillary, KartaView or OSM data overlays | Not available. |
+| Turned on Mapillary, KartaView or OSM data overlays | Not part of the task map. Turn them on inside the iD editor instead, which carries its own photo and OSM data overlays. See [Editing inside MapRoulette](/documentation/rapid-editor/). |
 | Edited with the embedded **Rapid** editor | Rapid is now an external editor. The embedded editor is iD. See [Rapid Editor](/documentation/rapid-editor/). |
 | Saved, named, imported or exported widget layouts | Not available, and layouts exported from MR3 cannot be imported. See [Using Layouts](/documentation/using-layouts/). |
 | Worked Tag Fix challenges | The editor opens automatically with the proposed tags applied, for you to review and save as your own edit, rather than approved with a Yes/No panel. See [Tag Fix Challenges](/documentation/tag-fix-challenges/). |
