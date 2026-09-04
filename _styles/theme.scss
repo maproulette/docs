@@ -1,0 +1,137 @@
+/* Design tokens mirroring the MapRoulette app (see maproulette3 src/main.css).
+ *
+ * The app builds on Tailwind's zinc scale in light mode and its slate scale in
+ * dark mode, with green as the single accent colour. These variables restate
+ * those exact values so the docs and the app read as one product. */
+
+:root {
+  color-scheme: light;
+
+  --mr-bg: #f4f4f5;             /* zinc-100  — app body background */
+  --mr-surface: #ffffff;        /* white     — app Card background */
+  --mr-surface-subtle: #fafafa; /* zinc-50 */
+  --mr-surface-hover: #f4f4f5;  /* zinc-100 */
+
+  --mr-text: #3f3f46;           /* zinc-700  — app body text */
+  --mr-text-strong: #18181b;    /* zinc-900  — app Card text / headings */
+  --mr-text-muted: #71717a;     /* zinc-500  — app CardDescription */
+  --mr-text-faint: #a1a1aa;     /* zinc-400 */
+
+  --mr-border: #e4e4e7;         /* zinc-200  — app default border */
+  --mr-border-strong: #d4d4d8;  /* zinc-300  — app outline button border */
+
+  --mr-accent: #16a34a;         /* green-600 — app link hover, success button */
+  --mr-accent-hover: #15803d;   /* green-700 */
+  --mr-accent-subtle: rgba(22, 163, 74, 0.12);
+
+  --mr-info: #2563eb;           /* blue-600 */
+  --mr-warning: #ca8a04;        /* yellow-600 */
+  --mr-caution: #ea580c;        /* orange-600 */
+  --mr-danger: #b91c1c;         /* red-700 */
+
+  --mr-code-bg: #fafafa;
+  --mr-code-border: #e4e4e7;
+
+  /* The app's --shadow-lg override, plus Tailwind's shadow-sm/xs */
+  --mr-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --mr-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --mr-shadow-lg: 0 0 10px rgba(0, 0, 0, 0.15);
+
+  /* rounded-lg / rounded-xl / rounded-full in the app */
+  --mr-radius: 0.5rem;
+  --mr-radius-lg: 0.75rem;
+  --mr-radius-full: 9999px;
+
+  --mr-ring: rgba(9, 9, 11, 0.5); /* zinc-950/50 — app focus-visible ring */
+
+  --mr-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --mr-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  --mr-sidebar-width: 17.5rem;
+  --mr-header-height: 4.25rem;
+  /* Also applied as the footer's min-height, so the space the sticky
+   * sidebar reserves below itself always matches the real footer. */
+  --mr-footer-height: 4.25rem;
+}
+
+:root.dark {
+  color-scheme: dark;
+
+  --mr-bg: #020617;             /* slate-950 — app body background */
+  --mr-surface: #1e293b;        /* slate-800 — app Card background */
+  --mr-surface-subtle: #0f172a; /* slate-900 */
+  --mr-surface-hover: #1e293b;  /* slate-800 */
+
+  --mr-text: #fafafa;           /* zinc-50   — app body text */
+  --mr-text-strong: #fafafa;    /* zinc-50 */
+  --mr-text-muted: #94a3b8;     /* slate-400 — app CardDescription */
+  --mr-text-faint: #64748b;     /* slate-500 */
+
+  --mr-border: #334155;         /* slate-700 — app default border */
+  --mr-border-strong: #334155;  /* slate-700 */
+
+  --mr-accent: #4ade80;         /* green-400 — app link hover in dark */
+  --mr-accent-hover: #86efac;   /* green-300 */
+  --mr-accent-subtle: rgba(74, 222, 128, 0.14);
+
+  --mr-info: #60a5fa;           /* blue-400 */
+  --mr-warning: #facc15;        /* yellow-400 */
+  --mr-caution: #fb923c;        /* orange-400 */
+  --mr-danger: #f87171;         /* red-400 */
+
+  --mr-code-bg: #0f172a;
+  --mr-code-border: #334155;
+
+  --mr-shadow-xs: none;
+  --mr-shadow-sm: none;
+  --mr-shadow-lg: none;
+
+  --mr-ring: rgba(212, 212, 216, 0.5); /* zinc-300/50 — app dark focus ring */
+}
+
+/* Algolia DocSearch, themed with the tokens above so the search button and the
+ * search modal match the app's Input, Card and Dialog components rather than
+ * DocSearch's defaults. Driven through DocSearch's own custom properties
+ * wherever possible, so it survives upgrades; see components.scss for the few
+ * places a variable doesn't reach. */
+:root {
+  --docsearch-primary-color: #16a34a; /* green-600 — active hit, highlights */
+  --docsearch-highlight-color: var(--docsearch-primary-color);
+  --docsearch-text-color: var(--mr-text);
+  --docsearch-muted-color: var(--mr-text-muted);
+  --docsearch-logo-color: var(--mr-text-faint);
+  --docsearch-icon-stroke-width: 2;
+  --docsearch-spacing: 0.75rem;
+
+  --docsearch-container-background: rgba(9, 9, 11, 0.45);
+  --docsearch-modal-width: 38rem;
+  --docsearch-modal-height: 32rem;
+  --docsearch-modal-background: var(--mr-surface);
+  --docsearch-modal-shadow: var(--mr-shadow-lg);
+
+  --docsearch-searchbox-height: 2.75rem;
+  --docsearch-searchbox-background: var(--mr-surface-subtle);
+  --docsearch-searchbox-focus-background: var(--mr-surface-subtle);
+  --docsearch-searchbox-shadow: inset 0 0 0 1px var(--mr-border-strong);
+
+  --docsearch-hit-height: 3rem;
+  --docsearch-hit-color: var(--mr-text);
+  --docsearch-hit-active-color: #ffffff;
+  --docsearch-hit-background: var(--mr-surface-subtle);
+  --docsearch-hit-shadow: none;
+
+  --docsearch-key-gradient: var(--mr-surface-subtle);
+  --docsearch-key-shadow: none;
+
+  --docsearch-footer-height: 3rem;
+  --docsearch-footer-background: var(--mr-surface);
+  --docsearch-footer-shadow: 0 -1px 0 0 var(--mr-border);
+}
+
+:root.dark {
+  --docsearch-primary-color: #22c55e; /* green-500 — white text still reads on it */
+  --docsearch-container-background: rgba(2, 6, 23, 0.7);
+  --docsearch-modal-shadow: 0 0 0 1px var(--mr-border), 0 16px 40px rgba(0, 0, 0, 0.5);
+}

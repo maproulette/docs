@@ -1,57 +1,247 @@
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-  color: #fffd86;
-}
+/* Long-form content styling. Type scale, code, tables and callouts are built
+ * from the same tokens the app's Card / Table / Alert components use. */
 
-b, strong {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--mr-text-strong);
   font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  scroll-margin-top: calc(var(--mr-header-height) + 1rem);
 }
 
-pre, code {
-  font-size: 1em;
+h1 {
+  font-size: 2rem;
+  margin: 0 0 1.5rem;
 }
 
-pre {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.1);
-  padding: 1em;
+h2 {
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--mr-border);
+}
+
+h3 {
+  font-size: 1.1875rem;
+  margin: 2rem 0 0.75rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1rem;
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
+li > ul,
+li > ol {
+  margin: 0.25rem 0;
+}
+
+b,
+strong {
+  font-weight: 600;
+  color: var(--mr-text-strong);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--mr-border);
+  margin: 2.5rem 0;
+}
+
+/* ------------------------------------------------------------------ links --- */
+
+/* Mirrors the app's `link` utility: underlined with a 4px offset, going green
+ * on hover, in both themes. Scoped to the content column so it can't reach
+ * into the header, the sidebar, or DocSearch's own modal. */
+main a,
+main a:visited {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: color 150ms;
+}
+
+main a:hover {
+  color: var(--mr-accent);
+}
+
+/* ------------------------------------------------------------------- code --- */
+
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--mr-font-mono);
+  font-size: 0.875em;
 }
 
 code {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 2px;
-  border-radius: 3px;
+  background: var(--mr-code-bg);
+  border: 1px solid var(--mr-code-border);
+  border-radius: 0.25rem;
+  padding: 0.1em 0.3em;
+  white-space: break-spaces;
+}
+
+pre {
+  background: var(--mr-code-bg);
+  border: 1px solid var(--mr-code-border);
+  border-radius: var(--mr-radius-lg);
+  padding: 1rem;
+  margin: 0 0 1.25rem;
+  overflow-x: auto;
+  line-height: 1.5;
 }
 
 pre > code {
   background: none;
-  padding: initial;
+  border: 0;
+  padding: 0;
+  white-space: pre;
 }
 
-a, a:visited {
-  color: rgb(145, 243, 162);
+/* Keyboard keys, used heavily on the shortcuts page. */
+kbd {
+  display: inline-block;
+  min-width: 1.5rem;
+  padding: 0.125rem 0.375rem;
+  border: 1px solid var(--mr-border-strong);
+  border-bottom-width: 2px;
+  border-radius: 0.375rem;
+  background: var(--mr-surface);
+  color: var(--mr-text-strong);
+  font-size: 0.75rem;
+  font-family: var(--mr-font-sans);
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
 }
 
-a:hover {
-  color: white;
-}
+/* ------------------------------------------------------------------ media --- */
 
-img, video {
+img,
+video {
   display: block;
   max-width: 100%;
+  border-radius: var(--mr-radius-lg);
+  border: 1px solid var(--mr-border);
+  background: var(--mr-surface);
 }
 
 img[width][height] {
   height: auto; /* Preserve aspect ratio */
 }
 
+/* ----------------------------------------------------------------- tables --- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  display: block;
+  overflow-x: auto;
+}
+
+th,
+td {
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--mr-border);
+}
+
+thead th {
+  color: var(--mr-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ------------------------------------------------------- callouts / notes --- */
+
+/* Kramdown renders `>` blocks as blockquotes; the app's Alert component is the
+ * closest equivalent, so borrow its shape. Add `{: .warning}` or `{: .legacy}`
+ * for the other variants. */
+blockquote {
+  margin: 0 0 1.25rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--mr-border);
+  border-left: 3px solid var(--mr-info);
+  border-radius: var(--mr-radius);
+  background: var(--mr-surface);
+  color: var(--mr-text);
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+blockquote.warning {
+  border-left-color: var(--mr-warning);
+}
+
+blockquote.caution {
+  border-left-color: var(--mr-caution);
+}
+
+/* Used to flag documentation for behaviour that the current MapRoulette
+ * frontend no longer provides. */
+blockquote.legacy {
+  border-left-color: var(--mr-text-faint);
+  color: var(--mr-text-muted);
+}
+
+/* ------------------------------------------------------------- footnotes --- */
+
 .footnotes {
-  border-top: 1px solid color-mix(in srgb, currentColor 30%, transparent);
-  font-size: small;
-  margin-top: 2em;
-  padding-top: 2em;
+  border-top: 1px solid var(--mr-border);
+  color: var(--mr-text-muted);
+  font-size: 0.875rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
 }
 
 .footnotes p {
   margin: 0.5em 0;
+}
+
+/* Side-by-side screenshot rows used on a few pages. */
+.figure-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.figure-row img {
+  flex: 1 1 14rem;
+  min-width: 0;
 }

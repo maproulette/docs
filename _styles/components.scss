@@ -1,0 +1,350 @@
+/* Header controls, modelled on the app's ThemeSwitcher, DropdownMenu and
+ * InputGroup components. */
+
+/* ------------------------------------------------------- theme switcher --- */
+
+/* A three-position pill (system / light / dark) with a sliding thumb, exactly
+ * as in the app's user menu. */
+.theme-switcher {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  height: 2rem;
+  padding: 0.25rem;
+  border: 1px solid var(--mr-border);
+  border-radius: var(--mr-radius-full);
+  background: var(--mr-surface-subtle);
+}
+
+.theme-switcher-thumb {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: var(--mr-radius-full);
+  background: var(--mr-border);
+  transition: transform 300ms ease-out;
+}
+
+:root.dark .theme-switcher-thumb {
+  background: var(--mr-surface);
+}
+
+.theme-switcher button {
+  position: relative;
+  display: flex;
+  height: 1.5rem;
+  width: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: var(--mr-radius-full);
+  background: none;
+  color: var(--mr-text-faint);
+  cursor: pointer;
+}
+
+.theme-switcher button svg {
+  position: relative;
+  z-index: 10;
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.theme-switcher button[aria-pressed="true"] {
+  color: var(--mr-text-strong);
+}
+
+/* ------------------------------------------------------- language picker --- */
+
+/* Trigger looks like the app's ghost Button; the panel like its DropdownMenu. */
+details.language-picker {
+  display: inline-block;
+  position: relative;
+}
+
+details.language-picker > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2rem;
+  padding: 0 0.625rem;
+  border-radius: var(--mr-radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+details.language-picker > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.language-picker > summary:hover,
+details.language-picker[open] > summary {
+  background: var(--mr-surface-hover);
+  color: var(--mr-text-strong);
+}
+
+details.language-picker > summary::before {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  background-color: currentcolor;
+  mask-image: url(/assets/icons/translate.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+details.language-picker > summary::after {
+  content: "";
+  height: 0.875rem;
+  width: 0.875rem;
+  background-color: currentcolor;
+  mask-image: url(/assets/icons/chevron-down.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+details.language-picker[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+details.language-picker ul {
+  position: absolute;
+  right: 0;
+  z-index: 40;
+  min-width: 10rem;
+  margin: 0.375rem 0 0;
+  padding: 0.25rem;
+  list-style: none;
+  border: 1px solid var(--mr-border);
+  border-radius: var(--mr-radius);
+  background: var(--mr-surface);
+  box-shadow: var(--mr-shadow-lg);
+  font-size: 0.875rem;
+}
+
+:root.dark details.language-picker ul {
+  box-shadow: 0 0 0 1px var(--mr-border);
+}
+
+details.language-picker li {
+  margin: 0;
+}
+
+details.language-picker a {
+  display: block;
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.375rem;
+  color: var(--mr-text);
+  text-decoration: none;
+}
+
+details.language-picker a:hover {
+  background: var(--mr-surface-hover);
+  color: var(--mr-accent);
+}
+
+/* --------------------------------------------------------------- search --- */
+
+/* DocSearch mounts its own button here; size the slot like the app's global
+ * search input so the header keeps the same proportions. */
+.site-search {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 32rem;
+}
+
+.site-search .DocSearch-Button {
+  width: 100%;
+  height: 2.5rem;
+  margin: 0;
+  padding: 0 0.75rem;
+  border: 1px solid var(--mr-border-strong);
+  border-radius: var(--mr-radius);
+  background: var(--mr-surface);
+  color: var(--mr-text-muted);
+  box-shadow: var(--mr-shadow-xs);
+}
+
+.site-search .DocSearch-Button:hover {
+  box-shadow: var(--mr-shadow-xs);
+  background: var(--mr-surface);
+  border-color: var(--mr-text-faint);
+}
+
+.site-search .DocSearch-Button:focus-visible {
+  outline: 3px solid var(--mr-ring);
+  outline-offset: 2px;
+}
+
+.site-search .DocSearch-Button-Placeholder {
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 0 0.5rem;
+}
+
+.site-search .DocSearch-Search-Icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--mr-text-muted);
+}
+
+.site-search .DocSearch-Button-Keys {
+  min-width: auto;
+}
+
+.site-search .DocSearch-Button-Key {
+  height: 1.25rem;
+  width: auto;
+  min-width: 1.25rem;
+  padding: 0 0.25rem;
+  margin-right: 0.25rem;
+  border: 1px solid var(--mr-border);
+  border-radius: 0.25rem;
+  background: var(--mr-surface-subtle);
+  box-shadow: none;
+  color: var(--mr-text-muted);
+  font-size: 0.6875rem;
+  top: 0;
+}
+
+/* ------------------------------------------------- search modal (DocSearch) --- */
+
+/* Most of the modal is themed through DocSearch's own custom properties in
+ * theme.scss. These are the parts those variables don't reach. */
+
+.DocSearch-Container {
+  backdrop-filter: blur(2px);
+}
+
+.DocSearch-Modal {
+  border: 1px solid var(--mr-border);
+  border-radius: var(--mr-radius-lg);
+}
+
+.DocSearch-SearchBar {
+  padding: var(--docsearch-spacing) var(--docsearch-spacing) 0;
+}
+
+.DocSearch-Form {
+  border-radius: var(--mr-radius);
+}
+
+/* One ring on the wrapper rather than two: the page's global :focus-visible
+ * outline was landing on the input on top of DocSearch's own box-shadow. */
+.DocSearch-Form:focus-within {
+  box-shadow:
+    inset 0 0 0 1px var(--mr-border-strong),
+    0 0 0 3px var(--mr-accent-subtle);
+}
+
+.DocSearch-Input:focus,
+.DocSearch-Input:focus-visible {
+  outline: none;
+}
+
+.DocSearch-Input {
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+.DocSearch-Input::placeholder {
+  color: var(--mr-text-muted);
+  opacity: 1;
+}
+
+.DocSearch-MagnifierLabel,
+.DocSearch-Reset,
+.DocSearch-LoadingIndicator {
+  color: var(--mr-text-muted);
+}
+
+.DocSearch-MagnifierLabel svg,
+.DocSearch-Reset svg,
+.DocSearch-LoadingIndicator svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.DocSearch-Dropdown {
+  max-height: min(28rem, 60vh);
+  padding: 0 var(--docsearch-spacing);
+}
+
+/* Group headings, styled like the sidebar's section labels. */
+.DocSearch-Hit-source {
+  margin: 0;
+  padding: 0.875rem 0 0.375rem;
+  background: var(--mr-surface);
+  color: var(--mr-text-muted);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.DocSearch-Hit a {
+  border-radius: var(--mr-radius);
+  padding: 0 0.75rem;
+}
+
+.DocSearch-Hit-title {
+  font-size: 0.9375rem;
+}
+
+.DocSearch-Hit-path {
+  font-size: 0.75rem;
+  color: var(--mr-text-muted);
+}
+
+.DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-path,
+.DocSearch-Hit[aria-selected="true"] mark {
+  color: var(--docsearch-hit-active-color);
+}
+
+/* Empty and no-result states. */
+.DocSearch-StartScreen,
+.DocSearch-NoResults {
+  padding: 2.5rem 1rem;
+  color: var(--mr-text-muted);
+  font-size: 0.875rem;
+}
+
+.DocSearch-Title {
+  font-size: 0.9375rem;
+}
+
+/* Footer key hints, matching the <kbd> styling used in the docs themselves. */
+.DocSearch-Footer {
+  border-top: 1px solid var(--mr-border);
+  box-shadow: none;
+  padding: 0 var(--docsearch-spacing);
+}
+
+.DocSearch-Commands {
+  font-size: 0.75rem;
+  color: var(--mr-text-muted);
+}
+
+.DocSearch-Commands-Key {
+  width: auto;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.25rem;
+  margin-right: 0.25rem;
+  border: 1px solid var(--mr-border);
+  border-radius: 0.25rem;
+  background: var(--mr-surface-subtle);
+  box-shadow: none;
+  color: var(--mr-text-muted);
+}
+
+.DocSearch-Cancel {
+  color: var(--mr-text-muted);
+}

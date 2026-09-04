@@ -2,40 +2,65 @@
 layout: default
 ---
 
-<nav>
-  <ul>
-    {% for section in site.sections %}
-    <li>
-    {% assign key = "section." | append: section %}
-    {% assign name = site.data.translations[page.lang][key] | default: site.data.translations["en-US"][key] %}
-    <h3>{{ name }}</h3>
+{% assign current = page.url %}
+
+{%- comment -%}
+Sections named in `sections` / `appendix_sections` render in that order. Any
+other directory under _documentation/ is appended after them rather than being
+dropped, so adding a section without touching _config.yaml can never make a
+whole group of pages silently vanish from the sidebar.
+{%- endcomment -%}
+{% assign ordered_sections = site.sections %}
+{% if site.appendix_sections %}
+  {% assign ordered_sections = ordered_sections | concat: site.appendix_sections %}
+{% endif %}
+{% assign present_sections = site.documentation | map: "section" | uniq | sort %}
+
+<nav aria-label="Documentation">
+  <details class="nav-toggle" open>
+    <summary>Documentation</summary>
+
     <ul>
-      {% assign docs = site.documentation | where: "section", section | where: "lang", page.lang | sort: "order" %}
-      {% for page in docs %}
-        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+      {% for section in site.sections %}
+        {% include nav-section.html section=section current=current %}
       {% endfor %}
-      </ul>
-    </li>
-    {% endfor %}
-    
-    <h3>For Developers</h3>
-    <ul>
-      <li><a rel="external" href="https://github.com/maproulette/maproulette3/blob/main/DEVELOPMENT.md">Setting up the Frontend</a></li>
-      <li><a rel="external" href="https://github.com/maproulette/maproulette-backend/blob/main/README.md">Setting up the Backend</a></li>
-      <li><a rel="external" href="https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none">HTTP API documentation</a></li>
-      <li><a rel="external" href="https://github.com/osmlab/maproulette-java-client">Java client</a></li>
-      <li><a rel="external" href="https://github.com/osmlab/maproulette-python-client">Python client</a></li>
+
+      {% for section in present_sections %}
+        {% unless ordered_sections contains section %}
+          {% include nav-section.html section=section current=current %}
+        {% endunless %}
+      {% endfor %}
+
+      {% assign screencasts = site.screencasts | sort: "slug" %}
+      {% if screencasts.size > 0 %}
+        <li>
+          <h3>Screencasts</h3>
+          <ul>
+            {% for doc in screencasts %}
+              <li>
+                <a href="{{ doc.url }}"{% if doc.url == current %} aria-current="page"{% endif %}>{{ doc.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+
+      <li>
+        <h3>For Developers</h3>
+        <ul>
+          <li><a rel="external" href="https://github.com/maproulette/maproulette3/blob/main/DEVELOPMENT.md">Setting up the Frontend</a></li>
+          <li><a rel="external" href="https://github.com/maproulette/maproulette-backend/blob/main/README.md">Setting up the Backend</a></li>
+          <li><a rel="external" href="https://maproulette.org/docs/swagger-ui/index.html?url=/assets/swagger.json&docExpansion=none">HTTP API documentation</a></li>
+          <li><a rel="external" href="https://github.com/osmlab/maproulette-java-client">Java client</a></li>
+          <li><a rel="external" href="https://github.com/osmlab/maproulette-python-client">Python client</a></li>
+        </ul>
+      </li>
+
+      {% for section in site.appendix_sections %}
+        {% include nav-section.html section=section current=current %}
+      {% endfor %}
     </ul>
-    
-    <h3>Screencasts</h3>
-    <ul>
-      {% assign screencasts = site.screencasts | where: "lang", page.lang | sort: "slug" %}
-      {% for page in screencasts %}
-        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-      {% endfor %}
-      </ul>
-    </li>
-  </ul>
+  </details>
 </nav>
 
 <main id="content">
@@ -45,3 +70,78 @@ layout: default
 
 {{ content }}
 </main>
+
+<script>
+  // The sidebar collapses into a disclosure on narrow screens and is always
+  // expanded from the sidebar breakpoint up.
+  (function () {
+    var nav = document.querySelector(".nav-toggle");
+    if (!nav) return;
+
+    var wide = window.matchMedia("(min-width: 60rem)");
+
+    function sync() {
+      nav.open = wide.matches;
+    }
+
+    wide.addEventListener("change", sync);
+    sync();
+  })();
+
+  // Every link here is a full page load, so the sidebar's own scroll box would
+  // otherwise snap back to the top on each navigation. Carry the offset across
+  // pages, then make sure the current page's link ended up visible.
+  (function () {
+    var sidebar = document.querySelector("body > nav");
+    if (!sidebar) return;
+
+    var KEY = "mr-nav-scroll";
+
+    function saved() {
+      try {
+        return parseInt(sessionStorage.getItem(KEY), 10);
+      } catch (e) {
+        return NaN;
+      }
+    }
+
+    function save() {
+      // Below the sidebar breakpoint the nav is a plain static block, so don't
+      // let its permanent 0 overwrite the wide-screen offset.
+      if (sidebar.scrollHeight <= sidebar.clientHeight) return;
+
+      try {
+        sessionStorage.setItem(KEY, String(sidebar.scrollTop));
+      } catch (e) {
+        /* private mode, storage full: scroll restoring is not worth failing over */
+      }
+    }
+
+    function restore() {
+      var top = saved();
+      if (top > 0) sidebar.scrollTop = top;
+
+      // A deep link or an outdated offset can leave the current page's entry
+      // off-screen; nudge it back without scrolling the window itself.
+      var current = sidebar.querySelector('a[aria-current="page"]');
+      if (!current) return;
+
+      var box = sidebar.getBoundingClientRect();
+      var link = current.getBoundingClientRect();
+      var margin = 24;
+
+      if (link.top < box.top + margin) {
+        sidebar.scrollTop -= box.top + margin - link.top;
+      } else if (link.bottom > box.bottom - margin) {
+        sidebar.scrollTop += link.bottom - (box.bottom - margin);
+      }
+    }
+
+    restore();
+    // Web fonts and images can resize the list after first paint.
+    window.addEventListener("load", restore);
+
+    sidebar.addEventListener("scroll", save, { passive: true });
+    window.addEventListener("pagehide", save);
+  })();
+</script>
