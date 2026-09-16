@@ -1,96 +1,279 @@
+/* Page shell: a sticky header over a sidebar + content grid, matching the
+ * app's AppLayout (header, then a scrolling region below it). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
-  background: #172e51;
+  background: var(--mr-bg);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  background-image: linear-gradient(90deg, #47725f, #172e51);
-  
-  color: white;
-  font-family: sans-serif;
-  line-height: 1.5;
-  font-weight: 300;
+  background: var(--mr-bg);
+  color: var(--mr-text);
+  font-family: var(--mr-font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   display: grid;
-  grid-template-columns: [full-start left-start] 300px [left-end right-start] 1fr [right-end full-end];
-  column-gap: 1em;
-  min-height: 100vh;
+  grid-template-columns: [full-start left-start] var(--mr-sidebar-width) [left-end right-start] minmax(0, 1fr) [right-end full-end];
   grid-template-rows: min-content 1fr min-content;
+  min-height: 100vh;
 }
 
-main {
-  max-width: 100ch;
-  margin: 1em;
+/* The app draws a 3px focus ring on interactive elements; do the same here
+ * instead of relying on each browser's default outline. */
+/* Outlines follow the element's own border-radius, so don't set one here —
+ * doing so squared off rounded controls (nav links, search hits) on focus. */
+:focus-visible {
+  outline: 3px solid var(--mr-ring);
+  outline-offset: 2px;
 }
+
+/* ---------------------------------------------------------------- header --- */
 
 body > header {
   grid-column: full;
-  background-image: linear-gradient(90deg, #47725f, #172e51);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--mr-bg);
+  border-bottom: 1px solid var(--mr-border);
 
   display: flex;
   align-items: center;
-  gap: 1.5em;
   justify-content: space-between;
-  padding: 1em 2em;
+  gap: 1rem;
+  padding: 0.625rem 0.75rem;
 }
 
-body > header a, body > footer a {
-  text-decoration: none;
+@media (min-width: 48rem) {
+  body > header {
+    gap: 1.5rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .site-brand svg {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
-body > header .right {
+.site-brand {
   display: flex;
   align-items: center;
-  gap: 1.5em;
+  gap: 0.5rem;
+  color: var(--mr-text-strong);
+  text-decoration: none;
+  flex-shrink: 0;
 }
+
+.site-brand:hover {
+  color: var(--mr-text-strong);
+}
+
+.site-brand svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+.site-brand-name {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.site-brand-suffix {
+  color: var(--mr-text-muted);
+  font-weight: 400;
+}
+
+@media (max-width: 30rem) {
+  .site-brand-suffix {
+    display: none;
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------- sidebar --- */
 
 body > nav {
-  margin-left: 1.5em;
+  grid-column: left;
+  padding: 1.5rem 0.5rem 1.5rem 1.25rem;
+  font-size: 0.875rem;
+  align-self: start;
+  position: sticky;
+  top: var(--mr-header-height);
+  /* Leave room for the footer: pinned at `top`, an element this tall bottoms
+     out exactly where the footer starts once it scrolls into view, so a long
+     nav list scrolls inside itself instead of running under the footer. */
+  max-height: calc(100vh - var(--mr-header-height) - var(--mr-footer-height));
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
+nav h2,
 nav h3 {
-  margin-top: 2em;
-  margin-bottom: 0.5em;
-  font-size: small;
-  font-weight: bold;
+  margin: 1.75rem 0 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: white;
+  color: var(--mr-text-muted);
+}
+
+nav ul > li:first-child > h3 {
+  margin-top: 0;
 }
 
 nav ul {
-  list-style-type: none;
+  list-style: none;
+  margin: 0;
   padding: 0;
 }
 
 nav ul li {
-  line-height: 1.25;
-  margin: 0.25em 0;
+  line-height: 1.375;
 }
 
-nav ul a, nav ul a:visited {
+nav ul a {
+  display: block;
+  padding: 0.3125rem 0.5rem;
+  margin-left: -0.5rem;
+  border-radius: var(--mr-radius);
+  color: var(--mr-text);
   text-decoration: none;
-  color: white;
+  transition: color 150ms, background-color 150ms;
 }
 
 nav ul a:hover {
-  color: rgb(145, 243, 162);
+  color: var(--mr-accent);
+  background: var(--mr-surface-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
+
+nav ul a[aria-current="page"] {
+  color: var(--mr-accent);
+  background: var(--mr-accent-subtle);
+  font-weight: 500;
+}
+
+/* The sidebar is a plain list on wide screens; the disclosure summary that
+ * collapses it only appears on narrow ones. */
+.nav-toggle > summary {
+  display: none;
+}
+
+@media (max-width: 60rem) {
+  body {
+    grid-template-columns: [full-start left-start right-start] minmax(0, 1fr) [left-end right-end full-end];
+  }
+
+  body > nav {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding: 0.75rem 1rem 0;
+    border-bottom: 1px solid var(--mr-border);
+  }
+
+  .nav-toggle > summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--mr-border-strong);
+    border-radius: var(--mr-radius);
+    background: var(--mr-surface);
+    font-weight: 500;
+  }
+
+  .nav-toggle > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .nav-toggle > summary::after {
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    background-color: currentcolor;
+    mask-image: url(/assets/icons/chevron-down.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    transition: transform 150ms;
+  }
+
+  .nav-toggle[open] > summary::after {
+    transform: rotate(180deg);
+  }
+}
+
+/* --------------------------------------------------------------- content --- */
+
+main {
+  grid-column: right;
+  max-width: 52rem;
+  padding: 2rem 1.25rem 4rem;
+}
+
+@media (min-width: 60rem) {
+  main {
+    padding: 2.5rem 2.5rem 5rem;
+  }
+}
+
+/* ---------------------------------------------------------------- footer --- */
 
 body > footer {
   grid-column: full;
-  background: #172e51;
-  color: #B4CBEE;
-  font-size: small;
+  /* Opaque and above the sticky sidebar, so the footer always wins the overlap
+     rather than having nav links show through it. */
+  position: relative;
+  z-index: 20;
+  background: var(--mr-bg);
+  min-height: var(--mr-footer-height);
+  box-sizing: border-box;
+  border-top: 1px solid var(--mr-border);
+  color: var(--mr-text-muted);
+  font-size: 0.8125rem;
 
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 2em;
-  padding: 1em;
+  gap: 0.5rem 1.5rem;
+  padding: 1.5rem 1.25rem;
 }
 
-body > footer ul {
-  padding: 0;
-  list-style-type: none;
+body > footer a {
+  color: var(--mr-text-muted);
+  text-decoration: none;
+}
+
+body > footer a:hover {
+  color: var(--mr-accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+body > footer p {
+  margin: 0;
 }

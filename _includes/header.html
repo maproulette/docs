@@ -1,24 +1,73 @@
 <header>
-  <a href="{% if page.lang %}/{{ page.lang }}/{% else %}/{% endif %}">
-    <img src="/assets/logo.svg" width="225" alt="MapRoulette"/>
+  <a class="site-brand" href="/" rel="home">
+    {% include logomark.html %}
+    <span class="site-brand-name">MapRoulette <span class="site-brand-suffix">Docs</span></span>
   </a>
-  <div class="right">
-    <div id="docsearch"></div>
-    {% if page.variants.size > 1 %}
-      <details class="language-picker">
-        <summary>{{ page.variants.size }} languages</summary>
-        <ul>
-        {% for variant in page.variants %}
-          {% assign code = variant[0] %}
-          {% assign permalink = variant[1] %}
-          <li><a href="{{ permalink }}">{{ site.data.language_names[code] | default: code }}</a></li>
-        {% endfor %}
-          <li><a href="/en-US/documentation/translate-docs/">+ add language</a></li>
-        </ul>
-      </details>
-    {% else %}
-      <a href="/en-US/documentation/translate-docs/">Help translate!</a>
-    {% endif %}
+
+  <div class="site-search" id="docsearch"></div>
+
+  <div class="header-actions">
+    <div class="theme-switcher" role="group" aria-label="Theme" hidden>
+      <span class="theme-switcher-thumb" aria-hidden="true"></span>
+      <button type="button" data-theme="system" aria-label="System theme" aria-pressed="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+      </button>
+      <button type="button" data-theme="light" aria-label="Light theme" aria-pressed="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <button type="button" data-theme="dark" aria-label="Dark theme" aria-pressed="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
     </div>
+
   </div>
 </header>
+
+<script>
+  (function () {
+    var group = document.querySelector(".theme-switcher");
+    if (!group) return;
+
+    var buttons = Array.prototype.slice.call(group.querySelectorAll("button[data-theme]"));
+    var thumb = group.querySelector(".theme-switcher-thumb");
+    var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+    function read() {
+      try {
+        return localStorage.getItem("app-theme") || "system";
+      } catch (e) {
+        return "system";
+      }
+    }
+
+    function apply(theme) {
+      var dark = theme === "dark" || (theme === "system" && media.matches);
+      document.documentElement.classList.toggle("dark", dark);
+
+      buttons.forEach(function (button, index) {
+        var active = button.dataset.theme === theme;
+        button.setAttribute("aria-pressed", active ? "true" : "false");
+        if (active) thumb.style.transform = "translateX(" + index * 1.5 + "rem)";
+      });
+    }
+
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        try {
+          localStorage.setItem("app-theme", button.dataset.theme);
+        } catch (e) {
+          /* Preference just won't persist. */
+        }
+        apply(button.dataset.theme);
+      });
+    });
+
+    // Follow the OS while the preference is "system", as the app does.
+    media.addEventListener("change", function () {
+      if (read() === "system") apply("system");
+    });
+
+    group.hidden = false;
+    apply(read());
+  })();
+</script>
