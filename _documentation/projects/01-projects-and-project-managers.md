@@ -28,7 +28,8 @@ the challenge's actions menu.
 
 ## Project roles
 
-Project permissions are granted per user (or per team) with one of three roles:
+Project permissions are granted per user with one of three roles. A team brings
+its own roles instead — see [Attaching a team](#attaching-a-team):
 
 **Read** — view the project overview page and the challenges under the project.
 
@@ -42,17 +43,44 @@ or removed once another user holds the Admin role.
 
 ### Adding and removing managers
 
-The **Project managers** panel on the project's management page lists everyone
-with a role on the project, and the teams granted one. From there you can:
+**Managers and teams**, in the project's actions, lists everyone with a role on
+the project and every team attached to it. From there you can:
 
 - search for a mapper by their OpenStreetMap username, pick the role to give
   them, and add them
 - change an existing manager's role from the dropdown beside their name
-- remove a manager, or a team, with the bin icon
+- search for a [team](/documentation/teams/) by name and attach it
+- remove a manager, or detach a team, with the bin icon
 
-Granting a [team](/documentation/teams/) a role gives that role to every
-member, which is usually easier than adding people one at a time. A grantee who
-somehow holds more than one role is shown as the strongest of them.
+### Attaching a team
+
+Attaching a team is usually easier than adding people one at a time, and it
+keeps up with the team as its membership changes.
+
+There is no role to pick for a team, because a team already has roles of its
+own. What each person can do on the project follows the role they hold **in the
+team**:
+
+| Their role in the team | What they get on the project |
+| --- | --- |
+| Owner | Admin |
+| Admin | Admin |
+| Manager | Write |
+| Member | nothing |
+
+Belonging to a team is not the same as running its work, so plain members get
+no access to a project their team is attached to.
+
+A grantee who somehow holds more than one role is shown as the strongest of
+them.
+
+### Teams that own a project
+
+Attaching a team is different from giving a project **to** a team. A project can
+have one owning team, chosen in the project form, and that team's image becomes
+the picture on the project's card. Ownership is about whose project it is;
+attachment is about who is helping run it. Both give access by the same rule
+above.
 
 ## Tips
 

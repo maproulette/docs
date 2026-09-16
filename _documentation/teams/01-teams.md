@@ -26,23 +26,32 @@ You can edit any of these later from the team's page.
 
 ### Team Roles
 
-Members of a team are either **Admin** or **Member**. Admins have full
-management access to the team: inviting and removing members, promoting and
-demoting other members, editing the team's name, description and avatar, and
-deleting the team. A Member can see the team and its membership and can leave,
-but has no management capability.
+A team member holds one of four roles. Each one can do everything the role
+below it can:
 
-The team page lists **Admins** and **Members** separately, with **Promote** and
-**Demote** controls on each row for admins to use.
+**Owner** — deletes the team, and makes other members owners. Everything an
+Admin can do.
 
-Teams must have at least one Admin. If you wish to leave a team you created,
-you will first need to promote another team member to Admin.
+**Admin** — invites and removes members, and sets their roles. Everything a
+Manager can do.
 
-> A member's role on the team affects only what they can do to the team itself.
-> It has no bearing on the permissions a team confers when it is
-> [given a role on a project](/documentation/projects-and-project-managers/):
-> every member gets the same project permissions through the team, whatever
-> their role on it.
+**Manager** — runs the team's work: creating, editing and deleting the projects
+and challenges the team is responsible for.
+
+**Member** — belongs to the team and sees it listed, and nothing more.
+
+Change a member's role from the dropdown beside their name on the team page.
+
+Teams must always have at least one Owner, so the last one cannot be demoted,
+removed, or leave the team. If you created a team and want to leave it, make
+someone else an owner first. Handing out the Owner role is reserved to owners —
+admins run the membership, but not the keys to the team itself.
+
+> A member's role decides what they can do **to the team** and what they can do
+> **with the team's work**. When a team is given a project or a challenge, the
+> people who can act on it are its owners, admins and managers; plain members
+> get nothing. See [Projects and Project
+> Managers](/documentation/projects-and-project-managers/).
 
 ### Inviting members
 
@@ -56,12 +65,28 @@ in the meantime.
 Been invited to join a team? Your pending invitations appear in the Teams block
 on your Dashboard, each with **Accept** and **Decline**.
 
-### Challenge images
+### The team's image
 
-A team can hold a set of images that its members may put on their challenges.
-Anyone on the team can **Request image** from the team's page; a super admin
-reviews it, and once **Approved** it becomes selectable in the
-[challenge form](/documentation/creating-a-challenge/) for everyone on
-that team. Images awaiting review show as **Awaiting review**, and can be
-withdrawn by whoever requested them or by a team admin.
+A team has one image, shown on the cards of the projects and challenges the
+team owns. Anyone on the team can **Request image** from the team's page; a
+super admin reviews it, and once **Approved** it replaces whatever the team had
+before. An image awaiting review shows as **Awaiting review**, and can be
+withdrawn by whoever requested it or by a team admin.
+
+A team has only one image slot, so it can have only one request outstanding at
+a time — withdraw the pending one to request a different image.
+
+Until an image is approved, work owned by the team shows no picture. A tile
+showing a placeholder usually means the image is still awaiting review rather
+than that something is broken.
+
+### Giving a team your work
+
+A project or a challenge can be owned by a team. Pick the team in the project or
+challenge form; only teams whose work you run — where you are an owner, admin or
+manager — are offered, so belonging to a team is not enough to publish under its
+name.
+
+Handing work to a team does two things: everyone who runs that team can manage
+it, and the team's approved image becomes the picture on its card.
 

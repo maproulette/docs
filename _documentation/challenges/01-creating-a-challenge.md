@@ -89,12 +89,16 @@ couple of thousand.
 > shows the source read-only; to regenerate tasks from updated data, use
 > [Rebuild Tasks](/documentation/rebuilding-challenge-tasks/).
 
-### Challenge image
+### Team
 
-An optional image shown on this challenge's card. The images available to you
-are the ones your [teams](/documentation/teams/) have had approved: any
-team member can request an image from the team's page, and a super admin
-reviews it before it can be used here.
+An optional [team](/documentation/teams/) to own this challenge. Everyone who
+runs that team — its owners, admins and managers — can then manage the
+challenge, whatever role they hold on the parent project, and the team's
+approved image becomes the picture on the challenge's card.
+
+Only teams whose work you run are offered, so belonging to a team is not enough
+to publish a challenge under its name. A team's image is requested from the
+team's page and reviewed by a super admin before it appears anywhere.
 
 ### Basemap
 
