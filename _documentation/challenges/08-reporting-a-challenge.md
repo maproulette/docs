@@ -12,6 +12,9 @@ This page describes the steps you can take to resolve an issue with a
 MapRoulette Challenge. This process is a lot like the process you would follow
 when you notice a questionable edit in OSM made outside of MapRoulette.
 
+![A challenge page: the owner byline and the Comments button in the header](/media/mr4-challenge-page.png){: .only-light}
+![A challenge page: the owner byline and the Comments button in the header](/media/mr4-challenge-page-dark.png){: .only-dark}
+
 ### 1. Comment on the Challenge
 
 Start on the challenge page and open its comments with the **Comments**

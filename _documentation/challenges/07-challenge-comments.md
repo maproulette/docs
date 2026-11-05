@@ -14,6 +14,9 @@ one](https://maproulette.org/browse/challenges/40609) — and select
 header shrinks, the same button becomes a speech-bubble icon (**View
 comments**). Either opens the **Challenge Comments** dialog.
 
+![The Challenge Comments dialog](/media/mr4-challenge-comments.png){: .only-light}
+![The Challenge Comments dialog](/media/mr4-challenge-comments-dark.png){: .only-dark}
+
 ## Submitting a comment
 
 Type your comment and choose **Send**. Comments support

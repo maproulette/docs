@@ -19,6 +19,9 @@ Points are awarded for each task that is completed as follows:
 
 ## Levels
 
+![The Mapper Level System dialog, showing the current level and the levels above it](/media/mr4-dashboard-level-system.png){: .only-light}
+![The Mapper Level System dialog, showing the current level and the levels above it](/media/mr4-dashboard-level-system-dark.png){: .only-dark}
+
 Your points also determine your **mapper level**. Level is derived from your
 score with:
 

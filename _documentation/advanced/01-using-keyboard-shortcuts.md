@@ -12,6 +12,9 @@ Most of them are single keys, so you can keep one hand on the mouse and work
 the task with the other. At the time of writing, the following shortcuts are
 available.
 
+![The Keyboard Shortcuts dialog](/media/mr4-keyboard-shortcuts.png){: .only-light}
+![The Keyboard Shortcuts dialog](/media/mr4-keyboard-shortcuts-dark.png){: .only-dark}
+
 ### Task actions
 
 The four status keys open the confirmation dialog rather than completing the

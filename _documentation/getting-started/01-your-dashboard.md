@@ -7,6 +7,9 @@ with the challenges you've saved, your mapping progress, and what you've been
 working on recently. It is laid out as three columns on a wide screen, and
 stacks into one column on smaller ones.
 
+![The dashboard: saved challenges, profile and level, contributions with locked tasks, and teams](/media/mr4-dashboard.png){: .only-light}
+![The dashboard: saved challenges, profile and level, contributions with locked tasks, and teams](/media/mr4-dashboard-dark.png){: .only-dark}
+
 ## Saved Challenges
 
 Challenges you've saved (the bookmark control on a challenge page) are listed
@@ -29,6 +32,9 @@ formula and the point value of each task status.
 
 The column also badges your account as **Verified** or a **Guest**, depending
 on whether you're signed in with your OpenStreetMap account.
+
+![The Mapper Level System dialog](/media/mr4-dashboard-level-system.png){: .only-light}
+![The Mapper Level System dialog](/media/mr4-dashboard-level-system-dark.png){: .only-dark}
 
 ## Contributions
 

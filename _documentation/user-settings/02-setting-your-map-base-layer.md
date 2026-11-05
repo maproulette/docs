@@ -27,7 +27,13 @@ Individual maps add their own buttons alongside these — the task map, for
 example, adds controls for task markers and for
 [working several tasks together](/documentation/solving-multiple-tasks-together/).
 
+![The Map style control open on a task map, listing the bundled base layers](/media/mr4-map-style-control.png){: .only-light}
+![The Map style control open on a task map, listing the bundled base layers](/media/mr4-map-style-control-dark.png){: .only-dark}
+
 ## Your default basemap
+
+![Account Settings, General tab, with the Default Basemap list open](/media/mr4-settings-default-basemap.png){: .only-light}
+![Account Settings, General tab, with the Default Basemap list open](/media/mr4-settings-default-basemap-dark.png){: .only-dark}
 
 You can record a preferred basemap on your account from the user menu →
 **Account Settings** → **General** → **Default Basemap**. Remember to press

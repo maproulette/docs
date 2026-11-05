@@ -16,6 +16,9 @@ Priorities are set on their own page: from the challenge's management page,
 choose **Configure prioritization**. The page has an editor on the left and a
 live preview on the right.
 
+![The prioritization editor with a property rule on the High tier and the preview map](/media/mr4-priority-rules.png){: .only-light}
+![The prioritization editor with a property rule on the High tier and the preview map](/media/mr4-priority-rules-dark.png){: .only-dark}
+
 The editor has a tab for each of the three tiers — **High**, **Medium** and
 **Low** — plus a **Default priority** selector. Each tab holds that tier's
 property rules and its geographic bounds. At the top of each tab you'll see:

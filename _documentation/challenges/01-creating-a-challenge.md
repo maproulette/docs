@@ -36,6 +36,9 @@ pick the project from the form's project picker.
 The challenge form, **Create New Challenge**, is a single page in eight
 sections.
 
+![The top of the challenge form: project, name, description and instructions](/media/mr4-create-challenge-form.png){: .only-light}
+![The top of the challenge form: project, name, description and instructions](/media/mr4-create-challenge-form-dark.png){: .only-dark}
+
 ### Project
 
 Which project the challenge belongs to. You can only pick projects you manage.
@@ -148,6 +151,9 @@ heavy the query is, this can take a few seconds to a couple of minutes. You
 land on the challenge's management page, which shows **Tasks Building...** with
 an elapsed timer and refreshes itself as it progresses, then shows your tasks on
 a map with a task table and challenge statistics.
+
+![A challenge's management page after its tasks are built](/media/mr4-manage-challenge.png){: .only-light}
+![A challenge's management page after its tasks are built](/media/mr4-manage-challenge-dark.png){: .only-dark}
 
 From there you can:
 

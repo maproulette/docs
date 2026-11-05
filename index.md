@@ -4,7 +4,8 @@ permalink: /
 
 Welcome to the MapRoulette documentation and learning site!
 
-![](/media/welcome-index.png)
+![MapRoulette's Explore Challenges page](/media/mr4-explore-grid-map.png){: .only-light}
+![MapRoulette's Explore Challenges page](/media/mr4-explore-grid-map-dark.png){: .only-dark}
 
 If you'd like to get mapping, visit our application page at [MapRoulette.org](https://maproulette.org/)
 

@@ -8,6 +8,9 @@ challenges inside it.
 
 ## Managing your projects
 
+![Manage → Projects, filtered to owned projects](/media/mr4-manage-projects.png){: .only-light}
+![Manage → Projects, filtered to owned projects](/media/mr4-manage-projects-dark.png){: .only-dark}
+
 **Manage → Projects** (from the user menu) lists the projects you manage. From
 there you can:
 
@@ -36,6 +39,9 @@ no way to undo this from MapRoulette.
 
 A challenge can be moved between projects you manage with **Move challenge** in
 the challenge's menu on its project's page.
+
+![A project page with its actions and its challenges](/media/mr4-manage-project.png){: .only-light}
+![A project page with its actions and its challenges](/media/mr4-manage-project-dark.png){: .only-dark}
 
 ## Project roles
 

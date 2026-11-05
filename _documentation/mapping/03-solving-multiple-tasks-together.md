@@ -10,6 +10,9 @@ configure first.
 
 ### Building a bundle
 
+![The Work on multiple tasks panel open on the task map](/media/mr4-multi-task-panel.png){: .only-light}
+![The Work on multiple tasks panel open on the task map](/media/mr4-multi-task-panel-dark.png){: .only-dark}
+
 Lock a task, then open the **Work on multiple tasks** panel at the top of the
 map. There are two ways to add tasks to your selection:
 
@@ -33,6 +36,9 @@ Once tasks are bundled, completing the primary task completes all of them
 together — you set one status, leave one comment, and every task in the bundle
 receives it. Locking works the same way: locking the primary task locks the
 whole bundle, which is why your Dashboard shows locked bundles as *n tasks*.
+
+![The Bundled Tasks list on the Features tab, with the primary task marked](/media/mr4-bundled-tasks-list.png){: .only-light}
+![The Bundled Tasks list on the Features tab, with the primary task marked](/media/mr4-bundled-tasks-list-dark.png){: .only-dark}
 
 A few map controls help while you work:
 

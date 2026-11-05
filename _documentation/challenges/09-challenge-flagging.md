@@ -17,6 +17,9 @@ Open the challenge page and select the **Challenge actions** menu (the ⋮
 button beside the challenge title), then **Report Challenge**. You need to be
 signed in.
 
+![The Challenge actions menu with Report Challenge](/media/mr4-challenge-actions-menu.png){: .only-light}
+![The Challenge actions menu with Report Challenge](/media/mr4-challenge-actions-menu-dark.png){: .only-dark}
+
 The report dialog asks for:
 
 - **Email (optional)** — so the administrators can reach you about the report.
@@ -39,6 +42,9 @@ Reporting a challenge does **not** disable it immediately, and it does not
 archive or hide it. Any follow-up discussion happens in the [challenge
 comments](/documentation/challenge-comments/).
 
+![The Report Challenge dialog](/media/mr4-report-challenge-dialog.png){: .only-light}
+![The Report Challenge dialog](/media/mr4-report-challenge-dialog-dark.png){: .only-dark}
+
 ## After reporting
 
 While your report is awaiting review, the actions menu shows **Challenge
@@ -46,6 +52,9 @@ Reported** with a red flag instead of **Report Challenge**, and the item is
 disabled — there is nothing more for you to do until an administrator has
 looked at it. You can report the same challenge again once your earlier report
 has been dealt with.
+
+![A reported challenge's page with the notice above Start Challenge](/media/mr4-challenge-reported.png){: .only-light}
+![A reported challenge's page with the notice above Start Challenge](/media/mr4-challenge-reported-dark.png){: .only-dark}
 
 Reports aren't private. While a challenge has a report awaiting review, its
 page shows **This challenge has been reported. Click to view the reports.**
@@ -57,6 +66,9 @@ on a given date. The email address a reporter gave and the administrator's note
 are never shown there.
 
 ## What administrators do with it
+
+![Super Admin → Challenge reports with an open report](/media/mr4-super-admin-challenge-reports.png){: .only-light}
+![Super Admin → Challenge reports with an open report](/media/mr4-super-admin-challenge-reports-dark.png){: .only-dark}
 
 Reports land in a review queue under **Super Admin → Challenge Reports**, where
 an administrator reads the report, can jump straight to the challenge or its

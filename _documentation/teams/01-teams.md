@@ -65,6 +65,9 @@ dashboard until they act on it. In the meantime admins and owners see them
 listed as **Invited** on the team page; other visitors see only members who
 have joined.
 
+![A team's page with its members and a pending invitation](/media/mr4-team-page.png){: .only-light}
+![A team's page with its members and a pending invitation](/media/mr4-team-page-dark.png){: .only-dark}
+
 ### Accepting or Declining an Invitation
 
 Been invited to join a team? Your pending invitations appear in the Teams block

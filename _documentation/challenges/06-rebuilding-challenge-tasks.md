@@ -61,6 +61,9 @@ rebuild.
 While the rebuild runs, the challenge page shows **Tasks Building...** with an
 elapsed timer and refreshes itself as it progresses.
 
+![The Rebuild Challenge Tasks dialog for a challenge built from an uploaded file](/media/mr4-rebuild-tasks-dialog.png){: .only-light}
+![The Rebuild Challenge Tasks dialog for a challenge built from an uploaded file](/media/mr4-rebuild-tasks-dialog-dark.png){: .only-dark}
+
 ## Optionally removing incomplete tasks first
 
 The rebuild dialog offers some details about the process along with an option

@@ -9,6 +9,9 @@ to suit your screen.
 
 ### The two panels
 
+![The task screen: task panel and its tabs on the left, the task map on the right](/media/mr4-task-screen.png){: .only-light}
+![The task screen: task panel and its tabs on the left, the task map on the right](/media/mr4-task-screen-dark.png){: .only-dark}
+
 - **Left — the task panel.** Everything about the task, in four tabs:
   - **Instructions** — the task's instructions (or the challenge's, if the
     task has none of its own), below a summary of any unsaved edits you have

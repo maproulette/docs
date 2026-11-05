@@ -21,6 +21,9 @@ so far — to build a selection. A toolbar appears showing **_n_ selected**.
 > challenge. Narrow with the filters first if you want to be sure of what
 > you're acting on.
 
+![Three rows selected in a challenge's task table, with the bulk actions toolbar](/media/mr4-bulk-actions-toolbar.png){: .only-light}
+![Three rows selected in a challenge's task table, with the bulk actions toolbar](/media/mr4-bulk-actions-toolbar-dark.png){: .only-dark}
+
 ## Available actions
 
 | Action            | What it does |
@@ -38,6 +41,9 @@ couldn't — a delete can partially succeed if you lack permission on some of th
 selected tasks.
 
 **Delete cannot be undone.**
+
+![The confirmation shown before deleting the selected tasks](/media/mr4-bulk-delete-confirm.png){: .only-light}
+![The confirmation shown before deleting the selected tasks](/media/mr4-bulk-delete-confirm-dark.png){: .only-dark}
 
 ## Changing several challenges at once
 

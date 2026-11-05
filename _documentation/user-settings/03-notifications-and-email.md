@@ -23,6 +23,9 @@ Notifications page (**All** shows every category):
 
 ## Working through your notifications
 
+![The Notifications page with its filters and grouped notifications](/media/mr4-notifications-page.png){: .only-light}
+![The Notifications page with its filters and grouped notifications](/media/mr4-notifications-page-dark.png){: .only-dark}
+
 The Notifications page is a list with a filter bar and a reading pane:
 
 - Filter by **type**, by **sender**, by **task**, and by read/unread state.
@@ -48,6 +51,9 @@ MapRoulette does not require email validation, so please make sure that the
 address you enter is valid and yours.
 
 ## Choosing what you're told about
+
+![Account Settings, Notifications tab, with the Notify me about section](/media/mr4-settings-notifications.png){: .only-light}
+![Account Settings, Notifications tab, with the Notify me about section](/media/mr4-settings-notifications-dark.png){: .only-dark}
 
 Under **Notify me about** on the same **Notifications** tab, you set each kind
 of notification separately. The kinds you can set are **System messages**,

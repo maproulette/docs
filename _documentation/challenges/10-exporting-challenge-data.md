@@ -28,6 +28,9 @@ Go to **Manage → Projects** (from the user menu), find the project, and choose
 **Export CSV** from its actions menu. The export covers the tasks of every
 challenge in that project, and downloads as `project-<name>-tasks.csv`.
 
+![A project's actions menu on Manage → Projects, with Export CSV](/media/mr4-manage-projects-actions.png){: .only-light}
+![A project's actions menu on Manage → Projects, with Export CSV](/media/mr4-manage-projects-actions-dark.png){: .only-dark}
+
 CSV exports still include a **Tags** column, and GeoJSON exports an `mr_tags`
 property. MapRoulette no longer asks mappers to tag tasks, so these only hold
 tags that were added to tasks in earlier versions of MapRoulette.

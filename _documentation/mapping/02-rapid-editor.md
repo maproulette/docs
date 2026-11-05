@@ -12,6 +12,9 @@ the iD editor inline, in place of the task map. The task's OSM features are
 pre-selected for you, and the changeset comment is pre-filled from the
 challenge, exactly as it would be if you had opened iD in a new tab.
 
+![The built-in iD editor open in the task screen, with the Re-Center, Select Tasks, Show All and Close editor bar](/media/mr4-built-in-editor.png){: .only-light}
+![The built-in iD editor open in the task screen, with the Re-Center, Select Tasks, Show All and Close editor bar](/media/mr4-built-in-editor-dark.png){: .only-dark}
+
 ### MapRoulette's controls
 
 A small panel floats over the editor with MapRoulette's own controls. Drag it

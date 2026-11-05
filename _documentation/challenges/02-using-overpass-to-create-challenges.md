@@ -25,6 +25,9 @@ after choosing **I want to provide an Overpass query**.
 Once you submit the form, MapRoulette runs the query in the background and your
 Tasks reflect its result.
 
+![The challenge form's task data section with an Overpass query entered](/media/mr4-create-challenge-overpass.png){: .only-light}
+![The challenge form's task data section with an Overpass query entered](/media/mr4-create-challenge-overpass-dark.png){: .only-dark}
+
 ## Common Pitfalls
 
 ### `out center` returns both relations and ways as nodes; use `out geom` instead

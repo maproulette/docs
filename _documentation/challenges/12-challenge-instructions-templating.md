@@ -55,6 +55,9 @@ Creates a select field named myDropdown with three choices (foo or bar or baz)
 The label can also include basic markdown, including mustache tags referencing
 task properties
 
+![Task instructions rendering a checkbox and a select field](/media/mr4-instructions-form-fields.png){: .only-light}
+![Task instructions rendering a checkbox and a select field](/media/mr4-instructions-form-fields-dark.png){: .only-dark}
+
 ## Other Useful Short Codes
 
 ```

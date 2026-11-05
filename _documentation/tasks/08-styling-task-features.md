@@ -54,6 +54,9 @@ fuchsia fill:
 }
 ```
 
+![A task whose first building is drawn with a purple simplestyle stroke and fill, and its swatch on the Features tab](/media/mr4-styled-task-features.png){: .only-light}
+![A task whose first building is drawn with a purple simplestyle stroke and fill, and its swatch on the Features tab](/media/mr4-styled-task-features-dark.png){: .only-dark}
+
 > Earlier versions of MapRoulette could also style features through rules set
 > up in the challenge form, based on the values of task properties. Those
 > style rules, and the Feature Style Legend that went with them, are not part

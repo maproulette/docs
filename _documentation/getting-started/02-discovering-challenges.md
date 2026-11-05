@@ -22,6 +22,9 @@ The control at the right end of the filter bar switches between three views:
   as **Featured**, **Tag Fix**, **Cooperative** or **Global** where that
   applies.
 
+![Explore Challenges in the grid-with-map view, with challenges in view listed beside the map](/media/mr4-explore-grid-map.png){: .only-light}
+![Explore Challenges in the grid-with-map view, with challenges in view listed beside the map](/media/mr4-explore-grid-map-dark.png){: .only-dark}
+
 # Sorting
 
 Use **Sort by** to order results by **Name** (the default), **Newest**,
