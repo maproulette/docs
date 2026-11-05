@@ -1,8 +1,13 @@
 {
-  "new-topics": "New Topics/Features",
-  "basics": "Basics",
-  "advanced": "Advanced Topics",
-  "creating-challenges": "Creating and Managing Challenges",
-  "teams": "Working as a Team",
-  "server-admin": "Server Admin"
+  "getting-started": "Getting Started",
+  "migrating": "Migrating from MR3",
+  "mapping": "Mapping Tasks",
+  "user-settings": "User Settings",
+  "projects": "Projects",
+  "challenges": "Challenges",
+  "tasks": "Tasks",
+  "teams": "Teams",
+  "advanced": "Advanced",
+  "server-admin": "Server Admin",
+  "creating-challenges": "Creating and Managing Challenges"
 }
