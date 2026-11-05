@@ -1,28 +1,79 @@
 .sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0); 
+  clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
-  white-space: nowrap; 
+  white-space: nowrap;
   width: 1px;
 }
 
-a.sr-only[href="#content"] {
+/* Skip link: hidden until focused, then shown as a button over the header. */
+.skip-link {
   position: absolute;
-  top: 0;
+  top: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 50;
+  padding: 0.5rem 1rem;
+  border-radius: var(--mr-radius);
+  background: var(--mr-text-strong);
+  color: var(--mr-bg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 a[rel="external"]::after {
   display: inline-block;
   content: "";
-  height: 1em;
-  width: 1em;
+  height: 0.875em;
+  width: 0.875em;
   background-color: currentcolor;
   mask-image: url(/assets/icons/external.svg);
   mask-size: contain;
+  mask-repeat: no-repeat;
   transform: translateY(0.125em);
-  margin-left: 0.5ch;
+  margin-left: 0.375ch;
+}
+
+/* Applied by the header script only when JS is available, so the theme
+ * switcher never appears as a dead control. */
+[hidden] {
+  display: none !important;
+}
+
+/* The app's `link-nav` utility: no underline until hovered. */
+.link-nav,
+.link-nav:visited {
+  color: var(--mr-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.link-nav:hover {
+  color: var(--mr-accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Logomark rings spin on hover, matching the app's Logomark component. */
+@media (prefers-reduced-motion: no-preference) {
+  .site-brand:hover .logomark-inner {
+    transform-origin: center;
+    animation: logomark-spin 2s linear infinite;
+  }
+
+  .site-brand:hover .logomark-middle {
+    transform-origin: center;
+    animation: logomark-spin 4s linear infinite;
+  }
+}
+
+@keyframes logomark-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
