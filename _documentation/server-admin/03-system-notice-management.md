@@ -2,11 +2,20 @@
 title: System-Notice Management
 ---
 
-MapRoulette supports the display of system notices -- such as notice of upcoming maintenance -- through a simple external JSON file that can be hosted anywhere (including a GitHub repo). You simply need to specify the URL to the file in the `REACT_APP_SYSTEM_NOTICES_URL` .env configuration variable.
+MapRoulette can display system notices — such as notice of upcoming
+maintenance — as a banner across the top of every page. Notices come from a
+simple JSON file that can be hosted anywhere (including a GitHub repo). The
+backend fetches that file and serves it to the frontend at
+`/api/v2/user/announcements`; the URL of the file is configured on the
+**backend**, with its `maproulette.systemNoticesUrl` setting, not on the
+frontend.
 
-The JSON file should represent a single object with a top-level `notices` array of notice objects. Any other top-level fields are ignored.
+The JSON file should represent a single object with a top-level `notices`
+array of notice objects. Any other top-level fields are ignored.
 
-Each notice object should contain a `message` field, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formatted `expirationTimestamp` field in UTC, and a `uuid` field that uniquely identifies the notice.
+Each notice object should contain a `message` field, an [ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601) formatted `expirationTimestamp`
+field in UTC, and a `uuid` field that uniquely identifies the notice.
 
 Example JSON:
 
@@ -38,7 +47,9 @@ but dismissing one only hides it until the page is reloaded.
 
 The message may contain markdown.
 
-If you are creating a notice by hand, you may wish to take advantage of an online UUID generator such as https://www.guidgenerator.com/online-guid-generator.aspx
+If you are creating a notice by hand, you may wish to take advantage of an
+online UUID generator such as
+<https://www.guidgenerator.com/online-guid-generator.aspx>.
 
 Removing the hosted file (or leaving none configured) simply means no banners
 are shown — the frontend treats an empty or unavailable response as "no

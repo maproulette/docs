@@ -44,7 +44,8 @@ Your email address is set on the **Notifications** tab of your
 (user menu → **Account Settings**). If you ask for notifications by email, they
 are sent there.
 
-Right now, MapRoulette does not require email validation, so please make sure that the email address you enter is valid and yours.
+MapRoulette does not require email validation, so please make sure that the
+address you enter is valid and yours.
 
 ## Choosing what you're told about
 

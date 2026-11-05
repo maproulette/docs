@@ -1,5 +1,5 @@
 ---
-title: Bulk Editing Challenges
+title: Bulk Actions
 ---
 
 When you're managing a challenge, most changes you need to make across many
@@ -39,7 +39,7 @@ selected tasks.
 
 **Delete cannot be undone.**
 
-## Remove a challenge from Bulk Edit
+## Changing several challenges at once
 
 Editing a batch of challenges through a single form is not part of the current
 frontend. Instead, each challenge row — on **Manage → Challenges** and on a

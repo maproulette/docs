@@ -1,5 +1,5 @@
 ---
-title: Rapid Editor
+title: Editing inside MapRoulette
 ---
 
 Most tasks can be edited without leaving MapRoulette, so you don't have to

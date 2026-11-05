@@ -2,8 +2,8 @@
 title: Discovering Interesting Tasks and Challenges
 ---
 
-How do you find things that you are interested in fixing? MapRoulette offers a number of ways that we'll talk about on this page.
-![](/media/sorting-8.png)
+How do you find things that you are interested in fixing? MapRoulette offers a
+number of ways that we'll talk about on this page.
 
 **Explore Challenges** is the front page of MapRoulette and the main place to
 browse. It has a filter bar across the top and, below it, your results.
@@ -42,7 +42,7 @@ and the topic, difficulty and global settings are not applied, so the results
 match the unfiltered markers on the map. Your settings are kept, and apply
 again when you switch back to the grid or list view.
 
-## By Topic
+## By topic
 
 The creator of a Challenge assigns a topic to it from a pre-defined list. Use
 **Work on** to narrow the list to one of them:
@@ -55,13 +55,19 @@ The creator of a Challenge assigns a topic to it from a pre-defined list. Use
 - Land Use / Administrative Boundaries
 - Transit
 
-The creator of a Challenge will assign a Topic to it from a pre-defined list. For example, a Challenge that looks at fixing coastlines will have the topic 'Water', and a Challenge that looks at fixing the tagging of Burger King restaurants will fall under 'Points / Areas of Interest'. You can select one of these Topics to quickly narrow down the list to only show the relevant Challenges.
+For example, a Challenge that looks at fixing coastlines will have the topic
+'Water', and a Challenge that looks at fixing the tagging of Burger King
+restaurants will fall under 'Points / Areas of Interest'.
 
-## By Difficulty
+## By difficulty
 
-When someone creates a Challenge, they decide if this is an Easy, Medium, or Expert level Challenge. Tasks in an Easy Challenge should be fixable by mappers with little experience. Working on Expert level Challenges requires advanced mapping skills and intimate familiarity with OSM tagging practices.
+When someone creates a Challenge, they decide if this is an **Easy**,
+**Normal** or **Expert** level Challenge. Tasks in an Easy Challenge should be
+fixable by mappers with little experience. Working on Expert level Challenges
+requires advanced mapping skills and intimate familiarity with OSM tagging
+practices. Leave the filter on **Any** to see all of them.
 
-## By Text or Id
+## By location
 
 MapRoulette Challenges cover the entire world. To concentrate on one place,
 type into the location box and pick a result — it searches
@@ -80,7 +86,7 @@ results by default. Turn on **Global** to include them. The selected place
 still applies when it is on. The switch is only available in the grid and list
 views.
 
-## By Location
+## By text
 
 Free-text search lives in the search box in the header rather than on the
 filter bar. Press <kbd>⌘</kbd> <kbd>K</kbd> (or <kbd>Ctrl</kbd> <kbd>K</kbd>)

@@ -31,7 +31,7 @@ them that they've been mentioned in a comment. Depending on their notification
 settings, they may also receive an email notification, or the notification may
 be ignored completely.
 
-## Reference a map viewport
+## Reference OSM elements and map viewports
 
 Short-codes are surrounded by brackets (`[` and `]`). They are turned into
 links in two places: in challenge instructions, as shown in the **Instructions**
@@ -42,9 +42,12 @@ appear as the bracketed text you typed.
 
 ### Reference an OpenStreetMap element (node, way, or relation)
 
-To reference a map viewport of a specific location, use `v` followed by an optional space or slash, followed by slash-separated zoom, latitude, and longitude.
+To reference a node, way, or relation, use `n`, `w`, or `r` followed by an
+optional space or slash, followed by the OSM id. `node`, `way`, or `relation`
+can also be fully spelled out.
 
-Reference location 37.11777, 126.99754 at zoom 17: `[v17/37.11777/126.99754]` (or, equivalently, `[v 17/37.11777/126.99754]` or `[v/17/37.11777/126.99754]`)
+Reference node 123456789: `[n123456789]` (or, equivalently, `[n 123456789]` or
+`[n/123456789]`)
 
 Reference way 24681012: `[w24681012]`
 

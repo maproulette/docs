@@ -6,12 +6,14 @@ Most MapRoulette tasks ask you to go and fix something yourself. A **Tag Fix**
 task is different: the challenge already knows what it thinks the change should
 be, and hands it to you ready-made. Your job is to judge whether it's right.
 
-Let’s look at an example. Consider this aerial image of a Wendy’s restaurant:
+Consider this aerial image of a Wendy's restaurant:
 
 ![](/media/tagfix.png){:width="500"}
 
-
-You can see from the aerial imagery that this restaurant has a `drive_through`: you can see cars snaking around the structure on a dedicated lane.
+You can see from the aerial imagery that this restaurant has a `drive_through`:
+cars snake around the structure on a dedicated lane. But the restaurant does not
+have `drive_through=yes` in OSM. That is exactly the kind of small, verifiable
+change a Tag Fix challenge is built for.
 
 ## Working a Tag Fix task
 

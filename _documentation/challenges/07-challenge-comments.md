@@ -20,12 +20,15 @@ Type your comment and choose **Send**. Comments support
 [Markdown](/documentation/markdown/) and show a character counter as you
 type.
 
-Messages you submit here will automatically notify the challenge owner, so there's no need to include the challenge owner's tag.  However, non-owners will still need to be tagged in the comment if you want them to be notified.
+Messages you submit here automatically notify the challenge owner and the
+admins of its project, so there's no need to tag them. Other mappers still need
+to be [mentioned](/documentation/comment-short-codes/#mention-other-users) by
+name if you want them to be notified.
 
 You need to be signed in to comment. Comments from the challenge's owner are
 marked with an **Owner** badge.
 
-## Task Specific Comments
+## Task-specific comments
 
 Once any of the challenge's tasks have comments, a **Show task comments**
 checkbox appears; check it to fold those task comments into the same feed.

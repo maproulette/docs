@@ -1,18 +1,18 @@
 ---
-title: Earning Points and the Leaderboard
+title: Earning Points and Levelling Up
 ---
 
 ## Points
 
 Points are awarded for each task that is completed as follows:
 
-| Completion Status | Points Awarded |
-| ----------------- | :------------: |
-| Fixed             |       5        |
-| Not an Issue      |       3        |
-| Already Fixed     |       3        |
-| Too Hard          |       1        |
-| Skipped           |       0        |
+| Completion Status         | Points Awarded |
+| ------------------------- | :------------: |
+| Fixed                     |       5        |
+| Not an Issue[^1]          |       3        |
+| Already Fixed             |       3        |
+| Can't Complete[^2]        |       1        |
+| Skipped                   |       0        |
 
 [^1]: Recorded as "False Positive" in exports, task tables and the API.
 [^2]: Previously called "Too Hard".

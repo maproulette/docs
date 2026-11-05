@@ -1,12 +1,15 @@
 ---
-title: Challenge Flagging
+title: Filing a Challenge Report
 ---
 
 Reporting a challenge lets mappers escalate a challenge that did not meet
 quality standards, when talking to its owner hasn't resolved things. The report
 goes to the MapRoulette administrators, who decide what to do about it.
 
-**Please be aware that Challenge Flagging is one of a set of features that assists mappers with reaching out to challenge owners.  Flagging a challenge may not be necessary, so please review the list of features and our recommendations for [Reporting A Challenge](/en-US/documentation/reporting-a-challenge) depeding on your specific needs.**
+> Reporting is one of a set of features for reaching out to challenge owners,
+> and it is rarely the first one to reach for. Please review the recommended
+> order of steps in [Reporting A
+> Challenge](/documentation/reporting-a-challenge/) first.
 
 ## Filing a report
 
@@ -76,5 +79,5 @@ Admin](/documentation/super-admin/) for the administrator's side of the queue.
 > describes that original GitHub-based version.
 {: .legacy}
 
-We hope flag feature will help maintain and improve the overall quality of challenges on MapRoulette by passing our users abilities to regulate.
-
+We hope the report feature helps maintain and improve the overall quality of
+challenges on MapRoulette by giving our users the ability to regulate them.

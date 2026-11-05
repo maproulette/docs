@@ -1,5 +1,5 @@
 ---
-title: Searchbox Short-Commands
+title: Search Prefixes and Shortcuts
 ---
 
 The search box in the MapRoulette header finds challenges, projects, tasks and
@@ -24,7 +24,7 @@ or pick the search type from the list.
 | `tc:`  | **Task comments**                                                 |
 | `cc:`  | **Challenge comments**                                            |
 
-### Examples:
+## Details and examples
 
 ### `c:` — find a challenge
 

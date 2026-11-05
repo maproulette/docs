@@ -13,7 +13,9 @@ Be sure that your external ids are **unique for each feature in your data**. It 
 You can name the property explicitly in **Task settings → OSM/External Id
 Property** when creating or editing a challenge.
 
-If you do not specify which field or property to use during challenge creation, MapRoulette will automatically scan your task features looking for certain special fields and properties to use as a unique external identifier.
+If you leave it blank, MapRoulette will automatically scan your task features
+looking for certain special fields and properties to use as a unique external
+identifier.
 
 MapRoulette looks for external identifiers first on the feature fields and then within the feature's properties. It stops as soon as it finds a matching field or property. It looks for the following, in this order:
 
@@ -27,7 +29,7 @@ name
 
 If none of those are found on either the feature fields or its properties, then a [random UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)) is generated and assigned as an external identifier.
 
-> Note: if you subsequently edit your challenge and set (or change) which feature field or property to treat as the OSM id, you must [rebuild your tasks](/en-US/documentation/rebuilding-challenge-tasks/) for that change to take effect. As mentioned above, you must be very careful to ensure that each feature will have a unique value for the field/property
+> Note: if you subsequently edit your challenge and set (or change) which feature field or property to treat as the OSM id, you must [rebuild your tasks](/documentation/rebuilding-challenge-tasks/) for that change to take effect. As mentioned above, you must be very careful to ensure that each feature will have a unique value for the field/property
 
 > Note: A Tag Fix consists of one independent (or parent) operation which includes one or more embedded dependent (or child) operations. Any OSM ids referenced in an operation must be of the form of `elementType/numericId`, e.g. `node/123456789`
 
@@ -36,8 +38,8 @@ If none of those are found on either the feature fields or its properties, then 
 While most MapRoulette tasks use OSM ids when specifying external ids, it's possible to provide your own (non-OSM) unique ids instead. Here are some recommendations if you do so:
 
 * Make sure your ids don't look like OSM ids. MapRoulette does not provide a way to distinguish OSM ids from non-OSM ids except by their formatting. For example, MapRoulette itself uses UUIDs if it needs to generate ids. If your ids look like OSM ids, then they may be treated as OSM ids in some situations.
-* Make sure your ids are represented as strings in your GeoJSON. External task ids must be strings in MapRoulette.
+* Represent your ids as strings in your GeoJSON. External task ids are stored as strings in MapRoulette.
 * Do not reuse one of the traditional osm id fields mentioned above (such as `id`). Instead, give your external id field a different name, like `externalId`.
-* Provide the name of your id field on the "OSM/External Id Property" setting when setting up your challenge (found in the "Configure property-based behavior" section)
+* If you leave the property unnamed and rely on automatic detection, keep your ids out of the detected fields' way: don't reuse `id`, `@id`, `osmid`, `osm_id` or `name` unless you want that field treated as the external id
 * If you want your external id to show up in the task properties when someone clicks on a task feature, then put your id field inside the feature properties in your GeoJSON. If you do *not* want your id to be displayed in the task properties, then put it on the feature itself in your GeoJSON
 

@@ -21,7 +21,7 @@ saved in that browser only, not on their account, so it does not follow them
 to another browser or device. See [Setting your Map Base
 Layer](/documentation/setting-your-map-base-layer/).
 
-## Disabling Stock Layers
+## Changing the available layers
 
 The layer list is compiled into the frontend rather than configured at
 deployment time. Each style lives as a JSON document in the frontend source
@@ -67,7 +67,7 @@ layer of its own and does not depend on the bundled list.
 > document's tile URL.
 {: .legacy}
 
-## Controlling the Overlay Layers
+## Overlays
 
 > The Mapillary, OpenStreetCam/KartaView and OSM data overlays — and the
 > `REACT_APP_IMAGERY_OPENSTREETCAM`, `REACT_APP_MAPILLARY_CLIENT_TOKEN` and

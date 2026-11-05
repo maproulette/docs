@@ -2,7 +2,11 @@
 title: Solving Multiple Tasks Together
 ---
 
-Many MapRoulette Challenges have Tasks that are geographically so close together that it is more efficient to solve multiple close Tasks together as if it were one Task. MapRoulette offers a workflow for this since version 3.4.2.
+Many MapRoulette Challenges have Tasks that are geographically so close
+together that it is more efficient to solve several of them as if they were one
+Task. MapRoulette calls a group of tasks worked together a **bundle**, and the
+tools for building one are built into the task map — there is nothing to add or
+configure first.
 
 ### Building a bundle
 

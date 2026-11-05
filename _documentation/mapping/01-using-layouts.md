@@ -1,5 +1,5 @@
 ---
-title: Using Layouts
+title: The Task Screen
 ---
 
 The task screen is where mappers do the actual work: task instructions and
@@ -33,7 +33,7 @@ to suit your screen.
   [inline iD editor](/documentation/rapid-editor/) replaces while you're
   editing.
 
-### Customizing a Layout
+### Resizing
 
 Drag the handle between the two panels to give either one more room; the task
 panel can take between 20% and 50% of the width.

@@ -8,7 +8,9 @@ open the **Keyboard Shortcuts** dialog, which shows the shortcuts that apply to
 what you're doing right now, and explains why any of the others are out of
 reach.
 
-At the time of writing, the following shortcuts are available:
+Most of them are single keys, so you can keep one hand on the mouse and work
+the task with the other. At the time of writing, the following shortcuts are
+available.
 
 ### Task actions
 
@@ -59,11 +61,10 @@ beside the editor it opens.
 | <kbd>Del</kbd>                  | Leave multi-task mode and work on the primary task only [^2] |
 | <kbd>Esc</kbd>                  | Cancel drawing [^3]                                          |
 
-### Confirmation Step
+### The confirmation dialog
 
-- The comment box will now automatically receive focus so you can immediately begin typing your comment
-- `Shift` + `Enter` submits confirmation
-
+The comment box takes focus as soon as the dialog opens, so you can start
+typing your comment straight away.
 
 | Key                                             | Action                    |
 | :---------------------------------------------- | :------------------------ |

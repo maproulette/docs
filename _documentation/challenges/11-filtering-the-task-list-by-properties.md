@@ -2,7 +2,8 @@
 title: 'Challenge Managers: filtering tasks by properties'
 ---
 
-When analyzing your challenges as a manager, it can sometimes be useful to filter tasks by property values (such as OSM tags). It has been possible since v3.4.4 of MapRoulette to filter tasks by the value of a single task property, but v3.5.3 brings the ability to create compound filtering rules that can AND and OR together multiple properties to achieve fine-grained filtering.
+When analyzing your challenges as a manager, it can be useful to filter tasks by
+property values (such as OSM tags) rather than only by status and priority.
 
 Open the **Filter by property** control above the task table on a challenge's
 management page. It opens the same AND/OR rule builder used by [task
@@ -10,7 +11,10 @@ prioritization](/documentation/task-priority-rules/).
 
 ## Building a rule
 
-For example, if you were looking for motorways, you might choose the `highway` property, the `equals` operator, and then enter `motorway` for the value.
+Each rule is a property name, a value type (**string** or **number**), a
+comparison operator, and a value to compare against. For example, to find
+motorways you would enter the `highway` property, leave the type as **string**,
+choose the `equals` operator, and enter `motorway` as the value.
 
 The operators on offer depend on the value type:
 
@@ -23,7 +27,10 @@ Tick **Comma-separated values** on a rule to match one property against
 several values at once — `highway` `equals` `motorway, trunk` matches either —
 rather than building an OR group by hand.
 
-> Note: it's important to choose the correct data types for the properties you're filtering against. However, if you have numeric data represented as strings in your GeoJSON (e.g. `population: "500"`), MapRoulette will attempt to perform numeric comparisons if you choose a Number type for the property despite it technically being a string/text.
+> Note: it's important to choose the correct value type for the properties
+> you're filtering against. If you have numeric data represented as strings in
+> your GeoJSON (e.g. `population: "500"`), choosing **number** will still compare
+> numerically.
 
 Press **Apply** to filter the table and the map down to matching tasks. The
 control is highlighted while a filter is active. **Clear** removes it, as does
@@ -39,7 +46,9 @@ A group holds as many rules as you need — you are not limited to two at a time
 and **Group** nests a sub-group with its own AND/OR setting when you need
 something more involved, such as "this property AND either of those two".
 
-For example, if you wanted motorways with at least 6 lanes, you would choose "compound rule", set the first rule to Text with `highway` `equals` `motorway`, set the second rule to Number with `lanes` `>` `5`, and choose to AND them together.
+For example, to find motorways with at least 6 lanes, add a **string** rule with
+`highway` `equals` `motorway` and a **number** rule with `lanes` `greater than`
+`5`, and leave the group set to AND.
 
 > Task properties live on the server, so the filter is evaluated there. Very
 > large challenges are filtered to the first 10,000 matching tasks.

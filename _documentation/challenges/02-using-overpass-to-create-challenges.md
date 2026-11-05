@@ -19,6 +19,8 @@ out meta;
 Explaining the full syntax of Overpass QL (the language this query is written in) is outside the scope of this article. Please look at the [language reference](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL), [examples](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example) and other Overpass related pages on the OSM wiki. OSM user Binette also has some [MapRoulette specific query examples](https://wiki.openstreetmap.org/wiki/User:Binnette/OverpassQueries) on their user page.
 
 You can plug this query right into MapRoulette when you create a Challenge:
+paste it into **Overpass QL** in the challenge form's **Task data** section,
+after choosing **I want to provide an Overpass query**.
 
 Once you submit the form, MapRoulette runs the query in the background and your
 Tasks reflect its result.
@@ -75,7 +77,7 @@ current data.
 
 ### Timeouts
 
-Complex queries or queries that span a large area can take a long time to complete. MapRoulette uses a default query timeout of 180 seconds (3 minutes). This should be enough for most scenarios. If you really need MapRoulette to tell Overpass to wait longer, you can use [Overpass's native `[timeout]` setting](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#timeout:) to override this.
+Complex queries or queries that span a large area can take a long time to complete. MapRoulette uses a default query timeout of 120 seconds (2 minutes). This should be enough for most scenarios. If you really need MapRoulette to tell Overpass to wait longer, you can use [Overpass's native `[timeout]` setting](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#timeout:) to override this.
 
 ### A word on `out meta`
 

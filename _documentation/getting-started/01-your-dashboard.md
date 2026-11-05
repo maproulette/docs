@@ -7,7 +7,7 @@ with the challenges you've saved, your mapping progress, and what you've been
 working on recently. It is laid out as three columns on a wide screen, and
 stacks into one column on smaller ones.
 
-## Popular Challenges
+## Saved Challenges
 
 Challenges you've saved (the bookmark control on a challenge page) are listed
 here, up to ten at a time, along with each one's total number of tasks and the
@@ -30,7 +30,7 @@ formula and the point value of each task status.
 The column also badges your account as **Verified** or a **Guest**, depending
 on whether you're signed in with your OpenStreetMap account.
 
-## Your Recent Contributions
+## Contributions
 
 At the top of the card, **Locked tasks** lists any tasks currently locked to
 you, including the number of tasks when the lock covers a bundle. MapRoulette

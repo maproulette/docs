@@ -2,7 +2,11 @@
 title: Setting The Basemap Layer For Your Challenge
 ---
 
-One of the customizations you can apply to your own Challenges is a custom basemap layer. This basemap layer will override whatever basemap MapRoulette users have defined as their default. This is useful in those cases where you know that a certain basemap is needed to successfully complete the tasks in your Challenge.
+One of the customizations you can apply to your own Challenges is a custom
+basemap layer. This basemap layer will override whatever basemap MapRoulette
+users have defined as their default. This is useful in those cases where you
+know that a certain basemap is needed to successfully complete the tasks in
+your Challenge.
 
 ## Choosing the basemap
 
@@ -20,7 +24,7 @@ When creating or editing a challenge, the **Basemap** section offers:
 - **Custom tile layer…**, which reveals a **Custom basemap URL** field for your
   own XYZ layer using the common pattern:
 
-`https://some.imagerylayer.com/tile/{z}/{x}/{y}`
+  `https://some.imagerylayer.com/tile/{z}/{x}/{y}`
 
 Leaving the custom URL blank is treated the same as not overriding the basemap
 at all.

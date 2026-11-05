@@ -2,7 +2,9 @@
 title: Managing Teams
 ---
 
-MapRoulette offers a basic implementation of Teams that makes it possible to group together affiliated users, such as users in a local a mapping club or attendees at a mapathon. Anyone can start a new team and invite other users to join their team.
+MapRoulette Teams group together affiliated users, such as the members of a
+local mapping club or the attendees at a mapathon. Anyone can start a new team
+and invite other users to join.
 
 Teams live in the **Teams** block on your
 [Dashboard](/documentation/your-dashboard/), which lists the teams you

@@ -10,34 +10,38 @@ one feature in a task needs to stand out.
 
 ## Supported properties
 
-| Property         | Description                     | Supported Geometries
-|:-----------------|:--------------------------------|:-----------------------------------
-| stroke           | Outline color                   | LineStrings, Polygons
-| stroke-width     | Thickness of outline            | LineStrings, Polygons
-| stroke-opacity   | Translucency of outline         | LineStrings, Polygons
-| fill             | Fill color (inside the outline) | Polygons
-| fill-opacity     | Translucency of the fill        | Polygons
-| marker-color     | Map marker color                | Points
-| marker-size      | Map marker size                 | Points
+| Property         | Description                     | Supported geometries  |
+|:-----------------|:--------------------------------|:----------------------|
+| `stroke`         | Outline color                   | LineStrings, Polygons |
+| `stroke-width`   | Thickness of the outline        | LineStrings, Polygons |
+| `stroke-opacity` | Translucency of the outline     | LineStrings, Polygons |
+| `fill`           | Fill color inside the outline   | Polygons              |
+| `fill-opacity`   | Translucency of the fill        | Polygons              |
+| `marker-color`   | Color of the point marker       | Points                |
 
 Some notes and caveats:
 
-Some notes and caveats:
-* colors need to be expressed as [web hex colors](https://en.wikipedia.org/wiki/Web_colors) or (slightly riskier) [common web color names](https://en.wikipedia.org/wiki/Web_colors#X11_color_names)
-* opacities need to be decimal numbers between 0.0 (transparent) and 1.0 (opaque)
-* marker-size must be one of `small`, `medium`, or `large` (medium is the normal size)
-* fill colors can obscure OSM labels, so be careful about high fill-opacity values
-* use of colors used by OSM or MapRoulette to convey special meaning could confuse your mappers
-
+- Colors can be [web hex colors](https://en.wikipedia.org/wiki/Web_colors)
+  such as `#800080`, `rgb()`/`hsl()` values, or
+  [color names](https://en.wikipedia.org/wiki/Web_colors#X11_color_names).
+  A value that isn't a valid color is ignored.
+- Opacities are decimal numbers from `0` (transparent) to `1` (opaque).
+- `stroke-width` must be between `0.5` and `40`; values outside that range are
+  ignored.
+- A point without a `marker-color` uses its `stroke` color instead.
+- `marker-size` is not supported; markers are always drawn at the same size.
+- Fill colors can hide the map underneath, so keep `fill-opacity` low.
+- Colors MapRoulette already uses to mean something, such as task status
+  colors, may confuse your mappers.
 
 A feature that has a stroke, marker or fill color also shows a small swatch of
 that color next to it in the task's **Features** tab, so mappers can match
 each entry in the list to what they see on the map.
 
-### Example
+## Example
 
-The following set of properties results in a Way being rendered with a purple stroke (outline) and 50%-opaque fuschia fill, as shown below:
-
+These properties draw a way with a purple outline and a half-transparent
+fuchsia fill:
 
 ```json
 "properties": {

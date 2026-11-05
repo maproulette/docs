@@ -1,4 +1,5 @@
 ---
+permalink: /
 ---
 
 Welcome to the MapRoulette documentation and learning site!

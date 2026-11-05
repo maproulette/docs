@@ -6,7 +6,7 @@ Projects are how challenges are organised: every challenge belongs to exactly
 one project, and permissions on the project decide who can manage the
 challenges inside it.
 
-## Assigning a user privileges
+## Managing your projects
 
 **Manage → Projects** (from the user menu) lists the projects you manage. From
 there you can:
@@ -67,7 +67,7 @@ the project and every team attached to it. From there you can:
 - search for a [team](/documentation/teams/) by name and attach it
 - remove a manager, or detach a team, with the bin icon
 
-## Removing a user or team
+### Attaching a team
 
 Attaching a team is usually easier than adding people one at a time, and it
 keeps up with the team as its membership changes.

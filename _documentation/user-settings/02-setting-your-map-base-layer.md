@@ -2,7 +2,10 @@
 title: Setting your Map Base Layer
 ---
 
-Depending on the type of Task and the geographical area you are working on, you may want to use a different base layer for the Task map. You can quickly switch between the available layers right in the Map Widget:
+Depending on the type of Task and the geographical area you are working on, you
+may want to use a different base layer for the map. Every map in MapRoulette —
+the explore map, a challenge's map, and the task map — carries the same set of
+controls in its corner:
 
 - **Map style** — switch the base layer
 - **Reset view** — return the map to where it started
@@ -24,7 +27,7 @@ Individual maps add their own buttons alongside these — the task map, for
 example, adds controls for task markers and for
 [working several tasks together](/documentation/solving-multiple-tasks-together/).
 
-## Custom base layers
+## Your default basemap
 
 You can record a preferred basemap on your account from the user menu →
 **Account Settings** → **General** → **Default Basemap**. Remember to press
