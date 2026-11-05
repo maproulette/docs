@@ -22,6 +22,16 @@ sections:
   - teams
   - server-admin
 
+# Pages offered in the search box before anything has been typed. Listed by
+# slug; the title and section label are looked up from the page itself, so they
+# stay correct if a page is retitled or moved.
+recommended_pages:
+  - discovering-challenges
+  - your-dashboard
+  - creating-a-challenge
+  - using-keyboard-shortcuts
+  - teams
+
 defaults:
   - scope: { path: "" } # empty string matches all files in the project
     values:

@@ -1,28 +1,90 @@
 <footer>
-  <!--
-  <ul>
-    <li><a href="https://maproulette.org">MapRoulette</a></li>
-    <li><a href="https://blog.maproulette.org">MapRoulette blog</a></li>
-  </ul>
-  -->
-    <a href="https://maproulette.org">MapRoulette</a>
-    <a href="https://blog.maproulette.org">MapRoulette blog</a>
-    <a href="https://github.com/maproulette/docs">Help improve these docs</a>
-    <p>Site last updated: {{ site.time }}</p>
+  <a href="https://maproulette.org">MapRoulette</a>
+  <a href="https://blog.maproulette.org">MapRoulette blog</a>
+  <a href="https://github.com/maproulette/docs">Help improve these docs</a>
+  <p>Site last updated: {{ site.time | date: "%Y-%m-%d" }}</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-<script> 
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0"></script>
+<script>
+    const INDEX_NAME = 'maproulette';
+
+    // Pages to offer before anything has been typed, from `recommended_pages`
+    // in _config.yaml. Titles and section names come from the pages themselves.
+    const RECOMMENDED = [
+    {%- for slug in site.recommended_pages -%}
+      {%- assign doc = site.documentation | where: "slug", slug | first -%}
+      {%- if doc -%}
+        {%- assign section = site.data.sections[doc.section] | default: doc.section -%}
+      { url: {{ doc.url | jsonify }}, title: {{ doc.title | jsonify }}, section: {{ section | jsonify }} },
+      {%- endif -%}
+    {%- endfor %}
+    ];
+
+    // DocSearch's start screen lists the reader's saved searches. Seeding that
+    // list gives first-time visitors something to click instead of an empty
+    // "No recent searches" panel; the heading is relabelled "Recommended"
+    // below. Done once only, so pages the reader removes stay removed.
+    //
+    // NOTE: the storage key is DocSearch's, not a documented API — hence the
+    // pinned version above. If it ever stops matching, the start screen simply
+    // falls back to its stock empty state.
+    (function seedRecommended() {
+        const SEEDED = 'mr-docs-recommended-seeded-v1';
+        const FAVORITES = '__DOCSEARCH_FAVORITE_SEARCHES__' + INDEX_NAME;
+        try {
+            if (localStorage.getItem(SEEDED)) return;
+            const existing = JSON.parse(localStorage.getItem(FAVORITES) || '[]');
+            if (Array.isArray(existing) && existing.length === 0) {
+                localStorage.setItem(FAVORITES, JSON.stringify(RECOMMENDED.map((page) => ({
+                    objectID: page.url,
+                    url: page.url,
+                    type: 'lvl1',
+                    hierarchy: {
+                        lvl0: page.section, lvl1: page.title, lvl2: null,
+                        lvl3: null, lvl4: null, lvl5: null, lvl6: null,
+                    },
+                    content: null,
+                    _highlightResult: {
+                        hierarchy: {
+                            lvl0: { value: page.section, matchLevel: 'none', matchedWords: [] },
+                            lvl1: { value: page.title, matchLevel: 'none', matchedWords: [] },
+                        },
+                    },
+                }))));
+            }
+            localStorage.setItem(SEEDED, '1');
+        } catch (e) {
+            // Private browsing can throw on localStorage; the start screen just
+            // stays empty, which is the behaviour we had before.
+        }
+    })();
+
     docsearch({
         container: '#docsearch',
         appId: 'ZW90CMRTNS',
         apiKey: 'b8f0ee7c47e37d93bbcf70da9922055d',
-        indexName: 'maproulette',
-        algoliaOptions: { 
+        indexName: INDEX_NAME,
+        placeholder: 'Search the docs...',
+        translations: {
+            button: {
+                buttonText: 'Search the docs...',
+                buttonAriaLabel: 'Search the docs',
+            },
+            modal: {
+                startScreen: {
+                    favoriteSearchesTitle: 'Recommended',
+                    recentSearchesTitle: 'Recent',
+                    noRecentSearchesText: 'Start typing to search the documentation',
+                    removeFavoriteSearchButtonTitle: 'Remove this page from recommendations',
+                },
+            },
+        },
+        algoliaOptions: {
             facetFilters: [
                 ['tags:documentation', 'tags:screencasts']
                 // translate as (tags:documentation OR tags:screencasts) ...
-            ] 
+            ]
         },
         autocompleteOptions: {
             focusShortcuts: ['/'],
