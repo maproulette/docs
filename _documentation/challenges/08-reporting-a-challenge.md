@@ -8,23 +8,7 @@ This page describes the steps you can take to resolve an issue with a MapRoulett
 
 ### 1. Contact the Challenge owner
 
-The first step is to contact the owner of the Challenge and explain the issue you encountered to them. Most of the time, you can have a constructive dialog with the owner and resolve the issue with them. Remember to assume good intent on the part of the Challenge owner and be respectful in your language.
-
-To contact the owner, go to any task in the Challenge and click on the three dot menu next to the Challenge name.
-
-![](/media/screen-shot-2021-03-02-at-2.26.20-pm.png)
-
-In the dropdown menu, select 'Contact Challenge Owner'. MapRoulette will then look up the OSM user who created the Challenge, and the link changes to 'Message \[user] through OSM':
-
-![](/media/screen-shot-2021-03-02-at-2.26.28-pm.png)
-
-Clicking on that item will take you to OSM's native messaging interface, where you can send the Challenge owner a message. The discussion will flow through the OSM messaging system from there on.
-
-If you can't come to an agreement on how to proceed, the next step is to get in touch with us.
-
 ### 2. Comment on the Challenge
-
-You can raise awareness of a concern or item for a specific challenge using [Challenge Comments](/en-US/documentation/challenge-comments).  This feature not only helps create dialogue with the Challenge owner but all interested mappers wanting to assist.
 
 ### 3. Challenge Flagging
 

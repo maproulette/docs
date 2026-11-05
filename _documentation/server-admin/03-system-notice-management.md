@@ -27,8 +27,6 @@ Example JSON:
 }
 ```
 
-Only future notices are displayed to users, based on each notice's `expirationTimestamp`. Logged-in users are given the option of acknowledging/dismissing each notice, and will not be shown the notice again once acknowledged.
-
 The message may contain markdown.
 
 If you are creating a notice by hand, you may wish to take advantage of an online UUID generator such as https://www.guidgenerator.com/online-guid-generator.aspx

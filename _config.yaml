@@ -25,7 +25,6 @@ sections:
   - teams
   - advanced
   - server-admin
-  - creating-challenges
 
 # Pages offered in the search box before anything has been typed. Listed by
 # slug; the title and section label are looked up from the page itself, so they

@@ -20,25 +20,11 @@ Explaining the full syntax of Overpass QL (the language this query is written in
 
 You can plug this query right into MapRoulette when you create a Challenge:
 
-![](/media/87983753-1f76b580-ca96-11ea-89d0-c6373a54031e.png)
-
-After completing the Challenge wizard, your Tasks will reflect the result of the Overpass Query:
-
-![](/media/87983923-606eca00-ca96-11ea-8ba4-c06bdf0ff1df.png)
-
 ## Common Pitfalls
 
 ### `out center` returns both relations and ways as nodes; use `out geom` instead
 
 `out center` returns the correct coordinates, but instead of relations and ways, nodes are returned. This causes issues with editors because instead of searching for a `way` with `id = 9817324213`, we search for a `node` with `id = 9817324213`. This also causes problems with the MapRoulette maps as a single point will be displayed instead of a linestring.
-
-- ` [out:json];` (space at the front) breaks, resulting in `[out:json][timeout:Y]; [out:json];`
-- ` [out:json][timeout:X];` (whitespace) is broken, resulting in `[out:json][timeout:Y]; [out:json][timeout:X];`
-- Conflicting timeout: X is from the user and timeout Y is from the MapRoulette settings
-- `[timeout:X][out:json];` is technically broken with the result being `[out:json][timeout:X][out:json];`
-- `[out:xml];` breaks, resulting in `[out:json][timeout:Y];[out:xml];`
-
-<pre>`&#123;&#123;bbox&#125;&#125;`</pre>
 
 This indicates the currently visible map extent. Overpass Turbo replaces this with the actual longitude / latitude bounds before sending the query to Overpass. If you want to use a query that contains `bbox`, you need to select `Export` > `Query` > `Copy as standalone query` before pasting into MapRoulette.
 
@@ -67,8 +53,4 @@ Complex queries or queries that span a large area can take a long time to comple
 ### A word on `out meta`
 
 Strictly speaking, you don't need all OSM metadata to build the tasks. You can just use the `out` statement with no parameters which, according to the documentation, gives you "all information necessary to use the data". By using `out meta` you get "everything output by body for each OSM element, as well as the version, changeset id, timestamp, and the user data of the user that last touched".
-
-![](/media/88001168-b8202c00-cabc-11ea-9d47-db983ce4d11b.png)
-
-_An OSM way imported as a Task using Overpass with full metadata_
 

@@ -8,14 +8,9 @@ MapRoulette supports [mustache-tag replacement](/en-US/documentation/mustache-ta
 
 It may occasionally be useful to allow mappers to provide to challenge managers some additional information as they work through tasks. MapRoulette supports special short codes that offer the ability to embed very basic form fields in Challenge Instructions, which mappers can optionally complete for each task. Responses are included in CSV and GeoJSON [exports](/en-US/documentation/exporting-challenge-data/) of the challenge.
 
-![](/media/basic_template.gif){:width="500"}
-
-
 To add form fields, simply use one or more of the short codes documented below in your Challenge Instructions. The short-codes will be replaced with inline form fields.
 
 > Note: form fields used to be represented by three curly braces instead of as short codes using square brackets. That older notation is still supported for backwards compatibility with existing challenges, but is considered deprecated and should no longer be used
-
-Form responses for each task will be automatically included in CSV and GeoJSON exports of challenge tasks from challenge management. The name you assign to each form field will be used as the column name in the exported CSV or property name in the exported GeoJSON.
 
 ### Checkbox field:
 
