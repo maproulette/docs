@@ -10,6 +10,14 @@ It may occasionally be useful to allow mappers to provide to challenge managers 
 
 To add form fields, simply use one or more of the short codes documented below in your Challenge Instructions. The short-codes will be replaced with inline form fields.
 
+Responses are saved against the task when the mapper completes it, so a mapper
+who returns to a task they have already answered sees their previous answers.
+In the exported CSV, each form field gets its own column, named `Recorded_`
+followed by the name you assigned to the field (for example
+`Recorded_myCheckbox`). In the exported GeoJSON, all of a task's responses are
+stored together as JSON in a single `mr_responses` property, keyed by field
+name.
+
 > Note: form fields used to be represented by three curly braces instead of as short codes using square brackets. That older notation is still supported for backwards compatibility with existing challenges, but is considered deprecated and should no longer be used
 
 ### Checkbox field:
@@ -40,3 +48,17 @@ The label can also include basic markdown, including mustache tags referencing t
 
 Causes a clipboard button to be rendered immediately after the specified text that, when clicked, will copy the text to the user's clipboard. The text can also include mustache tags referencing task or workspace properties, which will be substituted, but **cannot** include markdown.
 
+Instructions also turn references to OSM elements, such as `[n123456789]` or
+`[w24681012, r1553447]`, and to map viewports, such as
+`[v17/37.11777/126.99754]` or a pasted OpenStreetMap `#map=` URL in brackets,
+into links to OpenStreetMap. See [Short-codes in
+Comments](/documentation/comment-short-codes/#reference-osm-elements-and-map-viewports)
+for the full syntax.
+
+## Short codes and Markdown
+
+Short codes are recognised only when the bracketed text matches one of the forms
+above and is not immediately followed by `(`, so ordinary Markdown links —
+`[the wiki](https://wiki.osm.org)` — and bracketed prose are left alone. Text
+that looks like a short code but isn't one of the supported forms is shown
+exactly as written.

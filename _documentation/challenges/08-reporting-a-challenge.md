@@ -8,7 +8,25 @@ This page describes the steps you can take to resolve an issue with a MapRoulett
 
 ### 1. Contact the Challenge owner
 
+Start on the challenge page and open its comments with the **Comments**
+button in the header. Anything you post there notifies the challenge owner
+automatically, and is visible to other mappers working the same challenge, so
+it is both the quickest way to reach the owner and the most useful place for
+the conversation to happen. See
+[Challenge Comments](/documentation/challenge-comments/).
+
+Remember to assume good intent on the part of the Challenge owner and be
+respectful in your language. Most of the time you can have a constructive
+dialog with the owner and resolve the issue between you.
+
 ### 2. Comment on the Challenge
+
+The challenge page shows **by _username_** beneath the challenge name, linking
+to that mapper's OpenStreetMap profile. From there you can send them a message
+through OSM's own messaging system if the discussion is better held privately.
+
+If the challenge is owned by a [team](/documentation/teams/), the byline names
+the team instead and links to the team's page.
 
 ### 3. Challenge Flagging
 

@@ -27,7 +27,19 @@ Example JSON:
 }
 ```
 
+Only notices that have not yet passed their `expirationTimestamp` are shown. A
+notice missing any of the three fields, or whose timestamp cannot be parsed, is
+skipped rather than displayed indefinitely.
+
+Signed-in users can dismiss each notice, and it will not be shown to them
+again — the acknowledgement is stored on their MapRoulette account, so it
+follows them between browsers and devices. Signed-out visitors see notices too,
+but dismissing one only hides it until the page is reloaded.
+
 The message may contain markdown.
 
 If you are creating a notice by hand, you may wish to take advantage of an online UUID generator such as https://www.guidgenerator.com/online-guid-generator.aspx
 
+Removing the hosted file (or leaving none configured) simply means no banners
+are shown — the frontend treats an empty or unavailable response as "no
+notices" rather than an error.

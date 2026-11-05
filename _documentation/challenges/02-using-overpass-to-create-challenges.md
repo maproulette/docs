@@ -20,11 +20,30 @@ Explaining the full syntax of Overpass QL (the language this query is written in
 
 You can plug this query right into MapRoulette when you create a Challenge:
 
+Once you submit the form, MapRoulette runs the query in the background and your
+Tasks reflect its result.
+
 ## Common Pitfalls
 
 ### `out center` returns both relations and ways as nodes; use `out geom` instead
 
 `out center` returns the correct coordinates, but instead of relations and ways, nodes are returned. This causes issues with editors because instead of searching for a `way` with `id = 9817324213`, we search for a `node` with `id = 9817324213`. This also causes problems with the MapRoulette maps as a single point will be displayed instead of a linestring.
+
+### Settings statements
+
+MapRoulette adds `[out:json]` and a `[timeout:]` setting to your query when
+they're missing. If the first line of your query is a settings statement (it
+starts with `[` and ends with `;`), MapRoulette keeps it and only adds whichever
+of the two is missing. Otherwise, if the query contains no settings anywhere, it
+puts `[out:json][timeout:...];` on a new first line; if it finds settings
+elsewhere in the query (for example after a leading comment, or split across
+lines), it leaves the query unchanged.
+
+Keep any settings on the first line, before any comments. Don't ask for a
+different output format such as `[out:xml]`: MapRoulette needs JSON, and the
+challenge fails to build otherwise.
+
+### `{% raw %}{{bbox}}{% endraw %}`
 
 This indicates the currently visible map extent. Overpass Turbo replaces this with the actual longitude / latitude bounds before sending the query to Overpass. If you want to use a query that contains `bbox`, you need to select `Export` > `Query` > `Copy as standalone query` before pasting into MapRoulette.
 
@@ -45,6 +64,14 @@ out skel qt;
 way["highway"="path"](40.76,-111.90,40.81,-111.85);
 out geom;
 ```
+
+### The query can't be edited later
+
+A challenge's Overpass query can be changed by editing the challenge only until
+the challenge has tasks; after that, editing shows it read-only. To change what
+the query returns, use [Rebuild
+Tasks](/documentation/rebuilding-challenge-tasks/), which re-runs it against
+current data.
 
 ### Timeouts
 

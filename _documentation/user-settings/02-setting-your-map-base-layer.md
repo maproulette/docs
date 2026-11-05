@@ -4,5 +4,63 @@ title: Setting your Map Base Layer
 
 Depending on the type of Task and the geographical area you are working on, you may want to use a different base layer for the Task map. You can quickly switch between the available layers right in the Map Widget:
 
+- **Map style** — switch the base layer
+- **Reset view** — return the map to where it started
+- **Zoom in** / **Zoom out**
+- a toggle to collapse the control stack out of the way
+
+The **Map style** control offers these base layers:
+
+- OSM Bright
+- OSM Carto
+- Bing Aerial
+- Esri World Imagery
+- Esri World Imagery (Clarity)
+
+Your choice is remembered in your browser and re-applied the next time a map
+loads, so you only have to pick your preferred imagery once.
+
+Individual maps add their own buttons alongside these — the task map, for
+example, adds controls for task markers and for
+[working several tasks together](/documentation/solving-multiple-tasks-together/).
+
 ## Custom base layers
 
+You can record a preferred basemap on your account from the user menu →
+**Account Settings** → **General** → **Default Basemap**. Remember to press
+**Save Changes** to save. The options are:
+
+- **None** — no preference; maps open on whichever layer you last picked with
+  the **Map style** control
+- **Bing Maps Aerial**
+- **Esri World Imagery**
+- **Esri World Imagery (Clarity) Beta**
+- **OpenStreetMap (Standard)** — opens on OSM Carto
+- **Custom tile layer…** — your own imagery
+
+Choosing **Custom tile layer…** reveals a **Custom Basemap URL** field, which
+you must fill in before you can save. Give it an XYZ tile template like
+`https://example.com/tiles/{z}/{x}/{y}.png`.
+
+If you chose a basemap in an older version of MapRoulette that is no longer
+offered, such as Mapbox Satellite, OpenAerialMap or OpenCycleMap, the field
+shows **Keep current basemap** instead. That basemap has no matching layer, so
+maps open as if you had chosen **None** until you pick something else.
+
+A challenge's map and the task map open on your default basemap unless the
+challenge you are working on sets [a basemap of its
+own](/documentation/setting-basemap-for-challenge/), which takes precedence.
+If neither is set, the map opens on whichever layer you last picked with the
+**Map style** control. The explore map always opens on the layer you last
+picked.
+
+## Adding your own layer
+
+The **Map style** control also offers **Add your own layer**, for imagery
+MapRoulette doesn't bundle. Give it a name, then choose **XYZ tiles** and a
+tile template like `https://example.org/tile/{z}/{x}/{y}.png`, or choose
+**WMS** and give the endpoint URL plus the layer names to request.
+
+Layers you add are saved to your account, so they follow you between browsers
+and devices. Nobody else sees them. Remove one with the bin icon beside it in
+the list. If you are signed out they are remembered by your browser alone.
