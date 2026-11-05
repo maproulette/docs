@@ -1,187 +1,96 @@
+/* Rouge syntax highlighting, driven by tokens so code blocks are legible in
+ * both themes (the previous palette only worked on a dark background). */
+
+:root {
+  --hl-text: #24292f;
+  --hl-comment: #6e7781;
+  --hl-keyword: #cf222e;
+  --hl-string: #0a3069;
+  --hl-number: #0550ae;
+  --hl-name: #953800;
+  --hl-function: #8250df;
+  --hl-tag: #116329;
+  --hl-error: #b91c1c;
+}
+
+:root.dark {
+  --hl-text: #f8f8f2;
+  --hl-comment: #8b8878;
+  --hl-keyword: #f92672;
+  --hl-string: #e6db74;
+  --hl-number: #ae81ff;
+  --hl-name: #a6e22e;
+  --hl-function: #a6e22e;
+  --hl-tag: #f92672;
+  --hl-error: #ff6b8a;
+}
+
+.highlight,
+.highlight pre {
+  color: var(--hl-text);
+}
+
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
-.highlight .gh {
-  color: #999999;
+
+/* comments and generic output */
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf,
+.highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs,
+.highlight .gh, .highlight .gu, .highlight .gp, .highlight .go {
+  color: var(--hl-comment);
 }
-.highlight .sr {
-  color: #f6aa11;
+
+/* keywords and operators */
+.highlight .k, .highlight .kv, .highlight .kc, .highlight .kd,
+.highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt,
+.highlight .o, .highlight .ow, .highlight .no {
+  color: var(--hl-keyword);
 }
-.highlight .go {
-  color: #888888;
-}
-.highlight .gp {
-  color: #555555;
-}
-.highlight .gs {
-}
-.highlight .gu {
-  color: #aaaaaa;
-}
-.highlight .nb {
-  color: #f6aa11;
-}
-.highlight .cm {
-  color: #75715e;
-}
-.highlight .cp {
-  color: #75715e;
-}
-.highlight .c1 {
-  color: #75715e;
-}
-.highlight .cs {
-  color: #75715e;
-}
-.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
-  color: #75715e;
-}
-.highlight .err {
-  color: #eb4cac;
-}
-.highlight .gr {
-  color: #eb4cac;
-}
-.highlight .gt {
-  color: #eb4cac;
-}
-.highlight .gd {
-  color: #49483e;
-}
-.highlight .gi {
-  color: #49483e;
-}
-.highlight .ge {
-  color: #49483e;
-}
-.highlight .kc {
-  color: #66d9ef;
-}
-.highlight .kd {
-  color: #66d9ef;
-}
-.highlight .kr {
-  color: #66d9ef;
-}
-.highlight .no {
-  color: #66d9ef;
-}
-.highlight .kt {
-  color: #66d9ef;
-}
-.highlight .mf {
-  color: #ae81ff;
-}
-.highlight .mh {
-  color: #ae81ff;
-}
-.highlight .il {
-  color: #ae81ff;
-}
-.highlight .mi {
-  color: #ae81ff;
-}
-.highlight .mo {
-  color: #ae81ff;
-}
-.highlight .m, .highlight .mb, .highlight .mx {
-  color: #ae81ff;
-}
-.highlight .sc {
-  color: #ae81ff;
-}
-.highlight .se {
-  color: #ae81ff;
-}
-.highlight .ss {
-  color: #ae81ff;
-}
-.highlight .sd {
-  color: #e6db74;
-}
-.highlight .s2 {
-  color: #e6db74;
-}
-.highlight .sb {
-  color: #e6db74;
-}
-.highlight .sh {
-  color: #e6db74;
-}
-.highlight .si {
-  color: #e6db74;
-}
-.highlight .sx {
-  color: #e6db74;
-}
-.highlight .s1 {
-  color: #e6db74;
-}
-.highlight .s, .highlight .sa, .highlight .dl {
-  color: #e6db74;
-}
-.highlight .na {
-  color: #a6e22e;
-}
-.highlight .nc {
-  color: #a6e22e;
-}
-.highlight .nd {
-  color: #a6e22e;
-}
-.highlight .ne {
-  color: #a6e22e;
-}
-.highlight .nf, .highlight .fm {
-  color: #a6e22e;
-}
-.highlight .vc {
-  color: #ffffff;
-}
-.highlight .nn {
-  color: #ffffff;
-}
-.highlight .nl {
-  color: #ffffff;
-}
-.highlight .ni {
-  color: #ffffff;
-}
-.highlight .bp {
-  color: #ffffff;
-}
-.highlight .vg {
-  color: #ffffff;
-}
-.highlight .vi {
-  color: #ffffff;
-}
-.highlight .nv, .highlight .vm {
-  color: #ffffff;
-}
-.highlight .w {
-  color: #ffffff;
-}
-.highlight {
-  color: #ffffff;
-}
-.highlight .n, .highlight .py, .highlight .nx {
-  color: #ffffff;
-}
-.highlight .ow {
-  color: #f92672;
-}
+
+/* markup / element names */
 .highlight .nt {
-  color: #f92672;
+  color: var(--hl-tag);
 }
-.highlight .k, .highlight .kv {
-  color: #f92672;
+
+/* strings */
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc,
+.highlight .dl, .highlight .sd, .highlight .s1, .highlight .s2,
+.highlight .se, .highlight .sh, .highlight .si, .highlight .sx,
+.highlight .sr, .highlight .ss {
+  color: var(--hl-string);
 }
-.highlight .kn {
-  color: #f92672;
+
+/* numbers */
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh,
+.highlight .mi, .highlight .mo, .highlight .mx, .highlight .il {
+  color: var(--hl-number);
 }
-.highlight .kp {
-  color: #f92672;
+
+/* declarations: attributes, classes, constants */
+.highlight .na, .highlight .nb, .highlight .nc, .highlight .nd,
+.highlight .ne, .highlight .nl, .highlight .nn {
+  color: var(--hl-name);
 }
-.highlight .o {
-  color: #f92672;
+
+/* function and method names */
+.highlight .nf, .highlight .fm {
+  color: var(--hl-function);
 }
+
+/* plain names and variables inherit the body colour */
+.highlight .n, .highlight .py, .highlight .nx, .highlight .ni,
+.highlight .nv, .highlight .vm, .highlight .vc, .highlight .vg,
+.highlight .vi, .highlight .bp, .highlight .w {
+  color: var(--hl-text);
+}
+
+/* errors and tracebacks */
+.highlight .err, .highlight .gr, .highlight .gt {
+  color: var(--hl-error);
+}
+
+/* diffs */
+.highlight .gd { background: rgba(207, 34, 46, 0.12); }
+.highlight .gi { background: rgba(22, 163, 74, 0.12); }
+.highlight .ge { font-style: italic; }
+.highlight .gs { font-weight: 600; }
