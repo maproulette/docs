@@ -6,11 +6,10 @@ layout: default
   <ul>
     {% for section in site.sections %}
     <li>
-    {% assign key = "section." | append: section %}
-    {% assign name = site.data.translations[page.lang][key] | default: site.data.translations["en-US"][key] %}
+    {% assign name = site.data.sections[section] | default: section %}
     <h3>{{ name }}</h3>
     <ul>
-      {% assign docs = site.documentation | where: "section", section | where: "lang", page.lang | sort: "order" %}
+      {% assign docs = site.documentation | where: "section", section | sort: "order" %}
       {% for page in docs %}
         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
       {% endfor %}
@@ -29,7 +28,7 @@ layout: default
     
     <h3>Screencasts</h3>
     <ul>
-      {% assign screencasts = site.screencasts | where: "lang", page.lang | sort: "slug" %}
+      {% assign screencasts = site.screencasts | sort: "slug" %}
       {% for page in screencasts %}
         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
       {% endfor %}
