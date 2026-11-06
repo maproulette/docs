@@ -1,21 +1,20 @@
-/* Design tokens mirroring the MapRoulette app (see maproulette3 src/main.css).
+/* Design tokens based on the MapRoulette app (see maproulette3 src/main.css).
  *
- * The app builds on Tailwind's zinc scale in light mode and its slate scale in
- * dark mode, with green as the single accent colour. These variables restate
- * those exact values so the docs and the app read as one product. */
+ * Dark mode restates the app's slate scale. Light mode departs from the app's
+ * zinc grays for the page and body text, using white and black for contrast. */
 
 :root {
   color-scheme: light;
 
-  --mr-bg: #f4f4f5;             /* zinc-100  — app body background */
+  --mr-bg: #ffffff;
   --mr-surface: #ffffff;        /* white     — app Card background */
   --mr-surface-subtle: #fafafa; /* zinc-50 */
   --mr-surface-hover: #f4f4f5;  /* zinc-100 */
 
-  --mr-text: #3f3f46;           /* zinc-700  — app body text */
-  --mr-text-strong: #18181b;    /* zinc-900  — app Card text / headings */
-  --mr-text-muted: #71717a;     /* zinc-500  — app CardDescription */
-  --mr-text-faint: #a1a1aa;     /* zinc-400 */
+  --mr-text: #000000;
+  --mr-text-strong: #000000;
+  --mr-text-muted: #52525b;     /* zinc-600 */
+  --mr-text-faint: #71717a;     /* zinc-500 */
 
   --mr-border: #e4e4e7;         /* zinc-200  — app default border */
   --mr-border-strong: #d4d4d8;  /* zinc-300  — app outline button border */
@@ -51,9 +50,6 @@
 
   --mr-sidebar-width: 17.5rem;
   --mr-header-height: 4.25rem;
-  /* Also applied as the footer's min-height, so the space the sticky
-   * sidebar reserves below itself always matches the real footer. */
-  --mr-footer-height: 4.25rem;
 }
 
 :root.dark {

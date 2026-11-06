@@ -10,6 +10,7 @@
 html {
   background: var(--mr-bg);
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--mr-header-height) + 1rem);
 }
 
 body {
@@ -118,10 +119,7 @@ body > nav {
   align-self: start;
   position: sticky;
   top: var(--mr-header-height);
-  /* Leave room for the footer: pinned at `top`, an element this tall bottoms
-     out exactly where the footer starts once it scrolls into view, so a long
-     nav list scrolls inside itself instead of running under the footer. */
-  max-height: calc(100vh - var(--mr-header-height) - var(--mr-footer-height));
+  max-height: calc(100vh - var(--mr-header-height));
   overflow-y: auto;
   overscroll-behavior: contain;
 }
@@ -243,14 +241,8 @@ main {
 /* ---------------------------------------------------------------- footer --- */
 
 body > footer {
-  grid-column: full;
-  /* Opaque and above the sticky sidebar, so the footer always wins the overlap
-     rather than having nav links show through it. */
-  position: relative;
-  z-index: 20;
-  background: var(--mr-bg);
-  min-height: var(--mr-footer-height);
-  box-sizing: border-box;
+  /* Under the content only, so the sticky sidebar never overlaps it. */
+  grid-column: right;
   border-top: 1px solid var(--mr-border);
   color: var(--mr-text-muted);
   font-size: 0.8125rem;
