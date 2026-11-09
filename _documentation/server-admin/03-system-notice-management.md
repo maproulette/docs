@@ -2,7 +2,7 @@
 title: System-Notice Management
 ---
 
-MapRoulette supports the display of system notices -- such as notice of upcoming maintenance -- through a simple external JSON file that can be hosted anywhere (including a GitHub repo). You simply need to specify the URL to the file in the `REACT_APP_SYSTEM_NOTICES_URL` .env configuration variable.
+MapRoulette supports the display of system notices -- such as notice of upcoming maintenance -- through a simple external JSON file that can be hosted anywhere (including a GitHub repo). You simply need to specify the URL to the file in the backend's `maproulette.systemNoticesUrl` setting, in `application.conf` or as `-Dmaproulette.systemNoticesUrl=...`.
 
 The JSON file should represent a single object with a top-level `notices` array of notice objects. Any other top-level fields are ignored.
 
@@ -32,4 +32,3 @@ Only future notices are displayed to users, based on each notice's `expirationTi
 The message may contain markdown.
 
 If you are creating a notice by hand, you may wish to take advantage of an online UUID generator such as https://www.guidgenerator.com/online-guid-generator.aspx
-
