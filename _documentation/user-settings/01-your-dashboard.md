@@ -2,52 +2,26 @@
 title: Your Dashboard
 ---
 
-When logging into MapRoulette, you'll be presented with a customizable layout of different widgets that can help you get started on some challenges or see some highlights of your accomplishments and recent contributions.
+When signed into MapRoulette, you'll have access to your dashboard from **Dashboard** in the top navigation. In the dashboard you can view your saved challenges, current level, recent activity, and the teams you are in.
 
-![](/media/dashboard-1.png)
+![The dashboard: saved challenges, profile and level, contributions with locked tasks, and teams](/media/mr4-dashboard.png){: .only-light}
+![The dashboard: saved challenges, profile and level, contributions with locked tasks, and teams](/media/mr4-dashboard-dark.png){: .only-dark}
 
-The main dashboard widget will display your current points and leaderboard status, and provides easy access/direction to challenges you've been working on or new challenges that may interest you.
+## Saved Challenges
 
-Just like most of the projects, challenges, and task pages, you can customize the layout of your dashboard to make it more personalized.
+Challenges you've saved show up here so you can easily pick up where you left off. You can save a challenge from its page, which you can find through [Explore Challenges](/documentation/discovering-challenges/).
 
+## Your profile and level
 
-![](/media/dashboard-2.png){:width="500"}
+Increase your level by completing tasks! Click your level to see how many points you need for the next one. See [Earning Points and Levelling Up](/documentation/point-scoring/) for how points are awarded.
 
+![The Mapper Level System dialog](/media/mr4-dashboard-level-system.png){: .only-light}
+![The Mapper Level System dialog](/media/mr4-dashboard-level-system-dark.png){: .only-dark}
 
-Here are a list of different widgets available to you:
+## Contributions
 
-![](/media/dashboard-3.png){:width="500"}
+Any tasks you currently have locked are listed at the top, so you can jump back in to finish or unlock them. Below that, this section shows all of your personal recent contributions on Challenges.
 
+## Teams
 
-# Follow
-
-![](/media/dashboard-4.png){:width="500"}
-
-
-Follow allows you to track the activity of other users, add new users to follow, and see who is following you.  You can also control who follows you by blocking users if you choose.
-
-To follow a new user, click on **Following** at the top of the widget and input a users name.  A dropdown of located users by your input will display and you can click on the user.  The followed user will display on your list and the activity column will update appropriately.  You can also click on their name and view their MapRoulette user page.
-
-![](/media/dashboard-5.png)
-
-![](/media/dashboard-6.png){:width="500"}
-
-
-## Challenge Highlights
-
-This widget will showcase Challenges that have been labeled **Featured** by an admin, allowing the community more visibility over challenges with a high demand for contribution.  Featured challenges will also show up at the top of your Challenge Search List.
-
-![](/media/dashboard-7.png)
-
-## Popular Challenges
-
-Challenges with recent contributions from the community may end up getting labeled **Popular**, and will show up in this widget.
-
-## Tracked Tasks
-
-Tasks that you've decided to Track will show up here.  In order to track a task, go to the task page of the task you'd like to track.  Click the gear box on the top right and select **Edit Layout**. Click the **Add Widget** dropdown and select the **More Options** widget.
-
-## Your Recent Contributions
-
-Similar to the **Follow** widget, where you can view other people's most recent work, this widget shows all of your personal recent contributions on Challenges.
-
+The teams you belong to, and any pending team invitations, are listed here. Learn more about [Managing Teams](/documentation/teams/).
