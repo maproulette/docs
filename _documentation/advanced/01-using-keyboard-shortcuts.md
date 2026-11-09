@@ -2,100 +2,38 @@
 title: Using Keyboard Shortcuts
 ---
 
-A number of keyboard shortcuts are available while you're working on a task.
-The current list is always available in the app itself: press <kbd>?</kbd> to
-open the **Keyboard Shortcuts** dialog, which shows the shortcuts that apply to
-what you're doing right now, and explains why any of the others are out of
-reach.
-
-Most of them are single keys, so you can keep one hand on the mouse and work
-the task with the other. At the time of writing, the following shortcuts are
-available.
+A number of keyboard shortcuts are available throughout the website. The latest shortcuts can always be seen for the current step by pressing `?`.
 
 ![The Keyboard Shortcuts dialog](/media/mr4-keyboard-shortcuts.png){: .only-light}
 ![The Keyboard Shortcuts dialog](/media/mr4-keyboard-shortcuts-dark.png){: .only-dark}
 
-### Task actions
+At the time of writing, the following shortcuts are available:
 
-The four status keys open the confirmation dialog rather than completing the
-task outright, so a mistyped key costs you nothing. <kbd>W</kbd> skips straight
-to another task, without a dialog.
+| Key         | Action                                      |
+| :---------- | :------------------------------------------ |
+| +           | Zoom in map                                 |
+| -           | Zoom out map                                |
+| 0           | Fit map to task features                    |
+| m           | Show or hide task markers                   |
+| Shift + o   | Show or hide tasks from other challenges    |
+| s           | Toggle direction indicators on task geometry |
+| e           | Edit in iD [^1]                             |
+| r           | Edit in JOSM [^1]                           |
+| t           | Edit in new JOSM layer [^1]                 |
+| y           | Edit just features in JOSM [^1]             |
+| v           | Edit in Level0 [^1]                         |
+| a           | Edit in Rapid [^1]                          |
+| f           | Fixed [^1]                                  |
+| q           | Not an Issue [^1]                           |
+| x           | Already Fixed [^1]                          |
+| d           | Can't Complete [^1]                         |
+| w           | Skip [^1]                                   |
+| ESC         | Close the built-in editor                   |
+| Shift + b   | Draw to select multiple tasks               |
+| b           | Show only the selected tasks [^2]           |
+| Del         | Work on the primary task only [^2]          |
+| Ctrl/⌘ + k  | Open the search box                         |
+| ?           | Show keyboard shortcuts                     |
 
-| Key          | Action                            |
-| :----------- | :-------------------------------- |
-| <kbd>F</kbd> | Fixed [^1]                        |
-| <kbd>Q</kbd> | Not an Issue [^1]                 |
-| <kbd>X</kbd> | Already Fixed [^1]                |
-| <kbd>D</kbd> | Can't Complete [^1]               |
-| <kbd>W</kbd> | Skip this task [^1]               |
-
-### Editors
-
-| Key            | Action                                        |
-| :------------- | :-------------------------------------------- |
-| <kbd>E</kbd>   | Edit in iD [^1]                               |
-| <kbd>R</kbd>   | Edit in JOSM [^1]                             |
-| <kbd>T</kbd>   | Edit in new JOSM layer [^1]                   |
-| <kbd>Y</kbd>   | Edit just features in JOSM [^1]               |
-| <kbd>V</kbd>   | Edit in level0 [^1]                           |
-| <kbd>A</kbd>   | Edit in Rapid [^1]                            |
-| <kbd>Esc</kbd> | Close the built-in editor and go back to the map |
-
-The same list is in the menu next to the editor button, with each key shown
-beside the editor it opens.
-
-### Map
-
-| Key                                         | Action                                      |
-| :------------------------------------------ | :------------------------------------------ |
-| <kbd>+</kbd>                                | Zoom in                                     |
-| <kbd>-</kbd>                                | Zoom out                                    |
-| <kbd>0</kbd>                                | Centre the map on the task                  |
-| <kbd>M</kbd>                                | Show or hide all task markers               |
-| <kbd>Shift</kbd> + <kbd>O</kbd>             | Show or hide tasks from other challenges    |
-| <kbd>S</kbd>                                | Toggle direction indicators on task geometry |
-| <kbd>B</kbd>                                | Show only the tasks you're working on [^2]  |
-
-### Multi-task
-
-| Key                             | Action                                                       |
-| :------------------------------ | :----------------------------------------------------------- |
-| <kbd>Shift</kbd> + <kbd>B</kbd> | Start drawing to add tasks to your selection                 |
-| <kbd>Del</kbd>                  | Leave multi-task mode and work on the primary task only [^2] |
-| <kbd>Esc</kbd>                  | Cancel drawing [^3]                                          |
-
-### The confirmation dialog
-
-The comment box takes focus as soon as the dialog opens, so you can start
-typing your comment straight away.
-
-| Key                                             | Action                    |
-| :---------------------------------------------- | :------------------------ |
-| <kbd>Shift</kbd> + <kbd>Enter</kbd>             | Submit the confirmation   |
-| <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd> | Submit the confirmation   |
-| <kbd>Esc</kbd>                                  | Cancel                    |
-
-### Anywhere in MapRoulette
-
-| Key                                         | Action                            |
-| :------------------------------------------ | :-------------------------------- |
-| <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>K</kbd> | Open the search box               |
-| <kbd>?</kbd>                                | Show the keyboard shortcuts dialog |
-
-[^1]: Only available once you have started mapping the task, and not while the challenge is paused. Statuses are also only offered where the task can actually move to them.
-[^2]: Only available while you have more than one task selected.
-[^3]: Only available while you are drawing.
-
-Shortcuts are ignored while you're typing in a text box, so you can write a
-comment containing an `f` or a `?` without triggering anything. The two
-exceptions are deliberate: <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>K</kbd> and the
-submit shortcuts are meant to work while you type.
-
-If you used MapRoulette 3, most of these are the keys you already know, but a
-few changed meaning. <kbd>M</kbd> used to toggle the Mapillary layer and now
-shows or hides task markers; <kbd>B</kbd> used to complete tasks together and
-now filters the map to your selected tasks; and <kbd>S</kbd>, which used to
-toggle the task-feature layer, now toggles direction indicators. Some of 3's
-keys are not here yet: <kbd>H</kbd> and <kbd>L</kbd> for the previous and next
-task, and <kbd>O</kbd> for the OSM data layer. They are being kept free for
-when those features arrive.
+[^1]: shortcut is only available after editing has been initiated
+[^2]: shortcut is only available while more than one task is selected

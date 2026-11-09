@@ -2,112 +2,34 @@
 title: Projects and Project Managers
 ---
 
-Projects are how challenges are organised: every challenge belongs to exactly
-one project, and permissions on the project decide who can manage the
-challenges inside it.
-
-## Managing your projects
-
-![Manage → Projects, filtered to owned projects](/media/mr4-manage-projects.png){: .only-light}
-![Manage → Projects, filtered to owned projects](/media/mr4-manage-projects-dark.png){: .only-dark}
-
-**Manage → Projects** (from the user menu) lists the projects you manage. From
-there you can:
-
-- **Create Project** — a new project needs a **Project Name** (a unique
-  identifier, lowercase with no spaces) and a **Display Name** shown to users,
-  and takes an optional description. Under **Visibility**, the **Enabled**
-  switch makes it discoverable (super admins also get a **Featured** switch),
-  and an optional **Team** section picks a team to own it (see [Teams that own
-  a project](#teams-that-own-a-project))
-- open a project to see its challenges, its statistics, and its **Project
-  Playbook** of setup advice
-- **Add challenge** inside it
-- **Pin project**, or make it discoverable or not with the eye button on its
-  card (**Make discoverable** / **Make not discoverable**; see [Challenge
-  Visibility and
-  Discovery](/documentation/challenge-visibility-and-discovery/))
-- **Edit project**, **Export CSV** of its tasks, **Archive project**, or
-  **Delete project** from its menu
-
-On the project's own page the same visibility setting is the **Enable
-project** / **Disable project** button.
-
-Deleting a project marks it, along with all of its challenges and their tasks,
-for deletion, and MapRoulette removes it permanently some time later. There's
-no way to undo this from MapRoulette.
-
-A challenge can be moved between projects you manage with **Move challenge** in
-the challenge's menu on its project's page.
+MapRoulette provides lots of project and team tooling for users to collaborate. One feature that assists with this is the **Managers and teams** dialog in the Project overview page. Every challenge belongs to a project, and you can find the projects you manage under **Manage → Projects** in the user menu.
 
 ![A project page with its actions and its challenges](/media/mr4-manage-project.png){: .only-light}
 ![A project page with its actions and its challenges](/media/mr4-manage-project-dark.png){: .only-dark}
 
-## Project roles
+Here, the creator of a project can designate other users or teams to manage the project or even take a project over.
 
-Project permissions are granted per user with one of three roles. A team brings
-its own roles instead — see [Attaching a team](#attaching-a-team):
+## Adding a user or team
 
-**Read** — view the project overview page and the challenges under the project.
+Simply use the search box to find a user by their OpenStreetMap username. You can also assign a team. More about teams [here](/documentation/teams/)
 
-**Write** — create and edit challenges in the project, and edit the project's
-details.
+![The Managers and teams dialog with the project managers and the add-a-manager and add-a-team fields](/media/mr4-project-managers-dialog.png){: .only-light}
+![The Managers and teams dialog with the project managers and the add-a-manager and add-a-team fields](/media/mr4-project-managers-dialog-dark.png){: .only-dark}
 
-**Admin** — everything Write can do, plus making the project discoverable or
-not, changing the team that owns it, deleting it, and adding and removing
-other managers and changing their roles.
+## Assigning a user privileges
 
-A project always needs at least one Admin. MapRoulette won't remove the last
-user holding the Admin role, or change their role to Write or Read; give
-someone else Admin first. Teams don't count towards this. Removing a manager
-who isn't an Admin is never blocked.
+Users can be assigned various roles in the project
 
-### Adding and removing managers
+**Read** - A user will be able to view the project overview page and the challenges under the project
+**Write** - A user will be able to create and edit challenges in the project, and edit the project's details
+**Admin** - A user will have complete access to managing, editing, or deleting a project. Users will also be able to remove other managers or change their privileges.
 
-**Managers and teams**, in the project's actions, lists everyone with a role on
-the project and every team attached to it. From there you can:
+A team doesn't get a role of its own. Its owners and admins get Admin on the project, its managers get Write, and its plain members get no access.
 
-- search for a mapper by their OpenStreetMap username, pick the role to give
-  them, and add them
-- change an existing manager's role from the dropdown beside their name
-- search for a [team](/documentation/teams/) by name and attach it
-- remove a manager, or detach a team, with the bin icon
+## Removing a user or team
 
-### Attaching a team
+An Admin has the ability to remove a user or team from the project.
 
-Attaching a team is usually easier than adding people one at a time, and it
-keeps up with the team as its membership changes.
+## Removing an admin
 
-There is no role to pick for a team, because a team already has roles of its
-own. What each person can do on the project follows the role they hold **in the
-team**:
-
-| Their role in the team | What they get on the project |
-| --- | --- |
-| Owner | Admin |
-| Admin | Admin |
-| Manager | Write |
-| Member | nothing |
-
-Belonging to a team is not the same as running its work, so plain members get
-no access to a project their team is attached to.
-
-A grantee who somehow holds more than one role is shown as the strongest of
-them.
-
-### Teams that own a project
-
-Attaching a team is different from giving a project **to** a team. A project can
-have one owning team, chosen in the project form, and that team's image becomes
-the picture on the project's card. Ownership is about whose project it is;
-attachment is about who is helping run it. Both give access by the same rule
-above.
-
-## Tips
-
-- **Define scope early.** Use a stable naming pattern (region, theme, version)
-  and keep each project focused on one clear objective.
-- **Publish intentionally.** Keep projects non-discoverable while iterating;
-  turn discoverable on only after instructions and QA checks are validated.
-- **Share ownership.** Arrange co-managers before launch so triage, support and
-  archival responsibilities are covered.
+A project always requires at least one admin, so once another user is assigned **Admin**, other admins will be able to be demoted.

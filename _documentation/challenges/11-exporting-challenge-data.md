@@ -2,36 +2,17 @@
 title: Exporting Challenge Data
 ---
 
-MapRoulette lets managers download task data, either for a single challenge or
-for a whole project.
+MapRoulette allows challenge managers to export their challenge data in either CSV format (suitable for spreadsheet applications) or as GeoJSON.
 
-## Exporting one challenge
+To export your data from the Challenge Management screen, simply click the **Export** button above the tasks table and choose one of the export formats. By default, all timestamps in the export are represented in your browser's timezone, but that can be customized on a per-export basis by selecting your desired timezone in the Export dialog prior to downloading.
 
-Open the challenge's management page and choose **Export** above the task
-table. You can pick:
+The filters currently applied to the tasks table are applied to the export as well.
 
-- **Format** — CSV, one row per task, or GeoJSON, carrying the task geometries
-  and their properties
-- **Timestamp timezone** — the offset that timestamp columns are rendered in.
-  It starts on your own browser's timezone; choose UTC±00:00 for GMT
+![The Export tasks dialog with the CSV and GeoJSON formats and the timestamp timezone](/media/mr4-export-tasks-dialog.png){: .only-light}
+![The Export tasks dialog with the CSV and GeoJSON formats and the timestamp timezone](/media/mr4-export-tasks-dialog-dark.png){: .only-dark}
 
-Then choose **Download**.
-
-The filters currently applied to the task table — status, priority and any
-[property filter](/documentation/filtering-the-task-list-by-properties/) —
-are applied to the export as well, so what you see in the table is what you
-get in the file.
-
-## Exporting a whole project
-
-Go to **Manage → Projects** (from the user menu), find the project, and choose
-**Export CSV** from its actions menu. The export covers the tasks of every
-challenge in that project, and downloads as `project-<name>-tasks.csv`.
+You can also export the tasks of every challenge in a project as one CSV by choosing **Export CSV** from the project's menu on the Manage Projects page.
 
 ![A project's actions menu on Manage → Projects, with Export CSV](/media/mr4-manage-projects-actions.png){: .only-light}
 ![A project's actions menu on Manage → Projects, with Export CSV](/media/mr4-manage-projects-actions-dark.png){: .only-dark}
-
-CSV exports still include a **Tags** column, and GeoJSON exports an `mr_tags`
-property. MapRoulette no longer asks mappers to tag tasks, so these only hold
-tags that were added to tasks in earlier versions of MapRoulette.
 

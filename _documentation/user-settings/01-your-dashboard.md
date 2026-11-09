@@ -2,56 +2,26 @@
 title: Your Dashboard
 ---
 
-Once you sign in, **Dashboard** in the top navigation gives you a single screen
-with the challenges you've saved, your mapping progress, and what you've been
-working on recently. It is laid out as three columns on a wide screen, and
-stacks into one column on smaller ones.
+When signed into MapRoulette, you'll have access to your dashboard from **Dashboard** in the top navigation. In the dashboard you can view your saved challenges, current level, recent activity, and the teams you are in.
 
 ![The dashboard: saved challenges, profile and level, contributions with locked tasks, and teams](/media/mr4-dashboard.png){: .only-light}
 ![The dashboard: saved challenges, profile and level, contributions with locked tasks, and teams](/media/mr4-dashboard-dark.png){: .only-dark}
 
 ## Saved Challenges
 
-Challenges you've saved (the bookmark control on a challenge page) are listed
-here, up to ten at a time, along with each one's total number of tasks and the
-percentage complete. Each entry's **…** menu has **Browse challenge**,
-**Manage challenge** if you're one of its managers, and **Unsave challenge**.
-
-If the list is empty, save a challenge from
-[Explore Challenges](/documentation/discovering-challenges/) to have
-somewhere to pick up from next time.
+Challenges you've saved show up here so you can easily pick up where you left off. You can save a challenge from its page, which you can find through [Explore Challenges](/documentation/discovering-challenges/).
 
 ## Your profile and level
 
-The middle column shows your mapper level and its title, and how many points
-you are through the current level. Selecting it opens the **Mapper Level
-System** dialog, which shows your total points, explains how levelling works
-and lists the level milestones and the score each one requires. See
-[Earning Points and Levelling Up](/documentation/point-scoring/) for the
-formula and the point value of each task status.
-
-The column also badges your account as **Verified** or a **Guest**, depending
-on whether you're signed in with your OpenStreetMap account.
+Increase your level by completing tasks! Click your level to see how many points you need for the next one. See [Earning Points and Levelling Up](/documentation/point-scoring/) for how points are awarded.
 
 ![The Mapper Level System dialog](/media/mr4-dashboard-level-system.png){: .only-light}
 ![The Mapper Level System dialog](/media/mr4-dashboard-level-system-dark.png){: .only-dark}
 
 ## Contributions
 
-At the top of the card, **Locked tasks** lists any tasks currently locked to
-you, including the number of tasks when the lock covers a bundle. MapRoulette
-allows one locked task (or one bundle) at a time, so if you start a task while
-another is still locked, you'll be asked whether to release the old lock
-first. You can jump straight to a locked task from here to finish or unlock
-it.
-
-Below that, your recent task contributions form a timeline: one entry per day,
-and within each day the challenges you worked on, with a count beside each
-**Set Status on Task as …** line for every status you set.
+Any tasks you currently have locked are listed at the top, so you can jump back in to finish or unlock them. Below that, this section shows all of your personal recent contributions on Challenges.
 
 ## Teams
 
-The last block lists the teams you belong to — selecting one opens its page —
-and has a **+** control for starting a new one. Any pending team invitations
-show here too, with **Accept** and **Decline**. See
-[Managing Teams](/documentation/teams/).
+The teams you belong to, and any pending team invitations, are listed here. Learn more about [Managing Teams](/documentation/teams/).

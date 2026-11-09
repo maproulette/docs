@@ -4,7 +4,7 @@ title: Task Attachments
 
 MapRoulette offers the ability to attach data to tasks. That data may simply travel along with the task, perhaps to be consumed by external processes, or -- depending on the kind of data -- it may be utilized during task completion to present mappers with additional information or context.
 
-The initial implementation allows various kinds of data to be attached, but only reference layers are specially supported during task completion: they're loaded into JOSM when you open a task with **Edit in JOSM** or **Edit in new JOSM layer** (not **Edit just features in JOSM**, or any other editor). Special handling of other kinds of data, such as automatic display of attached street-level imagery, will be coming in future releases.
+The initial implementation allows various kinds of data to be attached, but only reference layers (to be shown in JOSM) are specially supported during task completion. Special handling of other kinds of data, such as automatic display of attached street-level imagery, will be coming in future releases.
 
 > Note: the [mr-cli](https://www.npmjs.com/package/@maproulette/mr-cli) command-line utility now provides basic tooling for adding task attachments to your line-by-line GeoJSON files. See its [README](https://www.npmjs.com/package/@maproulette/mr-cli#attaching-data-to-tasks) for usage and examples.
 
@@ -34,13 +34,12 @@ Each GeoJSON Feature (or FeatureCollection) representing a task can have an embe
               [100.0, 0.0]
             ]
           ]
-        }      
+        }
       }
     }
   ]
 }
 ```
-
 
 Each attachment in the `attachments` array is a JSON object with a set of fields. The exact fields are flexible and depend on the kind of attachment, but the following fields are always supported (and some required).
 
@@ -73,12 +72,11 @@ These fields are always allowed regardless of the kind of attachment. Some may b
 
 `meta`: Reserved for tracking meta information about the attachment, such as data-format version used, timestamps, etc.
 
-
 ### Supported Kinds
 
 > Note: some kinds below are shown as "planned". They technically can still be used as attachments, but special handling has not yet been implemented (i.e. they will not be made available to the mapper during task completion) and the details are subject to change.
 
-`referenceLayer` *(v3.6.5)*: A reference layer to be shown in editors (depending on editor support) during task completion. GeoJSON, OSM, and GPX layers are supported. `type` should be set to `geojson`, `osm`, or `gpx`. OSM and GPX data must be base64-encoded and should have `format` set to `xml` and encoding set to `base64`. No additional fields are required for GeoJSON. The `data` field should be set to the GeoJSON object or, for OSM and GPX, a string containing the base64-encoded XML data. Reference layers are only sent to JOSM when the task is opened with **Edit in JOSM** or **Edit in new JOSM layer**. By default, they're locked in JOSM with no OpenStreetMap upload/download allowed. This behavior can be changed by including a `settings` object on the attachment with `layerLocked`, `uploadPolicy`, and `downloadPolicy` fields set as desired (see JOSM docs for appropriate values).
+`referenceLayer` *(v3.6.5)*: A reference layer to be shown in editors (depending on editor support) during task completion. GeoJSON, OSM, and GPX layers are supported. `type` should be set to `geojson`, `osm`, or `gpx`. OSM and GPX data must be base64-encoded and should have `format` set to `xml` and encoding set to `base64`. No additional fields are required for GeoJSON. The `data` field should be set to the GeoJSON object or, for OSM and GPX, a string containing the base64-encoded XML data. By default, reference layers are locked in JOSM with no OpenStreetMap upload/download allowed. This behavior can be changed by including a `settings` object on the attachment with `layerLocked`, `uploadPolicy`, and `downloadPolicy` fields set as desired (see JOSM docs for appropriate values).
 
 `referencePhoto` *(planned)*: A photo (or sequence of photos) to be shown in MR during task completion. `type` should be set to either `mapillary` or `openstreetcam`. For Mapillary, `format` should be either `image` or `sequence` and the `data` field should be a string containing the unique Mapillary image or sequence key. For OpenStreetCam the `format` should be `name` and the data should be a string containing the appropriate lth_name (or th_name) for the image.
 
@@ -96,7 +94,6 @@ These fields are always allowed regardless of the kind of attachment. Some may b
 
 `keyValue`: a flat JSON object consisting of key/value pairs (values may not be objects).
 
-
 ### Settings
 A kind-specific `settings` object can be provided that controls the interaction between MapRoulette and the attachment. The following settings are supported for each `kind`:
 
@@ -112,4 +109,3 @@ Example:
   "downloadPolicy": ""     // disable the default download policy of "never"
 }
 ```
-

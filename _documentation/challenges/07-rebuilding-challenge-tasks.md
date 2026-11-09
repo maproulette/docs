@@ -43,31 +43,14 @@ For example, if an updated GeoJSON file contained new opening hours for the muse
 
 ## Starting a rebuild
 
-**Rebuild tasks** is in a challenge's menu on **Manage → Challenges** and on
-the challenge list of its project, and is a button on the challenge's own
-management page.
+Click **Rebuild tasks** on the challenge's management page, or in the challenge's menu in your challenge lists. Challenges built from an Overpass query or a GeoJSON URL fetch the latest data again. Challenges built from an uploaded file ask you to upload a new one.
 
-What the rebuild does depends on how the challenge gets its task data: it
-re-runs an Overpass query, re-downloads a remote GeoJSON URL, or — for a
-challenge built from an uploaded file — asks you for a new GeoJSON file to
-upload. The dialog says which of the three applies before you proceed. A
-challenge built from a GeoJSON URL with a **Task Bundle Id Property** set is
-saved as an uploaded file, so rebuilding it asks for a file too.
-
-When you upload a new file, you can also record the [date the data was
-sourced](/documentation/defining-task-sourced-date/) as part of the
-rebuild.
-
-While the rebuild runs, the challenge page shows **Tasks Building...** with an
-elapsed timer and refreshes itself as it progresses.
-
-![The Rebuild Challenge Tasks dialog for a challenge built from an uploaded file](/media/mr4-rebuild-tasks-dialog.png){: .only-light}
-![The Rebuild Challenge Tasks dialog for a challenge built from an uploaded file](/media/mr4-rebuild-tasks-dialog-dark.png){: .only-dark}
+![The Rebuild Challenge Tasks dialog](/media/mr4-rebuild-tasks-dialog.png){: .only-light}
+![The Rebuild Challenge Tasks dialog](/media/mr4-rebuild-tasks-dialog-dark.png){: .only-dark}
 
 ## Optionally removing incomplete tasks first
 
-The rebuild dialog offers some details about the process along with an option
-(off by default) to first remove incomplete tasks. This can be useful if your GeoJSON represents the full list of features that still need to be addressed, and you wish to clear out old incomplete tasks that are no longer needed (perhaps they were attended to outside of MapRoulette).
+When you initiate a Rebuild, you will be presented with a dialog that offers some details about the process along with an option (off by default) to first remove incomplete tasks. This can be useful if your GeoJSON represents the full list of features that still need to be addressed, and you wish to clear out old incomplete tasks that are no longer needed (perhaps they were attended to outside of MapRoulette).
 
 If you check this option, then incomplete tasks (either untouched or skipped) will first be deleted from the challenge and then recreated as needed based from the latest source data. Tasks in other statuses will not be removed.
 

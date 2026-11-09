@@ -19,14 +19,11 @@ out meta;
 Explaining the full syntax of Overpass QL (the language this query is written in) is outside the scope of this article. Please look at the [language reference](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL), [examples](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example) and other Overpass related pages on the OSM wiki. OSM user Binette also has some [MapRoulette specific query examples](https://wiki.openstreetmap.org/wiki/User:Binnette/OverpassQueries) on their user page.
 
 You can plug this query right into MapRoulette when you create a Challenge:
-paste it into **Overpass QL** in the challenge form's **Task data** section,
-after choosing **I want to provide an Overpass query**.
 
-Once you submit the form, MapRoulette runs the query in the background and your
-Tasks reflect its result.
+![The challenge form with an Overpass query entered](/media/mr4-create-challenge-overpass.png){: .only-light}
+![The challenge form with an Overpass query entered](/media/mr4-create-challenge-overpass-dark.png){: .only-dark}
 
-![The challenge form's task data section with an Overpass query entered](/media/mr4-create-challenge-overpass.png){: .only-light}
-![The challenge form's task data section with an Overpass query entered](/media/mr4-create-challenge-overpass-dark.png){: .only-dark}
+After creating the Challenge, your Tasks will reflect the result of the Overpass Query.
 
 ## Common Pitfalls
 
@@ -36,17 +33,7 @@ Tasks reflect its result.
 
 ### Settings statements
 
-MapRoulette adds `[out:json]` and a `[timeout:]` setting to your query when
-they're missing. If the first line of your query is a settings statement (it
-starts with `[` and ends with `;`), MapRoulette keeps it and only adds whichever
-of the two is missing. Otherwise, if the query contains no settings anywhere, it
-puts `[out:json][timeout:...];` on a new first line; if it finds settings
-elsewhere in the query (for example after a leading comment, or split across
-lines), it leaves the query unchanged.
-
-Keep any settings on the first line, before any comments. Don't ask for a
-different output format such as `[out:xml]`: MapRoulette needs JSON, and the
-challenge fails to build otherwise.
+MapRoulette adds `[out:json]` and a `[timeout:]` setting to your query when they're missing. Keep any settings of your own on the first line, before any comments, and don't ask for a different output format such as `[out:xml]`, as MapRoulette needs JSON.
 
 ### `{% raw %}{{bbox}}{% endraw %}`
 
@@ -69,14 +56,6 @@ out skel qt;
 way["highway"="path"](40.76,-111.90,40.81,-111.85);
 out geom;
 ```
-
-### The query can't be edited later
-
-A challenge's Overpass query can be changed by editing the challenge only until
-the challenge has tasks; after that, editing shows it read-only. To change what
-the query returns, use [Rebuild
-Tasks](/documentation/rebuilding-challenge-tasks/), which re-runs it against
-current data.
 
 ### Timeouts
 

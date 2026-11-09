@@ -2,75 +2,57 @@
 title: Short-codes in Comments
 ---
 
-## Mention other users
+MapRoulette offers a "short-code" mechanism in Task comments, challenge descriptions, and challenge or task instructions for providing enhanced references to things like OpenStreetMap nodes/ways/relations and zoom/lat/lon map viewports. Short-codes are always surrounded by brackets (`[` and `]`).
 
-To "mention" a user, type `@` followed by their username, e.g. `@username`.
-The mentioned user receives an in-app notification that they've been mentioned
-in a comment.
+The following short-codes are currently supported:
 
-When you reply to a comment thread from your **Notifications**, MapRoulette
-offers matching users to pick from as you type, inserts the name for you, and
-renders the mention as a link to that user's OpenStreetMap profile. The comment
-boxes on the task screen, in the task completion dialog and on a challenge's
-comments are plain text boxes: type the name out in full there, and it is
-shown as written rather than as a link.
+## Reference an OpenStreetMap element (node, way, or relation) -- or multiple elements together
+
+To reference a node, way, or relation, use `n`, `w`, or `r` followed by an optional space or slash, followed by the OSM id.
+
+> Note: `node`, `way`, or `relation` can also be fully spelled out, if preferred
 
 **Examples:**
 
-Mention user "abc": `Hello @abc`
+Reference node 123456789: `[n123456789]` (or, equivalently, `[n 123456789]` or `[n/123456789]`)
 
-Mention user "example_user": `Hello @example_user`
+Reference way 24681012: `[w24681012]` (or, equivalently, `[w 24681012]` or `[w/24681012]`)
 
-A username containing spaces or punctuation can't be matched that way, so wrap
-it in brackets instead: `Hello [@example user]`
+Multiple elements can be combined in a single short-code by separating them with commas:
+`[n123456789, w24681012]`
 
 **Behavior:**
 
-By default, the mentioned user will receive an in-app notification informing
-them that they've been mentioned in a comment. Depending on their notification
-settings, they may also receive an email notification, or the notification may
-be ignored completely.
+OSM Element short-codes will be displayed as browser links to an Overpass Turbo page that will render the referenced element(s). However, if the reader has configured JOSM as their current MapRoulette editor, then clicking on the link will instead load the referenced elements into JOSM.
 
-## Reference OSM elements and map viewports
+## Reference a map viewport
 
-Short-codes are surrounded by brackets (`[` and `]`). They are turned into
-links in two places: in challenge instructions, as shown in the **Instructions**
-tab on the task screen, and in comment threads opened from your
-**Notifications**. Elsewhere — the task's own comments, challenge comments, and
-the instructions shown in the task details drawer on a challenge map — they
-appear as the bracketed text you typed.
+To reference a map viewport of a specific location, use `v` followed by an optional space or slash, followed by slash-separated zoom, latitude, and longitude.
 
-### Reference an OpenStreetMap element (node, way, or relation)
+> Note: `viewport` can also be fully spelled out, if preferred
 
-To reference a node, way, or relation, use `n`, `w`, or `r` followed by an
-optional space or slash, followed by the OSM id. `node`, `way`, or `relation`
-can also be fully spelled out.
+**Examples:**
 
-Reference node 123456789: `[n123456789]` (or, equivalently, `[n 123456789]` or
-`[n/123456789]`)
+Reference location 37.11777, 126.99754 at zoom 17: `[v17/37.11777/126.99754]` (or, equivalently, `[v 17/37.11777/126.99754]` or `[v/17/37.11777/126.99754]`)
 
-Reference way 24681012: `[w24681012]`
+For convenience, a complete OSM map url can also be used instead, e.g. `[https://www.openstreetmap.org/#map=17/37.11777/126.99754]` -- notice that it is *not* started with a `v` in that case
 
-Multiple elements can be combined in a single short-code by separating them
-with commas: `[n123456789, w24681012]`
+**Behavior:**
 
-Each is rendered as a link to the element on OpenStreetMap.
+Viewport short-codes will be displayed as links to OpenStreetMap for the referenced location at the specified zoom. However, if the reader has configured JOSM as their current MapRoulette editor, then clicking on the link will instead zoom JOSM to the referenced viewport.
 
-### Reference a map viewport
+## Mention other users
 
-To reference a specific location, use `v` followed by an optional space or
-slash, followed by slash-separated zoom, latitude, and longitude:
-`[v17/37.11777/126.99754]`. A complete OSM map URL can be used instead, e.g.
-`[https://www.openstreetmap.org/#map=17/37.11777/126.99754]`.
+To "mention" a user, use `@` followed by their username, e.g. `[@username]`. For simple usernames that don't contain any spaces or punctuation, a simplified `@username` (omitting the square brackets) can also be used. The user will receive an in-app notification that they've been mentioned in a comment, unless they've chosen to disable those notifications.
 
-These are rendered as links to OpenStreetMap at the referenced location and
-zoom.
+**Examples:**
 
-> Ordinary Markdown links are left alone: `[the wiki](https://wiki.osm.org)` is
-> still a link, not a short-code. So is bracketed prose that doesn't match one
-> of the forms above.
+Mention user "abc" (no spaces or punctuation): `Hello [@abc]` or `Hello @abc`
 
-> Earlier versions of MapRoulette could load a referenced element straight into
-> JOSM, or zoom a running JOSM to a referenced viewport, for readers who had it
-> configured as their editor. References now always open OpenStreetMap.
-{: .legacy}
+Mention user "example user" (with spaces): `Hello [@example user]`
+
+Mention user "example.user" (with punctuation): `Hello [@example.user]`
+
+**Behavior:**
+
+By default, the mentioned user will receive an in-app notification informing them that they've been mentioned in a comment. Depending on how the user has customized their notification settings, however, they may also receive an email notification (either immediately or rolled up into a daily digest of notifications) or the notification may be ignored completely.

@@ -2,101 +2,38 @@
 title: Managing Teams
 ---
 
-MapRoulette Teams group together affiliated users, such as the members of a
-local mapping club or the attendees at a mapathon. Anyone can start a new team
-and invite other users to join.
+MapRoulette offers Teams that make it possible to group together affiliated users, such as users in a local a mapping club or attendees at a mapathon. Anyone can start a new team and invite other users to join their team.
 
-Teams live in the **Teams** block on your
-[Dashboard](/documentation/your-dashboard/), which lists the teams you
-belong to and any pending invitations. Selecting a team opens its own page.
-
-> Note: Teams and their membership are public. Private teams are not supported.
+The primary purpose of teams is to make it easier to grant project permissions to groups of users. When a Team is added to a project, its members get access to that project for as long as they are members of the team.
 
 ### Starting a New Team
 
-Use the **+** control in the dashboard's Teams block to create a team, and give
-it:
-
-- a **name**, which must be unique
-- a **description**
-- optionally an **avatar** — upload a PNG, JPEG, WebP or GIF, or link to an
-  image URL instead. Square images look best
-
-Admins and owners can change any of these later with **Edit** on the team's
-page.
-
-### Team Roles
-
-A team member holds one of four roles. Each one can do everything the role
-below it can:
-
-**Owner** — deletes the team, and makes other members owners. Everything an
-Admin can do.
-
-**Admin** — edits the team's details, invites and removes members, and sets
-their roles. Everything a Manager can do.
-
-**Manager** — runs the team's work: creating, editing and deleting the projects
-and challenges the team is responsible for.
-
-**Member** — belongs to the team, sees it listed, and can request the team's
-image (see below).
-
-Admins and owners change a member's role from the dropdown beside their name on
-the team page. Your own row has no role dropdown or remove button, so another
-admin or owner has to change your role or remove you. There's no control for
-leaving a team yourself.
-
-Teams must always have at least one Owner, so the last one cannot be demoted or
-removed. Handing out the Owner role is reserved to owners — admins run the
-membership, but not the keys to the team itself.
-
-> A member's role decides what they can do **to the team** and what they can do
-> **with the team's work**. When a team is given a project or a challenge, the
-> people who can act on it are its owners, admins and managers; plain members
-> get nothing. See [Projects and Project
-> Managers](/documentation/projects-and-project-managers/).
-
-### Inviting members
-
-**Invite** opens a dialog where you search for a mapper by OSM username and
-pick the role to give them. They receive an invitation, which shows on their
-dashboard until they act on it. In the meantime admins and owners see them
-listed as **Invited** on the team page; other visitors see only members who
-have joined.
+To start a team, go to the [Dashboard](/documentation/your-dashboard/) and use the **+** control in the Teams section. Once you've provided a team name and description, and saved your new team, you can click on it and start inviting users to join your team.
 
 ![A team's page with its members and a pending invitation](/media/mr4-team-page.png){: .only-light}
 ![A team's page with its members and a pending invitation](/media/mr4-team-page-dark.png){: .only-dark}
 
+> Note: Teams and their membership are public. Private teams are not supported.
+
+### Team Roles
+
+Members of teams have roles on the team itself: Owner, Admin, Manager, or Member. Owners have full control of the team, including deleting it. Admins can invite and remove members, change their roles (only owners can make someone an Owner), and edit the team name and description. Managers can manage the projects and challenges the team is responsible for. Members belong to the team but have no management capability.
+
+> Note that a team member's role also decides what they can do on a project the team is added to: owners and admins get Admin, managers get Write, and plain members get no access.
+
+Teams must have at least one Owner. If you wish to leave a team you created, you will first need to grant another team member the Owner role if you haven't already.
+
+### Adding a Team to a Project
+
+**Managers and teams** on a project's page lets you add Teams to projects. You do not have to be a member of a Team to add it to your project. See [Projects and Project Managers](/documentation/projects-and-project-managers/).
+
+> :warning: When you add a Team to a project, you are conferring project permissions to every Owner, Admin and Manager of the Team, including any who are added later.
+
+Projects must have at least one user with an Admin role. A Team cannot be the sole administrator of a project.
+
+A project or challenge can also be owned by a team, chosen in the project or challenge form. The team's image is then shown on its card. Anyone on the team can request an image from the team's page, and it appears once a super admin approves it.
+
 ### Accepting or Declining an Invitation
 
-Been invited to join a team? Your pending invitations appear in the Teams block
-on your Dashboard, each with **Accept** and **Decline**.
-
-### The team's image
-
-A team has one image, which the team's page lists under **Challenge image**.
-It's shown on the cards of the projects and challenges the team owns. Anyone on
-the team can **Request image** from the team's page — the button reads
-**Request replacement** once the team already has an approved image. A super
-admin reviews the request, and once **Approved** it replaces whatever the team
-had before. An image awaiting review shows as **Awaiting review**, and can be
-withdrawn by whoever requested it or by a team admin.
-
-A team has only one image slot, so it can have only one request outstanding at
-a time — withdraw the pending one to request a different image.
-
-Until an image is approved, work owned by the team shows no picture. A card
-with no image usually means the team's image is still awaiting review rather
-than that something is broken.
-
-### Giving a team your work
-
-A project or a challenge can be owned by a team. Pick the team in the project or
-challenge form; only teams whose work you run — where you are an owner, admin or
-manager — are offered, so belonging to a team is not enough to publish under its
-name.
-
-Handing work to a team does two things: everyone who runs that team can manage
-it, and the team's approved image becomes the picture on its card.
+Have you been invited to a join a team? Your pending invitations appear in the Teams section of your Dashboard, with options for accepting or declining the invitation.
 

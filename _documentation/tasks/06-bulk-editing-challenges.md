@@ -1,61 +1,81 @@
 ---
-title: Bulk Actions
+title: Bulk Editing Challenges
 ---
 
-When you're managing a challenge, most changes you need to make across many
-tasks at once can be made from the challenge's task table rather than one task
-at a time.
+Project owners can **Bulk-edit** challenges within the same project. While this feature isn't as robust as editing a single challenge individually, there are a few fields that allow you to edit multiple challenges for quality of life purposes.
 
-## Selecting tasks
+**Keep in mind that this feature, for most fields, will overwrite the original data of each challenge if you choose to utilize the field. Since each challenge can have different data, you will not have context on this page of what you are overwriting.  Use at your own risk.  Fields that you leave alone will leave the original data the way it is.**
 
-Open **Manage** for your challenge to reach the tasks explorer. The table
-lists only the tasks inside the current view of the map above it, so pan and
-zoom the map to cover the area you want. Narrow the table further with the
-**Status**, **Priority** and **Filter by property** filters and the sort
-control, then use the checkbox on each row —
-or the checkbox in the header, which selects every task loaded into the table
-so far — to build a selection. A toolbar appears showing **_n_ selected**.
+## Go to your Project's admin page and select challenges
 
-> The table loads tasks in batches of 50 as you scroll, and the header checkbox
-> only selects the rows that have loaded so far, not every task in the
-> challenge. Narrow with the filters first if you want to be sure of what
-> you're acting on.
+Simply go to a project's Manage page. In the challenges list, tick the checkbox next to each challenge you would like to edit simultaneously.
+
+![A project's challenge list with two challenges ticked and Edit 2 selected challenges in the side panel](/media/mr4-bulk-edit-select.png){: .only-light}
+![A project's challenge list with two challenges ticked and Edit 2 selected challenges in the side panel](/media/mr4-bulk-edit-select-dark.png){: .only-dark}
+
+You can also choose to "select-all" by ticking the checkbox at the top of the list.
+
+## Bulk Edit Page
+
+Next, click **Edit N selected challenges** in the side panel, under **Create challenge**. It stays greyed out until you've selected at least one challenge.
+
+You'll be directed to the bulk edit page.
+
+![The bulk edit page with the selected challenges, the overwrite warning and the Instructions field](/media/mr4-bulk-edit-page.png){: .only-light}
+![The bulk edit page with the selected challenges, the overwrite warning and the Instructions field](/media/mr4-bulk-edit-page-dark.png){: .only-dark}
+
+## Remove a challenge from Bulk Edit
+
+You should see a list of the challenges you will be editing simultaneously. If you change your mind on any of the challenges, but don't want to go back and re-select them, you can click the "X" symbol to the right of the challenge name.
+
+## Fields you can bulk edit
+
+- **Instructions**
+- **Additional keywords** — each challenge keeps its own category
+- **Exportable properties** — the task properties included in CSV and GeoJSON exports
+- **Basemap**
+- **Data origin date**
+- **Priorities** — replaces the default priority and all three [priority rules](/documentation/task-priority-rules/). Each challenge's location bounds are kept.
+
+## Bulk Editing Guidelines
+
+1. Any fields you choose to use for bulk editing will be used to **overwrite** the data that is on each challenge.
+
+2. Any fields you leave alone on the bulk edit page will not do anything to the existing challenge data.
+
+## Submitting A Bulk Edit
+
+Once you've proposed all of the changes you need on the form, press **Review changes** and you will be presented with a confirmation modal that indicates all of the changes that will be made on each challenge.
+
+![The Confirm bulk edit dialog listing the new instructions](/media/mr4-bulk-edit-confirm.png){: .only-light}
+![The Confirm bulk edit dialog listing the new instructions](/media/mr4-bulk-edit-confirm-dark.png){: .only-dark}
+
+**Cancel edit** will allow you to go back to the form and make any additional changes you like.  Additionally you can choose to abandon all edits by clicking **Cancel** on the bulk edit page.
+
+**Submit bulk edit** will proceed with the submission of edits on each challenge. Challenges are saved one at a time; if one can't be saved, it may be partly changed, the rest are left unchanged, and you're told which ones were saved.
+
+## Bulk task actions
+
+Challenge managers can also change many tasks of a challenge at once from the challenge's task table.
+
+### Select tasks
+
+Go to your challenge's Manage page. The task table lists the tasks inside the current view of the map above it, so pan and zoom the map to cover the area you want, and narrow the list with the Status, Priority and property filters. Then tick the tasks you want to change, or use the checkbox in the header to select all of them.
 
 ![Three rows selected in a challenge's task table, with the bulk actions toolbar](/media/mr4-bulk-actions-toolbar.png){: .only-light}
 ![Three rows selected in a challenge's task table, with the bulk actions toolbar](/media/mr4-bulk-actions-toolbar-dark.png){: .only-dark}
 
-## Available actions
+> The table loads tasks in batches as you scroll, so the header checkbox only selects the tasks that have loaded so far. Narrow with the filters first if you want to be sure of what you're acting on.
 
-| Action            | What it does |
-| ----------------- | ------------ |
-| **Change status** | Choose **Pick a status…**, then pick a status (Created, Fixed, Not an Issue, Skipped, Deleted, Already Fixed, Can't Complete, Answered, Validated, Disabled) and **Apply** to set it on every selected task |
-| **Archive** | Pick **Archive** or **Unarchive** from its menu to archive the selected tasks, or bring them back |
-| **Delete**        | Permanently removes the tasks along with their comments, reviews and tags |
-| **Clear**         | Clears the selection without changing any tasks |
+### Apply an action
 
-**Archive** and **Unarchive** run as soon as you pick them, with no
-confirmation. After a status change or archive, the confirmation message
-reports the number of tasks you had selected. **Delete** asks you to confirm
-first, then reports how many tasks it actually deleted and how many it
-couldn't — a delete can partially succeed if you lack permission on some of the
-selected tasks.
+With tasks selected, a toolbar lets you:
 
-**Delete cannot be undone.**
+- **Change status** of every selected task
+- **Archive** or **Unarchive** them
+- **Delete** them
+
+**Delete cannot be undone.** You'll be asked to confirm first.
 
 ![The confirmation shown before deleting the selected tasks](/media/mr4-bulk-delete-confirm.png){: .only-light}
 ![The confirmation shown before deleting the selected tasks](/media/mr4-bulk-delete-confirm-dark.png){: .only-dark}
-
-## Changing several challenges at once
-
-Editing a batch of challenges through a single form is not part of the current
-frontend. Instead, each challenge row — on **Manage → Challenges** and on a
-project's page — has icon buttons to pause/resume, archive/unarchive, pin, and
-make discoverable, followed by an actions menu with the other per-challenge
-operations:
-
-- on **Manage → Challenges**: start, edit, archive/unarchive,
-  [rebuild tasks](/documentation/rebuilding-challenge-tasks/), copy URL, and
-  delete
-- on a project's page: start, edit, move, clone, archive/unarchive,
-  [rebuild tasks](/documentation/rebuilding-challenge-tasks/), enable or
-  disable, and delete

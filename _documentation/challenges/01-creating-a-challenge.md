@@ -2,168 +2,48 @@
 title: Creating a Challenge
 ---
 
-Creating a challenge starts with a good challenge idea. Good challenges have
-tasks that:
+Creating a challenge starts with a good challenge idea. Good challenges have tasks that:
 
 - Are easy to solve (typically less than one minute)
 - Do not require local knowledge
 - Involve only one or two OSM objects
 
-Let's work through an example. We will ask mappers to review `motorway_junction`
-nodes in the United States that have `name` tags. This is uncommon in the U.S.
-Often mappers will add a name tag that has the destination information on it, so
-the information renders on the map.
+Here's an [example challenge](https://maproulette.org/browse/challenges/3253) that meets that criteria. We will ask mappers to review `motorway_junction` nodes in the United States that have name `tags`. This is uncommon in the U.S. Often mappers will add a name tag that has the destination information on it, so the information renders on the map:
 
-This [Overpass query](https://overpass-turbo.eu/?Q=area%5Bname%3D%22United%20States%20of%20America%22%5D-%3E.a%3B%0Anode%5B%22highway%22%3D%22motorway_junction%22%5D%5B%22name%22%5D(area.a)%3B%0Aout%20meta%3B%0A&C=40.66202;-111.87756;12)
-selects all these nodes.
+![](/media/create-challenge-1.png)
+
+This [Overpass query](https://overpass-turbo.eu/?Q=area%5Bname%3D%22United%20States%20of%20America%22%5D-%3E.a%3B%0Anode%5B%22highway%22%3D%22motorway_junction%22%5D%5B%22name%22%5D(area.a)%3B%0Aout%20meta%3B%0A&C=40.66202;-111.87756;12) selects all these nodes.
 
 ```
 area[name="United States of America"]->.a; node["highway"="motorway_junction"]["name"](area.a); out meta;
 ```
 
-## Getting to the form
+With that query in hand, open the user menu and choose **Manage**, then **Projects**. Challenges live inside projects, so if you don't have one yet, click **Create Project**. Otherwise open the project that should hold your new challenge and click **Create challenge**.
 
-Challenges live inside projects, so you need a project first. Open the user
-menu and choose **Manage**, then **Projects**. If you don't have one yet,
-**Create Project** makes one; otherwise open the project that should hold your
-new challenge and choose **Create challenge**.
+![The challenge form](/media/mr4-create-challenge-form.png){: .only-light}
+![The challenge form](/media/mr4-create-challenge-form-dark.png){: .only-dark}
 
-You can also go straight to **Manage → Challenges → Create Challenge** and
-pick the project from the form's project picker.
+At the top you enter the title, description and instruction for your challenge, as well as some metadata that will be used to help others find it and identify edits made by mappers using the Challenge:
 
-## Filling in the form
+- **Name** A descriptive name for the challenge. I used Review named motorway junctions in USA. A good title describes what the challenge is about in a few words.
+- **Description** Some text to describe in more words what the challenge is about. This field supports markdown and appears on the challenge page when mappers browse for interesting challenges:
 
-The challenge form, **Create New Challenge**, is a single page in eight
-sections.
+I used Motorway junction nodes are not commonly tagged with name. This challenge asks mappers to review those nodes, removing the name where it's not applicable.
 
-![The top of the challenge form: project, name, description and instructions](/media/mr4-create-challenge-form.png){: .only-light}
-![The top of the challenge form: project, name, description and instructions](/media/mr4-create-challenge-form-dark.png){: .only-dark}
+- **Instructions** This is perhaps the most important text. Here you tell mappers exactly what the task is you want them to perform. Be specific and use links (this field supports markdown as well) to the OSM wiki or other external sources where needed. This text is shown next to the map of the task location. I used This `motorway_junction` node has a `name` tag. This is uncommon, [see the OSM wiki](https://wiki.openstreetmap.org/wiki/Tag:highway=motorway_junction#Name_and_number) for details. If this name tag does not represent a 'name of the junction or interchange', the name tag should be removed. If you're not sure, you can skip the task. Note how I use markdown features to make the instructions easy to read and comprehensive.
+- **Changeset Comment** This field will be used to pre-fill the changeset comment in the editor ( A URL linking to the task is automatically added to the changeset comment, but only when the challenge is discoverable ). I used reviewing named motorway junctions. A `#maproulette` hashtag will be added if it's missing. The comment can include [mustache tags](/documentation/mustache-tag-replacement/) referencing task properties.
+- **Changeset Source** This field will be used to pre-fill the changeset source field in the editor. If your task involves using any external data, you should list it here. I used maproulette;overpass.
+- **Difficulty** You can leave this at 'Normal' unless your tasks are particularly easy or hard.
+- **Category** This helps the user find challenges they are interested in. There is a dropdown menu on the main Challenge list that lets users narrow down the list by category. For this challenge I used Roads / Pedestrian / Cycleways.
+- **Keywords** These also help users find interesting challenges. I used `junction`, `name`, `motorway` and `exit`.
 
-### Project
+When all this is filled out, further down the form you supply the source data for the tasks. This can be a GeoJSON file or URL, or an Overpass query. If you use an Overpass query, make sure you don't use any Overpass Turbo specific language such as `geocodeArea:...`. Test your query in Overpass Turbo first. See [Using Overpass to create Challenges](/documentation/using-overpass-to-create-challenges/) for more. Make sure that the query only returns the nodes or ways that you want mappers to review, and ideally the number of objects returned should be no more than a couple thousand.
 
-Which project the challenge belongs to. You can only pick projects you manage.
-(This is only asked when creating; to move an existing challenge later, use
-**Move challenge** in the challenge's menu on its project's page.)
+The rest of the form is optional: a [team](/documentation/teams/) to own the challenge, a [basemap](/documentation/setting-basemap-for-challenge/), and the [task identifier](/documentation/setting-external-task-identifiers/) property. Finally, confirm that you have read OpenStreetMap's [Automated Edits code of conduct](https://wiki.openstreetmap.org/wiki/Automated_Edits_code_of_conduct).
 
-### Basic information
-
-- **Name** — a descriptive name. I used *Review named motorway junctions in
-  USA*. A good title describes what the challenge is about in a few words. At
-  least 3 characters.
-- **Description** — some text describing in more words what the challenge is
-  about. This field supports [Markdown](/documentation/markdown/) and
-  appears on the challenge page when mappers browse for interesting challenges.
-  I used *Motorway junction nodes are not commonly tagged with name. This
-  challenge asks mappers to review those nodes, removing the name where it's not
-  applicable.*
-- **Instructions** — perhaps the most important text. Here you tell mappers
-  exactly what task you want them to perform. Be specific and use links (this
-  field supports Markdown as well) to the OSM wiki or other external sources
-  where needed. This text is shown beside the map of the task location.
-- **Difficulty** — **Easy**, **Normal** or **Expert**. Leave this at Normal
-  unless your tasks are particularly easy or hard.
-- **How should your Challenge be Categorized?** — a category that helps
-  mappers find challenges that match their interests. Choose **Other** if
-  nothing fits.
-- **Additional Categorization Keywords** — optional extra keywords to help
-  mappers discover your challenge.
-
-Description and Instructions are both required.
-
-### OpenStreetMap changeset
-
-These two fields are pre-filled in the editor when a mapper saves their changes
-to OpenStreetMap. Both are required.
-
-- **Changeset comment** — describes the changes mappers make. The
-  `#maproulette` hashtag is appended if it's missing, and a link back to the
-  task is added automatically.
-- **Changeset source** — the imagery or data mappers are expected to use,
-  separated by semicolons (for example *Bing; survey*).
-
-### Task data
-
-Choose one of three sources for the challenge's tasks:
-
-- **I want to provide an Overpass query** — Overpass QL that generates the
-  tasks. See [Using Overpass to create
-  Challenges](/documentation/using-overpass-to-create-challenges/) for
-  important details and common pitfalls; in particular, don't use Overpass
-  Turbo-specific syntax such as `{% raw %}{{geocodeArea:...}}{% endraw %}`, and test your query in
-  Overpass Turbo first.
-- **I want to upload a GeoJSON file** — a GeoJSON file from your computer.
-  Standard GeoJSON and [line-by-line
-  GeoJSON](/documentation/line-by-line-geojson/) are both supported.
-- **I have a URL to the GeoJSON data** — a URL pointing directly at the raw
-  GeoJSON file, not at a page linking to it. See [Hosting Remote GeoJSON with
-  Gists](/documentation/gists-for-remote-geojson/).
-
-Make sure that your query or file only returns the features that you want
-mappers to review, and ideally the number of objects should be no more than a
-couple of thousand.
-
-> The data source can be changed by editing the challenge only until it has
-> tasks. After that, editing shows the source read-only; to regenerate tasks
-> from updated data, use [Rebuild
-> Tasks](/documentation/rebuilding-challenge-tasks/).
-
-### Team
-
-An optional [team](/documentation/teams/) to own this challenge. Everyone who
-runs that team — its owners, admins and managers — can then manage the
-challenge, whatever role they hold on the parent project, and the team's
-approved image becomes the picture on the challenge's card.
-
-Only teams whose work you run are offered, so belonging to a team is not enough
-to publish a challenge under its name. A team's image is requested from the
-team's page and reviewed by a super admin before it appears anywhere.
-
-### Basemap
-
-Optionally force a base layer for this challenge's maps, overriding whatever
-each mapper has chosen for themselves — useful when the tasks can only be
-judged against particular imagery. See [Setting The Basemap Layer For Your
-Challenge](/documentation/setting-basemap-for-challenge/).
-
-### Task settings
-
-- **OSM/External Id Property** — the feature property holding each task's
-  identifier. Leave it blank to let MapRoulette detect it. See [Setting
-  External Task Identifiers](/documentation/setting-external-task-identifiers/).
-- **Task Bundle Id Property** — the feature property to treat as a bundle id.
-  Features sharing a value become a single task with multiple features;
-  features without the property stay as separate tasks. Leave it blank for one
-  task per feature. This isn't available for Overpass queries.
-
-### Automated Edits code of conduct
-
-Before creating a challenge you must confirm that you have read and understand
-OpenStreetMap's [Automated Edits code of
-conduct](https://wiki.openstreetmap.org/wiki/Automated_Edits_code_of_conduct).
-Make sure that your Challenge is designed to encourage careful human attention
-to each task, in that spirit.
-
-## After you submit
-
-**Create Challenge** saves the challenge and starts building its tasks. If you
-used an Overpass query, MapRoulette runs it in the background; depending on how
-heavy the query is, this can take a few seconds to a couple of minutes. You
-land on the challenge's management page, which shows **Tasks Building...** with
-an elapsed timer and refreshes itself as it progresses, then shows your tasks on
-a map with a task table and challenge statistics.
+When you click **Create Challenge**, MapRoulette will query Overpass in the background and populate your challenge. Depending on how heavy the Overpass query is, this can take a few seconds to a couple of minutes. When it finishes, you will see a map with your tasks, a complete list of tasks and some more challenge information.
 
 ![A challenge's management page after its tasks are built](/media/mr4-manage-challenge.png){: .only-light}
 ![A challenge's management page after its tasks are built](/media/mr4-manage-challenge-dark.png){: .only-dark}
 
-From there you can:
-
-- **Browse challenge** to open the public challenge page and try it out
-  yourself
-- **Configure prioritization** to decide which tasks get served first — see
-  [Prioritizing Tasks](/documentation/task-priority-rules/)
-- Use the **Enabled** switch to control whether it appears in search results.
-  A new challenge starts with it on, so turn it off if you want to test before
-  mappers can find it. A challenge is discoverable only when both it and its
-  project are. In challenge lists the same switch is the eye button labelled
-  **Make discoverable** / **Make not discoverable**. See [Challenge Visibility
-  and Discovery](/documentation/challenge-visibility-and-discovery/)
+You can now click **Browse challenge** to go directly to your challenge and try it out!

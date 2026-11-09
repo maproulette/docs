@@ -2,74 +2,29 @@
 title: Setting your Map Base Layer
 ---
 
-Depending on the type of Task and the geographical area you are working on, you
-may want to use a different base layer for the map. Every map in MapRoulette —
-the explore map, a challenge's map, and the task map — carries the same set of
-controls in its corner:
-
-- **Map style** — switch the base layer
-- **Reset view** — return the map to where it started
-- **Zoom in** / **Zoom out**
-- a toggle to collapse the control stack out of the way
-
-The **Map style** control offers these base layers:
-
-- OSM Bright
-- OSM Carto
-- Bing Aerial
-- Esri World Imagery
-- Esri World Imagery (Clarity)
-
-Your choice is remembered in your browser and re-applied the next time a map
-loads, so you only have to pick your preferred imagery once.
-
-Individual maps add their own buttons alongside these — the task map, for
-example, adds controls for task markers and for
-[working several tasks together](/documentation/solving-multiple-tasks-together/).
+Depending on the type of Task and the geographical area you are working on, you may want to use a different base layer for the Task map. You can quickly switch between the available layers right in the **Map style** control:
 
 ![The Map style control open on a task map, listing the bundled base layers](/media/mr4-map-style-control.png){: .only-light}
 ![The Map style control open on a task map, listing the bundled base layers](/media/mr4-map-style-control-dark.png){: .only-dark}
 
-## Your default basemap
+You can set your default choice for your preferred map base layer in your Account Settings, under **Default Basemap** on the **General** tab. Remember to click **Save Changes**.
 
 ![Account Settings, General tab, with the Default Basemap list open](/media/mr4-settings-default-basemap.png){: .only-light}
 ![Account Settings, General tab, with the Default Basemap list open](/media/mr4-settings-default-basemap-dark.png){: .only-dark}
 
-You can record a preferred basemap on your account from the user menu →
-**Account Settings** → **General** → **Default Basemap**. Remember to press
-**Save Changes** to save. The options are:
+## Challenge Default
 
-- **None** — no preference; maps open on whichever layer you last picked with
-  the **Map style** control
-- **Bing Maps Aerial**
-- **Esri World Imagery**
-- **Esri World Imagery (Clarity) Beta**
-- **OpenStreetMap (Standard)** — opens on OSM Carto
-- **Custom tile layer…** — your own imagery
+The creator of the Challenge you work on may set an appropriate base layer for the map, which will be selected by default when you start working on that Challenge. You can still override this in the **Map style** control.
 
-Choosing **Custom tile layer…** reveals a **Custom Basemap URL** field, which
-you must fill in before you can save. Give it an XYZ tile template like
-`https://example.com/tiles/{z}/{x}/{y}.png`.
+## Custom base layers
 
-If you chose a basemap in an older version of MapRoulette that is no longer
-offered, such as Mapbox Satellite, OpenAerialMap or OpenCycleMap, the field
-shows **Keep current basemap** instead. That basemap has no matching layer, so
-maps open as if you had chosen **None** until you pick something else.
+_Advanced_
 
-A challenge's map and the task map open on your default basemap unless the
-challenge you are working on sets [a basemap of its
-own](/documentation/setting-basemap-for-challenge/), which takes precedence.
-If neither is set, the map opens on whichever layer you last picked with the
-**Map style** control. The explore map always opens on the layer you last
-picked.
+If you have a custom TMS tile layer source you want to use, you can select **Custom tile layer…** from the list in your Account Settings, and add the layer using the same URL pattern used [in QGIS](https://docs.qgis.org/3.22/en/docs/user_manual/managing_data_source/opening_data.html#using-xyz-tile-services) and [Leaflet](https://leafletjs.com/reference.html#tilelayer), for example:
 
-## Adding your own layer
+`https://tiles.somewhere.com/blabla/{z}/{x}/{y}.png`
 
-The **Map style** control also offers **Add your own layer**, for imagery
-MapRoulette doesn't bundle. Give it a name, then choose **XYZ tiles** and a
-tile template like `https://example.org/tile/{z}/{x}/{y}.png`, or choose
-**WMS** and give the endpoint URL plus the layer names to request.
+You can also choose **Add your own layer** in the **Map style** control to add an XYZ or WMS layer. Layers you add there are saved to your account and only you can see them.
 
-Layers you add are saved to your account, so they follow you between browsers
-and devices. Nobody else sees them. Remove one with the bin icon beside it in
-the list. If you are signed out they are remembered by your browser alone.
+![The Map style control with the Add your own layer form open](/media/mr4-add-custom-layer.png){: .only-light}
+![The Map style control with the Add your own layer form open](/media/mr4-add-custom-layer-dark.png){: .only-dark}

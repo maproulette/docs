@@ -2,67 +2,28 @@
 title: Notifications and Email
 ---
 
-MapRoulette notifies you about events that may be important to you. The bell in
-the header shows your unread notifications, with a dot when something is
-waiting; **View all notifications** in that menu opens the full
-**Notifications** page.
-
-## What you get notified about
-
-Notifications are grouped into these categories, which you can filter by on the
-Notifications page (**All** shows every category):
-
-- **Comments** — new comments on a challenge you manage.
-- **Mentions** — someone mentioned you in a comment.
-- **Challenges** — a challenge you manage or mapped on was completed, or
-  someone asked you to unlock a task you have locked.
-- **Teams** — team invitations and other team activity.
-- **System** — important MapRoulette system events, like planned downtime.
-  These are very infrequent. Notifications about task reviews are also listed
-  here.
-
-## Working through your notifications
+You can now get notified of events in MapRoulette that may be important to you. The notifications will show up in the bell menu in the header. If you have new notifications, there will be a red dot. Click **View all notifications** to open the Notifications page, where you can filter, reply to and manage them:
 
 ![The Notifications page with its filters and grouped notifications](/media/mr4-notifications-page.png){: .only-light}
 ![The Notifications page with its filters and grouped notifications](/media/mr4-notifications-page-dark.png){: .only-dark}
 
-The Notifications page is a list with a filter bar and a reading pane:
+Currently, MapRoulette will notify you about the following things:
 
-- Filter by **type**, by **sender**, by **task**, and by read/unread state.
-- **Group by Task** collapses every notification about the same task into one
-  thread, which is the quickest way to deal with a busy task conversation.
-- Selecting a notification opens the thread, showing the comments on that task,
-  and lets you **reply** without leaving the page.
-- Notifications can be marked read or unread — individually, for a whole
-  thread, or for everything selected — and deleted.
-- **Saved views** let you store a filter combination under a name and re-apply
-  it later, so a routine such as "unread mentions" is one click away.
-  Saved views live in your browser rather than on your account, so they don't
-  follow you to another device.
+- **System messages** — important MapRoulette system events, like planned downtime. These will be very infrequent.
+- **Mentions** — Be notified when someone mentions you in a comment.
+- **Challenge completed** — Be notified when a challenge you manage is completed.
+- **Teams** — Be notified about team invitations and other team activity.
 
-## Email
+You can set individual notification preferences for each of these on the **Notifications** tab of your Account Settings. There are four notification levels:
 
-Your email address is set on the **Notifications** tab of your
-[account settings](/documentation/setting-your-default-osm-editor/)
-(user menu → **Account Settings**). If you ask for notifications by email, they
-are sent there.
-
-MapRoulette does not require email validation, so please make sure that the
-address you enter is valid and yours.
-
-## Choosing what you're told about
+1. **Ignore** — no notification whatsoever
+2. **Notify in app** — you will see the notification in MapRoulette, but no emails are sent
+3. **Notify and email immediately** — you will see the notification in MapRoulette, and an email will be sent to the address in your Account Settings as the event happens
+4. **Notify and include in daily digest** — you will see the notification in MapRoulette, and the notification will be added to a daily email digest that will be sent to the address in your Account Settings
 
 ![Account Settings, Notifications tab, with the Notify me about section](/media/mr4-settings-notifications.png){: .only-light}
 ![Account Settings, Notifications tab, with the Notify me about section](/media/mr4-settings-notifications-dark.png){: .only-dark}
 
-Under **Notify me about** on the same **Notifications** tab, you set each kind
-of notification separately. The kinds you can set are **System messages**,
-**Mentions**, **Challenge completed** and **Teams**. For each one you choose:
+Remember to click **Save Changes** at the bottom of the tab.
 
-- **Ignore** — don't tell me at all
-- **Notify in app** — a notification in MapRoulette, but no email
-- **Notify and email immediately** — an email as soon as it happens
-- **Notify and include in daily digest** — an email, batched into one a day
-
-These are saved together with the rest of your account settings, by the
-**Save Changes** button at the bottom of the tab.
+Right now, MapRoulette does not require email validation, so please make sure that the email address you enter is valid and yours.
