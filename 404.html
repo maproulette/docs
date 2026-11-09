@@ -30,8 +30,14 @@ layout: default
 // The site used to live under a locale segment, e.g. /en-US/documentation/page/
 // (and older links used the invalid /en-us/). Send those to the flat URL so
 // existing links and bookmarks keep working.
+const RENAMED_PAGES = { "rapid-editor": "id-editor" };
 const match = window.location.pathname.match(/^\/en-[Uu][Ss](\/.*)?$/);
-if (match) {
-  window.location.replace((match[1] || "/") + window.location.hash);
+let path = match ? match[1] || "/" : window.location.pathname;
+const page = path.match(/^\/documentation\/([^/]+)\/?$/);
+if (page && RENAMED_PAGES[page[1]]) {
+  path = `/documentation/${RENAMED_PAGES[page[1]]}/`;
+}
+if (path !== window.location.pathname) {
+  window.location.replace(path + window.location.hash);
 }
 </script>
