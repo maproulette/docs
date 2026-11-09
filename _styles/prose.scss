@@ -156,6 +156,11 @@ img[width][height] {
   height: auto; /* Preserve aspect ratio */
 }
 
+:root:not(.dark) .only-dark,
+:root.dark .only-light {
+  display: none;
+}
+
 /* ----------------------------------------------------------------- tables --- */
 
 table {
