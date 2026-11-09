@@ -15,11 +15,13 @@ collections:
 # Order of the sidebar sections. Each entry must match a directory name under
 # _documentation/.
 sections:
-  - new-topics
-  - basics
+  - getting-started
+  - mapping
+  - user-settings
+  - projects
+  - challenges
+  - tasks
   - advanced
-  - creating-challenges
-  - teams
   - server-admin
 
 # Pages offered in the search box before anything has been typed. Listed by
