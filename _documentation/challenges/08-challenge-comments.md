@@ -2,11 +2,12 @@
 title: Challenge Comments
 ---
 
-In an effort to provide more tooling for users to contact challenge owners, **Challenge Comments** have been added as a feature in addition to Task Comments.  This allows users to address issues or assessments that could be systemic beyond just one task, and to get clarity from the owner or recommend changes without need to flag or report a challenge.  
+In an effort to provide more tooling for users to contact challenge owners, **Challenge Comments** have been added as a feature in addition to Task Comments. This allows users to address issues or assessments that could be systemic beyond just one task, and to get clarity from the owner or recommend changes without need to report a challenge.
 
-To navigate to a challenge's comments and to post a comment, simply go to a challenge overview page like [this one](https://maproulette.org/browse/challenges/40609).  Then click on the link "Get In Touch".
+To navigate to a challenge's comments and to post a comment, simply go to a challenge overview page like [this one](https://maproulette.org/browse/challenges/40609).  Then click on "Comments" in the challenge header.
 
-![](/media/challenge-comments-2.png){:width="700"}
+![The Challenge Comments dialog](/media/mr4-challenge-comments.png){: .only-light}
+![The Challenge Comments dialog](/media/mr4-challenge-comments-dark.png){: .only-dark}
 
 ## Submitting a comment
 
@@ -14,5 +15,4 @@ Messages you submit here will automatically notify the challenge owner, so there
 
 ## Task Specific Comments
 
-Task specific comments can be viewed here and will be included in the challenge comment feed by simply clicking the "Task Comments" checkbox.
-
+Task specific comments can be viewed here and will be included in the challenge comment feed by simply clicking the "Show task comments" checkbox.

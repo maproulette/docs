@@ -6,7 +6,7 @@ As a challenge owner, you may wish to occasionally rebuild the tasks in your cha
 
 **In order for your challenge to rebuild successfully, each task feature must contain a supported id field with a unique id (within the challenge) so that existing tasks can be matched up with updated feature data. If tasks aren't matched up properly they will likely be duplicated.**
 
-You can either explicitly [specify an id property](/en-US/documentation/setting-external-task-identifiers) on your challenge, or rely on a supported field/property that will be automatically detected. Automatically supported id fields are: `id`, `@id`, `osmid`, `osm_id`, and `name` (checked in that order). If your features contain one of those automatically-supported fields and you do *not* wish to use it (or the order of detection would pick up the wrong field first), then you must explicitly [specify](/en-US/documentation/setting-external-task-identifiers) on the challenge which field/property is to be used.
+You can either explicitly [specify an id property](/documentation/setting-external-task-identifiers/) on your challenge, or rely on a supported field/property that will be automatically detected. Automatically supported id fields are: `id`, `@id`, `osmid`, `osm_id`, and `name` (checked in that order). If your features contain one of those automatically-supported fields and you do *not* wish to use it (or the order of detection would pick up the wrong field first), then you must explicitly [specify](/documentation/setting-external-task-identifiers/) on the challenge which field/property is to be used.
 
 Challenge tasks generated from Overpass queries automatically contain ids (including exported GeoJSON files from Overpass Turbo), so nothing more is required. But for challenges with tasks generated from other local or remote GeoJSON data, you will need to ensure these ids are included if you wish your challenge to rebuild successfully. Id fields can be on the features themselves (preferable) or the feature properties.
 
@@ -40,6 +40,13 @@ For example, the following feature representing a museum contains both a field n
 **It's important that the same features in your original GeoJSON file and updated GeoJSON file use the same id values so they can be matched up, or you will likely end up with duplicated tasks.**
 
 For example, if an updated GeoJSON file contained new opening hours for the museum above, the feature in the updated GeoJSON file should contain an id property with the value of `relation/1553447` so that it will be successfully matched with the existing task for the museum and not result in a duplicated task.
+
+## Starting a rebuild
+
+Click **Rebuild tasks** on the challenge's management page, or in the challenge's menu in your challenge lists. Challenges built from an Overpass query or a GeoJSON URL fetch the latest data again. Challenges built from an uploaded file ask you to upload a new one.
+
+![The Rebuild Challenge Tasks dialog](/media/mr4-rebuild-tasks-dialog.png){: .only-light}
+![The Rebuild Challenge Tasks dialog](/media/mr4-rebuild-tasks-dialog-dark.png){: .only-dark}
 
 ## Optionally removing incomplete tasks first
 

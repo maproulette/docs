@@ -13,5 +13,5 @@ Visibility only affects discoverability: mappers can still access a challenge di
 | No                      | Yes                       | No                         |
 | No                      | No                        | No                         |
 
-> Note: virtual projects do not affect visibility of their contained challenges. Only a challenge's standard parent project is considered when determining discoverability
+You can change a challenge's visibility with the **Enabled** switch on its management page, or with the eye button beside it in your challenge lists.
 
