@@ -34,13 +34,12 @@ Each GeoJSON Feature (or FeatureCollection) representing a task can have an embe
               [100.0, 0.0]
             ]
           ]
-        }      
+        }
       }
     }
   ]
 }
 ```
-
 
 Each attachment in the `attachments` array is a JSON object with a set of fields. The exact fields are flexible and depend on the kind of attachment, but the following fields are always supported (and some required).
 
@@ -73,7 +72,6 @@ These fields are always allowed regardless of the kind of attachment. Some may b
 
 `meta`: Reserved for tracking meta information about the attachment, such as data-format version used, timestamps, etc.
 
-
 ### Supported Kinds
 
 > Note: some kinds below are shown as "planned". They technically can still be used as attachments, but special handling has not yet been implemented (i.e. they will not be made available to the mapper during task completion) and the details are subject to change.
@@ -96,13 +94,12 @@ These fields are always allowed regardless of the kind of attachment. Some may b
 
 `keyValue`: a flat JSON object consisting of key/value pairs (values may not be objects).
 
-
 ### Settings
 A kind-specific `settings` object can be provided that controls the interaction between MapRoulette and the attachment. The following settings are supported for each `kind`:
 
 **referenceLayer**
 
-`layerLocked` (boolean) and `downloadPolicy` (string) can be provided to explicitly control how the layer is treated in JOSM (see the [JOSM docs](https://josm.openstreetmap.de/wiki/Help/RemoteControlCommands#import) for details). By default, all reference layers are locked with upload and download policies both set to "never", so usually no special settings are needed. The upload policy cannot currently be changed.
+`layerLocked` (boolean), `uploadPolicy` (string) and `downloadPolicy` (string) can be provided to explicitly control how the layer is treated in JOSM (see the [JOSM docs](https://josm.openstreetmap.de/wiki/Help/RemoteControlCommands#import) for details). By default, all reference layers are locked with upload and download policies both set to "never", so usually no special settings are needed.
 
 Example:
 
@@ -112,4 +109,3 @@ Example:
   "downloadPolicy": ""     // disable the default download policy of "never"
 }
 ```
-
